@@ -14,13 +14,13 @@ let projects = data.projects;
   <div class = "move-area mx-auto -mt-24 flex min-h-screen flex-1 flex-col duration-300 motion-reduce:transition-none md:w-[90%] xl:w-4/5">
   <div class = "md:grid-cols-0 grid px-8 lg:grid-cols-5">
     <div class = "md:col-span-3">
-    <h4 class = "text-2xl font-semibold text-white underline decoration-gray-500 hover:decoration-sky-200 decoration-4">hi 👋!</h4>
+    <h4 class = "text-2xl font-semibold text-white ">hi 👋!</h4>
     <div class = "py-2">
-      <p class = "text-white text-l"> i'm a full stack developer & i'm also the creator and sole developer of <a href = "https://wanderer.moe" class = "hover:bg-opacity-25 bg-sky-300 bg-opacity-5 p-1 rounded-md font-bold text-sky-200">wanderer.moe</a>. <br> (the genshin site you're probably looking for)</p>
+    <p class = "text-white text-l"> i'm a full stack developer & i'm also the creator and sole developer of <a href = "https://wanderer.moe" class = "hover:bg-opacity-25 bg-sky-300 bg-opacity-5 p-1 rounded-md font-bold text-sky-200">wanderer.moe</a>. <br> (the genshin site you're probably looking for, previously wtf.dromzeh.dev)</p>
     </div>
     <br>
   
-    <h4 class = "text-2xl font-semibold text-white underline decoration-gray-500 hover:decoration-sky-200 decoration-4">contact info</h4>
+    <h4 class = "text-2xl font-semibold text-white">contact info</h4>
 
     <div class="py-2 grid grid-cols-1 gap-2">
     <p class = "text-white"><a href = "https://github.com/dromzeh" class = "px-4 hover:bg-opacity-25 bg-sky-300 bg-opacity-5 p-1 rounded-md font-bold text-sky-200"><i class="fab fa-github"></i>  @dromzeh</a></p>
@@ -31,30 +31,27 @@ let projects = data.projects;
 
     <br>
     
-    <h4 class = "text-2xl font-semibold text-white underline decoration-gray-500 hover:decoration-sky-200 decoration-4">programming languages, etc</h4>
+    <h4 class = "text-2xl font-semibold text-white ">programming languages & tools</h4>
     
     <div class = "py-2">
     <p class = "text-white indent-2">  • javascript</p>
-    <p class = "text-gray-400 indent-4 text-sm">  - mainly used javascript for writing scripts for websites</p>
     <p class = "text-white indent-2">  • svelte (+sapper & sveltekit)</p>
-    <p class = "text-gray-400 indent-4 text-sm">  - sveltekit + svelte is what is used in my current project, wanderer.moe & this site</p>
     <p class = "text-white indent-2">  • python (+flask & discord.py)</p>
-    <p class = "text-gray-400 indent-4 text-sm">  - created multiple discord bots using discord.py, backends to websites with flask, etc</p>
     <p class = "text-white indent-2">  • node.js</p>
-    <p class = "text-gray-400 indent-4 text-sm">  - self-explanatory</p>
     <p class = "text-white indent-2">  • c# </p>
-    <p class = "text-gray-400 indent-4 text-sm">  - made some winforms programs, as well as some console scripts & a interactive console game</p>
     <p class = "text-white indent-2">  • html</p>
-    <p class = "text-gray-400 indent-4 text-sm">  - self-explanatory, used for website stuff, etc.</p>
     <p class = "text-white indent-2">  • css (+tailwind)</p>
-    <p class = "text-gray-400 indent-4 text-sm">  - self-explantory, mainly have used tailwind to create the frontend for many sites, such as this one</p>
     </div>
     <br>
+
+    <img src="https://ghchart.rshah.org/dromzeh" alt="github contribution graph for dromzeh">
+    <br>
+
 
   </div>
   
   <div class = "motion-reduce:transition-none lg:col-span-2 lg:mt-0 lg:mb-0">
-  <h4 class="text-2xl font-semibold text-white underline decoration-gray-500 hover:decoration-sky-200 decoration-4">some projects i've created</h4>
+  <h4 class="text-2xl font-semibold text-white ">projects</h4>
   <div class = "py-2">
   <div class="grid grid-cols-1 gap-4">
   {#each projects as project}
@@ -70,6 +67,11 @@ let projects = data.projects;
             {uses}
           </div>
           {/each}
+          {#if project.isopenSource == true}
+          <div class="hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-2 rounded-md font-bold uppercase text-sm text-indigo-200">
+            <i class="fa-brands fa-github"></i> open source
+          </div>
+          {/if}
         </div>
       </div>
     </div>

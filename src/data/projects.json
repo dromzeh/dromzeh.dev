@@ -4,25 +4,36 @@
             "name": "wanderer.moe",
             "description": "A website which hosts hundreds of Genshin Impact assets. Averages over 30,000 individual users per month. (and a lot of bandwidth usage 😵‍💫)",
             "url": "https://wanderer.moe",
-            "uses": ["svelte", "tailwindcss"]
+            "uses": ["svelte", "tailwindcss"],
+            "isopenSource": false
         },
         {
             "name": "roblox sound changer",
             "description": "Windows program that allows you to easily modify your roblox 'death' sound. Also includes auto detection of game installation location for easier usage.",
             "url": "https://github.com/dromzeh/robloxsoundchanger",
-            "uses": ["C#", "winforms"]
+            "uses": ["C#", "winforms"],
+            "isopenSource": true
         },
         {
             "name": "roblox filter for discord",
             "description": "A bot for discord which allows you to implement 'roblox-type' moderation to your discord server. Uses webhooks to mimic talking as the person.",
             "url": "https://github.com/dromzeh/roblox-filter-for-discord",
-            "uses": ["python", "discord.py"]
+            "uses": ["python", "discord.py"],
+            "isopenSource": true
         },
         {
             "name": "discord custom stream status",
             "description": "An incredibly simple discord self-bot which allows for you to easily set your status to streaming & change the stream name & url to anything of your choice. ",
             "url": "https://github.com/dromzeh/discord-custom-stream-status",
-            "uses": ["python", "discord.py"]
+            "uses": ["python", "discord.py"],
+            "isopenSource": true
+        },
+        {
+            "name": "dromzeh.dev",
+            "description": "The website you're currently seeing right now, created with SvelteKit and TailwindCSS and hosted with Cloudflare Pages. Previously hosted on Github Pages.",
+            "url": "https://github.com/dromzeh/dromzeh.dev",
+            "uses": ["sveltekit", "tailwindcss"],
+            "isopenSource": true
         }
     ]
 }
