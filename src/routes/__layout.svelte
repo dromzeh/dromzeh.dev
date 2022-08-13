@@ -25,14 +25,12 @@
             NProgress.done();
         }
     }
-    </script>
+</script>
+     
+<Nav {segment}/>
     
+<main>
+    <slot></slot>
+</main>
     
-    <Nav {segment}/>
-    
-    <main>
-        <slot></slot>
-    </main>
-    
-    
-    <Footer {segment}/>
+<Footer {segment}/>

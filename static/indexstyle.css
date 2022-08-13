@@ -20,12 +20,6 @@ p {
     background: rgb(255, 255, 255);
   }
 
-.glow{
-  color:#fff;
-  text-shadow:1px 1px 5px #fff, 1px 1px 5px #ccc;
-  animation: flicker 1s infinite;
-}
-
 @keyframes flicker
   {
   0% {opacity:0;}
@@ -34,4 +28,19 @@ p {
   13% {opacity:0;}
   20% {opacity:.5;}
   25% {opacity:1;}
+}
+
+* {
+	scrollbar-width:thin;
+	scrollbar-color:#7DD3FC #1F2937
+}
+   ::-webkit-scrollbar {
+	width:8px
+}
+   ::-webkit-scrollbar-track {
+	background:#1F2937
+}
+   ::-webkit-scrollbar-thumb {
+	background:#7DD3FC;
+	border-radius:8px
 }
