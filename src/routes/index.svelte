@@ -8,6 +8,7 @@ let projects = data.projects;
 
 <svelte:head>
 <title>dromzeh.dev</title>
+<meta name="description" content="get real" />
 </svelte:head>
 
 <div id="main" class = "mt-24 flex flex-col justify-center antialiased">
