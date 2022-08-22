@@ -17,7 +17,7 @@ let projects = data.projects;
     <div class = "md:col-span-3">
     <h4 class = "text-2xl font-semibold text-white ">hi 👋!</h4>
     <div class = "py-2">
-    <p class = "text-white text-l"> i'm a full stack developer & i'm also the creator and sole developer of <a href = "https://wanderer.moe" class = "hover:bg-opacity-25 bg-sky-300 bg-opacity-5 p-1 rounded-md font-bold text-sky-200">wanderer.moe</a>. <br> (the genshin site you're probably looking for, previously wtf.dromzeh.dev)</p>
+    <p class = "text-white text-l"> i'm a full stack developer & the developer of <a href = "https://wanderer.moe" class = "hover:bg-opacity-25 bg-sky-300 bg-opacity-5 p-1 rounded-md font-bold text-sky-200">wanderer.moe</a>. <br> (the genshin site you're probably looking for, previously wtf.dromzeh.dev)</p>
     </div>
     <br>
   
@@ -64,12 +64,12 @@ let projects = data.projects;
         <p class="my-2 text-sm text-white indent-2">{project.description}</p>
         <div class="flex items-center mt-4 gap-2">
           {#each project.uses as uses}
-          <div class="hover:bg-opacity-25 bg-sky-300 bg-opacity-5 p-2 rounded-md font-bold uppercase text-sm text-sky-200">
+          <div class="hover:bg-opacity-25 bg-sky-300 bg-opacity-5 p-2 rounded-md font-bold uppercase text-xs text-sky-200">
             {uses}
           </div>
           {/each}
           {#if project.isopenSource == true}
-          <div class="hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-2 rounded-md font-bold uppercase text-sm text-indigo-200">
+          <div class="hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-2 rounded-md font-bold uppercase text-xs text-indigo-200">
             <i class="fa-brands fa-github"></i> open source
           </div>
           {/if}
