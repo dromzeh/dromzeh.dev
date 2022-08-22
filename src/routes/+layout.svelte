@@ -1,8 +1,6 @@
 <script>
     import Nav from '../components/Nav.svelte';
     import Footer from '../components/Footer.svelte';
-    export let segment;
-    segment = segment; 
     
     import NProgress from 'nprogress';
     import { navigating } from '$app/stores';
@@ -27,10 +25,10 @@
     }
 </script>
      
-<Nav {segment}/>
+<Nav/>
     
 <main>
     <slot></slot>
 </main>
     
-<Footer {segment}/>
+<Footer/>
