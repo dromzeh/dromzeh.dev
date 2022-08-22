@@ -32,6 +32,7 @@
     "@popperjs/core": "^2.11.6",
     "axios": "^0.27.2",
     "dotenv": "^16.0.1",
-    "nprogress": "^0.2.0"
+    "nprogress": "^0.2.0",
+    "tiny-glob": "^0.2.9"
   }
 }
