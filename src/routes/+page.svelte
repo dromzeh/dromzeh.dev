@@ -44,10 +44,7 @@ let projects = data.projects;
     <p class = "text-white indent-2">  • css (+tailwind)</p>
     </div>
     <br>
-
-    <img src="https://ghchart.rshah.org/dromzeh" alt="github contribution graph for dromzeh">
     <br>
-
 
   </div>
   
