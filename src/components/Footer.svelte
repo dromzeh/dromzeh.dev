@@ -1,8 +1,9 @@
 <script>
-    // get the current year for the copyright
+    // gets the current year for the copyright
     const currentYear = new Date().getFullYear();
 </script>
 
+<!-- main footer with all items inside being centered for a cleaner look -->
 <footer class="text-center text-gray-400">
     <div class="flex justify-center items-center lg:justify-center p-6">
     <div class="justify-center">
