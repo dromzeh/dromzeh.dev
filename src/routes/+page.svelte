@@ -11,13 +11,14 @@ let projects = data.projects; // to save from typing data.projects every time...
 <meta name="description" content="get real" />
 </svelte:head>
 
+<!-- start of main page, values such as md: xl: etc controls the website looks on different devices.. -->
 <div id="main" class = "mt-24 flex flex-col justify-center antialiased">
-  <div class = "move-area mx-auto -mt-24 flex min-h-screen flex-1 flex-col duration-300 motion-reduce:transition-none md:w-[90%] xl:w-4/5">
+  <div class = "mx-auto -mt-24 flex min-h-screen flex-1 flex-col duration-300 motion-reduce:transition-none md:w-[90%] xl:w-4/5">
   <div class = "md:grid-cols-0 grid px-8 lg:grid-cols-5">
     <div class = "md:col-span-3">
 
     <!-- main text -->
-    <h4 class = "text-2xl font-semibold text-white ">hi 👋!</h4>
+    <h4 class = "text-2xl font-semibold text-white">hi 👋!</h4>
     <div class = "py-2">
     <p class = "text-white text-l"> i'm a full stack developer & the developer of <a href = "https://wanderer.moe" class = "hover:bg-opacity-25 bg-sky-300 bg-opacity-5 p-1 rounded-md font-bold text-sky-200">wanderer.moe</a>. <br> (the genshin site you're probably looking for, previously wtf.dromzeh.dev)</p>
     </div>
@@ -32,7 +33,7 @@ let projects = data.projects; // to save from typing data.projects every time...
     <p class = "text-white"><a href = "https://twitter.com/dromzeh" class = "px-4 hover:bg-opacity-25 bg-sky-300 bg-opacity-5 p-1 rounded-md font-bold text-sky-200"><i class="fab fa-twitter"></i>  @dromzeh</a></p>
     <p class = "text-white"><a href = "mailto:dromzeh@protonmail.com" class = "px-4 hover:bg-opacity-25 bg-sky-300 text-center bg-opacity-5 p-1 rounded-md font-bold text-sky-200"><i class="fas fa-envelope"></i>  dromzeh@protonmail.com</a></p>
     </div>
-    <br> 
+    <br> <!-- linebreak -->
     
     <!-- programming languages & tools section -->
     <h4 class = "text-2xl font-semibold text-white ">programming languages & tools</h4>
@@ -68,6 +69,7 @@ let projects = data.projects; // to save from typing data.projects every time...
         <h4 class="text-2xl font-semibold text-white">{project.name}</h4>
         <p class="my-2 text-sm text-white indent-2">{project.description}</p>
         <div class="flex items-center mt-4 gap-2">
+
           {#each project.uses as uses} <!-- as project.uses is often a list of more than one item.. -->
           <div class="hover:bg-opacity-25 bg-sky-300 bg-opacity-5 p-2 rounded-md font-bold uppercase text-xs text-sky-200">
             {uses}

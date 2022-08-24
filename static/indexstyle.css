@@ -23,16 +23,6 @@ p {
     background: rgb(255, 255, 255);
   }
 
-@keyframes flicker
-  {
-  0% {opacity:0;}
-  9% {opacity:1;}
-  10% {opacity:.5;}
-  13% {opacity:0;}
-  20% {opacity:.5;}
-  25% {opacity:1;}
-}
-
 /* styles the scrollbar instead of using the default one to fit with the site's color scheme */
 * {
 	scrollbar-width:thin;
