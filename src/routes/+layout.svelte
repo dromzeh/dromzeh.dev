@@ -23,6 +23,8 @@
             NProgress.done();
         }
     }
+
+    // nprogress is used to show loading progress bar at the top of the page
 </script>
      
 <Nav/>
