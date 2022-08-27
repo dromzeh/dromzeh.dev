@@ -8,13 +8,14 @@ Source code for my personal website, dromzeh.dev.
 
 Development:
 ```bash
-  pnpm dev
+  pnpm dev # unless changed in package.json, it'll run at port 1337..
 ```
 
-Production:
+Building:
 ```bash
   pnpm build
 ```
+
 ## License
 
 Licensed under [MIT](https://mit.dromzeh.dev/).
