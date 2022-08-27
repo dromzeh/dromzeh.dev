@@ -3,19 +3,10 @@ import adapter from '@sveltejs/adapter-static';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  kit: {
-    adapter: adapter(),
-    prerender: {
-      default: true,
-    },
-    serviceWorker: {
-      register: false,
-    },
+  kit: {adapter: adapter(), prerender: {default: true,},
+    serviceWorker: {register: false,},
   },
-  preprocess: [
-    preprocess({
-      postcss: true,
-    }),
+  preprocess: [preprocess({postcss: true,}),
   ],
 };
 

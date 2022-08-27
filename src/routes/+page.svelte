@@ -1,9 +1,41 @@
 <script context = "module">
-import data from '../data/projects.json'; // self explanatory
+import data from '../data/projects.json';
 </script>
 
 <script>
-let projects = data.projects; // to save from typing data.projects every time...
+import { onMount } from "svelte";
+import axios from 'axios';
+
+let discordData = '';
+let statusColor = '';
+
+async function getDiscordData() {
+	try {
+		// takes request to api.lanyard.rest to get my current discord status
+  let response = await axios.get('https://api.lanyard.rest/v1/users/492731761680187403')
+	.then(function (response) {
+		// console.log(response.data);
+    discordData = response.data.data;
+
+    const statusColors = {
+      online: '#34D399',
+      idle: '#FACC15',
+      dnd: '#F87171',
+      offline: '#9CA3AF'
+    }
+    statusColor = statusColors[discordData.discord_status];
+
+	})
+  } catch (e) {
+    console.log('Error fetching data')
+  }
+}
+
+onMount(() => {
+    getDiscordData();
+});
+
+let projects = data.projects;
 </script>
 
 <svelte:head>
@@ -21,15 +53,19 @@ let projects = data.projects; // to save from typing data.projects every time...
     <h4 class = "text-2xl font-semibold text-white">hi 👋!</h4>
     <div class = "py-2">
     <p class = "text-white text-l"> i'm a full stack developer & the developer of <a href = "https://wanderer.moe" class = "hover:bg-opacity-25 bg-sky-300 bg-opacity-5 p-1 rounded-md font-bold text-sky-200">wanderer.moe</a>. <br> (the genshin site you're probably looking for, previously wtf.dromzeh.dev)</p>
+    {#if discordData.discord_status != undefined}
+      <p class = "text-gray-400 text-sm"><span style = "color: {statusColor}">● </span>currently {#if discordData.discord_status != "offline"}<span class = "text-white font-semibold">online</span> <span class = "text-xs">({discordData.discord_status})</span>{:else}<span class = "text-white font-semibold">offline</span>{/if}</p> 
+    {/if}
     </div>
     <br>
   
-    <h4 class = "text-2xl font-semibold text-white">contact info</h4>
+    <h4 class = "text-2xl font-semibold text-white">contact links</h4>
 
     <!-- contact information with href links that redirect to urls, mailto: etc.. -->
     <div class="py-2 grid grid-cols-1 gap-2">
     <p class = "text-white"><a href = "https://github.com/dromzeh" class = "px-4 hover:bg-opacity-25 bg-sky-300 bg-opacity-5 p-1 rounded-md font-bold text-sky-200"><i class="fab fa-github"></i>  @dromzeh</a></p>
     <p class = "text-white"><a href = "https://discord.com/users/492731761680187403" class = "px-4 hover:bg-opacity-25 bg-sky-300 bg-opacity-5 p-1 rounded-md font-bold text-sky-200"><i class="fab fa-discord"></i>  dromzeh#1337</a></p>
+    <p class = "text-white"><a href = "https://tiktok.com/@dromzeh" class = "px-4 hover:bg-opacity-25 bg-sky-300 bg-opacity-5 p-1 rounded-md font-bold text-sky-200"><i class="fab fa-tiktok"></i>  @dromzeh</a></p>
     <p class = "text-white"><a href = "https://twitter.com/dromzeh" class = "px-4 hover:bg-opacity-25 bg-sky-300 bg-opacity-5 p-1 rounded-md font-bold text-sky-200"><i class="fab fa-twitter"></i>  @dromzeh</a></p>
     <p class = "text-white"><a href = "mailto:dromzeh@protonmail.com" class = "px-4 hover:bg-opacity-25 bg-sky-300 text-center bg-opacity-5 p-1 rounded-md font-bold text-sky-200"><i class="fas fa-envelope"></i>  dromzeh@protonmail.com</a></p>
     </div>
@@ -52,7 +88,6 @@ let projects = data.projects; // to save from typing data.projects every time...
     <br>
 
   </div>
-
 
   <!-- projects section -->
   <div class = "motion-reduce:transition-none lg:col-span-2 lg:mt-0 lg:mb-0">
