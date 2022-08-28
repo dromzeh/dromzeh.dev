@@ -1,8 +1,3 @@
-/* sets overall body background color */
-body {
-    background: #1C1917;
-}
-
 /* setting different fonts for p and h1 */
 h1 {
     font-family: "Inter", sans-serif;
@@ -38,7 +33,7 @@ p {
 /* styles the scrollbar instead of using the default one to fit with the site's color scheme */
 * {
 	scrollbar-width:thin;
-	scrollbar-color:#7DD3FC #1F2937
+	scrollbar-color:#6366F1 #1F2937
 }
    ::-webkit-scrollbar {
 	width:8px
@@ -47,6 +42,6 @@ p {
 	background:#1F2937
 }
    ::-webkit-scrollbar-thumb {
-	background:#7DD3FC;
+	background:#6366F1;
 	border-radius:8px
 }

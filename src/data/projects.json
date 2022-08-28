@@ -2,9 +2,9 @@
     "projects": [
         {
             "name": "wanderer.moe",
-            "description": "A website which hosts hundreds of Genshin Impact assets. Averages over 30,000 individual users per month. (and a lot of bandwidth usage 😵‍💫)",
+            "description": "A website which hosts hundreds of Genshin Impact assets. Averages over 30,000 individual users per month.",
             "url": "https://wanderer.moe",
-            "uses": ["svelte", "tailwindcss"],
+            "uses": ["svelte", "tailwind"],
             "isopenSource": false
         },
         {
@@ -32,7 +32,7 @@
             "name": "dromzeh.dev",
             "description": "The website you're currently seeing right now, created with SvelteKit and TailwindCSS and hosted with Cloudflare Pages. Previously hosted on Github Pages.",
             "url": "https://github.com/dromzeh/dromzeh.dev",
-            "uses": ["sveltekit", "tailwindcss"],
+            "uses": ["sveltekit", "tailwind"],
             "isopenSource": true
         }
     ]
