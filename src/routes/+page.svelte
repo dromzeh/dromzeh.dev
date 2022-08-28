@@ -56,7 +56,7 @@ let projects = data.projects;
     
     <div>
     {#if discordData.discord_status != undefined}
-      <p class = "text-gray-400 text-sm"><span style = "color: {statusColor}"><i class="animate-pulse fa-solid fa-circle"></i> </span>currently {#if discordData.discord_status != "offline"}<span class = "text-white font-semibold">online</span> <span class = "text-xs">({discordData.discord_status})</span>{:else}<span class = "text-white font-semibold">offline</span>{/if}</p>
+      <p class = "text-gray-400 text-sm"><span style = "color: {statusColor}"><i class="animate-pulse fa-solid fa-circle"></i> </span>currently {#if discordData.discord_status != "offline"}<span class = "text-white font-semibold">online</span> <span class = "text-xs">({discordData.discord_status})</span>{:else}<span class = "text-white font-semibold">offline</span>{/if} on discord</p>
       {#if discordData.listening_to_spotify == true}
         <p class = "text-gray-400 text-sm"><i class = "text-green-200 animate-pulse fab fa-spotify"></i> listening to <span class = "text-white font-semibold">{discordData.spotify.song}</span> by <span class = "text-white font-semibold">{discordData.spotify.artist}</span></p>
       {/if}
