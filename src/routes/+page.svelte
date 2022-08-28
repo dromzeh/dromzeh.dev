@@ -52,10 +52,17 @@ let projects = data.projects;
     <!-- main text -->
     <h4 class = "text-2xl font-semibold text-white">hi 👋!</h4>
     <div class = "py-2">
-    <p class = "text-white text-l"> i'm a full stack developer & the developer of <a href = "https://wanderer.moe" class = "hover:bg-opacity-25 bg-sky-300 bg-opacity-5 p-1 rounded-md font-bold text-sky-200">wanderer.moe</a>. <br> (the genshin site you're probably looking for, previously wtf.dromzeh.dev)</p>
+    <p class = "text-white text-l"> i'm a full-stack developer & i'm the creator / developer of <a href = "https://wanderer.moe" class = "hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-1 rounded-md font-bold text-indigo-200">wanderer.moe <i class="fa-solid fa-up-right-from-square text-sm"></i></a>. <br> <span class = "text-sm">(the genshin site you're probably looking for, previously wtf.dromzeh.dev)</span></p>
+    
+    <div>
     {#if discordData.discord_status != undefined}
-      <p class = "text-gray-400 text-sm"><span style = "color: {statusColor}">● </span>currently {#if discordData.discord_status != "offline"}<span class = "text-white font-semibold">online</span> <span class = "text-xs">({discordData.discord_status})</span>{:else}<span class = "text-white font-semibold">offline</span>{/if}</p> 
+      <p class = "text-gray-400 text-sm"><span style = "color: {statusColor}"><i class="animate-pulse fa-solid fa-circle"></i> </span>currently {#if discordData.discord_status != "offline"}<span class = "text-white font-semibold">online</span> <span class = "text-xs">({discordData.discord_status})</span>{:else}<span class = "text-white font-semibold">offline</span>{/if}</p>
+      {#if discordData.listening_to_spotify == true}
+        <p class = "text-gray-400 text-sm"><i class = "text-green-200 animate-pulse fab fa-spotify"></i> listening to <span class = "text-white font-semibold">{discordData.spotify.song}</span> by <span class = "text-white font-semibold">{discordData.spotify.artist}</span></p>
+      {/if}
     {/if}
+    </div>
+
     </div>
     <br>
   
@@ -63,16 +70,16 @@ let projects = data.projects;
 
     <!-- contact information with href links that redirect to urls, mailto: etc.. -->
     <div class="py-2 grid grid-cols-1 gap-2">
-    <p class = "text-white"><a href = "https://github.com/dromzeh" class = "px-4 hover:bg-opacity-25 bg-sky-300 bg-opacity-5 p-1 rounded-md font-bold text-sky-200"><i class="fab fa-github"></i>  @dromzeh</a></p>
-    <p class = "text-white"><a href = "https://discord.com/users/492731761680187403" class = "px-4 hover:bg-opacity-25 bg-sky-300 bg-opacity-5 p-1 rounded-md font-bold text-sky-200"><i class="fab fa-discord"></i>  dromzeh#1337</a></p>
-    <p class = "text-white"><a href = "https://tiktok.com/@dromzeh" class = "px-4 hover:bg-opacity-25 bg-sky-300 bg-opacity-5 p-1 rounded-md font-bold text-sky-200"><i class="fab fa-tiktok"></i>  @dromzeh</a></p>
-    <p class = "text-white"><a href = "https://twitter.com/dromzeh" class = "px-4 hover:bg-opacity-25 bg-sky-300 bg-opacity-5 p-1 rounded-md font-bold text-sky-200"><i class="fab fa-twitter"></i>  @dromzeh</a></p>
-    <p class = "text-white"><a href = "mailto:dromzeh@protonmail.com" class = "px-4 hover:bg-opacity-25 bg-sky-300 text-center bg-opacity-5 p-1 rounded-md font-bold text-sky-200"><i class="fas fa-envelope"></i>  dromzeh@protonmail.com</a></p>
+    <p class = "text-white"><a href = "https://github.com/dromzeh" class = "px-4 hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-1 rounded-md font-bold text-indigo-200"><i class="fab fa-github"></i>  @dromzeh <i class="fa-solid fa-up-right-from-square text-sm"></i></a></p>
+    <p class = "text-white"><a href = "https://discord.com/users/492731761680187403" class = "px-4 hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-1 rounded-md font-bold text-indigo-200"><i class="fab fa-discord"></i>  dromzeh#1337 <i class="fa-solid fa-up-right-from-square text-sm"></i></a></p>
+    <p class = "text-white"><a href = "https://tiktok.com/@dromzeh" class = "px-4 hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-1 rounded-md font-bold text-indigo-200"><i class="fab fa-tiktok"></i>  @dromzeh <i class="fa-solid fa-up-right-from-square text-sm"></i></a></p>
+    <p class = "text-white"><a href = "https://twitter.com/dromzeh" class = "px-4 hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-1 rounded-md font-bold text-indigo-200"><i class="fab fa-twitter"></i>  @dromzeh <i class="fa-solid fa-up-right-from-square text-sm"></i></a></p>
+    <p class = "text-white"><a href = "mailto:dromzeh@protonmail.com" class = "px-4 hover:bg-opacity-25 bg-indigo-300 text-center bg-opacity-5 p-1 rounded-md font-bold text-indigo-200"><i class="fas fa-envelope"></i>  dromzeh@protonmail.com <i class="fa-solid fa-up-right-from-square text-sm"></i></a></p>
     </div>
     <br> <!-- linebreak -->
     
     <!-- programming languages & tools section -->
-    <h4 class = "text-2xl font-semibold text-white ">programming languages & tools</h4>
+    <h4 class = "text-2xl font-semibold text-white ">programming languages, etc</h4>
     <div class = "py-2">
 
     <!-- displays all languages and tools with a slight indent -->
@@ -101,19 +108,19 @@ let projects = data.projects;
     <a href="{project.url}">
     <div class="bg-stone-800 projectContainer transition duration-150 ease-in-out rounded p-4 shadow md:flex justify-between hover:scale-105">
       <div>
-        <h4 class="text-2xl font-semibold text-white">{project.name}</h4>
+        <h4 class="text-2xl font-semibold text-white">{project.name} <i class="fa-solid fa-up-right-from-square text-sm"></i></h4>
         <p class="my-2 text-sm text-white indent-2">{project.description}</p>
         <div class="flex items-center mt-4 gap-2">
 
           {#each project.uses as uses} <!-- as project.uses is often a list of more than one item.. -->
-          <div class="hover:bg-opacity-25 bg-sky-300 bg-opacity-5 p-2 rounded-md font-bold uppercase text-xs text-sky-200">
+          <div class="hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-2 rounded-md font-bold uppercase text-xs text-indigo-200">
             {uses}
           </div>
 
           <!-- displays 'open source' next to a project if isopensource is true inside projects.json -->
           {/each}
           {#if project.isopenSource == true}
-          <div class="hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-2 rounded-md font-bold uppercase text-xs text-indigo-200">
+          <div class="hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-2 rounded-md font-bold uppercase text-xs text-indigo-300">
             <i class="fa-brands fa-github"></i> open source
           </div>
           {/if}
