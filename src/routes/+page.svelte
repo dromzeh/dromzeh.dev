@@ -8,15 +8,16 @@ import axios from 'axios';
 
 let discordData = '';
 let statusColor = '';
+let wanderermoeStatus = 'sending request..';
+let onlineUsers = 'sending request..';
 
 async function getDiscordData() {
 	try {
-		// takes request to api.lanyard.rest to get my current discord status
+	// takes request to api.lanyard.rest to get my current discord status
   let response = await axios.get('https://api.lanyard.rest/v1/users/492731761680187403')
 	.then(function (response) {
 		// console.log(response.data);
     discordData = response.data.data;
-
     const statusColors = {
       online: '#34D399',
       idle: '#FACC15',
@@ -24,15 +25,43 @@ async function getDiscordData() {
       offline: '#9CA3AF'
     }
     statusColor = statusColors[discordData.discord_status];
-
 	})
   } catch (e) {
     console.log('Error fetching data')
   }
 }
 
+async function getOnlineDiscordUsers() {
+	try {
+  let response = await axios.get('https://discord.com/api/guilds/982385887000272956/widget.json')
+	.then(function (response) {
+		onlineUsers = response.data.presence_count;
+	})
+  } catch (e) {
+	  onlineUsers = '?';
+  }
+}
+
+async function makeRequest(url){
+  try {
+    let response = await axios.get(url)
+    if(response.status == 200){
+      return 'website is up 👍';
+    }
+    else{
+      return 'website is down';
+    }
+  } catch (e) {
+    return 'website is down';
+  }
+
+}
 onMount(() => {
     getDiscordData();
+    makeRequest('https://wanderer.moe/').then(function(response){
+      wanderermoeStatus = response;
+    });
+    getOnlineDiscordUsers();
 });
 
 let projects = data.projects;
@@ -52,7 +81,7 @@ let projects = data.projects;
     <!-- main text -->
     <h4 class = "text-2xl font-semibold text-white">hi 👋!</h4>
     <div class = "py-2">
-    <p class = "text-white text-l"> i'm a full-stack developer & i'm the creator / developer of <a href = "https://wanderer.moe" class = "hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-1 rounded-md font-bold text-indigo-200">wanderer.moe <i class="fa-solid fa-up-right-from-square text-sm"></i></a>. <br> <span class = "text-sm">(the genshin site you're probably looking for, previously wtf.dromzeh.dev)</span></p>
+    <p class = "text-white text-l"> i'm a full-stack developer & i'm the creator / developer of <a href = "https://wanderer.moe" class = "hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-1 rounded-md font-bold text-indigo-200">wanderer.moe</a>. <br> <span class = "text-sm">(the genshin site you're probably looking for, previously wtf.dromzeh.dev)</span></p>
     
     <div>
     {#if discordData.discord_status != undefined}
@@ -70,11 +99,11 @@ let projects = data.projects;
 
     <!-- contact information with href links that redirect to urls, mailto: etc.. -->
     <div class="py-2 grid grid-cols-1 gap-2">
-    <p class = "text-white"><a href = "https://github.com/dromzeh" class = "px-4 hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-1 rounded-md font-bold text-indigo-200"><i class="fab fa-github"></i>  @dromzeh <i class="fa-solid fa-up-right-from-square text-sm"></i></a></p>
-    <p class = "text-white"><a href = "https://discord.com/users/492731761680187403" class = "px-4 hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-1 rounded-md font-bold text-indigo-200"><i class="fab fa-discord"></i>  dromzeh#1337 <i class="fa-solid fa-up-right-from-square text-sm"></i></a></p>
-    <p class = "text-white"><a href = "https://tiktok.com/@dromzeh" class = "px-4 hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-1 rounded-md font-bold text-indigo-200"><i class="fab fa-tiktok"></i>  @dromzeh <i class="fa-solid fa-up-right-from-square text-sm"></i></a></p>
-    <p class = "text-white"><a href = "https://twitter.com/dromzeh" class = "px-4 hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-1 rounded-md font-bold text-indigo-200"><i class="fab fa-twitter"></i>  @dromzeh <i class="fa-solid fa-up-right-from-square text-sm"></i></a></p>
-    <p class = "text-white"><a href = "mailto:dromzeh@protonmail.com" class = "px-4 hover:bg-opacity-25 bg-indigo-300 text-center bg-opacity-5 p-1 rounded-md font-bold text-indigo-200"><i class="fas fa-envelope"></i>  dromzeh@protonmail.com <i class="fa-solid fa-up-right-from-square text-sm"></i></a></p>
+    <p class = "text-white"><a href = "https://github.com/dromzeh" class = "px-4 hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-1 rounded-md font-bold text-indigo-200"><i class="fab fa-github"></i>  @dromzeh </a></p>
+    <p class = "text-white"><a href = "https://discord.com/users/492731761680187403" class = "px-4 hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-1 rounded-md font-bold text-indigo-200"><i class="fab fa-discord"></i>  dromzeh#1337 </a></p>
+    <p class = "text-white"><a href = "https://tiktok.com/@dromzeh" class = "px-4 hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-1 rounded-md font-bold text-indigo-200"><i class="fab fa-tiktok"></i>  @dromzeh </a></p>
+    <p class = "text-white"><a href = "https://twitter.com/dromzeh" class = "px-4 hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-1 rounded-md font-bold text-indigo-200"><i class="fab fa-twitter"></i>  @dromzeh </a></p>
+    <p class = "text-white"><a href = "mailto:dromzeh@protonmail.com" class = "px-4 hover:bg-opacity-25 bg-indigo-300 text-center bg-opacity-5 p-1 rounded-md font-bold text-indigo-200"><i class="fas fa-envelope"></i>  dromzeh@protonmail.com </a></p>
     </div>
     <br> <!-- linebreak -->
     
@@ -92,6 +121,18 @@ let projects = data.projects;
     <p class = "text-white indent-2">  • css (+tailwind)</p>
     </div>
     <br>
+
+    <!-- programming languages & tools section -->
+    <h4 class = "text-2xl font-semibold text-white ">statuses</h4>
+
+    <div class = "py-2">
+        <p class = "text-white">my discord status: <span class = "font-normal text-gray-400"> {discordData.discord_status} </span></p>
+        <p class = "text-white">wanderer.moe: <span class = "font-normal text-gray-400"> {wanderermoeStatus} </span></p>
+        <p class = "text-white">online in my discord server: <span class = "font-normal text-gray-400"> {onlineUsers} </span></p>
+        <p class = "text-white">dromzeh.dev: <span class = "font-normal text-gray-400"> 🤔🤔🤔 </span></p>
+    </div>
+
+    <br>
     <br>
 
   </div>
@@ -108,7 +149,7 @@ let projects = data.projects;
     <a href="{project.url}">
     <div class="bg-stone-800 projectContainer transition duration-150 ease-in-out rounded p-4 shadow md:flex justify-between hover:scale-105">
       <div>
-        <h4 class="text-2xl font-semibold text-white">{project.name} <i class="fa-solid fa-up-right-from-square text-sm"></i></h4>
+        <h4 class="text-2xl font-semibold text-white">{project.name} </h4>
         <p class="my-2 text-sm text-white indent-2">{project.description}</p>
         <div class="flex items-center mt-4 gap-2">
 
