@@ -1,0 +1,39 @@
+{
+    "languages": [
+        {
+            "name": "Javascript",
+            "iconName": "javascript",
+            "color": "#f7df1e"
+        },
+        {
+            "name": "Svelte",
+            "iconName": "svelte",
+            "color": "#FF3E00"
+        },
+        {
+            "name": "Python",
+            "iconName": "python",
+            "color": "#3776AB"
+        },
+        {
+            "name": "node.js",
+            "iconName": "nodejs",
+            "color": "#339933"
+        },
+        {
+            "name": "C#",
+            "iconName": "csharp",
+            "color": "#239120"
+        },
+        {
+            "name": "HTML",
+            "iconName": "html5",
+            "color": "#e34c26"
+        },
+        {
+            "name": "CSS",
+            "iconName": "css3",
+            "color": "#1572B6"
+        }
+    ]
+}

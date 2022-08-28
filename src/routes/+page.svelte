@@ -1,5 +1,6 @@
 <script context = "module">
 import data from '../data/projects.json';
+import languageData from '../data/languages.json';
 </script>
 
 <script>
@@ -9,7 +10,10 @@ import axios from 'axios';
 let discordData = '';
 let statusColor = '';
 let wanderermoeStatus = 'sending request..';
-let onlineUsers = 'sending request..';
+let onlineUsers = '?';
+let memberCount = '?';
+let projects = data.projects;
+let languages = languageData.languages;
 
 async function getDiscordData() {
 	try {
@@ -31,16 +35,20 @@ async function getDiscordData() {
   }
 }
 
-async function getOnlineDiscordUsers() {
-	try {
-  let response = await axios.get('https://discord.com/api/guilds/982385887000272956/widget.json')
-	.then(function (response) {
-		onlineUsers = response.data.presence_count;
-	})
-  } catch (e) {
-	  onlineUsers = '?';
+
+async function getDiscordUsers() {
+  try {
+    let response = await axios.get('https://discord.com/api/v9/invites/659KAFfNd6?with_counts=true&with_expiration=true')
+    .then(function (response) {
+      memberCount = response.data.approximate_member_count
+      onlineUsers = response.data.approximate_presence_count
+    })
+  } catch (e){
+    memberCount = '?';
+    onlineUsers = '?';
   }
 }
+
 
 async function makeRequest(url){
   try {
@@ -54,17 +62,16 @@ async function makeRequest(url){
   } catch (e) {
     return 'website is down';
   }
-
 }
+
+
 onMount(() => {
     getDiscordData();
     makeRequest('https://wanderer.moe/').then(function(response){
       wanderermoeStatus = response;
     });
-    getOnlineDiscordUsers();
+    getDiscordUsers();
 });
-
-let projects = data.projects;
 </script>
 
 <svelte:head>
@@ -72,16 +79,13 @@ let projects = data.projects;
 <meta name="description" content="get real" />
 </svelte:head>
 
-<!-- start of main page, values such as md: xl: etc controls the website looks on different devices.. -->
-<div id="main" class = "mt-24 flex flex-col justify-center antialiased">
-  <div class = "mx-auto -mt-24 flex min-h-screen flex-1 flex-col duration-300 motion-reduce:transition-none md:w-[90%] xl:w-4/5">
-  <div class = "md:grid-cols-0 grid px-8 lg:grid-cols-5">
-    <div class = "md:col-span-3">
+<div id="main" class = "flex items-center justify-center">
+  <div class = "p-2">
 
     <!-- main text -->
     <h4 class = "text-2xl font-semibold text-white">hi 👋!</h4>
     <div class = "py-2">
-    <p class = "text-white text-l"> i'm a full-stack developer & i'm the creator / developer of <a href = "https://wanderer.moe" class = "hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-1 rounded-md font-bold text-indigo-200">wanderer.moe</a>. <br> <span class = "text-sm">(the genshin site you're probably looking for, previously wtf.dromzeh.dev)</span></p>
+    <p class = "text-white text-l"> i'm a 16 year old full-stack developer & i'm also the creator of <a href = "https://wanderer.moe" class = "hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-1 rounded-md font-bold text-indigo-200">wanderer.moe</a>. <span class = "text-sm">(the genshin site you're probably looking for, previously wtf.dromzeh.dev)</span></p>
     
     <div>
     {#if discordData.discord_status != undefined}
@@ -91,13 +95,11 @@ let projects = data.projects;
       {/if}
     {/if}
     </div>
-
     </div>
     <br>
   
-    <h4 class = "text-2xl font-semibold text-white">contact links</h4>
-
     <!-- contact information with href links that redirect to urls, mailto: etc.. -->
+    <h4 class = "text-2xl font-semibold text-white">contact links</h4>
     <div class="py-2 grid grid-cols-1 gap-2">
     <p class = "text-white"><a href = "https://github.com/dromzeh" class = "px-4 hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-1 rounded-md font-bold text-indigo-200"><i class="fab fa-github"></i>  @dromzeh </a></p>
     <p class = "text-white"><a href = "https://discord.com/users/492731761680187403" class = "px-4 hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-1 rounded-md font-bold text-indigo-200"><i class="fab fa-discord"></i>  dromzeh#1337 </a></p>
@@ -105,77 +107,66 @@ let projects = data.projects;
     <p class = "text-white"><a href = "https://twitter.com/dromzeh" class = "px-4 hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-1 rounded-md font-bold text-indigo-200"><i class="fab fa-twitter"></i>  @dromzeh </a></p>
     <p class = "text-white"><a href = "mailto:dromzeh@protonmail.com" class = "px-4 hover:bg-opacity-25 bg-indigo-300 text-center bg-opacity-5 p-1 rounded-md font-bold text-indigo-200"><i class="fas fa-envelope"></i>  dromzeh@protonmail.com </a></p>
     </div>
-    <br> <!-- linebreak -->
+    <br> 
     
     <!-- programming languages & tools section -->
-    <h4 class = "text-2xl font-semibold text-white ">programming languages, etc</h4>
+    <h4 class = "text-2xl font-semibold text-white ">technologies i use</h4>
     <div class = "py-2">
-
-    <!-- displays all languages and tools with a slight indent -->
-    <p class = "text-white indent-2">  • javascript</p>
-    <p class = "text-white indent-2">  • svelte (+sapper & sveltekit)</p>
-    <p class = "text-white indent-2">  • python (+flask & discord.py)</p>
-    <p class = "text-white indent-2">  • node.js</p>
-    <p class = "text-white indent-2">  • c# </p>
-    <p class = "text-white indent-2">  • html</p>
-    <p class = "text-white indent-2">  • css (+tailwind)</p>
+    <div class = "grid grid-cols-2 lg:grid-cols-3 gap-2">
+    {#each languages as language}
+    <div class = "bg-[#1f1f1f] p-2 rounded transition duration-150 hover:scale-105">
+      <p class = "text-white"> <i class="devicon-{language.iconName}-plain text-xl text-indigo-200" ></i> {language.name.toLowerCase()}</p>
+    </div>
+    {/each}
+    </div>
     </div>
     <br>
 
-    <!-- programming languages & tools section -->
+    <!-- status section -->
     <h4 class = "text-2xl font-semibold text-white ">statuses</h4>
-
     <div class = "py-2">
         <p class = "text-white">my discord status: <span class = "font-normal text-gray-400"> {discordData.discord_status} </span></p>
         <p class = "text-white">wanderer.moe: <span class = "font-normal text-gray-400"> {wanderermoeStatus} </span></p>
-        <p class = "text-white">online in my discord server: <span class = "font-normal text-gray-400"> {onlineUsers} </span></p>
-        <p class = "text-white">dromzeh.dev: <span class = "font-normal text-gray-400"> 🤔🤔🤔 </span></p>
+        <p class = "text-white">discord server: <span class = "font-normal text-gray-400"> {memberCount} users ({onlineUsers} online) </span></p>
     </div>
-
-    <br>
     <br>
 
-  </div>
-
-  <!-- projects section -->
-  <div class = "motion-reduce:transition-none lg:col-span-2 lg:mt-0 lg:mb-0">
-  <h4 class="text-2xl font-semibold text-white ">projects</h4>
-  <div class = "py-2">
-  <div class="grid grid-cols-1 gap-4"> <!-- 1 column with each container having a gap of 4, else the containers will be too close to eachother -->
-
-  <!-- scans through each project in projects.json and displays info such as name, description, uses etc -->
-  {#each projects as project}
-  <div class="container mx-auto">
-    <a href="{project.url}">
-    <div class="bg-stone-800 projectContainer transition duration-150 ease-in-out rounded p-4 shadow md:flex justify-between hover:scale-105">
-      <div>
-        <h4 class="text-2xl font-semibold text-white">{project.name} </h4>
-        <p class="my-2 text-sm text-white indent-2">{project.description}</p>
-        <div class="flex items-center mt-4 gap-2">
-
-          {#each project.uses as uses} <!-- as project.uses is often a list of more than one item.. -->
-          <div class="hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-2 rounded-md font-bold uppercase text-xs text-indigo-200">
-            {uses}
+    <!-- project section -->
+    <h4 class = "text-2xl font-semibold text-white ">projects</h4>
+    <div class = "py-2">
+    <div class="grid grid-cols-1 gap-4"> <!-- 1 column with each container having a gap of 4, else the containers will be too close to eachother -->
+      <!-- scans through each project in projects.json and displays info such as name, description, uses etc -->
+      {#each projects as project}
+      <div class="container mx-auto">
+        <a href="{project.url}">
+        <div class="bg-[#1f1f1f] projectContainer transition duration-150 ease-in-out rounded p-4 shadow md:flex justify-between md:hover:scale-105">
+          <div>
+            <h4 class="text-2xl font-semibold text-white">{project.name} </h4>
+            <p class="my-2 text-sm text-white indent-2">{project.description.toLowerCase()}</p>
+            <div class="flex items-center mt-4 gap-2">
+    
+              {#each project.uses as uses} <!-- as project.uses is often a list of more than one item.. -->
+              <div class="hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-2 rounded-md font-bold uppercase text-xs text-indigo-200">
+                {uses}
+              </div>
+    
+              <!-- displays 'open source' next to a project if isopensource is true inside projects.json -->
+              {/each}
+              {#if project.isopenSource == true}
+              <div class="hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-2 rounded-md font-bold uppercase text-xs text-indigo-300">
+                <i class="fa-brands fa-github"></i> open source
+              </div>
+              {/if}
+    
+            </div>
           </div>
-
-          <!-- displays 'open source' next to a project if isopensource is true inside projects.json -->
-          {/each}
-          {#if project.isopenSource == true}
-          <div class="hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-2 rounded-md font-bold uppercase text-xs text-indigo-300">
-            <i class="fa-brands fa-github"></i> open source
-          </div>
-          {/if}
-
         </div>
+      </a>
       </div>
+      {/each}
     </div>
-  </a>
-  </div>
-  {/each}
+    </div>
 
-    </div>
-    </div>
-    </div>
-  </div>
   </div>
 </div>
+
