@@ -34,6 +34,16 @@
             "name": "CSS",
             "iconName": "css3",
             "color": "#1572B6"
+        },
+        {
+            "name": "arch",
+            "iconName": "linux",
+            "color": "#1793D1"
+        },
+        {
+            "name": "tailwind",
+            "iconName": "tailwindcss",
+            "color": "#2298BD"
         }
     ]
 }
