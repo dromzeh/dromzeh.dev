@@ -3,7 +3,9 @@ import adapter from '@sveltejs/adapter-static';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  kit: {adapter: adapter(),},
+  kit: {adapter: adapter(), prerender: {default: true,},
+    serviceWorker: {register: false,},
+  },
   preprocess: [preprocess({postcss: true,}),
   ],
 };
