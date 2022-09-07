@@ -6,7 +6,9 @@ import languageData from '../data/languages.json';
 <script>
 import { onMount } from "svelte";
 import axios from 'axios';
+import dayjs from 'dayjs';
 
+let age = '16';
 let discordData = '';
 let statusColor = '';
 let wanderermoeStatus = 'sending request..';
@@ -15,12 +17,20 @@ let memberCount = '?';
 let projects = data.projects;
 let languages = languageData.languages;
 
+
+async function getAge(){
+  setInterval(() => {
+	let time = dayjs().diff(dayjs(1156136400000), 'year', true);
+	  age = time.toString().substring(0, 8);
+}, 50);
+}
+
 async function getDiscordData() {
 	try {
 	// takes request to api.lanyard.rest to get my current discord status
   let response = await axios.get('https://api.lanyard.rest/v1/users/492731761680187403')
 	.then(function (response) {
-		// console.log(response.data);
+		console.log(response.data);
     discordData = response.data.data;
     const statusColors = {
       online: '#34D399',
@@ -33,6 +43,7 @@ async function getDiscordData() {
   } catch (e) {
     console.log('Error fetching data')
   }
+  setTimeout(getDiscordData, 25000) // refreshes every 25 seconds
 }
 
 
@@ -71,7 +82,11 @@ onMount(() => {
       wanderermoeStatus = response;
     });
     getDiscordUsers();
+    getAge();
 });
+
+
+
 </script>
 
 <svelte:head>
@@ -80,12 +95,12 @@ onMount(() => {
 </svelte:head>
 
 <div id="main" class = "flex items-center justify-center">
-  <div class = "p-2">
+  <div class = "lg:p-20 md:p-10 p-3">
 
     <!-- main text -->
     <h4 class = "text-2xl font-semibold text-white">hi 👋!</h4>
-    <div class = "py-2">
-    <p class = "text-white text-l"> i'm a 16 year old full-stack developer & i'm also the creator of <a href = "https://wanderer.moe" class = "hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-1 rounded-md font-bold text-indigo-200">wanderer.moe</a>. <span class = "text-sm">(the genshin site you're probably looking for, previously wtf.dromzeh.dev)</span></p>
+    <div class = "">
+    <p class = "text-white text-l"> i'm a {age} year old full-stack developer with my current focus being more on front-end web development. i'm also the creator of developer of<a href = "https://wanderer.moe" class = "hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-1 rounded-md font-bold text-indigo-200">wanderer.moe</a>, which is probably the genshin website you're looking for. (previously wtf.dromzeh.dev)</p>
     
     <div>
     {#if discordData.discord_status != undefined}
@@ -100,23 +115,24 @@ onMount(() => {
   
     <!-- contact information with href links that redirect to urls, mailto: etc.. -->
     <h4 class = "text-2xl font-semibold text-white">contact links</h4>
-    <div class="py-2 grid grid-cols-1 gap-2">
-    <p class = "text-white"><a href = "https://github.com/dromzeh" class = "px-4 hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-1 rounded-md font-bold text-indigo-200"><i class="fab fa-github"></i>  @dromzeh </a></p>
-    <p class = "text-white"><a href = "https://discord.com/users/492731761680187403" class = "px-4 hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-1 rounded-md font-bold text-indigo-200"><i class="fab fa-discord"></i>  dromzeh#1337 </a></p>
-    <p class = "text-white"><a href = "https://tiktok.com/@dromzeh" class = "px-4 hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-1 rounded-md font-bold text-indigo-200"><i class="fab fa-tiktok"></i>  @dromzeh </a></p>
-    <p class = "text-white"><a href = "https://twitter.com/dromzeh" class = "px-4 hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-1 rounded-md font-bold text-indigo-200"><i class="fab fa-twitter"></i>  @dromzeh </a></p>
-    <p class = "text-white"><a href = "mailto:dromzeh@protonmail.com" class = "px-4 hover:bg-opacity-25 bg-indigo-300 text-center bg-opacity-5 p-1 rounded-md font-bold text-indigo-200"><i class="fas fa-envelope"></i>  dromzeh@protonmail.com </a></p>
+    <div class="">
+      <p class = "text-white text-sm">i am a lot more likely to respond faster on discord and via e-mail.</p>
+      <div class = "flex gap-2">
+      <p class = "text-white"><a href = "https://github.com/dromzeh"><i class="fab fa-github text-xl text-white hover:text-indigo-200" ></i></a></p>
+      <p class = "text-white"><a href = "https://discord.com/users/492731761680187403"><i class="fab fa-discord text-xl text-white hover:text-indigo-200" ></i></a></p>
+      <p class = "text-white"><a href = "https://twitter.com/dromzeh"><i class="fab fa-twitter text-xl text-white hover:text-indigo-200" ></i></a></p>
+      <p class = "text-white"><a href = "https://tiktok.com/@dromzeh"><i class="fab fa-tiktok text-xl text-white hover:text-indigo-200" ></i></a></p>
+      <p class = "text-white"><a href = "mailto:marcel@dromzeh.dev"><i class="fas fa-envelope text-xl text-white hover:text-indigo-200" ></i></a></p>
+  </div>
     </div>
     <br> 
     
     <!-- programming languages & tools section -->
     <h4 class = "text-2xl font-semibold text-white ">technologies i use</h4>
-    <div class = "py-2">
-    <div class = "grid grid-cols-2 lg:grid-cols-3 gap-2">
+    <div class = "">
+    <div class = "flex gap-2">
     {#each languages as language}
-    <div class = "bg-[#1f1f1f] p-2 rounded transition duration-150 hover:scale-105">
-      <p class = "text-white"> <i class="devicon-{language.iconName}-plain text-xl text-indigo-200" ></i> {language.name.toLowerCase()}</p>
-    </div>
+      <p class = "text-white"> <i class="devicon-{language.iconName}-plain text-xl text-white hover:text-indigo-200" ></i></p>
     {/each}
     </div>
     </div>
@@ -124,7 +140,7 @@ onMount(() => {
 
     <!-- status section -->
     <h4 class = "text-2xl font-semibold text-white ">statuses</h4>
-    <div class = "py-2">
+    <div class = "">
         <p class = "text-white">my discord status: <span class = "font-normal text-gray-400"> {discordData.discord_status} </span></p>
         <p class = "text-white">wanderer.moe: <span class = "font-normal text-gray-400"> {wanderermoeStatus} </span></p>
         <p class = "text-white">discord server: <span class = "font-normal text-gray-400"> {memberCount} users ({onlineUsers} online) </span></p>
@@ -133,13 +149,13 @@ onMount(() => {
 
     <!-- project section -->
     <h4 class = "text-2xl font-semibold text-white ">projects</h4>
-    <div class = "py-2">
+    <div class = "">
     <div class="grid grid-cols-1 gap-4"> <!-- 1 column with each container having a gap of 4, else the containers will be too close to eachother -->
       <!-- scans through each project in projects.json and displays info such as name, description, uses etc -->
       {#each projects as project}
       <div class="container mx-auto">
         <a href="{project.url}">
-        <div class="bg-[#1f1f1f] projectContainer transition duration-150 ease-in-out rounded p-4 shadow md:flex justify-between md:hover:scale-105">
+        <div class="bg-[#171717] bg-opacity-20 border-dashed border-2 border-[#171717] projectContainer transition duration-150 ease-in-out rounded p-4 md:hover:scale-105">
           <div>
             <h4 class="text-2xl font-semibold text-white">{project.name} </h4>
             <p class="my-2 text-sm text-white indent-2">{project.description.toLowerCase()}</p>
