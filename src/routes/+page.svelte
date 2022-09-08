@@ -75,7 +75,6 @@ async function makeRequest(url){
   }
 }
 
-
 onMount(() => {
     getDiscordData();
     makeRequest('https://wanderer.moe/').then(function(response){
