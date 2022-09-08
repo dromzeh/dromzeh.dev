@@ -1,4 +1,4 @@
-<script context = "module">
+<script context = "module"false>
 import data from '../data/projects.json';
 import languageData from '../data/languages.json';
 </script>
@@ -131,7 +131,7 @@ onMount(() => {
     <div class = "">
     <div class = "flex gap-2">
     {#each languages as language}
-      <p class = "text-white"> <i class="devicon-{language.iconName}-plain text-xl text-white hover:text-indigo-200" ></i></p>
+      <p class = "text-white"> <i class="devicon-{language.iconName}-plain text-xl cursor-pointer text-white hover:text-indigo-200" ></i></p>
     {/each}
     </div>
     </div>
@@ -150,9 +150,10 @@ onMount(() => {
     <h4 class = "text-2xl font-semibold text-white ">projects</h4>
     <div class = "">
     <div class="grid grid-cols-1 gap-4"> <!-- 1 column with each container having a gap of 4, else the containers will be too close to eachother -->
+      
       <!-- scans through each project in projects.json and displays info such as name, description, uses etc -->
       {#each projects as project}
-      <div class="container mx-auto">
+      <div class="">
         <a href="{project.url}">
         <div class="bg-[#171717] bg-opacity-20 border-dashed border-2 border-[#171717] projectContainer transition duration-150 ease-in-out rounded p-4 md:hover:scale-105">
           <div>
@@ -179,6 +180,7 @@ onMount(() => {
       </a>
       </div>
       {/each}
+
     </div>
     </div>
 
