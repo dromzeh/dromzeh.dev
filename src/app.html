@@ -1,53 +1,96 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-	<!-- meta stuff -->
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="theme-color" content="#4C80CB" />
-	<meta property="og:title" content="dromzeh.dev" />
+  <head>
+    <!-- meta stuff -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#4C80CB" />
+    <meta property="og:title" content="dromzeh.dev" />
     <meta property="og:type" content="website" />
-	<meta property="og:image" content="https://dromzeh.dev/favicon.png" />
-	<title>dromzeh.dev</title>
-	<meta charset="UTF-8"/>
-	<meta name="title" content="dromzeh.dev">
-	<meta name="description" content= "get real" />
-  	<meta property="og:description" content= "get real" />
+    <meta property="og:image" content="https://dromzeh.dev/favicon.png" />
+    <title>dromzeh.dev</title>
+    <meta charset="UTF-8" />
+    <meta name="title" content="dromzeh.dev" />
+    <meta name="description" content="get real" />
+    <meta property="og:description" content="get real" />
 
-	<!-- importing google fonts, etc -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
-	<link href="https://rawgit.com/ellekasai/twemoji-awesome/gh-pages/twemoji-awesome.css" rel="stylesheet"/>
-	<link href = "https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet"> 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" /> 
-	<link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet"> 
+    <!-- importing google fonts, etc -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://rawgit.com/ellekasai/twemoji-awesome/gh-pages/twemoji-awesome.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Paytone+One"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla&display=swap"
+      rel="stylesheet"
+    />
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- for mobile devices -->
-	
-	<!-- import jquery -->
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- for mobile devices -->
 
-	<link rel="icon" type="image/png" href="/favicon.png" />
-	<link rel="apple-touch-icon" href="/favicon.png" />
-	<link rel="stylesheet" href="/index.css?v=1.8" type="text/css" /> <!-- tailwindcss file -->
-	<link rel="stylesheet" href="/indexstyle.css?v=1.8" type="text/css" /> 
+    <!-- import jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
 
-	<!-- force background and height for all pages -->
-	<style lang = "postcss">
-		html {
-		  height: 100%;
-		  background: #0a0a0a;
-		}
-	</style>
+    <script>
+      // play a sound on mouse click
+      function playSound() {
+        let audio = new Audio("/audio/click.ogg");
+        audio.volume = 0.1;
+        audio.play();
+      }
 
-	%sveltekit.head% <!-- %sveltekit.head% is the header of what is grabbed from +page.svelte -->
+      // run playSound() on mouse click
+      document.addEventListener("click", playSound);
+    </script>
 
-</head>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <link rel="stylesheet" href="/index.css?v=1.8" type="text/css" />
+    <!-- tailwindcss file -->
+    <link rel="stylesheet" href="/indexstyle.css?v=1.8" type="text/css" />
 
-<body>
-	<div id="svelte">%sveltekit.body%</div> <!-- %sveltekit.body% is the main content of what is grabbed from +page.svelte.. -->
-</body>
+    <!-- force background and height for all pages -->
+    <style lang="postcss">
+      html {
+        height: 100%;
+        background: #0a0a0a;
+      }
+    </style>
+
+    %sveltekit.head%
+    <!-- %sveltekit.head% is the header of what is grabbed from +page.svelte -->
+  </head>
+
+  <body>
+    <div id="svelte">%sveltekit.body%</div>
+    <!-- %sveltekit.body% is the main content of what is grabbed from +page.svelte.. -->
+  </body>
 </html>

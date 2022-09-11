@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@iconify/svelte': ^3.0.0
   '@mdi/js': ^5.9.55
   '@popperjs/core': ^2.11.6
   '@sveltejs/adapter-auto': 1.0.0-next.71
@@ -27,6 +28,7 @@ specifiers:
   vite: ^3.1.0
 
 dependencies:
+  '@iconify/svelte': 3.0.0_svelte@3.49.0
   '@popperjs/core': 2.11.6
   '@sveltejs/adapter-auto': 1.0.0-next.71
   '@sveltejs/adapter-static': 1.0.0-next.42
@@ -113,6 +115,19 @@ packages:
 
   /@iarna/toml/2.2.5:
     resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
+    dev: false
+
+  /@iconify/svelte/3.0.0_svelte@3.49.0:
+    resolution: {integrity: sha512-kmpIDyEqGBqV3uLTxEXVOPcsUg06GpwlLTTK1a8omaiBOBZCKnj+m4EETFjoy5cKsdCd5bWBYysna/uUuSTfoQ==}
+    peerDependencies:
+      svelte: '>=3'
+    dependencies:
+      '@iconify/types': 2.0.0
+      svelte: 3.49.0
+    dev: false
+
+  /@iconify/types/2.0.0:
+    resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
     dev: false
 
   /@mapbox/node-pre-gyp/1.0.10:
