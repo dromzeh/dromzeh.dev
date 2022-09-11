@@ -2,48 +2,58 @@
     "languages": [
         {
             "name": "Javascript",
-            "iconName": "javascript",
+            "iconName": "akar-icons:javascript-fill",
             "color": "#f7df1e"
         },
         {
             "name": "Svelte",
-            "iconName": "svelte",
+            "iconName": "cib:svelte",
             "color": "#FF3E00"
         },
         {
             "name": "Python",
-            "iconName": "python",
+            "iconName": "akar-icons:python-fill",
             "color": "#3776AB"
         },
         {
             "name": "node.js",
-            "iconName": "nodejs",
+            "iconName": "fa-brands:node",
             "color": "#339933"
         },
         {
             "name": "C#",
-            "iconName": "csharp",
+            "iconName": "mdi:language-csharp",
             "color": "#239120"
         },
         {
             "name": "HTML",
-            "iconName": "html5",
+            "iconName": "akar-icons:html-fill",
             "color": "#e34c26"
         },
         {
             "name": "CSS",
-            "iconName": "css3",
+            "iconName": "akar-icons:css-fill",
             "color": "#1572B6"
         },
         {
             "name": "arch",
-            "iconName": "linux",
+            "iconName": "cib:arch-linux",
             "color": "#1793D1"
         },
         {
             "name": "tailwind",
-            "iconName": "tailwindcss",
+            "iconName": "bxl:tailwind-css",
             "color": "#2298BD"
+        },
+        {
+            "name": "ubuntu server",
+            "iconName": "codicon:terminal-ubuntu",
+            "color": "#E95420"
+        },
+        {
+            "name": "git",
+            "iconName": "fa-brands:git-alt",
+            "color": "#F05032"
         }
     ]
 }
