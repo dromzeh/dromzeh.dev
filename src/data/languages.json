@@ -1,6 +1,5 @@
 {
-    "languages": [
-        {
+    "languages": [{
             "name": "Javascript",
             "iconName": "akar-icons:javascript-fill",
             "color": "#f7df1e"
@@ -54,6 +53,11 @@
             "name": "git",
             "iconName": "fa-brands:git-alt",
             "color": "#F05032"
+        },
+        {
+            "name": "cloudflare",
+            "iconName": "cib:cloudflare",
+            "color": "#F38020"
         }
     ]
 }
