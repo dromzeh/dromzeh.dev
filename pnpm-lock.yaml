@@ -25,6 +25,7 @@ specifiers:
   svelte-simple-modal: ^0.6.1
   tailwindcss: ^3.1.8
   tiny-glob: ^0.2.9
+  vanilla-tilt: ^1.7.2
   vite: ^3.1.0
 
 dependencies:
@@ -38,6 +39,7 @@ dependencies:
   dotenv: 16.0.1
   nprogress: 0.2.0
   tiny-glob: 0.2.9
+  vanilla-tilt: 1.7.2
 
 devDependencies:
   '@mdi/js': 5.9.55
@@ -1956,6 +1958,10 @@ packages:
 
   /util-deprecate/1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
+
+  /vanilla-tilt/1.7.2:
+    resolution: {integrity: sha512-arf2wY2Y65rP6Zxve9PnUUnRl9nQ1KenPNae6QRaVq/PEvaIto2bC4jYirNJ19U7nLkzI1H9O+nYtcQlX7BTsA==}
+    dev: false
 
   /vfile-message/2.0.4:
     resolution: {integrity: sha512-DjssxRGkMvifUOJre00juHoP9DPWuzjxKuMDrhNbk2TdaYYBNMStsNhEOt3idrtI12VQYM/1+iM0KOzXi4pxwQ==}
