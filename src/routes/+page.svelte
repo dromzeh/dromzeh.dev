@@ -1,6 +1,7 @@
 <script context = "module">
   import data from "../data/projects.json";
   import languageData from "../data/languages.json";
+  import VanillaTilt from 'vanilla-tilt';
 </script>
 
 <script>
@@ -188,9 +189,10 @@
 
         <!-- scans through each project in projects.json and displays info such as name, description, uses etc -->
         {#each projects as project}
-          <div class="relative group p-1">
+        <div data-tilt data-tilt-max="5" data-tilt-speed="100">
+          <div class="relative p-1">
             <a href={project.url}>
-              <div class = "bg-gradient-to-r p-[2px] from-violet-400 via-sky-400 to-indigo-400 transition duration-150 ease-in-out rounded md:hover:scale-105">
+              <div class = "bg-gradient-to-r p-[2px] from-violet-400 via-sky-400 to-indigo-400 transition duration-150 ease-in-out rounded md:hover:scale-105 ">
               <div
                 class="bg-[#070707] projectContainer p-4 "
               >
@@ -224,6 +226,7 @@
               </div>
               </div>
             </a>
+          </div>
           </div>
         {/each}
 

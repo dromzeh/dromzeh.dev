@@ -36,6 +36,7 @@
     "dayjs": "^1.11.5",
     "dotenv": "^16.0.1",
     "nprogress": "^0.2.0",
-    "tiny-glob": "^0.2.9"
+    "tiny-glob": "^0.2.9",
+    "vanilla-tilt": "^1.7.2"
   }
 }
