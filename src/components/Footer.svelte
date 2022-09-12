@@ -1,8 +1,21 @@
 <script>
-/* following code will be used later.
 
-    import axios from "axios";
-    import { onMount } from "svelte"; 
+import axios from "axios";
+import { onMount } from "svelte"; 
+
+let recentCommit;
+let sha;
+let shaSpliced;
+
+async function getRecentCommit(){
+  let response = await axios.get("https://api.github.com/repos/dromzeh/dromzeh.dev/commits?per_page=1");
+  // console.log(response.data[0].commit);
+  recentCommit = response.data[0].commit.message;
+  sha = response.data[0].sha;
+  shaSpliced = sha.substring(0, 7);
+}
+
+/* following code will be used later.
     let memberCount;
     let onlineUsers;
 
@@ -21,11 +34,11 @@
       onlineUsers = "?";
     }
   }
-
-    onMount(() => {
-        getDiscordUsers();
-    });
 */
+onMount(() => {
+  getRecentCommit();
+});
+
 
 // gets the current year for the copyright
 const currentYear = new Date().getFullYear();
@@ -37,6 +50,11 @@ const currentYear = new Date().getFullYear();
     <div class="justify-center">
         <p>© {currentYear} - dromzeh.</p>
         <p>built with <a class = "hover:bg-opacity-25 bg-indigo-400 bg-opacity-5 p-1 rounded-md font-bold text-indigo-300" href = "https://kit.svelte.dev/">SvelteKit</a> and <a class = "hover:bg-opacity-25 bg-indigo-400 bg-opacity-5 p-1 rounded-md font-bold text-indigo-300" href = "https://tailwindcss.com/">TailwindCSS</a></p>
-    </div>
+        {#if recentCommit}
+        <a href = "https://github.com/dromzeh/dromzeh.dev/commit/{sha}">
+          <p class = "text-xs hover:underline">{shaSpliced} | {recentCommit}</p>
+        </a>
+        {/if}
+      </div>
     </div>
 </footer>
