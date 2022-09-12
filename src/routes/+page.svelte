@@ -63,7 +63,6 @@
 
   onMount(() => {
     getDiscordData();
-    getDiscordUsers();
     getAge();
   });
 </script>
