@@ -1,7 +1,7 @@
 <script context = "module">
   import data from "../data/projects.json";
   import languageData from "../data/languages.json";
-  import VanillaTilt from 'vanilla-tilt';
+  import VanillaTilt from "vanilla-tilt";
 </script>
 
 <script>
@@ -75,15 +75,20 @@
 <div id="main" class="flex items-center justify-center">
   <div class="lg:p-20 md:p-10 p-3">
     <!-- main text -->
-    <h4 class="text-2xl font-semibold"><span class = "gradientText">hi</span> 👋<span class = "gradientText">!</span></h4>
+    <h4 class="text-2xl font-semibold">
+      <span class="gradientText">hi</span> 👋<span class="gradientText">!</span>
+    </h4>
     <div class="">
       <p class="text-white text-l">
-        i'm marcel — a {age} year old <span class = "gradientText">full-stack</span> developer with my current focus
-        being more on web development. i'm currently working on <a
+        i'm marcel — a {age} year old
+        <span class="gradientText">full-stack</span>
+        developer with my current focus being more on web development. i'm
+        currently working on
+        <a
           href="https://wanderer.moe"
           class="hover:bg-opacity-25 bg-indigo-400 bg-opacity-5 p-1 rounded-md font-bold text-indigo-300"
           >wanderer.moe</a
-        >. <span class = "text-xs">(previously wtf.dromzeh.dev)</span>
+        >. <span class="text-xs">(previously wtf.dromzeh.dev)</span>
       </p>
 
       <div>
@@ -172,7 +177,7 @@
           <p class="text-white">
             <Icon
               icon={language.iconName}
-              class="text-2xl cursor-pointer text-gray-200 hover:text-white" 
+              class="text-2xl cursor-pointer text-gray-200 hover:text-white"
             />
           </p>
         {/each}
@@ -188,54 +193,53 @@
 
         <!-- scans through each project in projects.json and displays info such as name, description, uses etc -->
         {#each projects as project}
-        <div data-tilt data-tilt-max="5" data-tilt-speed="100">
-          <div class="relative p-1">
-            <a href={project.url}>
-              <div class = "bg-gradient-to-r p-[2px] from-violet-400 via-sky-400 to-indigo-400 transition duration-150 ease-in-out rounded md:hover:scale-105 ">
-              <div
-                class="bg-[#070707] projectContainer p-4 "
-              >
-                <div>
-                  <h4 class="text-2xl font-semibold text-white">
-                    {project.name}
-                  </h4>
-                  <p class="my-2 text-sm text-white indent-2">
-                    {project.description.toLowerCase()}
-                  </p>
-                  <div class="flex items-center mt-4 gap-2">
-                    {#each project.uses as uses}
-                      <!-- as project.uses is often a list of more than one item.. -->
-                      <div
-                        class="hover:bg-opacity-25 bg-indigo-400 bg-opacity-5 p-2 rounded-md font-bold uppercase text-xs text-indigo-300"
-                      >
-                        {uses}
-                      </div>
+          <div data-tilt data-tilt-max="5" data-tilt-speed="100">
+            <div class="relative p-1">
+              <a href={project.url}>
+                <div
+                  class="bg-gradient-to-r p-[2px] from-violet-400 via-sky-400 to-indigo-400 transition duration-150 ease-in-out rounded md:hover:scale-105 "
+                >
+                  <div class="bg-[#070707] projectContainer p-4 ">
+                    <div>
+                      <h4 class="text-2xl font-semibold text-white">
+                        {project.name}
+                      </h4>
+                      <p class="my-2 text-sm text-white indent-2">
+                        {project.description.toLowerCase()}
+                      </p>
+                      <div class="flex items-center mt-4 gap-2">
+                        {#each project.uses as uses}
+                          <!-- as project.uses is often a list of more than one item.. -->
+                          <div
+                            class="hover:bg-opacity-25 bg-indigo-400 bg-opacity-5 p-2 rounded-md font-bold uppercase text-xs text-indigo-300"
+                          >
+                            {uses}
+                          </div>
 
-                      <!-- displays 'open source' next to a project if isopensource is true inside projects.json -->
-                    {/each}
-                    {#if project.isopenSource == true}
-                      <div
-                        class="hover:bg-opacity-25 bg-indigo-400 bg-opacity-5 p-2 rounded-md font-bold uppercase text-xs text-indigo-400"
-                      >
-                        <i class="fa-brands fa-github" /> open source
+                          <!-- displays 'open source' next to a project if isopensource is true inside projects.json -->
+                        {/each}
+                        {#if project.isopenSource == true}
+                          <div
+                            class="hover:bg-opacity-25 bg-indigo-400 bg-opacity-5 p-2 rounded-md font-bold uppercase text-xs text-indigo-400"
+                          >
+                            <i class="fa-brands fa-github" /> open source
+                          </div>
+                        {/if}
                       </div>
-                    {/if}
+                    </div>
                   </div>
                 </div>
-              </div>
-              </div>
-            </a>
-          </div>
+              </a>
+            </div>
           </div>
         {/each}
-
       </div>
     </div>
   </div>
 </div>
 
 <style lang="postcss">
-  .gradientText{
+  .gradientText {
     @apply text-transparent bg-clip-text bg-gradient-to-br from-violet-400 to-sky-100 font-semibold;
   }
 </style>
