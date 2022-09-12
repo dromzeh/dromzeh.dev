@@ -30,7 +30,7 @@
         },
         {
             "name": "dromzeh.dev",
-            "description": "The website you're currently seeing right now, created with SvelteKit and TailwindCSS and hosted with Cloudflare Pages. Previously hosted on Github Pages.",
+            "description": "The website you're currently seeing right now, built with SvelteKit, TailwindCSS and hosted with Cloudflare Pages.",
             "url": "https://github.com/dromzeh/dromzeh.dev",
             "uses": ["sveltekit", "tailwind"],
             "isopenSource": true

@@ -20,7 +20,7 @@
 
   async function getAge() {
     setInterval(() => {
-      let time = dayjs().diff(dayjs(1156136400000), "year", true);
+      let time = dayjs().diff(dayjs(1156118401000), "year", true);
       age = time.toString().substring(0, 6);
     }, 50);
   }
@@ -45,22 +45,6 @@
       console.log("Error fetching data");
     }
     setTimeout(getDiscordData, 25000); // refreshes every 25 seconds
-  }
-
-  async function getDiscordUsers() {
-    try {
-      let response = await axios
-        .get(
-          "https://discord.com/api/v9/invites/659KAFfNd6?with_counts=true&with_expiration=true"
-        )
-        .then(function (response) {
-          memberCount = response.data.approximate_member_count;
-          onlineUsers = response.data.approximate_presence_count;
-        });
-    } catch (e) {
-      memberCount = "?";
-      onlineUsers = "?";
-    }
   }
 
   async function makeRequest(url) {
@@ -91,15 +75,15 @@
 <div id="main" class="flex items-center justify-center">
   <div class="lg:p-20 md:p-10 p-3">
     <!-- main text -->
-    <h4 class="text-2xl font-semibold text-white">hi 👋!</h4>
+    <h4 class="text-2xl font-semibold"><span class = "gradientText">hi</span> 👋<span class = "gradientText">!</span></h4>
     <div class="">
       <p class="text-white text-l">
-        i'm marcel — a {age} year old full-stack developer with my current focus
-        being more on web development. i'm also the creator & developer of<a
+        i'm marcel — a {age} year old <span class = "gradientText">full-stack</span> developer with my current focus
+        being more on web development. i'm currently working on <a
           href="https://wanderer.moe"
-          class="hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-1 rounded-md font-bold text-indigo-200"
+          class="hover:bg-opacity-25 bg-indigo-400 bg-opacity-5 p-1 rounded-md font-bold text-indigo-300"
           >wanderer.moe</a
-        >. (previously wtf.dromzeh.dev)
+        >. <span class = "text-xs">(previously wtf.dromzeh.dev)</span>
       </p>
 
       <div>
@@ -133,14 +117,14 @@
     <br />
 
     <!-- contact information with href links that redirect to urls, mailto: etc.. -->
-    <h4 class="text-2xl font-semibold text-white">contact</h4>
     <div class="">
+      <h4 class="text-2xl font-semibold gradientText">contact me:</h4>
       <div class="flex gap-2">
         <p class="text-white">
           <a href="https://github.com/dromzeh"
             ><Icon
               icon="codicon:github-alt"
-              class="text-2xl text-white hover:text-indigo-200"
+              class="text-2xl text-gray-200 hover:text-white"
             /></a
           >
         </p>
@@ -148,7 +132,7 @@
           <a href="https://discord.com/users/492731761680187403"
             ><Icon
               icon="radix-icons:discord-logo"
-              class="text-2xl text-white hover:text-indigo-200"
+              class="text-2xl text-gray-200 hover:text-white "
             /></a
           >
         </p>
@@ -156,7 +140,7 @@
           <a href="https://twitter.com/dromzeh"
             ><Icon
               icon="iconoir:twitter"
-              class="text-2xl text-white hover:text-indigo-200"
+              class="text-2xl text-gray-200 hover:text-white "
             /></a
           >
         </p>
@@ -164,7 +148,7 @@
           <a href="https://tiktok.com/@dromzeh"
             ><Icon
               icon="ph:tiktok-logo"
-              class="text-2xl text-white hover:text-indigo-200"
+              class="text-2xl text-gray-200 hover:text-white "
             /></a
           >
         </p>
@@ -172,7 +156,7 @@
           <a href="mailto:marcel@dromzeh.dev"
             ><Icon
               icon="eva:email-outline"
-              class="text-2xl text-white hover:text-indigo-200"
+              class="text-2xl text-gray-200 hover:text-white"
             /></a
           >
         </p>
@@ -181,14 +165,14 @@
     <br />
 
     <!-- programming languages & tools section -->
-    <h4 class="text-2xl font-semibold text-white ">technologies i use</h4>
+    <h4 class="text-2xl font-semibold gradientText">technologies i use:</h4>
     <div class="">
       <div class="flex gap-2">
         {#each languages as language}
           <p class="text-white">
             <Icon
               icon={language.iconName}
-              class="text-2xl cursor-pointer text-white hover:text-indigo-200"
+              class="text-2xl cursor-pointer text-gray-200 hover:text-white" 
             />
           </p>
         {/each}
@@ -196,34 +180,19 @@
     </div>
     <br />
 
-    <!-- status section -->
-    <h4 class="text-2xl font-semibold text-white ">stats</h4>
-    <div class="">
-      <p class="text-white">
-        my discord status: <span class="font-normal text-gray-400">
-          {discordData.discord_status}
-        </span>
-      </p>
-      <p class="text-white">
-        discord server: <span class="font-normal text-gray-400">
-          {memberCount} users ({onlineUsers} online)
-        </span>
-      </p>
-    </div>
-    <br />
-
     <!-- project section -->
-    <h4 class="text-2xl font-semibold text-white ">projects</h4>
+    <h4 class="text-2xl font-semibold gradientText ">projects</h4>
     <div class="">
       <div class="grid grid-cols-1 gap-4">
         <!-- 1 column with each container having a gap of 4, else the containers will be too close to eachother -->
 
         <!-- scans through each project in projects.json and displays info such as name, description, uses etc -->
         {#each projects as project}
-          <div class="">
+          <div class="relative group p-1">
             <a href={project.url}>
+              <div class = "bg-gradient-to-r p-[2px] from-violet-400 via-sky-400 to-indigo-400 transition duration-150 ease-in-out rounded md:hover:scale-105">
               <div
-                class="bg-[#171717] bg-opacity-20 border-dashed border-2 border-[#171717] projectContainer transition duration-150 ease-in-out rounded p-4 md:hover:scale-105"
+                class="bg-[#070707] projectContainer p-4 "
               >
                 <div>
                   <h4 class="text-2xl font-semibold text-white">
@@ -236,7 +205,7 @@
                     {#each project.uses as uses}
                       <!-- as project.uses is often a list of more than one item.. -->
                       <div
-                        class="hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-2 rounded-md font-bold uppercase text-xs text-indigo-200"
+                        class="hover:bg-opacity-25 bg-indigo-400 bg-opacity-5 p-2 rounded-md font-bold uppercase text-xs text-indigo-300"
                       >
                         {uses}
                       </div>
@@ -245,7 +214,7 @@
                     {/each}
                     {#if project.isopenSource == true}
                       <div
-                        class="hover:bg-opacity-25 bg-indigo-300 bg-opacity-5 p-2 rounded-md font-bold uppercase text-xs text-indigo-300"
+                        class="hover:bg-opacity-25 bg-indigo-400 bg-opacity-5 p-2 rounded-md font-bold uppercase text-xs text-indigo-400"
                       >
                         <i class="fa-brands fa-github" /> open source
                       </div>
@@ -253,10 +222,18 @@
                   </div>
                 </div>
               </div>
+              </div>
             </a>
           </div>
         {/each}
+
       </div>
     </div>
   </div>
 </div>
+
+<style lang="postcss">
+  .gradientText{
+    @apply text-transparent bg-clip-text bg-gradient-to-br from-violet-400 to-sky-100 font-semibold;
+  }
+</style>
