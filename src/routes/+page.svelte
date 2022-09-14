@@ -13,9 +13,6 @@
   let age = "16";
   let discordData = "";
   let statusColor = "";
-  let wanderermoeStatus = "sending request..";
-  let onlineUsers = "?";
-  let memberCount = "?";
   let projects = data.projects;
   let languages = languageData.languages;
 
@@ -80,15 +77,16 @@
     </h4>
     <div class="">
       <p class="text-white text-l">
-        i'm marcel — a {age} year old
+        i'm marcel (aka 'dromzeh') — a {age} year old
         <span class="gradientText">full-stack</span>
-        developer with my current focus being more on web development. i'm
-        currently working on
+        developer with my current focus being more on website development & reverse
+        engineering.<br /> & i occasionally work on
         <a
           href="https://wanderer.moe"
           class="hover:bg-opacity-25 bg-indigo-400 bg-opacity-5 p-1 rounded-md font-bold text-indigo-300"
           >wanderer.moe</a
-        >. <span class="text-xs">(previously wtf.dromzeh.dev)</span>
+        ><span class="text-xs">(previously wtf.dromzeh.dev)</span> — built with sveltekit
+        & tailwind
       </p>
 
       <div>

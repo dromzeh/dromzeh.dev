@@ -2,7 +2,7 @@
     "projects": [
         {
             "name": "wanderer.moe",
-            "description": "A website which hosts hundreds of Genshin Impact assets. Averages over 30,000 individual users per month.",
+            "description": "A website which hosts hundreds of Genshin Impact assets. Currently averages over 35,000 individual users per month.",
             "url": "https://wanderer.moe",
             "uses": ["svelte", "tailwind"],
             "isopenSource": false

@@ -35,7 +35,10 @@
     "axios": "^0.27.2",
     "dayjs": "^1.11.5",
     "dotenv": "^16.0.1",
+    "markdown-it": "^13.0.1",
     "nprogress": "^0.2.0",
+    "rehype-autolink-headings": "^6.1.1",
+    "rehype-slug": "^5.0.1",
     "tiny-glob": "^0.2.9",
     "vanilla-tilt": "^1.7.2"
   }

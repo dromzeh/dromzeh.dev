@@ -1,0 +1,29 @@
+---
+title: financial transparency (wanderer.moe)
+description: blog detailing the overall cost of wanderer.moe 
+date: "09-14-2022"
+tags: ["finance"]
+---
+
+## domains
+- the domain `wanderer.moe` is registered with namecheap. the domain name is around **£15** per year.
+- i also include `dromzeh.dev` into the price because `wtf.dromzeh.dev` was the previous domain name of wanderer.moe, which is around **£15** per year.
+
+## site hosting
+- the website is currently hosted using [cloudflare pages](https://pages.cloudflare.com), which is completely free, and uptime has been incredible.
+- previously, `wanderer.moe` used [netlify](https://netlify.com) for 2 months (while the site was at its peak performance, over 100 users on the site at once), which costed **£19** per month.
+- before that, `wtf.dromzeh.dev` was hosted on a [digital ocean droplet](https://www.digitalocean.com), which costed around **£7** per month that ran h5ai (`wtf.dromzeh.dev`), according to digitalocean, i have spent **£100+** on hosting `wtf.dromzeh.dev`.
+
+## the total cost:
+
+| item | price | total |
+| --- | --- | --- |
+| domain name * 2 | £30 | £30 |
+| digitalocean | £100 | £130 |
+| netlify | £38 | £168 |
+| cloudflare pages | £0 | £168 |
+| **total** | | **£168** |
+
+## conclusion
+- equal to around **$200 USD** - does not include other factors such as paying for third party site sofwares & items being paid in advance, etc.
+- if we were to include items being paid in advance (domains, extra hosting credit incase of emergency, etc), the price would be more similar to **$320 / £280**. 
