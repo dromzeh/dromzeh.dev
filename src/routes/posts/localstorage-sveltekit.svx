@@ -1,0 +1,42 @@
+---
+title: using localstorage with sveltekit
+description: a quick guide on how to use localstorage with sveltekit, explained with a custom theme (dark mode) example
+date: "09-13-2022"
+tags: ["svelte", "sveltekit", "localstorage"]
+---
+
+when writing a sveltekit app, you might want to use `localStorage` to store some data, such as a user's **preferences**. (e.g dark mode, language, etc.)
+
+## how i did it
+
+i used `browser` to check if the code is running in the browser, and then used `localStorage` to store the data. as an example, we're going to store the user's **dark mode** preference.
+`browser` is true when the code is running in the browser, and false when it's running in the server. this is very useful as we don't want to use `localStorage` in the server, because it will throw an error:
+
+```svelte
+import { browser } from "$app/env";
+
+if (browser) {
+    if (localStorage.getItem("darkMode") === null) {
+      localStorage.setItem("darkMode", "false");
+      darkMode = false;
+    } else {
+      darkMode = localStorage.getItem("darkMode") === "true";
+    }
+  }
+```
+
+this code will check if the user has a dark mode preference stored in `localStorage`. if not, it will set the preference to `false` (light mode). if the user has a preference, it will set the preference to the user's preference.
+
+## simple toggle implementation 
+
+for the purpose of this example, we're going to use a button to toggle the user's dark mode preference. when the user clicks the button, it will toggle the user's dark mode preference, and then set the preference in the user's `localStorage`:
+
+```svelte
+<button on:click={() => {darkMode = !darkMode; localStorage.setItem("darkMode", darkMode.toString());}}>
+toggle dark mode
+</button>
+```
+
+imagine that the user has dark mode enabled, and then they click the button. the code will set `darkMode` to `false`. then, it will also set the user's dark mode preference in `localStorage` to `false`.
+
+> note: this is a _very simple_ implementation of a dark mode toggle. you can use this as a base for your **own implementation**.
