@@ -1,0 +1,40 @@
+/* setting different fonts for p and h1 */
+h1, h2, h3, h4, h5, h6 {
+    font-family:  'Space Grotesk', sans-serif;
+}
+
+p {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* changes the colour of when you select text */
+::-moz-selection {
+    color: rgb(255, 255, 255);
+    background: rgb(243, 232, 255, 0.5);
+  }
+  
+::selection {
+    color: rgb(255, 255, 255);
+    background: rgb(243, 232, 255, 0.5);
+}
+
+/* smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* styles the scrollbar instead of using the default one to fit with the site's color scheme */
+* {
+	scrollbar-width:thin;
+	scrollbar-color:#f3e8ff #1F2937
+}
+   ::-webkit-scrollbar {
+	width:2px
+}
+   ::-webkit-scrollbar-track {
+	background:#1F2937
+}
+   ::-webkit-scrollbar-thumb {
+	background:#f3e8ff;
+	border-radius:6px
+}
