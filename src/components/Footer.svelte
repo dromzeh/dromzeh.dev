@@ -16,26 +16,6 @@
     shaSpliced = sha.substring(0, 7);
   }
 
-  /* following code will be used later.
-    let memberCount;
-    let onlineUsers;
-
-    async function getDiscordUsers() {
-    try {
-      let response = await axios
-        .get(
-          "https://discord.com/api/v9/invites/659KAFfNd6?with_counts=true&with_expiration=true"
-        )
-        .then(function (response) {
-          memberCount = response.data.approximate_member_count;
-          onlineUsers = response.data.approximate_presence_count;
-        });
-    } catch (e) {
-      memberCount = "?";
-      onlineUsers = "?";
-    }
-  }
-*/
   onMount(() => {
     getRecentCommit();
   });
@@ -49,15 +29,13 @@
   <div class="flex justify-center items-center lg:justify-center p-6">
     <div class="justify-center">
       <p>
-        © {currentYear} — dromzeh | built with
-        <a
-          class="hover:bg-opacity-25 bg-indigo-400 bg-opacity-5 p-1 rounded-md font-bold text-indigo-300"
-          href="https://kit.svelte.dev/">SvelteKit</a
+        © {currentYear}, dromzeh | built with
+        <a class="highlightUnderline" href="https://kit.svelte.dev/"
+          >SvelteKit</a
         >
         and
-        <a
-          class="hover:bg-opacity-25 bg-indigo-400 bg-opacity-5 p-1 rounded-md font-bold text-indigo-300"
-          href="https://tailwindcss.com/">TailwindCSS</a
+        <a class="highlightUnderline" href="https://tailwindcss.com/"
+          >TailwindCSS</a
         >
       </p>
       {#if recentCommit}
@@ -68,3 +46,10 @@
     </div>
   </div>
 </footer>
+
+<style lang="postcss">
+  .highlightUnderline {
+    @apply text-purple-100 bg-[#2a2a2a] rounded-md p-1 hover:underline;
+    font-family: "jetbrains mono", monospace;
+  }
+</style>
