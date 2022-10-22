@@ -4,11 +4,11 @@
   let discordData = "";
   let statusColor = "";
 
-  async function getDiscordData(id) {
+  async function getDiscordData() {
     try {
       // takes request to api.lanyard.rest to get my current discord status
       let response = await axios
-        .get("https://api.lanyard.rest/v1/users/" + id)
+        .get("https://api.lanyard.rest/v1/users/492731761680187403")
         .then(function (response) {
           console.log(response.data);
           discordData = response.data.data;
@@ -27,7 +27,7 @@
   }
 
   onMount(() => {
-    getDiscordData(492731761680187403);
+    getDiscordData();
   });
 </script>
 
