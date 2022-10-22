@@ -1,5 +1,5 @@
 <script context = "module">
-  // TODO: move this to a separate file.. 
+  // TODO: move this to a separate file..
   import projectsList from "../data/projects.json";
 </script>
 
@@ -9,7 +9,7 @@
   import axios from "axios";
   import dayjs from "dayjs";
   import Icon from "@iconify/svelte";
-  import DiscordStatus from "../components/discordStatus.svelte";
+  import DiscordStatus from "../components/DiscordStatus.svelte";
 
   let allProjects = projectsList.projects; // :3
 
@@ -49,7 +49,7 @@
         </p>
       </div>
     </div>
-    
+
     <br />
 
     <!-- 
@@ -92,51 +92,49 @@
       <!-- project grid section..-->
 
       {#each allProjects as project}
-      <div
-        class="flex flex-col bg-[#2a2a2a] rounded-lg mt-6 shadow-md"
-      >
-        <div class="flex flex-col justify-between p-4 leading-normal">
-          <h5
-            class="text-2xl font-bold tracking-tight text-purple-100 monofont"
-          >
-            {project.name}
-          </h5>
-          {#if project.uses}
-          <div class = "flex flex-row gap-1">
-          {#each project.uses as uses}
-            <p
-              class="flex flex-row p-[1px] items-center justify-center text-xs font-medium leading-5 text-white hover:text-purple-100 transition-colors duration-150 bg-[#121212] hover:bg-[#0A0A0A]"
+        <div class="flex flex-col bg-[#2a2a2a] rounded-lg mt-6 shadow-md">
+          <div class="flex flex-col justify-between p-4 leading-normal">
+            <h5
+              class="text-2xl font-bold tracking-tight text-purple-100 monofont"
             >
-            {uses}
+              {project.name}
+            </h5>
+            {#if project.uses}
+              <div class="flex flex-row gap-1">
+                {#each project.uses as uses}
+                  <p
+                    class="flex flex-row p-[1px] items-center justify-center text-xs font-medium leading-5 text-white hover:text-purple-100 transition-colors duration-150 bg-[#121212] hover:bg-[#0A0A0A]"
+                  >
+                    {uses}
+                  </p>
+                {/each}
+              </div>
+            {/if}
+            <p class="mb-3 font-normal text-gray-100">
+              {project.description}
             </p>
-          {/each}
+            {#if project.isopenSource}
+              <div class="flex flex-row">
+                <a
+                  href={project.url}
+                  class="flex flex-row items-center justify-center px-4 py-2 text-sm font-medium leading-5 text-white hover:text-purple-100 transition-colors duration-150 bg-[#121212] hover:bg-[#0A0A0A]"
+                >
+                  <p>View on GitHub</p>
+                </a>
+              </div>
+            {/if}
+            {#if project.isopenSource == false && project.url}
+              <div class="flex flex-row">
+                <a
+                  href={project.url}
+                  class="flex flex-row items-center justify-center px-4 py-2 text-sm font-medium leading-5 text-white hover:text-purple-100 transition-colors duration-150 bg-[#121212] hover:bg-[#0A0A0A]"
+                >
+                  <p>View {project.url}</p>
+                </a>
+              </div>
+            {/if}
           </div>
-          {/if}
-          <p class="mb-3 font-normal text-gray-100">
-            {project.description}
-          </p>
-          {#if project.isopenSource}
-          <div class="flex flex-row">
-            <a
-              href={project.url}
-              class="flex flex-row items-center justify-center px-4 py-2 text-sm font-medium leading-5 text-white hover:text-purple-100 transition-colors duration-150 bg-[#121212] hover:bg-[#0A0A0A]"
-            >
-            <p>View on GitHub</p>
-            </a>
-            </div> 
-          {/if}
-          {#if project.isopenSource == false && project.url}
-          <div class="flex flex-row">
-            <a
-              href={project.url}
-              class="flex flex-row items-center justify-center px-4 py-2 text-sm font-medium leading-5 text-white hover:text-purple-100 transition-colors duration-150 bg-[#121212] hover:bg-[#0A0A0A]"
-            >
-            <p>View {project.url}</p>
-            </a>
-            </div> 
-          {/if}
         </div>
-      </div>
       {/each}
     </div>
     <!-- end of project grid -->
@@ -152,7 +150,7 @@
     @apply text-purple-100 bg-[#2a2a2a] rounded-md p-1 hover:underline;
     font-family: "jetbrains mono", monospace;
   }
-  .monofont{
+  .monofont {
     font-family: "jetbrains mono", monospace !important;
   }
 </style>
