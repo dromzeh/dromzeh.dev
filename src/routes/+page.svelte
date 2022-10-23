@@ -65,7 +65,9 @@
 
     <div id="about" class="mb-6">
       <div class="flex flex-col align-center my-auto items-center">
-        <span class="highlight text-4xl font-semibold mb-6">#about —</span>
+        <a href = "#about" class = "mb-6">
+        <span class="highlight text-4xl font-semibold">#about —</span>
+        </a>
       </div>
 
       <div class="mb-6 p-1">
@@ -86,7 +88,9 @@
 
     <div id="projects" class="mb-6">
       <div class="flex flex-col align-center my-auto items-center">
-        <span class="highlight text-4xl font-semibold mb-6">#projects —</span>
+        <a href = "#projects" class = "mb-6">
+        <span class="highlight text-4xl font-semibold">#projects —</span>
+        </a>
       </div>
       <div class="grid grid-cols-1 gap-3" />
       <!-- project grid section..-->
@@ -100,10 +104,10 @@
               {project.name}
             </h5>
             {#if project.uses}
-              <div class="flex flex-row gap-1">
+              <div class="flex flex-row gap-1 mb-2">
                 {#each project.uses as uses}
                   <p
-                    class="flex flex-row p-[1px] items-center justify-center text-xs font-medium leading-5 text-white hover:text-purple-100 transition-colors duration-150 bg-[#121212] hover:bg-[#0A0A0A]"
+                    class="flex flex-row pl-2 pr-2 items-center justify-center text-xs font-medium leading-5 text-white hover:text-purple-100 transition-colors duration-150 bg-[#121212] hover:bg-[#0A0A0A]"
                   >
                     {uses}
                   </p>

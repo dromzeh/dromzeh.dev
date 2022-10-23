@@ -25,5 +25,5 @@ tags: ["finance"]
 | **total** | | **£168** |
 
 ## conclusion
-- equal to around **$200 USD** - does not include other factors such as paying for third party site sofwares & items being paid in advance, etc.
+- equal to around **$200 USD** - does not include other factors such as paying for third party site softwares & items being paid in advance, etc.
 - if we were to include items being paid in advance (domains, extra hosting credit incase of emergency, etc), the price would be more similar to **$320 / £280**. 
