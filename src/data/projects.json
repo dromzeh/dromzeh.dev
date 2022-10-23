@@ -2,7 +2,7 @@
     "projects": [
         {
             "name": "wanderer.moe",
-            "description": "A SvelteKit website which hosts 'assets' from the game Genshin Impact - used by half a million unique people worldwide. Built with SvelteKit, TailwindCSS, and Cloudflare Pages & has its own API.",
+            "description": "A website which hosts 'assets' from the game Genshin Impact - used by half a million unique people worldwide. Built with SvelteKit, TailwindCSS, and Cloudflare Pages & has its own API.",
             "url": "https://wanderer.moe/",
             "uses": ["svelte", "tailwind"],
             "isopenSource": false
