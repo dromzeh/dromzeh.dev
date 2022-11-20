@@ -21,10 +21,12 @@
 
       {#each data.posts as post}
         <div data-tilt data-tilt-max="5" data-tilt-speed="100">
-          <div class="flex flex-col bg-[#2a2a2a] rounded-lg mt-6 shadow-md">
+          <div
+            class="flex flex-col bg-black backdrop-blur-lg bg-opacity-50 rounded-lg mt-6 shadow-md"
+          >
             <div class="flex flex-col justify-between p-4 leading-normal">
               <h5
-                class="text-2xl font-bold tracking-tight text-purple-100 monofont"
+                class="text-2xl font-bold tracking-tight text-blue-100 monofont"
               >
                 {post.meta.title}
               </h5>
@@ -32,7 +34,7 @@
                 <div class="flex flex-row gap-1">
                   {#each post.meta.tags as tags}
                     <p
-                      class="flex flex-row p-[1px] items-center justify-center text-xs font-medium leading-5 text-white hover:text-purple-100 transition-colors duration-150 bg-[#121212] hover:bg-[#0A0A0A]"
+                      class="flex flex-row p-[1px] items-center justify-center text-xs font-medium leading-5 text-white hover:text-blue-100 transition-colors duration-150 bg-[#121212] hover:bg-[#0A0A0A]"
                     >
                       {tags}
                     </p>
@@ -45,7 +47,7 @@
               <div class="flex flex-row">
                 <a
                   href={post.path}
-                  class="flex flex-row items-center justify-center px-4 py-2 text-sm font-medium leading-5 text-white hover:text-purple-100 transition-colors duration-150 bg-[#121212] hover:bg-[#0A0A0A]"
+                  class="flex flex-row items-center justify-center px-4 py-2 text-sm font-medium leading-5 text-white hover:text-blue-100 transition-colors duration-150 bg-[#121212] hover:bg-[#0A0A0A]"
                 >
                   <p>View</p>
                 </a>
@@ -61,7 +63,7 @@
 
 <style lang="postcss">
   .highlight {
-    @apply text-purple-100 bg-[#2a2a2a] rounded-md p-1;
+    @apply text-blue-100 bg-[#2a2a2a] rounded-md p-1;
     font-family: "jetbrains mono", monospace;
   }
   .monofont {

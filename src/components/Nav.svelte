@@ -17,7 +17,7 @@
       {#each nav as item}
         <a
           href={item.path}
-          class="text-white hover:text-purple-100 text-xl font-semibold mr-4 rounded-md p-1 px-2 bg-opacity-0 bg-white hover:bg-opacity-5 monofont"
+          class="text-white hover:text-blue-100 text-xl font-semibold mr-4 rounded-md p-1 px-2 bg-opacity-0 bg-white hover:bg-opacity-5 monofont"
           class:active={$page.url.pathname == item.path}>{item.title}</a
         >
       {/each}
@@ -28,7 +28,7 @@
         <a href="https://github.com/dromzeh/dromzeh.dev"
           ><Icon
             icon="codicon:github-alt"
-            class="text-2xl text-white hover:text-purple-100"
+            class="text-2xl text-white hover:text-blue-100"
           />
         </a>
       </p>
@@ -38,10 +38,10 @@
 
 <style lang="postcss">
   .active {
-    @apply text-purple-200;
+    @apply text-blue-200;
   }
 
-  .monofont{
+  .monofont {
     font-family: "jetbrains mono", monospace !important;
   }
 </style>

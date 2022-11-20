@@ -42,8 +42,10 @@
           hi 👋 i'm <span class="highlight">dromzeh,</span>
         </h1>
         <p class="text-xl text-m mt-3">
-          Also known as Marcel, I'm a <span class="highlight">{age}</span> year
-          old developer. I currently focus more on
+          Also known as Marcel, I'm a <span class="highlight"
+            >{age}</span
+          >
+          year old developer. I currently focus more on
           <span class="highlght">front-end</span>
           website development.
         </p>
@@ -52,26 +54,19 @@
 
     <br />
 
-    <!-- 
-    <div class=" mb-6 text-3xl font-semibold">
-      <a
-        class="border-l-[8px] border-purple-200 highlightUnderline"
-        href={"#projects"}>view projects</a
-      >
-    </div>
-    -->
-
     <DiscordStatus />
 
     <div id="about" class="mb-6">
       <div class="flex flex-col align-center my-auto items-center">
-        <a href = "#about" class = "mb-6">
-        <span class="highlight text-4xl font-semibold">#about —</span>
+        <a href="#about" class="mb-6">
+          <span class="monofont text-blue-100 text-4xl font-semibold"
+            >about —</span
+          >
         </a>
       </div>
 
       <div class="mb-6 p-1">
-        <p class="text-xl">
+        <p class="text-l">
           I've been 'writing' code since <span class="highlight">2012</span>. As
           of recent, I've been learning and using Svelte (+ Javascript) and
           Tailwind for usage in nearly all of my web projects. I can also
@@ -88,18 +83,22 @@
 
     <div id="projects" class="mb-6">
       <div class="flex flex-col align-center my-auto items-center">
-        <a href = "#projects" class = "mb-6">
-        <span class="highlight text-4xl font-semibold">#projects —</span>
+        <a href="#projects" class="mb-6">
+          <span class="monofont text-blue-100 text-4xl font-semibold"
+            >projects —</span
+          >
         </a>
       </div>
       <div class="grid grid-cols-1 gap-3" />
       <!-- project grid section..-->
 
       {#each allProjects as project}
-        <div class="flex flex-col bg-[#2a2a2a] rounded-lg mt-6 shadow-md">
+        <div
+          class="flex flex-col bg-black backdrop-blur-lg bg-opacity-50 rounded-lg mt-6 shadow-md"
+        >
           <div class="flex flex-col justify-between p-4 leading-normal">
             <h5
-              class="text-2xl font-bold tracking-tight text-purple-100 monofont"
+              class="text-2xl font-bold tracking-tight text-blue-100 monofont"
             >
               {project.name}
             </h5>
@@ -107,7 +106,7 @@
               <div class="flex flex-row gap-1 mb-2">
                 {#each project.uses as uses}
                   <p
-                    class="flex flex-row pl-2 pr-2 items-center justify-center text-xs font-medium leading-5 text-white hover:text-purple-100 transition-colors duration-150 bg-[#121212] hover:bg-[#0A0A0A]"
+                    class="flex flex-row pl-2 pr-2 items-center justify-center text-xs font-medium leading-5 text-white hover:text-blue-100 transition-colors duration-150 bg-[#121212] hover:bg-[#0A0A0A]"
                   >
                     {uses}
                   </p>
@@ -121,7 +120,7 @@
               <div class="flex flex-row">
                 <a
                   href={project.url}
-                  class="flex flex-row items-center justify-center px-4 py-2 text-sm font-medium leading-5 text-white hover:text-purple-100 transition-colors duration-150 bg-[#121212] hover:bg-[#0A0A0A]"
+                  class="flex flex-row items-center justify-center px-4 py-2 text-sm font-medium leading-5 text-white hover:text-blue-100 transition-colors duration-150 bg-[#121212] hover:bg-[#0A0A0A]"
                 >
                   <p>View on GitHub</p>
                 </a>
@@ -131,7 +130,7 @@
               <div class="flex flex-row">
                 <a
                   href={project.url}
-                  class="flex flex-row items-center justify-center px-4 py-2 text-sm font-medium leading-5 text-white hover:text-purple-100 transition-colors duration-150 bg-[#121212] hover:bg-[#0A0A0A]"
+                  class="flex flex-row items-center justify-center px-4 py-2 text-sm font-medium leading-5 text-white hover:text-blue-100 transition-colors duration-150 bg-[#121212] hover:bg-[#0A0A0A]"
                 >
                   <p>View {project.url}</p>
                 </a>
@@ -147,11 +146,11 @@
 
 <style lang="postcss">
   .highlight {
-    @apply text-purple-100 bg-[#2a2a2a] rounded-md p-1;
+    @apply text-blue-100 bg-[#2a2a2a] rounded-md p-1;
     font-family: "jetbrains mono", monospace;
   }
   .highlightUnderline {
-    @apply text-purple-100 bg-[#2a2a2a] rounded-md p-1 hover:underline;
+    @apply text-blue-100 bg-[#2a2a2a] rounded-md p-1 hover:underline;
     font-family: "jetbrains mono", monospace;
   }
   .monofont {
