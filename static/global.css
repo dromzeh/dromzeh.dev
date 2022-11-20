@@ -10,12 +10,12 @@ p {
 /* changes the colour of when you select text */
 ::-moz-selection {
     color: rgb(255, 255, 255);
-    background: rgb(243, 232, 255, 0.5);
-  }
+    background: rgba(182, 215, 233, 0.5);
+}
   
 ::selection {
     color: rgb(255, 255, 255);
-    background: rgb(243, 232, 255, 0.5);
+    background: rgba(182, 215, 233, 0.5);
 }
 
 /* smooth scrolling */

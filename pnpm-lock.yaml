@@ -9,6 +9,7 @@ specifiers:
   '@tailwindcss/typography': ^0.5.4
   autoprefixer: ^10.4.8
   axios: ^0.27.2
+  cors: ^2.8.5
   dayjs: ^1.11.5
   dotenv: ^16.0.1
   markdown-it: ^13.0.1
@@ -35,6 +36,7 @@ dependencies:
   '@sveltejs/adapter-static': 1.0.0-next.42
   '@sveltejs/kit': 1.0.0-next.476_svelte@3.49.0+vite@3.1.0
   axios: 0.27.2
+  cors: 2.8.5
   dayjs: 1.11.5
   dotenv: 16.0.1
   markdown-it: 13.0.1
@@ -540,6 +542,14 @@ packages:
   /cookie/0.5.0:
     resolution: {integrity: sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==}
     engines: {node: '>= 0.6'}
+    dev: false
+
+  /cors/2.8.5:
+    resolution: {integrity: sha512-KIHbLJqu73RGr/hnbrO9uBeixNGuvSQjul/jdFvS/KFSIH1hWVd1ng7zOHx+YrEfInLG7q4n6GHQ9cDtxv/P6g==}
+    engines: {node: '>= 0.10'}
+    dependencies:
+      object-assign: 4.1.1
+      vary: 1.1.2
     dev: false
 
   /cssesc/3.0.0:
@@ -2101,6 +2111,11 @@ packages:
 
   /vanilla-tilt/1.7.2:
     resolution: {integrity: sha512-arf2wY2Y65rP6Zxve9PnUUnRl9nQ1KenPNae6QRaVq/PEvaIto2bC4jYirNJ19U7nLkzI1H9O+nYtcQlX7BTsA==}
+    dev: false
+
+  /vary/1.1.2:
+    resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
+    engines: {node: '>= 0.8'}
     dev: false
 
   /vfile-message/2.0.4:

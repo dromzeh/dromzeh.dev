@@ -49,7 +49,7 @@
 
 <style lang="postcss">
   .highlightUnderline {
-    @apply text-purple-100 bg-[#2a2a2a] rounded-md p-1 hover:underline;
+    @apply text-blue-100 bg-[#2a2a2a] rounded-md p-1 hover:underline;
     font-family: "jetbrains mono", monospace;
   }
 </style>
