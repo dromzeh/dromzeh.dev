@@ -45,6 +45,24 @@
       {/if}
     </div>
   </div>
+
+  <div class = "mx-auto">
+    <!-- buy me a coffee url -->
+      <a
+      href="https://www.buymeacoffee.com/marcelmd"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        class = "mx-auto"
+        src="https://cdn.buymeacoffee.com/buttons/v2/default-white.png"
+        alt="Buy Me A Coffee"
+        style="height: 30px !important;width: 109px !important;"
+      />
+    </a>
+  </div>
+  <br>
+
 </footer>
 
 <style lang="postcss">

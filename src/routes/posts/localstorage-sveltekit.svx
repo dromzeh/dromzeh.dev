@@ -1,42 +1,65 @@
 ---
-title: using localstorage with sveltekit
-description: a quick guide on how to use localstorage with sveltekit, explained with a custom theme (dark mode) example
+title: "Using localstorage with sveltekit"
+description: "A quick guide on how to use localstorage with sveltekit, explained with a custom theme (dark mode) example"
 date: "09-13-2022"
 tags: ["svelte", "sveltekit", "localstorage"]
 ---
 
-when writing a sveltekit app, you might want to use `localStorage` to store some data, such as a user's **preferences**. (e.g dark mode, language, etc.)
+How to use localStorage with SvelteKit to store data in the user's browser. We'll use a custom theme example (dark mode) to demonstrate how to use localStorage to store and retrieve user preferences.
 
-## how i did it
+## Checking if your code is running in the browser
 
-i used `browser` to check if the code is running in the browser, and then used `localStorage` to store the data. as an example, we're going to store the user's **dark mode** preference.
-`browser` is true when the code is running in the browser, and false when it's running in the server. this is very useful as we don't want to use `localStorage` in the server, because it will throw an error:
+Before using localStorage, we need to check if the code is running in the browser or in the server. We can use `browser` from `$app/env` to check if the code is running in the browser. browser is true when the code is running in the browser and false when it's running in the server. This is useful because we don't want to use localStorage in the server as it will throw an error.
 
-```svelte
+Here's how to check if the code is running in the browser:
+
+```js
 import { browser } from "$app/env";
 
 if (browser) {
-    if (localStorage.getItem("darkMode") === null) {
-      localStorage.setItem("darkMode", "false");
-      darkMode = false;
-    } else {
-      darkMode = localStorage.getItem("darkMode") === "true";
-    }
-  }
+  // code that uses localStorage
+}
 ```
 
-this code will check if the user has a dark mode preference stored in `localStorage`. if not, it will set the preference to `false` (light mode). if the user has a preference, it will set the preference to the user's preference.
+## Storing and retrieving user preferences
 
-## simple toggle implementation 
+Now that we know how to check if the code is running in the browser, we can use `localStorage` to store and retrieve data. In this example, we'll store the user's dark mode preference using `localStorage`.
+Here's how to store and retrieve the user's dark mode preference using `localStorage`:
 
-for the purpose of this example, we're going to use a button to toggle the user's dark mode preference. when the user clicks the button, it will toggle the user's dark mode preference, and then set the preference in the user's `localStorage`:
+```js
+import { browser } from "$app/env";
 
-```svelte
-<button on:click={() => {darkMode = !darkMode; localStorage.setItem("darkMode", darkMode.toString());}}>
-toggle dark mode
+let darkMode = false;
+
+if (browser) {
+  if (localStorage.getItem("darkMode") === null) {
+    // If the user doesn't have a dark mode preference stored in localStorage,
+    // set their preference to "false" (light mode).
+    localStorage.setItem("darkMode", "false");
+    darkMode = false;
+  } else {
+    // If the user has a dark mode preference stored in localStorage,
+    // retrieve their preference and set darkMode accordingly.
+    darkMode = localStorage.getItem("darkMode") === "true";
+  }
+}
+```
+
+## Toggling the user's dark mode preference
+
+Now that we know how to store and retrieve the user's dark mode preference using `localStorage`, we can use a button to toggle the user's preference. When the user clicks the button, it will toggle their dark mode preference and set it in `localStorage`.
+
+Here's how to implement a simple toggle for the user's dark mode preference:
+
+```js
+<button on:click={() => {
+  darkMode = !darkMode;
+  localStorage.setItem("darkMode", darkMode.toString());
+}}>
+  Toggle dark mode
 </button>
 ```
 
-imagine that the user has dark mode enabled, and then they click the button. the code will set `darkMode` to `false`. then, it will also set the user's dark mode preference in `localStorage` to `false`.
+Imagine that the user has dark mode enabled and clicks the button. The code above will set `darkMode` to `false` and set the user's dark mode preference in `localStorage` to `false`.
 
-> note: this is a _very simple_ implementation of a dark mode toggle. you can use this as a base for your **own implementation**.
+> Note: this is a very simple implementation of a dark mode toggle. You can use this as a starting point for your own implementation.

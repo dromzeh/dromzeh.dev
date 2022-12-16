@@ -14,7 +14,7 @@
   <div class="mx-auto max-w-screen-lg px-3 py-6">
     <div id="projects" class="mb-6">
       <div class="flex flex-col align-center my-auto items-center">
-        <span class="highlight text-4xl font-semibold mb-6">#posts —</span>
+        <span class="text-4xl monofont font-semibold text-blue-100 mb-6">posts —</span>
       </div>
       <div class="grid grid-cols-1 gap-3" />
       <!-- project grid section..-->

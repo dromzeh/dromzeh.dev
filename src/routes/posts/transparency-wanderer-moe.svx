@@ -1,29 +1,34 @@
 ---
-title: financial transparency (wanderer.moe)
-description: blog detailing the overall cost of wanderer.moe 
+title: "Financial transparency (wanderer.moe)"
+description: "Break down the costs of the domain names, hosting, and any other relevant expenses."
 date: "09-14-2022"
 tags: ["finance"]
 ---
 
-## domains
-- the domain `wanderer.moe` is registered with namecheap. the domain name is around **£15** per year.
-- i also include `dromzeh.dev` into the price because `wtf.dromzeh.dev` was the previous domain name of wanderer.moe, which is around **£15** per year.
+## Domain names
 
-## site hosting
-- the website is currently hosted using [cloudflare pages](https://pages.cloudflare.com), which is completely free, and uptime has been incredible.
-- previously, `wanderer.moe` used [netlify](https://netlify.com) for 2 months (while the site was at its peak performance, over 100 users on the site at once), which costed **£19** per month.
-- before that, `wtf.dromzeh.dev` was hosted on a [digital ocean droplet](https://www.digitalocean.com), which costed around **£7** per month that ran h5ai (`wtf.dromzeh.dev`), according to digitalocean, i have spent **£100+** on hosting `wtf.dromzeh.dev`.
+- The domain `wanderer.moe` is registered with Namecheap. The domain name costs around **£15** per year.
+- I also include `dromzeh.dev` into the price because `wtf.dromzeh.dev` was the previous domain name of wanderer.moe, which costs around **£15** per year.
 
-## the total cost:
+## Site hosting
 
-| item | price | total |
+- The website is currently hosted using [Cloudflare Pages](https://pages.cloudflare.com), which is completely free. The uptime has been excellent.
+- Previously, `wanderer.moe` used [Netlify](https://netlify.com) for two months (while the site was at its peak performance, with over 100 users on the site at once). This cost **£19** per month.
+- Before that, `wtf.dromzeh.dev` was hosted on a [DigitalOcean droplet](https://www.digitalocean.com), which cost around **£7** per month. According to DigitalOcean, I have spent over **£100** on hosting `wtf.dromzeh.dev`.
+
+## Total
+
+Here's a breakdown of the total cost of how much it's costed me to host wanderer.moe:
+
+| Item | Price | Total |
 | --- | --- | --- |
-| domain name * 2 | £30 | £30 |
-| digitalocean | £100 | £130 |
-| netlify | £38 | £168 |
-| cloudflare pages | £0 | £168 |
-| **total** | | **£168** |
+| Domain name * 2 | £30 | £30 |
+| DigitalOcean | £100 | £130 |
+| Netlify | £38 | £168 |
+| Cloudflare Pages | £0 | £168 |
+| **Total** | | **£168** |
 
-## conclusion
-- equal to around **$200 USD** - does not include other factors such as paying for third party site softwares & items being paid in advance, etc.
-- if we were to include items being paid in advance (domains, extra hosting credit incase of emergency, etc), the price would be more similar to **$320 / £280**. 
+This means that money spent hosting wanderer.moe is approximately **$200 USD**. It's important to note that this does not include other expenses such as the cost of third-party site software or items paid in advance. If we were to include these factors, the total cost would be closer to **$320 / £280**.
+
+If you enjoy using wanderer.moe or any of my projects I've worked on and want to support the development of this and my other projects, please consider donating through my Buy Me a Coffee link. Your support will help me continue to maintain and improve my projects, and create even more great content for you to enjoy. 
+Every donation is greatly appreciated and all donations will go directly towards the development of my projects.

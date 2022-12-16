@@ -2,35 +2,28 @@
     "projects": [
         {
             "name": "wanderer.moe",
-            "description": "A website which hosts 'assets' from the game Genshin Impact - used by half a million unique people worldwide. Built with SvelteKit, TailwindCSS, and Cloudflare Pages & has its own API.",
+            "description": "Website hosting 'assets' from the game Genshin Impact, used by over 500,000 people worldwide. It was built using SvelteKit, TailwindCSS, and Cloudflare Pages, and has its own API.",
             "url": "https://wanderer.moe/",
             "uses": ["svelte", "tailwind"],
             "isopenSource": false
         },
         {
-            "name": "roblox sound changer",
-            "description": "Windows program that allows you to easily modify your roblox 'death' sound. Also includes auto detection of game installation location for easier usage.",
-            "url": "https://github.com/dromzeh/robloxsoundchanger",
-            "uses": ["C#", "winforms"],
-            "isopenSource": true
-        },
-        {
             "name": "roblox filter for discord",
-            "description": "A bot for discord which allows you to implement 'roblox-type' moderation to your discord server. Uses webhooks to mimic talking as the person.",
+            "description": "Discord bot allowing users to implement 'Roblox-type' moderation on their Discord server using webhooks to mimic speaking as other users.",
             "url": "https://github.com/dromzeh/roblox-filter-for-discord",
             "uses": ["python", "discord.py"],
             "isopenSource": true
         },
         {
             "name": "discord custom stream status",
-            "description": "An incredibly simple discord self-bot which allows for you to easily set your status to streaming & change the stream name & url to anything of your choice. ",
+            "description": "Easy-to-use self-bot that lets users set their status to streaming and allows for full customization of the stream name and URL to your liking.",
             "url": "https://github.com/dromzeh/discord-custom-stream-status",
             "uses": ["python", "discord.py"],
             "isopenSource": true
         },
         {
             "name": "dromzeh.dev",
-            "description": "The website you're currently seeing right now. Built with SvelteKit, TailwindCSS and hosted with Cloudflare Pages. Also has its own API used in /posts.",
+            "description": "The website you are currently viewing, built with SvelteKit and TailwindCSS and hosted with Cloudflare Pages. It also has its own API used in the /posts section.",
             "url": "https://github.com/dromzeh/dromzeh.dev",
             "uses": ["sveltekit", "tailwind"],
             "isopenSource": true

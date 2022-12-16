@@ -1,0 +1,61 @@
+---
+title: "libcrypto.so.1.1: No such file or directory fix"
+description: "How to fix the libcrypto.so.1.1: No such file or directory error after breaking your arch linux system"
+date: "12-16-2022"
+tags: ["linux", "openssl"]
+---
+
+Ever accidentally break your arch linux system and get the error `libcrypto.so.1.1: No such file or directory`? well, I did and this is how I fixed it.
+
+## the cause
+
+I was downloading a package from the AUR when I encontered an `openssl` error, without thinking and upgrading anything on my system, I ran `pacman -S openssl`. this broke my system and I got the error `libcrypto.so.1.1: No such file or directory` when trying to run any command, and I was unable to boot into my system.
+
+
+## the solution
+
+### getting into my install
+
+To troubleshoot this problem with my system, I booted into a live USB and used the following commands:
+
+   - `lsblk` to identify the name of my root partition (in this case, `/dev/nvme0n1p2`)
+   - `mount /dev/nvme0n1p2 /mnt` to mount my root partition to the `/mnt` directory
+   - `arch-chroot /mnt` to enter my root partition
+
+By doing this, I was now able to access and fix the problem from within the live USB environment.
+
+### fixing the problem
+
+To begin, you can use the `tail` command to view the `/var/log/pacman.log` file, which will show you the details of the update you just performed. This will give you a better understanding of what may have caused the error you are now experiencing.
+
+```bash
+tail /var/log/pacman.log
+```
+
+Next, you can use the `tar` command to extract the contents of the `openssl-X.X.X.X-X-x86_64.pkg.tar.xz` package and then use the `sed` and `grep` commands to filter out directories and create a list of only the files contained in the package. 
+
+Finally, you can use the `xargs` command to pass this list of files to the `rm` command, which will remove all of the newly installed OpenSSL files from your system.
+
+In my case, the package was `openssl-3.X.X.X-1-x86_64.pkg.tar.xz` so I ran the following command:
+
+```bash
+tar -tf openssl-3.X.X.X-1-x86_64.pkg.tar.xz | sed s:^:/: | grep -v '/$ ' | xargs rm 
+```
+
+Once you have done this, you can use the `cd` command to navigate to the root directory and then use the `tar` command again, this time to extract the contents of the `openssl-X.X.X.X-X-x86_64.pkg.tar.xz` package, which contains the old version of OpenSSL that you were previously using.
+In my case, the package was `openssl-1.X.X.X-1-x86_64.pkg.tar.xz` so I ran the following command:
+
+```bash
+cd /
+tar -xf openssl-1.X.X.X-1-x86_64.pkg.tar.xz
+```
+
+Finally, you can use the `pacman` command to update all of your packages, including OpenSSL, in the correct way. This will ensure that all of your packages are properly updated and that you do not encounter any further errors.
+  
+```bash
+pacman -Syu openssl
+```
+
+We must include the OpenSSL package in the command above because the package we just extracted is not the latest version of OpenSSL as pacman still thinks that we have the latest version of OpenSSL installed.
+
+> To prevent any further errors like this, I strongly reccomend installing `pacman-static`, which is a static version of the `pacman` package manager that can be used to update your system.
