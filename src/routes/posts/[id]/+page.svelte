@@ -7,8 +7,9 @@
   <meta name="description" content="get real" />
 </svelte:head>
 
+<div class="mx-auto max-w-screen-lg px-3 py-6">
 <article
-  class="prose prose-slate max-w-none prose-code:text-blue-100 prose-p:text-white prose-strong:text-white prose-blockquote:text-white prose-headings:text-transparent prose-headings:bg-clip-text prose-headings:bg-gradient-to-br prose-headings:text-blue-100 prose-headings:font-semibold prose-a:text-blue-100 prose-table:text-white prose-table:th:text-blue-400 prose-table:th:hover:text-sky-100 prose-table:td:text-white prose-table:td:hover:text-sky-100 list-disc prose-li:text-white prose-em:underline"
+  class="prose prose-slate max-w-7xl prose-code:text-blue-100 prose-p:text-white prose-strong:text-white prose-blockquote:text-white prose-headings:text-transparent prose-headings:bg-clip-text prose-headings:bg-gradient-to-br prose-headings:text-blue-100 prose-headings:font-semibold prose-a:text-blue-100 prose-table:text-white prose-table:th:text-blue-400 prose-table:th:hover:text-sky-100 prose-table:td:text-white prose-table:td:hover:text-sky-100 list-disc prose-li:text-white prose-em:underline"
 >
   <div class="lg:p-20 md:p-10 p-3">
     <h4 class="text-3xl text-blue-100 monofont">{data.title}</h4>
@@ -16,10 +17,10 @@
       {data.description}
       <span class="text-gray-400 text-xs">(Published: {data.date})</span>
     </p>
-    <br />
     <svelte:component this={data.content} />
   </div>
 </article>
+</div>
 
 <style lang="postcss">
   .highlight {

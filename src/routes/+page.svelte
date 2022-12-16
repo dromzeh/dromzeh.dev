@@ -67,15 +67,9 @@
 
       <div class="mb-6 p-1">
         <p class="text-l">
-          I've been 'writing' code since <span class="highlight">2012</span>. As
-          of recent, I've been learning and using Svelte (+ Javascript) and
-          Tailwind for usage in nearly all of my web projects. I can also
-          program with C#, Javascript and Python. I'm currently working on a few
-          projects, one of which is
-          <a href="https://wanderer.moe" class="highlightUnderline"
-            >wanderer.moe</a
-          >, a website that hosts genshin impact assets (it's pretty popular for
-          'some reason').
+          I've been writing code since 2012 and have been focusing on learning and using Svelte and Tailwind for my web projects. In addition to Svelte and Tailwind, I also have experience with C#, Javascript, and Python.
+
+          One of my current projects is wanderer.moe, a website that hosts Genshin Impact assets. The site has been growing in popularity and I'm constantly working on improving it. 
         </p>
         <br />
       </div>
