@@ -42,7 +42,7 @@
         <img
           class="inline w-32 h-32 rounded-md object-left discordImg transition delay-50 duration-300 ease-in-out hover:-rotate-[5deg] hover:scale-105"
           src="https://cdn.discordapp.com/avatars/{discordData.discord_user
-            .id}/{discordData.discord_user.avatar}.png"
+            .id}/{discordData.discord_user.avatar}.gif"
           alt="discord profile"
         />
       </a>
