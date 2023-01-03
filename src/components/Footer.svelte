@@ -14,6 +14,10 @@
     recentCommit = response.data[0].commit.message;
     sha = response.data[0].sha;
     shaSpliced = sha.substring(0, 7);
+    // sets commit message to split if there is a new line 
+    if (recentCommit.includes("\n")) {
+      recentCommit = recentCommit.split("\n")[0];
+    }
   }
 
   onMount(() => {
