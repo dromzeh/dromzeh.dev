@@ -26,6 +26,23 @@
             offline: "Offline",
           };
           statusColor = statusColors[discordData.discord_status];
+
+          if (discordData.discord_status != "offline") {
+            let onlineOnDevices = [];
+            if (discordData.active_on_discord_desktop) {
+              onlineOnDevices.push("🖥️");
+            }
+            if (discordData.active_on_discord_mobile) {
+              onlineOnDevices.push("📱");
+            }
+            if (discordData.active_on_discord_web) {
+              onlineOnDevices.push("🌐");
+            }
+            discordData.onlineOnDevices = onlineOnDevices.join(" ");
+          } else {
+            discordData.onlineOnDevices = "";
+          }
+
           discordData.discord_status = statusNames[discordData.discord_status];
         });
     } catch (e) {
@@ -43,7 +60,7 @@
 
 <!-- discord status section -->
 {#if discordData.discord_status != undefined}
-<div class = "relative rounded-lg border-[#121212] from-transparent border-2 mb-6">
+<div class = "relative rounded-lg border-[#121212] hover:border-gray-600/50 from-transparent border-2 mb-6">
   <p class = "absolute top-0 right-0 text-2xl m-2">
     <span style="color: {statusColor}"
     ><i class="animate-pulse fa-solid fa-circle" />
@@ -66,7 +83,7 @@
       </p>
       <p class="text-xl font-semibold text-white">
         {discordData.discord_user.username}#{discordData.discord_user
-          .discriminator}
+          .discriminator} {discordData.onlineOnDevices}
       </p>
       <p class="text-sm">
         {discordData.discord_status}
@@ -78,15 +95,15 @@
 
 <!-- spotify section -->
 {#if discordData.listening_to_spotify}
-<div class = "relative rounded-lg border-[#121212] from-transparent to-green-700/10 bg-gradient-to-tl border-2 mb-6">
+<div class = "relative rounded-lg border-[#121212] hover:border-gray-600/50 from-transparent to-green-700/10 bg-gradient-to-tl border-2 mb-6">
     <div class="flex items-center">
         <div class="p-5">
           <i class = "absolute fab text-2xl fa-spotify text-white animate-pulse top-0 right-0 m-2"></i>
-          <div class = "relative"> 
+          <div class = "relative opacity-80 hover:opacity-100"> 
             <a href = "https://open.spotify.com/track/{discordData.spotify.track_id}" target="_blank" rel="noreferrer">
-              <i class = "absolute fa fa-play text-white playBtn text-4xl"></i>
+              <p class = "absolute text-white playBtn text-4xl fa fa-play"></p>
 
-                <img class="w-24 h-24 rounded-md object-left max-w-none shadow-lg"
+                <img class="w-24 h-24 rounded-md object-left max-w-none coverImg shadow-lg"
                      src="{discordData.spotify.album_art_url}"
                      alt="{discordData.spotify.song} album art"
                 />
@@ -118,4 +135,5 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
 </style>

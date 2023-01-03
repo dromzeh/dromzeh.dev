@@ -22,7 +22,7 @@
       {#each data.posts as post}
         <div data-tilt data-tilt-max="5" data-tilt-speed="100">
           <div
-            class="flex flex-col bg-transparent bg-opacity-50 rounded-lg mt-6 shadow-md border-[#121212] border-2"
+            class="flex flex-col bg-transparent bg-opacity-50 rounded-lg mt-6 shadow-md border-[#121212] hover:border-gray-600/50 border-2"
           >
             <div class="flex flex-col justify-between p-4 leading-normal">
               <h5

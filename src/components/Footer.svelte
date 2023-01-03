@@ -33,14 +33,14 @@
         <a class="text-white hover:underline" href="https://kit.svelte.dev/"
           >SvelteKit</a
         >
-        and
+        &
         <a class="text-white hover:underline" href="https://tailwindcss.com/"
           >TailwindCSS</a
         >
       </p>
       {#if recentCommit}
         <a href="https://github.com/dromzeh/dromzeh.dev/commit/{sha}">
-          <p class="text-xs text-white hover:underline">{shaSpliced} -> {recentCommit}</p>
+          <p class = "text-gray-400 hover:text-white hover:underline text-xs"> {shaSpliced} -> {recentCommit} </p>
         </a>
       {/if}
     </div>
