@@ -30,17 +30,17 @@
     <div class="justify-center">
       <p>
         © {currentYear}, dromzeh | built with
-        <a class="highlightUnderline" href="https://kit.svelte.dev/"
+        <a class="text-white hover:underline" href="https://kit.svelte.dev/"
           >SvelteKit</a
         >
         and
-        <a class="highlightUnderline" href="https://tailwindcss.com/"
+        <a class="text-white hover:underline" href="https://tailwindcss.com/"
           >TailwindCSS</a
         >
       </p>
       {#if recentCommit}
         <a href="https://github.com/dromzeh/dromzeh.dev/commit/{sha}">
-          <p class="text-xs hover:underline">{shaSpliced} | {recentCommit}</p>
+          <p class="text-xs text-white hover:underline">{shaSpliced} -> {recentCommit}</p>
         </a>
       {/if}
     </div>
@@ -64,10 +64,3 @@
   <br>
 
 </footer>
-
-<style lang="postcss">
-  .highlightUnderline {
-    @apply text-blue-100 bg-[#2a2a2a] rounded-md p-1 hover:underline;
-    font-family: "jetbrains mono", monospace;
-  }
-</style>
