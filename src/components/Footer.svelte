@@ -1,6 +1,7 @@
 <script>
   import axios from "axios";
   import { onMount } from "svelte";
+  import Icon from "@iconify/svelte";
 
   let recentCommit;
   let sha;
@@ -32,8 +33,64 @@
 <footer class="text-center text-gray-400">
   <div class="flex justify-center items-center lg:justify-center p-6">
     <div class="justify-center">
+      <div class="flex flex-row flex-wrap gap-4 my-auto justify-center mb-6">
+        <a
+          href="https://discord.com/users/492731761680187403"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Icon
+            icon="fa-brands:discord"
+            class="text-xl hover:text-white"
+          />
+        </a>
+
+        <a
+          href="https://tiktok.com/@dromzeh"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Icon
+            icon="fa-brands:tiktok"
+            class="text-xl hover:text-white"
+          />
+        </a>
+
+        <a
+          href="https://twitter.com/dromzeh"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Icon
+            icon="fa-brands:twitter"
+            class="text-xl hover:text-white"
+          />
+        </a>
+
+        <a
+          href="mailto:marcel@dromzeh.dev"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Icon
+            icon="fa-solid:envelope"
+            class="text-xl hover:text-white"
+          />
+        </a>
+
+        <a
+          href="https://stats.fm/dromzeh"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Icon
+            icon="fa-brands:spotify"
+            class="text-xl hover:text-white"
+          />
+        </a>
+      </div>
       <p>
-        © {currentYear}, dromzeh | built with
+        © {currentYear} built with ❤️ by Marcel,
         <a class="text-white hover:underline" href="https://kit.svelte.dev/"
           >SvelteKit</a
         >

@@ -1186,6 +1186,10 @@ video {
   gap: 0.75rem;
 }
 
+.gap-4 {
+  gap: 1rem;
+}
+
 .break-words {
   overflow-wrap: break-word;
 }
@@ -1329,6 +1333,10 @@ video {
 
 .text-center {
   text-align: center;
+}
+
+.indent-2 {
+  text-indent: 0.5rem;
 }
 
 .text-xs {
@@ -1486,6 +1494,11 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.backdrop\:px-4::backdrop {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .after\:absolute::after {
   content: var(--tw-content);
   position: absolute;
@@ -1539,6 +1552,11 @@ video {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.hover\:text-gray-400:hover {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
 .hover\:underline:hover {

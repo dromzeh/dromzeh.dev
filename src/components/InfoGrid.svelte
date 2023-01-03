@@ -83,11 +83,14 @@
       </p>
       <p class="text-xl font-semibold text-white">
         {discordData.discord_user.username}#{discordData.discord_user
-          .discriminator} {discordData.onlineOnDevices}
+          .discriminator}
       </p>
       <p class="text-sm">
         {discordData.discord_status}
       </p>
+      <p class = "text-xs text-gray-400">
+        {discordData.onlineOnDevices}
+    </p>
     </div>
   </div>
 </div>
@@ -121,6 +124,9 @@
             <p class = "text-sm text-gray-400">
                 by {discordData.spotify.artist}
             </p>
+            <p class = "text-xs text-gray-400">
+              on {discordData.spotify.album}
+          </p>
         </div>
     </div>
 </div>
