@@ -29,7 +29,7 @@
     "@iconify/svelte": "^3.0.1",
     "@sveltejs/adapter-auto": "1.0.0",
     "@sveltejs/adapter-static": "1.0.0",
-    "@sveltejs/kit": "1.0.0",
+    "@sveltejs/kit": "1.0.1",
     "axios": "^1.2.1",
     "cors": "^2.8.5",
     "dayjs": "^1.11.7",
