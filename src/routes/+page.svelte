@@ -12,19 +12,40 @@
   import InfoGrid from "../components/InfoGrid.svelte";
 
   let allProjects = projectsList.projects; // :3
-
+  let myTime;
+  let respondStatus;
   let age = "16"; // also incase getAge function fails for some reason..
 
-  async function getAge() {
-    setInterval(() => {
-      let time = dayjs().diff(dayjs(1156118401000), "year", true);
-      age = time.toString().substring(0, 6);
-    }, 50);
-  }
+/* 
+The code below does the following:
+1. Get the current time in London, UK ( my time )
+2. Check if it's between 8am and 2am, if so, respondStatus is set to "I am most likely awake."
+3. If not, it will check if I'm online on Discord. If so, respondStatus is set to "I am most likely awake."
+4. If I'm offline on Discord and the time isn't between specified, respondStatus is set to "I am most likely asleep."
+*/
+async function getTime(){
+  const date = new Date();
+  const options = {
+    timeZone: "Europe/London",
+    hour: "numeric",
+    minute: "numeric",
+  };
+  myTime = date.toLocaleString("en-GB", options);
+}
 
-  onMount(() => {
-    getAge();
-  });
+setInterval(() => {
+  getTime();
+}, 5000);
+
+setInterval(() => {
+  let time = dayjs().diff(dayjs(1156118401000), "year", true);
+  age = time.toString().substring(0, 12);
+}, 50);
+
+
+onMount(() => {
+  getTime();
+});
 </script>
 
 <svelte:head>
@@ -41,11 +62,11 @@
         <h1 class="text-2xl font-semibold">
           hi 👋 i'm <span class="highlight">dromzeh,</span>
         </h1>
-        <p class="text-xl text-m mt-3">
+        <p class="text-xl text-m mt-3 break-words">
           Also known as Marcel, I'm a <span class="highlight">{age}</span>
           year old developer. I currently focus more on
           <span class="highlight">front-end</span>
-          website development.
+          website development. I'm also the developer of <a href="https://wanderer.moe" target="_blank" rel="noreferrer" class="highlight hover:underline">wanderer.moe</a>, a Genshin Impact Assets website.
         </p>
       </div>
     </div>
@@ -55,24 +76,61 @@
     <InfoGrid />
 
 
-    <div id="about" class="mb-6">
-      <div class="flex flex-col align-center my-auto items-center">
-        <a href="#about" class="mb-6">
-          <span class="monofont text-white text-4xl font-semibold">about —</span
+    <div id="contact" class="mb-6">
+      <div class="flex flex-col align-center my-auto items-center mb-6">
+        <a href="#contact">
+          <span class="monofont text-white text-4xl font-semibold">connections —</span
           >
         </a>
+        {#if myTime != undefined}
+          <p class = "text-gray-400">It is currently <span class = "text-white">{myTime}</span> for me.</p>
+        {/if}
       </div>
 
-      <div class="mb-6 p-1">
-        <p class="text-l text-gray-400">
-          I've been writing code since <span class = "highlight">2012</span> and have been focusing on learning
-          and using <span class = "highlight">Svelte</span> and <span class = "highlight">Tailwind</span> for my web projects. In addition to
-          Svelte and Tailwind, I also have experience with <span class = "highlight">C#</span>, <span class = "highlight">Javascript</span>, and
-          <span class = "highlight">Python</span>. One of my current projects is <a class = "highlight hover:underline" href = "https://wanderer.moe/">wanderer.moe</a>, a website that
-          hosts Genshin Impact assets. The site has been growing in popularity
-          and I'm constantly working on improving it.
-        </p>
-        <br />
+      <div class = "flex flex-row flex-wrap gap-1 my-auto justify-center">
+      
+        <a href="https://discord.com/users/492731761680187403" target="_blank" rel="noreferrer">
+          <button class = "flex flex-row items-center justify-center rounded-lg  px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-[#121212] hover:bg-[#0A0A0A]">
+            <Icon icon="ic:baseline-discord" class = "mr-2 text-xl text-[#6370F4] "/>
+            <p>Discord</p>
+          </button>
+        </a>
+
+        <a href="https://twitter.com/dromzeh" target="_blank" rel="noreferrer">
+          <button class = "flex flex-row items-center justify-center rounded-lg  px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-[#121212] hover:bg-[#0A0A0A]">
+            <Icon icon="logos:twitter" class = "mr-2 text-l" />
+            <p>Twitter</p>
+          </button>
+        </a>
+
+        <a href="mailto:marcel@dromzeh.dev" target="_blank" rel="noreferrer">
+          <button class = "flex flex-row items-center justify-center rounded-lg  px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-[#121212] hover:bg-[#0A0A0A]">
+            <Icon icon="ic:baseline-mail" class = "mr-2 text-xl" />
+            <p>marcel@dromzeh.dev</p>
+          </button>
+          </a>
+
+        <a href="https://akatsuki.pw/u/41379?mode=3&rx=0 " target="_blank" rel="noreferrer">
+          <button class = "flex flex-row items-center justify-center rounded-lg  px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-[#121212] hover:bg-[#0A0A0A]">
+            <Icon icon="material-symbols:link-rounded" class = "mr-2 text-xl" />
+            <p>akatsuki</p>
+          </button>
+        </a>
+
+        <a href="https://stats.fm/dromzeh " target="_blank" rel="noreferrer">
+          <button class = "flex flex-row items-center justify-center rounded-lg  px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-[#121212] hover:bg-[#0A0A0A]">
+            <Icon icon="logos:spotify-icon" class = "mr-2 text-xl" />
+            <p>stats.fm</p>
+          </button>
+        </a>
+
+        <a href="https://tiktok.com/@dromzeh " target="_blank" rel="noreferrer">
+          <button class = "flex flex-row items-center justify-center rounded-lg  px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-[#121212] hover:bg-[#0A0A0A]">
+            <Icon icon="akar-icons:tiktok-fill" class = "mr-2 text-xl" />
+            <p>TikTok</p>
+          </button>
+        </a>
+
       </div>
     </div>
 
@@ -89,7 +147,7 @@
 
       {#each allProjects as project}
         <div
-          class="flex flex-col backdrop-blur-lg rounded-lg shadow-md border-[#121212] border-2"
+          class="flex flex-col backdrop-blur-lg rounded-lg shadow-md border-[#121212] hover:border-gray-600/50 border-2 "
         >
           <div class="flex flex-col justify-between p-4 leading-normal">
             <h5 class="text-2xl font-bold tracking-tight text-white monofont">
