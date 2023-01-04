@@ -39,7 +39,7 @@ setInterval(() => {
         </h1>
         <p class="text-m mt-3 break-words text-xl">
           Also known as dromzeh, I'm a <span class="highlight">{age}</span>
-          year old developer from the UK. I currently focus more on
+          year old self-taught developer from the UK. I currently focus more on
           <span class="highlight">front-end</span>
           website development. I'm also the developer of
           <a

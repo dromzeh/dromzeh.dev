@@ -4,8 +4,12 @@
 
 Source code for my personal website, `dromzeh.dev`.
 
-- Uses SvelteKit, TailwindCSS (+ typography), mdsvex.
-- Cloudflare Pages used for deployment and hosting.
+Uses [Svelte](https://svelte.dev/) & [SvelteKit](https://kit.svelte.dev/).
+Styling is done with [TailwindCSS](https://tailwindcss.com/).
+[MDSveX](https://mdsvex.com/) is used for Markdown parsing paired with [Tailwind Typography](https://tailwindcss.com/docs/typography-plugin) for styling.
+Deployment is done using [Cloudflare Pages](https://pages.cloudflare.com/).
+
+[Lanyard](https://api.lanyard.rest/) is used to get Discord status. You can view the DiscordStatus component inside `./src/components/DiscordStatus.svelte`.
 
 ## Running the Site
 
