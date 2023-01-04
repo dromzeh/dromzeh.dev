@@ -1,32 +1,32 @@
 {
-    "projects": [
-        {
-            "name": "wanderer.moe",
-            "description": "Website hosting 'assets' from the game Genshin Impact, used by over 500,000 people worldwide. It was built using SvelteKit, TailwindCSS, and Cloudflare Pages, and has its own API.",
-            "url": "https://wanderer.moe/",
-            "uses": ["svelte", "tailwind"],
-            "isopenSource": false
-        },
-        {
-            "name": "roblox filter for discord",
-            "description": "Discord bot allowing users to implement 'Roblox-type' moderation on their Discord server using webhooks to mimic speaking as other users.",
-            "url": "https://github.com/dromzeh/roblox-filter-for-discord",
-            "uses": ["python", "discord.py"],
-            "isopenSource": true
-        },
-        {
-            "name": "discord custom stream status",
-            "description": "Easy-to-use self-bot that lets users set their status to streaming and allows for full customization of the stream name and URL to your liking.",
-            "url": "https://github.com/dromzeh/discord-custom-stream-status",
-            "uses": ["python", "discord.py"],
-            "isopenSource": true
-        },
-        {
-            "name": "dromzeh.dev",
-            "description": "The website you are currently viewing, built with SvelteKit and TailwindCSS and hosted with Cloudflare Pages. It also has its own API used in the /posts section.",
-            "url": "https://github.com/dromzeh/dromzeh.dev",
-            "uses": ["sveltekit", "tailwind"],
-            "isopenSource": true
-        }
-    ]
+  "projects": [
+    {
+      "name": "wanderer.moe",
+      "description": "Website hosting 'assets' from the game Genshin Impact, used by over 500,000 people worldwide. It was built using SvelteKit, TailwindCSS, and Cloudflare Pages, and has its own API.",
+      "url": "https://wanderer.moe/",
+      "uses": ["svelte", "tailwind"],
+      "isopenSource": false
+    },
+    {
+      "name": "roblox filter for discord",
+      "description": "Discord bot allowing users to implement 'Roblox-type' moderation on their Discord server using webhooks to mimic speaking as other users.",
+      "url": "https://github.com/dromzeh/roblox-filter-for-discord",
+      "uses": ["python", "discord.py"],
+      "isopenSource": true
+    },
+    {
+      "name": "discord custom stream status",
+      "description": "Easy-to-use self-bot that lets users set their status to streaming and allows for full customization of the stream name and URL to your liking.",
+      "url": "https://github.com/dromzeh/discord-custom-stream-status",
+      "uses": ["python", "discord.py"],
+      "isopenSource": true
+    },
+    {
+      "name": "dromzeh.dev",
+      "description": "The website you are currently viewing, built with SvelteKit and TailwindCSS and hosted with Cloudflare Pages. It also has its own API used in the /posts section.",
+      "url": "https://github.com/dromzeh/dromzeh.dev",
+      "uses": ["sveltekit", "tailwind"],
+      "isopenSource": true
+    }
+  ]
 }

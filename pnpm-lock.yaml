@@ -19,6 +19,7 @@ specifiers:
   postcss-nested: ^6.0.0
   prettier: ^2.8.1
   prettier-plugin-svelte: ^2.9.0
+  prettier-plugin-tailwindcss: ^0.2.1
   rehype-autolink-headings: ^6.1.1
   rehype-slug: ^5.1.0
   svelte: ^3.55.0
@@ -55,6 +56,7 @@ devDependencies:
   postcss-nested: 6.0.0_postcss@8.4.20
   prettier: 2.8.1
   prettier-plugin-svelte: 2.9.0_ajxj753sv7dbwexjherrch25ta
+  prettier-plugin-tailwindcss: 0.2.1_prettier@2.8.1
   svelte: 3.55.0
   svelte-i18n: 3.6.0_svelte@3.55.0
   svelte-preprocess: 5.0.0_qs7rgzvahok4cbkjoy5bgypde4
@@ -1270,6 +1272,15 @@ packages:
     dependencies:
       prettier: 2.8.1
       svelte: 3.55.0
+    dev: true
+
+  /prettier-plugin-tailwindcss/0.2.1_prettier@2.8.1:
+    resolution: {integrity: sha512-aIO8IguumORyRsmT+E7JfJ3A9FEoyhqZR7Au7TBOege3VZkgMvHJMkufeYp4zjnDK2iq4ktkvGMNOQR9T8lisQ==}
+    engines: {node: '>=12.17.0'}
+    peerDependencies:
+      prettier: '>=2.2.0'
+    dependencies:
+      prettier: 2.8.1
     dev: true
 
   /prettier/2.8.1:
