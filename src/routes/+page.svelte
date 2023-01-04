@@ -19,7 +19,7 @@ let age = "16"; // also incase getAge function fails for some reason..
 
 setInterval(() => {
   let time = dayjs().diff(dayjs(1156118401000), "year", true);
-  age = time.toString().substring(0, 12);
+  age = time.toString().substring(0, 7);
 }, 50);
 </script>
 
