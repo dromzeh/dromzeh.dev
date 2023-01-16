@@ -58,4 +58,4 @@ pacman -Syu openssl
 
 We must include the OpenSSL package in the command above because the package we just extracted is not the latest version of OpenSSL as pacman still thinks that we have the latest version of OpenSSL installed.
 
-> To prevent any further errors like this, I strongly reccomend installing `pacman-static`, which is a static version of the `pacman` package manager that can be used to update your system.
+> To prevent any further errors like this, I strongly recommend installing `pacman-static`, which is a static version of the `pacman` package manager that can be used to update your system.
