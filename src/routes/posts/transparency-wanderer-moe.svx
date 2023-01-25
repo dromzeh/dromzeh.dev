@@ -8,17 +8,17 @@ tags: ["finance"]
 ## Domain names
 
 - The domain `wanderer.moe` is registered with Namecheap. The domain name costs around **£15** per year.
-- I also include `dromzeh.dev` into the price because `wtf.dromzeh.dev` was the previous domain name of wanderer.moe, which costs around **£15** per year.
+- `dromzeh.dev` into the price because `wtf.dromzeh.dev` was the old domain name of wanderer.moe, which costs around **£15** per year.
 
 ## Site hosting
 
-- The website is currently hosted using [Cloudflare Pages](https://pages.cloudflare.com), which is completely free. The uptime has been excellent.
+- The website is currently hosted using [Cloudflare Pages](https://pages.cloudflare.com), which is free. The uptime has been excellent.
 - Previously, `wanderer.moe` used [Netlify](https://netlify.com) for two months (while the site was at its peak performance, with over 100 users on the site at once). This cost **£19** per month.
 - Before that, `wtf.dromzeh.dev` was hosted on a [DigitalOcean droplet](https://www.digitalocean.com), which cost around **£7** per month. According to DigitalOcean, I have spent over **£100** on hosting `wtf.dromzeh.dev`.
 
 ## Total
 
-Here's a breakdown of the total cost of how much it's costed me to host wanderer.moe:
+Here's a breakdown of the total cost of how much it's cost me to host wanderer.moe:
 
 | Item | Price | Total |
 | --- | --- | --- |
@@ -28,7 +28,6 @@ Here's a breakdown of the total cost of how much it's costed me to host wanderer
 | Cloudflare Pages | £0 | £168 |
 | **Total** | | **£168** |
 
-This means that money spent hosting wanderer.moe is approximately **$200 USD**. It's important to note that this does not include other expenses such as the cost of third-party site software or items paid in advance. If we were to include these factors, the total cost would be closer to **$320 / £280**.
+Money spent hosting wanderer.moe is approximately **$200 USD**. It's important to note that this does not include other expenses as the cost of third-party site software or items paid in advance. With these factors, the total cost would be closer to **$320 / £280**.
 
-If you enjoy using wanderer.moe or any of my projects I've worked on and want to support the development of this and my other projects, please consider donating through my Buy Me a Coffee link. Your support will help me continue to maintain and improve my projects, and create even more great content for you to enjoy. 
-Every donation is greatly appreciated and all donations will go directly towards the development of my projects.
+If you enjoy using wanderer.moe or any of the projects I've worked on and want to support the development of this and my other projects, please consider donating through my Buy Me a Coffee link. 

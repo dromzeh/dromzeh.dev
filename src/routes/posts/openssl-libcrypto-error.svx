@@ -5,16 +5,16 @@ date: "12-16-2022"
 tags: ["linux", "openssl"]
 ---
 
-Ever accidentally break your arch linux system and get the error `libcrypto.so.1.1: No such file or directory`? well, I did and this is how I fixed it.
+Ever accidentally break your arch linux system and get the error `libcrypto.so.1.1: No such file or directory`? I did - this is how I fixed it.
 
-## the cause
+## The cause
 
-I was downloading a package from the AUR when I encontered an `openssl` error, without thinking and upgrading anything on my system, I ran `pacman -S openssl`. this broke my system and I got the error `libcrypto.so.1.1: No such file or directory` when trying to run any command, and I was unable to boot into my system.
+I was downloading a package from the AUR when I encontered an `openssl` error by upgrading anything on my system.  I ran `pacman -S openssl`; this broke my system:`libcrypto.so.1.1: No such file or directory` when trying to run any command, and I couldn't boot into my system.
 
 
-## the solution
+## The solution
 
-### getting into my install
+### Getting into my install
 
 To troubleshoot this problem with my system, I booted into a live USB and used the following commands:
 
@@ -22,11 +22,11 @@ To troubleshoot this problem with my system, I booted into a live USB and used t
    - `mount /dev/nvme0n1p2 /mnt` to mount my root partition to the `/mnt` directory
    - `arch-chroot /mnt` to enter my root partition
 
-By doing this, I was now able to access and fix the problem from within the live USB environment.
+By doing this, I could access and fix the problem from within the live USB environment.
 
-### fixing the problem
+### Fixing the problem
 
-To begin, you can use the `tail` command to view the `/var/log/pacman.log` file, which will show you the details of the update you just performed. This will give you a better understanding of what may have caused the error you are now experiencing.
+To begin, you can use the `tail` command to view the `/var/log/pacman.log` file, showing you the details of the update you just performed, giving you a better understanding of what may have caused the error you are now experiencing.
 
 ```bash
 tail /var/log/pacman.log
@@ -50,12 +50,12 @@ cd /
 tar -xf openssl-1.X.X.X-1-x86_64.pkg.tar.xz
 ```
 
-Finally, you can use the `pacman` command to update all of your packages, including OpenSSL, in the correct way. This will ensure that all of your packages are properly updated and that you do not encounter any further errors.
+Finally, you can use the `pacman` command to update all of your packages, including OpenSSL, in the correct way, ensuring that all of your packages are updated and that you do not encounter any errors.
   
 ```bash
 pacman -Syu openssl
 ```
 
-We must include the OpenSSL package in the command above because the package we just extracted is not the latest version of OpenSSL as pacman still thinks that we have the latest version of OpenSSL installed.
+We must include the OpenSSL package in the command above because the package we just extracted is not the latest version of OpenSSL as pacman still thinks the latest version of OpenSSL  isinstalled.
 
-> To prevent any further errors like this, I strongly recommend installing `pacman-static`, which is a static version of the `pacman` package manager that can be used to update your system.
+> To prevent any errors like this, I reccomend installing `pacman-static`; a static version of the `pacman` package manager to update your system.
