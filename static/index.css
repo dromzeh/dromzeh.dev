@@ -1123,6 +1123,18 @@ video {
   height: 1.5rem;
 }
 
+.h-\[16px\] {
+  height: 16px;
+}
+
+.h-px {
+  height: 1px;
+}
+
+.h-4 {
+  height: 1rem;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -1133,6 +1145,18 @@ video {
 
 .w-8 {
   width: 2rem;
+}
+
+.w-\[18px\] {
+  width: 18px;
+}
+
+.w-\[50px\] {
+  width: 50px;
+}
+
+.w-\[44px\] {
+  width: 44px;
 }
 
 .max-w-none {
