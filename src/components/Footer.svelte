@@ -1,9 +1,3 @@
-<style lang="postcss">
-.badgeImg {
-  @apply h-6 w-16;
-}
-</style>
-
 <script>
 import axios from "axios";
 import { onMount } from "svelte";
@@ -38,7 +32,7 @@ const currentYear = new Date().getFullYear();
 
 <footer class="text-left text-gray-400">
   <div class="flex items-center justify-center p-6 lg:justify-center">
-    <pre class="text-xs">
+<pre class="text-xs">
       ,_     _
       |\\_,-~/
       / _  _ |    ,--.
@@ -48,9 +42,7 @@ const currentYear = new Date().getFullYear();
      |         _  \ |
       \ \ ,  /      |
        || |-_\__   /
-      ((_/`(____,-'
-
-    </pre>
+      ((_/`(____,-'</pre>
     <div class="justify-center px-3">
       <div class="mb-3">
         <p>
@@ -85,6 +77,7 @@ const currentYear = new Date().getFullYear();
           alt="trans rights"
         />
         <img class="badgeImg" src="../assets/badge/gnu-linux.gif" alt="gnu" />
+        <a rel="me" href = "https://tech.lgbt/@marcel"><img class="badgeImg" src="../assets/badge/mastodon.gif" alt="mastodon" /></a>
       </div>
     </div>
   </div>
