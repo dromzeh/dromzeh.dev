@@ -1,7 +1,6 @@
 <script>
 import axios from "axios";
 import { onMount } from "svelte";
-import Icon from "@iconify/svelte";
 
 let recentCommit;
 let sha;
@@ -30,68 +29,47 @@ const currentYear = new Date().getFullYear();
 </script>
 
 <!-- main footer with all items inside being centered for a cleaner look -->
-<footer class="text-center text-gray-400">
+
+<footer class="text-left text-gray-400">
   <div class="flex items-center justify-center p-6 lg:justify-center">
-    <div class="justify-center">
-      <div class="my-auto mb-6 flex flex-row flex-wrap justify-center gap-4">
-        <a
-          href="https://discord.com/users/492731761680187403"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Icon icon="fa-brands:discord" class="text-xl hover:text-white" />
-        </a>
+    <pre class="text-xs">
+      ,_     _
+      |\\_,-~/
+      / _  _ |    ,--.
+     (  @  @ )   / ,-'
+      \  _T_/-._( (
+      /         `. \
+     |         _  \ |
+      \ \ ,  /      |
+       || |-_\__   /
+      ((_/`(____,-'
 
-        <a href="https://tiktok.com/@dromzeh" target="_blank" rel="noreferrer">
-          <Icon icon="fa-brands:tiktok" class="text-xl hover:text-white" />
-        </a>
-
-        <a href="https://twitter.com/dromzeh" target="_blank" rel="noreferrer">
-          <Icon icon="fa-brands:twitter" class="text-xl hover:text-white" />
-        </a>
-
-        <a href="mailto:marcel@dromzeh.dev" target="_blank" rel="noreferrer">
-          <Icon icon="fa-solid:envelope" class="text-xl hover:text-white" />
-        </a>
-
-        <a href="https://stats.fm/dromzeh" target="_blank" rel="noreferrer">
-          <Icon icon="fa-brands:spotify" class="text-xl hover:text-white" />
-        </a>
-      </div>
+    </pre>
+    <div class="justify-center px-3">
       <p>
-        © {currentYear} built with ❤️ by Marcel,
-        <a class="text-white hover:underline" href="https://kit.svelte.dev/"
-          >SvelteKit</a
+        © 2020-{currentYear} •
+        <a
+          class="text-white underline hover:text-emerald-300"
+          href="https://mit.dromzeh.dev/">mit</a
         >
-        &
-        <a class="text-white hover:underline" href="https://tailwindcss.com/"
-          >TailwindCSS</a
+        •
+        <a
+          class="text-white underline hover:text-emerald-300"
+          href="https://discord.gg/2Z4mD8">discord</a
+        >
+        •
+        <a
+          class="text-white underline hover:text-emerald-300"
+          href="https://github.com/dromzeh/">github</a
         >
       </p>
       {#if recentCommit}
         <a href="https://github.com/dromzeh/dromzeh.dev/commit/{sha}">
-          <p class="text-xs text-gray-400 hover:text-white hover:underline">
-            {shaSpliced} -> {recentCommit}
+          <p class="text-xs text-gray-500">
+            // {recentCommit} ({shaSpliced})
           </p>
         </a>
       {/if}
     </div>
   </div>
-
-  <div class="mx-auto">
-    <!-- buy me a coffee url -->
-    <a
-      href="https://www.buymeacoffee.com/marcelmd"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        class="mx-auto"
-        src="https://cdn.buymeacoffee.com/buttons/v2/default-white.png"
-        alt="Buy Me A Coffee"
-        style="height: 30px !important;width: 109px !important;"
-      />
-    </a>
-  </div>
-  <br />
 </footer>

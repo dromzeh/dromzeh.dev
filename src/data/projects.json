@@ -2,31 +2,51 @@
   "projects": [
     {
       "name": "wanderer.moe",
-      "description": "Website hosting 'assets' from the game Genshin Impact, used by over 500,000 people worldwide. It was built using SvelteKit, TailwindCSS, and Cloudflare Pages, and has its own API.",
+      "description": "Genshin Impact resource website with over 1 million users globally. Built using SvelteKit, TailwindCSS, and Cloudflare Pages, with its own API.",
       "url": "https://wanderer.moe/",
-      "uses": ["svelte", "tailwind"],
-      "isopenSource": false
+      "tags": ["svelte", "tailwind"],
+      "isopenSource": false,
+      "active": true
+    },
+    {
+      "name": "????",
+      "description": "Svelte open-source music player with offline support. Customizable interface with CSS & keyboard shortcuts. Includes audio visualization, smart playlists, and LAN sharing.",
+      "url": "#",
+      "tags": ["svelte"],
+      "isopenSource": false,
+      "active": true
+    },
+    {
+      "name": "qbit-rpc",
+      "description": "A simple, lightweight, and easy to use discord rich presence for qBittorrent, made with Javascript.",
+      "url": "https://github.com/dromzeh/qbit-rpc",
+      "tags": ["javascript"],
+      "isopenSource": true,
+      "active": true
     },
     {
       "name": "roblox filter for discord",
-      "description": "Discord bot allowing users to implement 'Roblox-type' moderation on their Discord server using webhooks to mimic speaking as other users.",
+      "description": "Discord bot for 'Roblox-style' moderation using webhooks to imitate user communication.",
       "url": "https://github.com/dromzeh/roblox-filter-for-discord",
-      "uses": ["python", "discord.py"],
-      "isopenSource": true
+      "tags": ["python", "discord.py"],
+      "isopenSource": true,
+      "active": false
     },
     {
       "name": "discord custom stream status",
-      "description": "Easy-to-use self-bot that lets users set their status to streaming and allows for full customization of the stream name and URL to your liking.",
+      "description": "Self-bot for setting custom streaming status with full name and URL customization options.",
       "url": "https://github.com/dromzeh/discord-custom-stream-status",
-      "uses": ["python", "discord.py"],
-      "isopenSource": true
+      "tags": ["python", "discord.py"],
+      "isopenSource": true,
+      "active": false
     },
     {
       "name": "dromzeh.dev",
-      "description": "The website you are currently viewing, built with SvelteKit and TailwindCSS and hosted with Cloudflare Pages. It also has its own API used in the /posts section.",
+      "description": "My personal SvelteKit/TailwindCSS website hosted on Cloudflare Pages with its own API.",
       "url": "https://github.com/dromzeh/dromzeh.dev",
-      "uses": ["sveltekit", "tailwind"],
-      "isopenSource": true
+      "tags": ["sveltekit", "tailwind"],
+      "isopenSource": true,
+      "active": false
     }
   ]
 }

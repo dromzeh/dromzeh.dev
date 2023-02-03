@@ -1,7 +1,7 @@
 ---
-title: "libcrypto.so.1.1: No such file or directory fix"
-description: "How to fix the libcrypto.so.1.1: No such file or directory error after breaking your arch linux system"
-date: "12-16-2022"
+title: "libcrypto.so: No such file or directory fix"
+description: "How to fix the libcrypto.so: No such file or directory error after breaking your arch linux system"
+date: "16/12/2022"
 tags: ["linux", "openssl"]
 ---
 

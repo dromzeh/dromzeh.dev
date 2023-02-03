@@ -88,11 +88,12 @@ onMount(() => {
 });
 </script>
 
-<div class="grid grid-cols-1 lg:grid-cols-2">
+<div class="grid grid-cols-1">
   <!-- discord status section -->
   {#if discordData.discord_status != undefined}
+    <p class=" text-2xl font-semibold text-white">discord status:</p>
     <div
-      class="relative m-2 rounded-lg border-2 border-[#121212] from-transparent hover:border-gray-600/50"
+      class="relative m-2 rounded-lg border-2 border-gray-600/10 from-transparent"
     >
       <p class="absolute top-0 right-0 m-2 text-2xl">
         <span style="color: {statusColor}"
@@ -134,7 +135,7 @@ onMount(() => {
   <!-- spotify section -->
   {#if discordData.listening_to_spotify}
     <div
-      class="relative m-2 rounded-lg border-2 border-[#121212] bg-gradient-to-tl from-transparent to-green-700/10 hover:border-gray-600/50"
+      class="relative m-2 rounded-lg border-2 border-gray-600/10 bg-gradient-to-tl from-transparent to-green-700/10"
     >
       <div class="flex items-center">
         <div class="p-5">
@@ -177,7 +178,7 @@ onMount(() => {
 <!-- custom RPC section -->
 {#if discordData.RPCExists}
   <div
-    class="relative m-2 mb-6 rounded-lg border-2 border-[#121212] bg-gradient-to-tl from-transparent to-cyan-700/10 hover:border-gray-600/50"
+    class="relative m-2 mb-6 rounded-lg border-2 border-gray-600/10 bg-gradient-to-tl from-transparent to-cyan-700/10"
   >
     <div class="flex items-center">
       <div class="p-5">
