@@ -55,7 +55,7 @@ const currentYear = new Date().getFullYear();
         •
         <a
           class="text-white underline hover:text-emerald-300"
-          href="https://discord.gg/2Z4mD8">discord</a
+          href="https://discord.com/users/492731761680187403">discord</a
         >
         •
         <a
