@@ -1,7 +1,7 @@
 ---
-title: "Using Claws Mail with ProtonMail Bridge: A Secure Email Setup"
+title: "Claws Mail with ProtonMail Bridge"
 description: "A step-by-step guide to setting up Claws Mail with Protonmail Bridge. (Arch & Windows)"
-date: "1-25-2023"
+date: "25/01/2023"
 tags: ["linux", "protonmail", "claws-mail", "windows"]
 ---
 
@@ -63,18 +63,16 @@ IMAP's default port is 1143; SMTP's is 1025.
 ### Send Settings (Enable STARTTLS):
 ![Send](/images/proton-claws-2.png)
 
-After you have entered your settings, click on the "Next" button to continue. 
-Claws Mail will prompt you if you want to trust the TLS certificate: Accept and Save.
+Claws Mail will prompt you if you want to trust the TLS certificate, click 'Accept and Save':
 
 ![TLS](/images/TLS-claws.png)
 
 ## Test Your Setup
 
-To test your setup, open Claws Mail and click on the "Inbox" button to view your emails. You should see all your emails in your inbox, and you can now send and receive emails from your ProtonMail account.
+Check your inbox, you should see all your emails in your inbox; you can now send and receive emails from the account.
 
 ## Conclusion
 
 ProtonMail Bridge is considered an essential tool for everyone concerned about privacy and security.
 
 In my situation, I've gone a further mile by connecting my domain to my ProtonMail account, allowing me to send and receive emails from my Domain and ProtonMail account using Claws Mail.
-This configuration gives me the maximum level of security and encryption for all communications. 

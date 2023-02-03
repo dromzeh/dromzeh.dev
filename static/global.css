@@ -1,31 +1,18 @@
-/* setting different fonts for p and h1 */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Space Grotesk", sans-serif;
-}
-
-p {
-  font-family: "Space Grotesk", sans-serif;
-}
-
 /* changes the colour of when you select text */
 ::-moz-selection {
   color: rgb(255, 255, 255);
-  background: rgba(182, 215, 233, 0.5);
+  background: rgba(84, 225, 211, 0.5);
 }
 
 ::selection {
   color: rgb(255, 255, 255);
-  background: rgba(182, 215, 233, 0.5);
+  background: rgba(84, 225, 211, 0.5);
 }
 
 /* smooth scrolling */
 html {
   scroll-behavior: smooth;
+  font-family: "JetBrains Mono", monospace !important;
 }
 
 /* styles the scrollbar instead of using the default one to fit with the site's color scheme */

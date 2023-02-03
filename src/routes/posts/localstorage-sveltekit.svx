@@ -1,7 +1,7 @@
 ---
-title: "Using localstorage with sveltekit"
+title: "Using localStorage with SvelteKit"
 description: "A quick guide on how to use localstorage with sveltekit, explained with a custom theme (dark mode) example"
-date: "09-13-2022"
+date: "13/09/2022"
 tags: ["svelte", "sveltekit", "localstorage"]
 ---
 
