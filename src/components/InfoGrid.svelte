@@ -93,7 +93,7 @@ onMount(() => {
   {#if discordData.discord_status != undefined}
     <p class=" text-2xl font-semibold text-white">discord status:</p>
     <div
-      class="relative m-2 rounded-lg border-2 border-gray-600/10 from-transparent"
+      class="relative mt-4 mb-4 border-2 border-gray-600/10 from-transparent"
     >
       <p class="absolute top-0 right-0 m-2 text-2xl">
         <span style="color: {statusColor}"
@@ -108,7 +108,7 @@ onMount(() => {
             rel="noreferrer"
           >
             <img
-              class="delay-50 inline h-24 w-24 max-w-none rounded-md object-left transition duration-300 ease-in-out hover:-rotate-[5deg] hover:scale-105"
+              class="inline h-24 w-24 max-w-none rounded-md object-left"
               src="https://cdn.discordapp.com/avatars/{discordData.discord_user
                 .id}/{discordData.discord_user.avatar}.png"
               alt="discord profile"
@@ -116,7 +116,6 @@ onMount(() => {
           </a>
         </div>
         <div>
-          <p class="text-xs text-gray-400">Discord Status</p>
           <p class="text-xl font-semibold text-white">
             {discordData.discord_user.username}#{discordData.discord_user
               .discriminator}
@@ -135,7 +134,7 @@ onMount(() => {
   <!-- spotify section -->
   {#if discordData.listening_to_spotify}
     <div
-      class="relative m-2 rounded-lg border-2 border-gray-600/10 bg-gradient-to-tl from-transparent to-green-700/10"
+      class="relative mb-4 border-2 border-gray-600/10 bg-gradient-to-tl from-transparent to-green-700/10"
     >
       <div class="flex items-center">
         <div class="p-5">
@@ -178,7 +177,7 @@ onMount(() => {
 <!-- custom RPC section -->
 {#if discordData.RPCExists}
   <div
-    class="relative m-2 mb-6 rounded-lg border-2 border-gray-600/10 bg-gradient-to-tl from-transparent to-cyan-700/10"
+    class="relative mb-4 border-2 border-gray-600/10 bg-gradient-to-tl from-transparent to-cyan-700/10"
   >
     <div class="flex items-center">
       <div class="p-5">
@@ -207,11 +206,11 @@ onMount(() => {
           {discordData.activityName}
         </p>
         <p class="text-sm text-gray-400">
-          {discordData.activityState}
+          {discordData.activityDetails}
         </p>
         {#if discordData.activityDetails != undefined}
           <p class="text-xs text-gray-400">
-            {discordData.activityDetails}
+            {discordData.activityState}
           </p>
         {/if}
       </div>

@@ -14,11 +14,10 @@ let allProjects = data.projects.projects; // :3
 <body class="min-h-screen text-gray-100">
   <div class="mx-auto max-w-screen-lg px-3 py-6">
     <div id="postsHeader" class="mb-3">
-      <div class="flex flex-col">
-        <span class="mb-6 text-3xl font-semibold text-white"
-          >in active development</span
-        >
-      </div>
+      <h1 class="mb-6 text-3xl font-semibold text-white">
+        active development:
+      </h1>
+
       {#each allProjects.filter((project) => project.active) as project}
         <p class="mb-6 font-normal text-gray-400">
           <a
@@ -31,11 +30,7 @@ let allProjects = data.projects.projects; // :3
           >
         </p>
       {/each}
-      <div class="flex flex-col">
-        <span class="mb-6 text-3xl font-semibold text-white"
-          >other projects</span
-        >
-      </div>
+      <h1 class="mb-6 text-3xl font-semibold text-white">other projects:</h1>
 
       {#each allProjects.filter((project) => !project.active) as project}
         <p class="mb-6 font-normal text-gray-400">

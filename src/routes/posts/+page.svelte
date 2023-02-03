@@ -13,9 +13,7 @@ export let data;
 <body class="min-h-screen text-gray-100">
   <div class="mx-auto max-w-screen-lg px-3 py-6">
     <div id="postsHeader" class="mb-3">
-      <div class=" flex flex-col">
-        <span class="mb-6 text-3xl font-semibold text-white">posts</span>
-      </div>
+      <h1 class="mb-6 text-3xl font-semibold text-white">posts</h1>
       {#each data.posts as post}
         <p class="mb-6 font-normal text-gray-400">
           <a

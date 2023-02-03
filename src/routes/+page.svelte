@@ -42,14 +42,14 @@ setInterval(() => {
         </p>
         <p class="break-words">
           My current interests includes <span class="highlight"
-            >web design & development, datahoarding, music, and reverse
-            engineering.</span
+            >webdev, datahoarding, music, reverse engineering & datamining.</span
           >
         </p>
 
         <p class="mt-3 text-white">
-          /* view my <a href="/posts" class="underline hover:text-emerald-300"
-            >posts</a
+          /* view all my <a
+            href="/posts"
+            class="underline hover:text-emerald-300">posts</a
           > */
         </p>
       </div>
@@ -59,7 +59,7 @@ setInterval(() => {
 
     <div id="projects">
       <div class="mb-3 flex flex-col">
-        <p class="text-2xl font-semibold text-white">active development:</p>
+        <p class="text-2xl font-semibold text-white">currently working on:</p>
         <p class="mb-3 font-normal text-gray-400">
           <a
             class="text-white underline hover:text-emerald-300"
@@ -69,21 +69,6 @@ setInterval(() => {
           <span class="text-sm italic text-gray-500"
             >// {#each allProjects.filter((project) => project.active)[0].tags as tag, i}
               {tag}{#if i < allProjects.filter((project) => project.active)[0].tags.length - 1},&nbsp;{/if}{/each}</span
-          >
-        </p>
-      </div>
-
-      <div class="mb-3 flex flex-col">
-        <p class=" text-2xl font-semibold text-white">other projects:</p>
-        <p class="mb-3 font-normal text-gray-400">
-          <a
-            class="text-white underline hover:text-emerald-300"
-            href="{allProjects.filter((project) => !project.active)[0].url}"
-            >{allProjects.filter((project) => !project.active)[0].name}</a
-          >: {allProjects.filter((project) => !project.active)[0].description}
-          <span class="text-sm italic text-gray-500"
-            >// {#each allProjects.filter((project) => !project.active)[0].tags as tag, i}
-              {tag}{#if i < allProjects.filter((project) => !project.active)[0].tags.length - 1},&nbsp;{/if}{/each}</span
           >
         </p>
       </div>
@@ -103,7 +88,7 @@ setInterval(() => {
 
       <div>
         <p class="mt-3 mb-12 text-white">
-          /* view all <a
+          /* view all my <a
             href="/projects"
             class="underline hover:text-emerald-300">projects</a
           > */
