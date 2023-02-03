@@ -1,3 +1,9 @@
+<style lang="postcss">
+.badgeImg {
+  @apply h-6 w-16;
+}
+</style>
+
 <script>
 import axios from "axios";
 import { onMount } from "svelte";
@@ -46,30 +52,40 @@ const currentYear = new Date().getFullYear();
 
     </pre>
     <div class="justify-center px-3">
-      <p>
-        © 2020-{currentYear} •
-        <a
-          class="text-white underline hover:text-emerald-300"
-          href="https://mit.dromzeh.dev/">mit</a
-        >
-        •
-        <a
-          class="text-white underline hover:text-emerald-300"
-          href="https://discord.com/users/492731761680187403">discord</a
-        >
-        •
-        <a
-          class="text-white underline hover:text-emerald-300"
-          href="https://github.com/dromzeh/">github</a
-        >
-      </p>
-      {#if recentCommit}
-        <a href="https://github.com/dromzeh/dromzeh.dev/commit/{sha}">
-          <p class="text-xs text-gray-500">
-            // {recentCommit} ({shaSpliced})
-          </p>
-        </a>
-      {/if}
+      <div class="mb-3">
+        <p>
+          © 2020-{currentYear} •
+          <a
+            class="text-white underline hover:text-emerald-300"
+            href="https://mit.dromzeh.dev/">mit</a
+          >
+          •
+          <a
+            class="text-white underline hover:text-emerald-300"
+            href="https://discord.com/users/492731761680187403">discord</a
+          >
+          •
+          <a
+            class="text-white underline hover:text-emerald-300"
+            href="https://github.com/dromzeh/">github</a
+          >
+        </p>
+        {#if recentCommit}
+          <a href="https://github.com/dromzeh/dromzeh.dev/commit/{sha}">
+            <p class="text-xs text-gray-500">
+              // {recentCommit} ({shaSpliced})
+            </p>
+          </a>
+        {/if}
+      </div>
+      <div class="flex flex-wrap gap-1">
+        <img
+          class="badgeImg"
+          src="../assets/badge/transnow2.gif"
+          alt="trans rights"
+        />
+        <img class="badgeImg" src="../assets/badge/gnu-linux.gif" alt="gnu" />
+      </div>
     </div>
   </div>
 </footer>

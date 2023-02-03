@@ -10,15 +10,15 @@ import Icon from "@iconify/svelte";
 
 const nav = [
   { title: "home", path: "/" },
-  { title: "posts", path: "/posts" },
   { title: "projects", path: "/projects" },
+  { title: "posts", path: "/posts" },
 ];
 </script>
 
 <!-- navigation bar stays at the top of the page at all times and has a slight blur when scrolling down for a pretty cool effect .. -->
 <header class="sticky top-0 z-10 pt-0 pb-0 backdrop-blur-lg backdrop-filter">
   <nav
-    class="h-15 after:shadow-hr flex flex-wrap items-center justify-between bg-[#121212] bg-opacity-70 p-4 text-sm after:absolute after:inset-x-0 after:z-[-1] after:h-12 after:w-full"
+    class="h-15 after:shadow-hr flex flex-wrap items-center justify-between bg-[#090909] bg-opacity-70 p-4 text-sm after:absolute after:inset-x-0 after:z-[-1] after:h-12 after:w-full"
   >
     <div class="align-center mr-6 flex">
       {#each nav as item}
