@@ -4,7 +4,8 @@
   color: transparent;
   position: absolute;
   letter-spacing: 0.05em;
-  background: linear-gradient(90deg,
+  background: linear-gradient(
+    90deg,
     #ffb3e6 16.7%,
     #ffddb3 16.7%,
     #ffddb3 33.4%,
@@ -29,8 +30,6 @@
     }
   }
 }
-
-
 </style>
 
 <script>
@@ -44,11 +43,9 @@ import Draggable from "../../components/Draggable.svelte";
 
 <body class="min-h-screen text-gray-100">
   <div class="mx-auto max-w-screen-lg px-3 py-6">
-
     <Draggable>
       <pre class="rainbow font-semibold">//  i'll add something cool
 here soon </pre>
     </Draggable>
-
   </div>
 </body>

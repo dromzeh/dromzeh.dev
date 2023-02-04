@@ -1201,10 +1201,6 @@ video {
   border-width: 2px;
 }
 
-.border {
-  border-width: 1px;
-}
-
 .border-gray-600\/10 {
   border-color: rgb(75 85 99 / 0.1);
 }
