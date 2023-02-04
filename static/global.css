@@ -9,10 +9,15 @@
   background: rgba(84, 225, 211, 0.5);
 }
 
+@font-face {
+  font-family: unifont;
+  src: url("/assets/fonts/unifont-min.ttf");
+}
+
 /* smooth scrolling */
 html {
   scroll-behavior: smooth;
-  font-family: "JetBrains Mono", monospace !important;
+  font-family: "unifont", monospace !important;
 }
 
 /* styles the scrollbar instead of using the default one to fit with the site's color scheme */
