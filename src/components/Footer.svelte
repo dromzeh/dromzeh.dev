@@ -48,13 +48,13 @@ const currentYear = new Date().getFullYear();
         <p>
           © 2020-{currentYear} •
           <a
-            class="text-white underline hover:text-emerald-300"
-            href="https://mit.dromzeh.dev/">mit</a
+            class="text-yellow-400 underline hover:text-emerald-300"
+            href="https://buymeacoffee.com/marcelmd">buymeacoffee</a
           >
           •
           <a
             class="text-white underline hover:text-emerald-300"
-            href="https://discord.com/users/492731761680187403">discord</a
+            href="https://mit.dromzeh.dev/">mit</a
           >
           •
           <a
