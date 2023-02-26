@@ -5,97 +5,120 @@
 </style>
 
 <script>
-import VanillaTilt from "vanilla-tilt";
 import dayjs from "dayjs";
+import moment from "moment-timezone";
 import InfoGrid from "../components/InfoGrid.svelte";
 
 export let data;
 
-let allProjects = data.projects.projects; // :3
-let age = "16"; // also incase getAge function fails for some reason..
+let allProjects = data.projects.projects;
+let allAlbums = data.albums.albums;
 
-// print all projects to console that are active
-console.log(allProjects.filter((project) => project.active === true));
+let age = "16"; // also incase getAge function fails for some reason..
+let myTime = moment().tz("Europe/London").format("HH:mm:ss");
+
+// console.log(allProjects.filter((project) => project.active === true));
 
 setInterval(() => {
   let time = dayjs().diff(dayjs(1156118401000), "year", true);
   age = time.toString().substring(0, 7);
+  myTime = moment().tz("Europe/London").format("HH:mm:ss");
 }, 50);
 </script>
 
 <svelte:head>
-  <title>index — dromzeh.dev</title>
+  <title>dromzeh.dev</title>
   <meta name="description" content="get real" />
 </svelte:head>
 
-<body class="min-h-screen text-gray-400">
+<body class="min-h-screen text-gray-100">
+  <!-- center div in the middle of the page -->
   <div class="mx-auto max-w-screen-lg px-3 py-6">
-    <div
-      class="flex flex-col items-center md:flex-row md:justify-between md:gap-x-20"
-    >
-      <div class="mb-6">
-        <p class="text-2xl font-semibold">
-          hi 👋 i'm <span class="highlight">Marcel,</span>
+    <!-- header -->
+    <div id="header" class="mb-3">
+      <h1 class="mb-6 text-3xl font-semibold text-white">
+        <span class="text-emerald-300">λ</span> dromzeh.dev
+      </h1>
+      <div class="mb-6 font-normal">
+        <p class="text-white">
+          hi, i'm Marcel. i'm {age} years old, software and reverse engineer.
         </p>
-        <p class="break-words">
-          {age} year old Self-Taught Reverse and Software Engineer from the UK.
-        </p>
-        <p class="break-words">
-          My current interests includes <span class="highlight"
-            >webdev, datahoarding, music, reverse engineering & datamining.</span
-          >
-        </p>
-
-        <p class="mt-3 text-white">
-          /* view all my <a
-            href="/posts"
-            class="underline hover:text-emerald-300">posts</a
-          > */
-        </p>
-      </div>
-    </div>
-
-    <br />
-
-    <div id="projects">
-      <div class="mb-3 flex flex-col">
-        <p class="text-2xl font-semibold text-white">currently working on:</p>
-        <p class="mb-3 font-normal text-gray-400">
-          <a
+        <p class=" text-white">
+          i work with svelte, c#, python, javascript, typescript & ida. i also
+          made <a
             class="text-white underline hover:text-emerald-300"
-            href="{allProjects.filter((project) => project.active)[0].url}"
-            >{allProjects.filter((project) => project.active)[0].name}</a
-          >: {allProjects.filter((project) => project.active)[0].description}
-          <span class="text-sm italic text-gray-500"
-            >// {#each allProjects.filter((project) => project.active)[0].tags as tag, i}
-              {tag}{#if i < allProjects.filter((project) => project.active)[0].tags.length - 1},&nbsp;{/if}{/each}</span
-          >
+            href="https://wanderer.moe">wanderer.moe</a
+          > ( genshin impact asset database )
         </p>
       </div>
-
-      <!--   {#each allProjects.filter((project) => project.active) as project}
-      <p class="mb-6 font-normal text-gray-400">
+      <div class="mb-6 font-normal">
+        <p class="text-white">
+          for me, it is currently {myTime}
+          <span class="text-gray-500">// Europe/London time</span>
+        </p>
         <a
           class="text-white underline hover:text-emerald-300"
-          href="{project.url}">{project.name}</a
-        >: {project.description}
-        <span class="text-sm italic text-gray-500"
-          >{#each project.tags as tag, i}
-            {tag}{#if i < project.tags.length - 1},&nbsp;{/if}{/each}</span
+          href="https://github.com/dromzeh">github</a
         >
-      </p>
-    {/each} -->
-
-      <div>
-        <p class="mt-3 mb-12 text-white">
-          /* view all my <a
-            href="/projects"
-            class="underline hover:text-emerald-300">projects</a
-          > */
-        </p>
+        |
+        <a
+          class="text-white underline hover:text-emerald-300"
+          href="https://discord.com/users/492731761680187403">discord</a
+        >
+        |
+        <a
+          class="text-white underline hover:text-emerald-300"
+          href="mailto:marcel@dromzeh.dev">marcel@dromzeh.dev</a
+        >
+        |
+        <a
+          class="text-white underline hover:text-emerald-300"
+          href="https://tech.lgbt/@marcel">@marcel@tech.lgbt</a
+        >
       </div>
+    </div>
+    <!-- end of header -->
 
+    <!-- info grid -->
+    <div id="infoGrid" class="mb-3">
       <InfoGrid />
     </div>
-  </div>
-</body>
+    <!-- end of info grid -->
+
+    <!-- projects grid -->
+    <div id="projectsGrid" class="mb-3">
+      <h1 class="mb-6 text-3xl font-semibold text-white">projects</h1>
+      {#each allProjects as project}
+        {#if project.active === true}
+          <p class="mb-6 font-normal text-gray-400">
+            <a
+              class="text-white underline hover:text-emerald-300"
+              href="{project.url}">{project.name}</a
+            >
+            <span class="text-sm italic text-gray-500"
+              >// {project.description}</span
+            >
+          </p>
+        {/if}
+      {/each}
+    </div>
+    <!-- end of projects grid -->
+
+    <!-- favourite albums -->
+    <div id="favouriteAlbums" class="mb-3">
+      <h1 class="mb-6 text-3xl font-semibold text-white">favourite albums</h1>
+      <div class="flex flex-row flex-wrap justify-center gap-3">
+        {#each allAlbums as album}
+          <a href="{album.url}" target="_blank" rel="noreferrer">
+            <img
+              class="h-24 w-24 rounded-md border-2 border-gray-600/10"
+              src="./images/albums/{album.path}.png"
+              alt="{album.album}"
+            />
+          </a>
+        {/each}
+      </div>
+    </div>
+    <!-- end of favourite albums -->
+  </div></body
+>

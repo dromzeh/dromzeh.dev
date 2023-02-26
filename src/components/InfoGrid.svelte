@@ -91,9 +91,9 @@ onMount(() => {
 <div class="grid grid-cols-1">
   <!-- discord status section -->
   {#if discordData.discord_status != undefined}
-    <p class=" text-2xl font-semibold text-white">discord status:</p>
+  <h1 class="mb-6 text-3xl font-semibold text-white">discord status</h1>
     <div
-      class="relative mt-4 mb-4 border-2 border-gray-600/10 from-transparent"
+      class="relative mb-4 border-2 border-gray-600/10 from-transparent"
     >
       <p class="absolute top-0 right-0 m-2 text-2xl">
         <span style="color: {statusColor}"
