@@ -10,7 +10,7 @@
     },
     {
       "name": "hi3-fps-unlocker",
-      "description": " Allows for custom modification value of Honkai Impact 3rd FPS in and out of combat.",
+      "description": "Allows for custom modification value of Honkai Impact 3rd FPS in and out of combat.",
       "url": "https://github.com/dromzeh/hi3-fps-unlocker",
       "tags": ["javascript", "node.js"],
       "isopenSource": true,
