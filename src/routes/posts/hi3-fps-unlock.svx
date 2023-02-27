@@ -70,7 +70,7 @@ if (value) {
 }
 ```
 
-Now that we have the value, we need to parse the data inside of it. The data is stored as HEX, so we need to convert it to a string. The `buffer`` module is used to convert the `HEX` data to a `string`.
+Now that we have the value, we need to parse the data inside of it. The data is stored as HEX, so we need to convert it to a string. The `buffer` module is used to convert the `HEX` data to a `string`.
 
 ```javascript
 // Convert the hex data to a string
@@ -79,7 +79,7 @@ const buffer = Buffer.from(hexData, 'hex');
 const dataString = buffer.toString();
 ```
 
-Now that we have the data as a string, we can parse it as JSON. We are also going to clean up the string a little bit, as it contains some extra characters that we don't need.
+Now that we have the data as a `string`, we can parse it as `JSON`. We are also going to clean up the string a little bit, as it contains some extra characters that we don't need.
 
 ```javascript
 // Clean the data string to remove all non-printable characters, then parse it to JSON
@@ -88,7 +88,7 @@ const cleanDataString = dataString.match(printableAscii).join('');
 const graphicsSettings = JSON.parse(cleanDataString);
 ```
 
-Now that we have the data as JSON, we can modify the FPS values. I decided to make the program take in 2 arguments, the first being the FPS value for when you're in combat, and the second being the FPS value for when you're not in combat.
+Now that we have the data as JSON, we can modify the FPS values. I decided to make the program take in `2 arguments` from the user, the first being the FPS value for when you're in combat, and the second being the FPS value for when you're not in combat.
 This is done using `readline` to get the arguments from the user.
 
 
@@ -105,7 +105,7 @@ rl.question('Enter the desired FPS in combat: ', (combatFPS) => {
          /// ...
 ```
 
-Now, we modify the JSON data, and then convert it back to HEX. We then write the new data to the registry.
+Now, we modify the `JSON` data, and then convert it back to `HEX`. We then `write` the new data to the registry.
 
 ```javascript
 const modifiedDataString = JSON.stringify(graphicsSettings);
