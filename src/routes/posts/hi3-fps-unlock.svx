@@ -1,6 +1,6 @@
 ---
-title: "Modifying the FPS of Honkai Impact 3rd on PC"
-description: "How I created a program using Node.js that allows me to modify the FPS value in Honkai Impact 3rd to any number I desire."
+title: "Modifying the FPS of Honkai Impact 3rd (Hi3) on PC"
+description: "How I created a program using Node.js that allows me to modify the FPS value in Honkai Impact 3rd (Hi3) to any number I desire."
 date: "26/02/2023"
 tags: ["windows", "node.js", "javascript"]
 ---
@@ -10,7 +10,7 @@ tags: ["windows", "node.js", "javascript"]
 [Honkai Impact 3rd (Hi3)](https://en.wikipedia.org/wiki/Honkai_Impact_3rd) is a pretty popular mobile game that has been [ported to PC](https://honkaiimpact3.hoyoverse.com/global/en-us/news/1977?cate=).
 However, the options for custom FPS are limited to up to 60 out of combat and up to 120 in combat.
 
-For many, this is not enough. I personally like to play at 144 FPS (the same FPS as my Primary Monitor), but I can't do that in Honkai Impact 3rd, so I decided to make a program that allows me to modify the FPS value in Honkai Impact 3rd to any number I desire.
+For many, this is not enough. I personally like to play at 144 FPS (the same FPS as my Primary Monitor), but I can't do that in Hi3, so I decided to make a program that allows me to modify the FPS value in Hi3 to any number I desire.
 
 
 # Research
