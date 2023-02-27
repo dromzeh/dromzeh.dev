@@ -19,14 +19,16 @@ Before starting, I need to understand where Hi3 stores its FPS values.
 As you're able to modify FPS values in the settings, my first look was inside the registry `HKEY_CURRENT_USER\Software\miHoYo\Honkai Impact 3rd\`.
 Inside of here I found the following entry: `GENERAL_DATA_V2_PersonalGraphicsSettingV2_XXXXXX`.
 
+![hxd view](/images/hxd-hi3-regview.png)
+
 The data inside this value was stored as HEX. Looking into it, it is formatted like a JSON file:
 
 ```JSON
 {
     "ResolutionQuality":"High",
     "ShadowLevel":"ULTRA",
-    "TargetFrameRateForInLevel":120,
-    "TargetFrameRateForOthers":120,
+    "TargetFrameRateForInLevel":60,
+    "TargetFrameRateForOthers":60,
     "ReflectionQuality":"HIGH",
     "UseDynamicBone":true,
     "UseFXAA":true,
@@ -61,7 +63,7 @@ const regKey = new winreg({
 });
 ```
 
-Now, we need to search for the value that contains `GENERAL_DATA_V2_PersonalGraphicsSettingV2_`.
+Now, we need to search for the value that contains `GENERAL_DATA_V2_PersonalGraphicsSettingV2`.
 
 ```javascript
 const value = items.find(item => item.type === 'REG_BINARY' && item.name.includes('GENERAL_DATA_V2_PersonalGraphicsSettingV2'));
@@ -70,7 +72,7 @@ if (value) {
 }
 ```
 
-Now that we have the value, we need to parse the data inside of it. The data is stored as HEX, so we need to convert it to a string. The `buffer` module is used to convert the `HEX` data to a `string`.
+Now that we have the value, we need to parse the data inside of it. The data is stored as `HEX`, so we need to convert it to a `string`. The `buffer` module is used to convert the `HEX` data to a `string`.
 
 ```javascript
 // Convert the hex data to a string

@@ -9,19 +9,27 @@
       "active": true
     },
     {
-      "name": "????",
-      "description": "Svelte open-source music player with offline support. Customizable interface with CSS & keyboard shortcuts. Includes audio visualization, smart playlists, and LAN sharing.",
-      "url": "#",
-      "tags": ["svelte"],
-      "isopenSource": false,
+      "name": "hi3-fps-unlocker",
+      "description": " Allows for custom modification value of Honkai Impact 3rd FPS in and out of combat.",
+      "url": "https://github.com/dromzeh/hi3-fps-unlocker",
+      "tags": ["javascript", "node.js"],
+      "isopenSource": true,
       "active": true
     },
     {
       "name": "qbit-rpc",
       "description": "A simple, lightweight, and easy to use discord rich presence for qBittorrent, made with Javascript.",
       "url": "https://github.com/dromzeh/qbit-rpc",
-      "tags": ["javascript"],
+      "tags": ["javascript", "node.js"],
       "isopenSource": true,
+      "active": true
+    },
+    {
+      "name": "????",
+      "description": "Svelte open-source music player with offline support. Customizable interface with CSS & keyboard shortcuts. Includes audio visualization, smart playlists, and LAN sharing.",
+      "url": "#",
+      "tags": ["svelte"],
+      "isopenSource": false,
       "active": true
     },
     {
