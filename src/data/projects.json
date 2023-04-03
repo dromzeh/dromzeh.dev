@@ -2,15 +2,15 @@
   "projects": [
     {
       "name": "wanderer.moe",
-      "description": "Genshin Impact resource website with over 1 million users globally. Built using SvelteKit, TailwindCSS, and Cloudflare Pages, with its own API.",
+      "description": "Resource website for assets from Games with over 1 million users globally. Built using SvelteKit, TailwindCSS & Cloudflare Pages with its own API.",
       "url": "https://wanderer.moe/",
-      "tags": ["svelte", "tailwind"],
+      "tags": ["sveltekit", "svelte", "tailwind"],
       "isopenSource": false,
       "active": true
     },
     {
       "name": "hi3-fps-unlocker",
-      "description": "Allows for custom modification value of Honkai Impact 3rd FPS in and out of combat.",
+      "description": "Node.JS program that modifies registry entries to allow for custom modification value of Honkai Impact 3rd FPS in and out of combat.",
       "url": "https://github.com/dromzeh/hi3-fps-unlocker",
       "tags": ["javascript", "node.js"],
       "isopenSource": true,
@@ -18,23 +18,31 @@
     },
     {
       "name": "qbit-rpc",
-      "description": "A simple, lightweight, and easy to use discord rich presence for qBittorrent, made with Javascript.",
+      "description": "A simple, lightweight, and easy to use Discord Rich Presence for qBittorrent, made with Javascript and Node.JS. Shows statistics such current and overall download and upload speeds, with average ratios.",
       "url": "https://github.com/dromzeh/qbit-rpc",
       "tags": ["javascript", "node.js"],
       "isopenSource": true,
       "active": true
     },
     {
+      "name": "dromzeh.dev",
+      "description": "My personal website, programmed with SvelteKit, TailwindCSS, and Cloudflare Pages. Includes a static blog done with MDSVeX and Tailwind Typography. Lanyard API integration for Discord RPC.",
+      "url": "https://github.com/dromzeh/dromzeh.dev",
+      "tags": ["sveltekit", "svelte", "tailwind"],
+      "isopenSource": true,
+      "active": false
+    },
+    {
       "name": "????",
       "description": "Svelte open-source music player with offline support. Customizable interface with CSS & keyboard shortcuts. Includes audio visualization, smart playlists, and LAN sharing.",
       "url": "#",
-      "tags": ["svelte"],
+      "tags": ["sveltekit", "svelte", "tailwind"],
       "isopenSource": false,
-      "active": true
+      "active": false
     },
     {
       "name": "roblox filter for discord",
-      "description": "Discord bot for 'Roblox-style' moderation using webhooks to imitate user communication.",
+      "description": "Discord bot programmed in discord.py that adds 'Roblox-style' moderation to a channel using webhooks to imitate user communication, using their avatar and username.",
       "url": "https://github.com/dromzeh/roblox-filter-for-discord",
       "tags": ["python", "discord.py"],
       "isopenSource": true,
@@ -42,17 +50,9 @@
     },
     {
       "name": "discord custom stream status",
-      "description": "Self-bot for setting custom streaming status with full name and URL customization options.",
+      "description": "Self-bot made in Python which allows setting your Discord Status to a custom streaming status with Name and URL customization options.",
       "url": "https://github.com/dromzeh/discord-custom-stream-status",
       "tags": ["python", "discord.py"],
-      "isopenSource": true,
-      "active": false
-    },
-    {
-      "name": "dromzeh.dev",
-      "description": "My personal SvelteKit/TailwindCSS website hosted on Cloudflare Pages with its own API.",
-      "url": "https://github.com/dromzeh/dromzeh.dev",
-      "tags": ["sveltekit", "tailwind"],
       "isopenSource": true,
       "active": false
     }

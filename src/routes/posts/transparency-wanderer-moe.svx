@@ -1,6 +1,6 @@
 ---
 title: "Financial Transparency (wanderer.moe)"
-description: "Breaking down the costs of the domain names, hosting, and any other relevant expenses."
+description: "Breaking down the overall costs of the domain names, hosting, and any other relevant expenses for wanderer.moe."
 date: "14/09/2022"
 tags: ["finance"]
 ---

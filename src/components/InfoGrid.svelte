@@ -91,11 +91,13 @@ onMount(() => {
 <div class="grid grid-cols-1">
   <!-- discord status section -->
   {#if discordData.discord_status != undefined}
-  <h1 class="mb-6 text-3xl font-semibold text-white">discord status</h1>
+    <h1 class="mb-2 text-2xl font-semibold tracking-wide sm:text-[1.67rem]">
+      Discord Status
+    </h1>
     <div
-      class="relative mb-4 border-2 border-gray-600/10 from-transparent"
+      class="rounded-lg border-[0.5px] border-white/20 bg-white/5 text-neutral-100/90 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/40 hover:bg-white hover:bg-opacity-[6.9%] hover:text-neutral-100"
     >
-      <p class="absolute top-0 right-0 m-2 text-2xl">
+      <p class="absolute right-0 top-0 m-2 text-2xl">
         <span style="color: {statusColor}"
           ><i class="fa-solid fa-circle animate-pulse"></i>
         </span>
@@ -134,12 +136,12 @@ onMount(() => {
   <!-- spotify section -->
   {#if discordData.listening_to_spotify}
     <div
-      class="relative mb-4 border-2 border-gray-600/10 bg-gradient-to-tl from-transparent to-green-700/10"
+      class="rounded-lg border-[0.5px] border-white/20 bg-white/5 text-neutral-100/90 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/40 hover:bg-white hover:bg-opacity-[6.9%] hover:text-neutral-100"
     >
       <div class="flex items-center">
         <div class="p-5">
           <i
-            class="fab fa-spotify absolute top-0 right-0 m-2 animate-pulse text-2xl text-white"
+            class="fab fa-spotify absolute right-0 top-0 m-2 animate-pulse text-2xl text-white"
           ></i>
           <div class="relative opacity-80 hover:opacity-100">
             <a
@@ -177,7 +179,7 @@ onMount(() => {
 <!-- custom RPC section -->
 {#if discordData.RPCExists}
   <div
-    class="relative mb-4 border-2 border-gray-600/10 bg-gradient-to-tl from-transparent to-cyan-700/10"
+    class="rounded-lg border-[0.5px] border-white/20 bg-white/5 text-neutral-100/90 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/40 hover:bg-white hover:bg-opacity-[6.9%] hover:text-neutral-100"
   >
     <div class="flex items-center">
       <div class="p-5">

@@ -1,6 +1,6 @@
 ---
 title: "Claws Mail with ProtonMail Bridge"
-description: "A step-by-step guide to setting up Claws Mail with Protonmail Bridge. (Arch & Windows)"
+description: "A step-by-step guide to setting up Claws Mail to work with Protonmail Bridge for secure email on Arch Linux and Windows."
 date: "25/01/2023"
 tags: ["linux", "protonmail", "claws-mail", "windows"]
 ---

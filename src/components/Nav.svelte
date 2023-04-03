@@ -1,6 +1,6 @@
 <style lang="postcss">
 .active {
-  @apply underline decoration-emerald-300;
+  @apply underline decoration-indigo-300 decoration-2;
 }
 </style>
 
@@ -16,7 +16,7 @@ const nav = [
 </script>
 
 <!-- navigation bar stays at the top of the page at all times and has a slight blur when scrolling down for a pretty cool effect .. -->
-<header class="sticky top-0 z-10 pt-0 pb-0 backdrop-blur-lg backdrop-filter">
+<header class="sticky top-0 z-10 pb-0 pt-0 backdrop-blur-lg backdrop-filter">
   <nav
     class="h-15 after:shadow-hr flex flex-wrap items-center justify-between bg-[#090909] bg-opacity-70 p-4 text-sm after:absolute after:inset-x-0 after:z-[-1] after:h-12 after:w-full"
   >
@@ -24,7 +24,7 @@ const nav = [
       {#each nav as item}
         <a
           href="{item.path}"
-          class="mr-4 rounded-md bg-white bg-opacity-0 p-1 px-2 text-xl text-gray-400 hover:bg-opacity-5 hover:font-semibold hover:text-white"
+          class="mr-4 rounded-md bg-white bg-opacity-0 p-1 px-2 text-xl font-semibold text-gray-400 hover:bg-opacity-5 hover:text-white"
           class:active="{item.path === '/'
             ? $page.url.pathname === '/'
             : $page.url.pathname.startsWith(item.path)}">{item.title}</a

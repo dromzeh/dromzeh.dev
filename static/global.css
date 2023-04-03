@@ -1,29 +1,38 @@
 /* changes the colour of when you select text */
 ::-moz-selection {
   color: rgb(255, 255, 255);
-  background: rgba(84, 225, 211, 0.5);
+  background: rgba(165, 180, 252, 0.2);
 }
 
 ::selection {
   color: rgb(255, 255, 255);
-  background: rgba(84, 225, 211, 0.5);
+  background: rgba(165, 180, 252, 0.2);
 }
 
 @font-face {
   font-family: unifont;
   src: url("/assets/fonts/unifont-min.ttf");
+  /* font-family: "unifont", monospace !important; */
+}
+
+@font-face {
+  font-family: Inter var;
+  src: url("/assets/fonts/Inter-roman.var.woff2") format("woff2-variations");
 }
 
 /* smooth scrolling */
 html {
   scroll-behavior: smooth;
-  font-family: "unifont", monospace !important;
+  font-family: Inter var, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol,
+    "Noto Color Emoji";
 }
 
 /* styles the scrollbar instead of using the default one to fit with the site's color scheme */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #f3e8ff #1f2937;
+  scrollbar-color: #a5b4fc #1f2937;
 }
 ::-webkit-scrollbar {
   width: 2px;
@@ -32,6 +41,6 @@ html {
   background: #1f2937;
 }
 ::-webkit-scrollbar-thumb {
-  background: #f3e8ff;
+  background: #a5b4fc;
   border-radius: 6px;
 }

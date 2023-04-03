@@ -1,6 +1,6 @@
 ---
 title: "Setting up h5ai as a file server with nginx and Cloudflare"
-description: "Tutorial on how to set up h5ai as a file server with nginx, including permissions, themes & Cloudflare."
+description: "Tutorial on how to set up h5ai as a lightweight HTTP file server including custom CSS themes using your own VPS, domain, nginx and Cloudflare."
 date: "03/02/2023"
 tags: ["nginx", "cloudflare", "linux"]
 ---
