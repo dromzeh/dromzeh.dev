@@ -1,6 +1,6 @@
 ---
 title: "Using localStorage with SvelteKit"
-description: "A quick guide on how to use localstorage with sveltekit, explained with a custom theme (dark mode) example"
+description: "A quick guide guide on how to create your own basic dark/light mode theme switcher for SvelteKit using localStorage."
 date: "13/09/2022"
 tags: ["svelte", "sveltekit", "localstorage"]
 ---

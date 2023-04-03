@@ -16,9 +16,10 @@ export let data;
   <meta name="description" content="get real" />
 </svelte:head>
 
+<!-- TODO: fix the formatting on this monstrosity. -->
 <div class="mx-auto min-h-screen max-w-screen-lg px-3 py-6">
   <article
-    class="prose-table:th:text-blue-400 prose-table:th:hover:text-sky-100 prose-table:td:text-white prose-table:td:hover:text-sky-100 prose prose-slate max-w-7xl list-disc prose-headings:bg-gradient-to-br prose-headings:bg-clip-text prose-headings:font-semibold prose-headings:text-transparent prose-headings:text-white prose-p:text-gray-400 prose-a:text-emerald-300 prose-blockquote:text-white prose-strong:text-white prose-em:underline prose-code:text-white prose-li:text-gray-400 prose-table:text-white"
+    class="prose-blue-400 prose-th prose-td prose prose-slate max-w-7xl text-neutral-100/90 prose-headings:text-3xl prose-headings:text-white prose-p:text-gray-400 prose-a:text-neutral-100/80 prose-a:hover:text-neutral-100/90 prose-blockquote:text-white prose-strong:text-neutral-100/80 prose-strong:hover:text-neutral-100/90 prose-em:underline prose-code:text-white prose-table:text-white prose-th:hover:text-sky-100 prose-td:hover:text-sky-100"
   >
     <div class="p-3 md:p-10 lg:p-20">
       <h4 class="text-3xl text-white">{data.title}</h4>

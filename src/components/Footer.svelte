@@ -28,55 +28,39 @@ onMount(() => {
 const currentYear = new Date().getFullYear();
 </script>
 
-<!-- main footer with all items inside being centered for a cleaner look -->
-
 <footer class="text-left text-gray-400">
   <div class="flex items-center justify-center p-6 lg:justify-center">
-    <pre class="text-xs">
-      ,_     _
-      |\\_,-~/
-      / _  _ |    ,--.
-     (  @  @ )   / ,-'
-      \  _T_/-._( (
-      /         `. \
-     |         _  \ |
-      \ \ ,  /      |
-       || |-_\__   /
-      ((_/`(____,-'</pre>
-    <div class="justify-center px-3">
+    <div class="px-3 text-center">
       <div class="mb-3">
-        <p>
-          © 2020-{currentYear} •
+        <p class="text-sm font-light text-neutral-100/80">
+          © 2020-{currentYear} • dromzeh.dev, powered by
+          <span class="text-[#EC8224]"
+            ><i class="fab fa-cloudflare"></i> Cloudflare<span> </span></span
+          >
+        </p>
+        <p class="text-sm font-light text-neutral-100/80">
           <a
-            class="text-yellow-400 underline hover:text-emerald-300"
+            class="font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline"
             href="https://buymeacoffee.com/marcelmd">buymeacoffee</a
           >
           •
           <a
-            class="text-white underline hover:text-emerald-300"
+            class="font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline"
             href="https://mit.dromzeh.dev/">mit</a
           >
           •
           <a
-            class="text-white underline hover:text-emerald-300"
+            class="font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline"
             href="https://github.com/dromzeh/">github</a
           >
         </p>
         {#if recentCommit}
           <a href="https://github.com/dromzeh/dromzeh.dev/commit/{sha}">
-            <p class="text-xs text-gray-500">
-              // {recentCommit} ({shaSpliced})
+            <p class="mt-4 text-xs text-gray-500">
+              [{shaSpliced}] {recentCommit}
             </p>
           </a>
         {/if}
-      </div>
-      <div class="flex flex-wrap gap-1">
-        <img
-          class="badgeImg"
-          src="../assets/badge/transnow2.gif"
-          alt="trans rights"
-        />
-        <img class="badgeImg" src="../assets/badge/gnu-linux.gif" alt="gnu" />
       </div>
     </div>
   </div>

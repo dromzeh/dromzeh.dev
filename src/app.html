@@ -21,6 +21,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
@@ -62,15 +64,13 @@
 
       onKonamiCode(function () {
         alert(":3");
-        // redirect to /cat
-        window.location.href = "/hidden";
       });
     </script>
 
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
-    <link rel="stylesheet" href="/index.css?v=26022023" type="text/css" />
-    <link rel="stylesheet" href="/global.css?v=26022023" type="text/css" />
+    <link rel="stylesheet" href="/index.css?v=03042023" type="text/css" />
+    <link rel="stylesheet" href="/global.css?v=03042023" type="text/css" />
 
     <!-- force background and height for all pages -->
     <style lang="postcss">
@@ -80,11 +80,9 @@
     </style>
 
     %sveltekit.head%
-    <!-- %sveltekit.head% is the header of what is grabbed from +page.svelte -->
   </head>
 
   <body>
     <div id="svelte">%sveltekit.body%</div>
-    <!-- %sveltekit.body% is the main content of what is grabbed from +page.svelte.. -->
   </body>
 </html>

@@ -1,6 +1,7 @@
 <script>
 import Nav from "../components/Nav.svelte";
 import Footer from "../components/Footer.svelte";
+import Pointer from "../components/Pointer.svelte";
 
 import NProgress from "nprogress";
 import { navigating } from "$app/stores";
@@ -27,6 +28,7 @@ $: {
 // nprogress is used to show loading progress bar at the top of the page
 </script>
 
+<Pointer />
 <Nav />
 
 <main>
