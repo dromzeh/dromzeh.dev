@@ -30,37 +30,32 @@
 let mouseX;
 let mouseY;
 
+// pointer opacity and scale.
 let opacity = 0;
 let scale = 1;
 
+// handle mousemove, touchstart and touchmove events.
 function handleMove(e) {
   if (e.type === "mousemove") {
     mouseX = e.clientX;
     mouseY = e.clientY;
     opacity = 1;
-  } else if (e.type === "touchmove") {
-    opactiy = 0;
+  } else if (e.type === "touchmove" || e.type === "touchstart") {
+    opacity = 0;
   }
 }
 
-function handleDown() {
-  scale = 1.35;
-}
-
-function handleUp() {
-  scale = 1;
-}
 </script>
 
 <svelte:window
-  on:mousemove="{handleMove}"
-  on:mousedown="{handleDown}"
-  on:mouseup="{handleUp}"
+  on:mousemove={handleMove}
+  on:mousedown={() => (scale = 1.3)}
+  on:mouseup={() => (scale = 1)}
 />
 
 <div
   class="pointer-ring"
-  style="transform: translate({mouseX}px, {mouseY}px) scale({scale})"
+  style="transform: translate({mouseX - 10}px, {mouseY - 10}px) scale({scale})"
   style:opacity="{opacity}"
 >
   <div class="pointer-dot"></div>
