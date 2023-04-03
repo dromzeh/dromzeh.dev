@@ -28,7 +28,7 @@ $: {
 // nprogress is used to show loading progress bar at the top of the page
 </script>
 
-<Pointer />
+<!-- <Pointer /> -->
 <Nav />
 
 <main>
