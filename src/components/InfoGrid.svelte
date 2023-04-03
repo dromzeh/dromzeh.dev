@@ -177,47 +177,46 @@ onMount(() => {
   {/if}
 
   <!-- custom RPC section -->
-{#if discordData.RPCExists}
-<div
-  class="rounded-lg border-[0.5px] border-white/20 bg-white/5 text-neutral-100/90 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/40 hover:bg-white hover:bg-opacity-[6.9%] hover:text-neutral-100"
->
-  <div class="flex items-center">
-    <div class="p-5">
-      <div class="relative">
-        {#if discordData.assets.small_image}
-          <img
-            class="smallImg absolute h-8 w-8 max-w-none rounded-md object-left"
-            src="https://cdn.discordapp.com/app-assets/{discordData.applicationID}/{discordData
-              .assets.small_image}.png"
-            alt="RPC Small"
-          />
-        {/if}
+  {#if discordData.RPCExists}
+    <div
+      class="rounded-lg border-[0.5px] border-white/20 bg-white/5 text-neutral-100/90 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/40 hover:bg-white hover:bg-opacity-[6.9%] hover:text-neutral-100"
+    >
+      <div class="flex items-center">
+        <div class="p-5">
+          <div class="relative">
+            {#if discordData.assets.small_image}
+              <img
+                class="smallImg absolute h-8 w-8 max-w-none rounded-md object-left"
+                src="https://cdn.discordapp.com/app-assets/{discordData.applicationID}/{discordData
+                  .assets.small_image}.png"
+                alt="RPC Small"
+              />
+            {/if}
 
-        {#if discordData.assets.large_image}
-          <img
-            class="coverImg h-24 w-24 max-w-none rounded-md object-left shadow-lg"
-            src="https://cdn.discordapp.com/app-assets/{discordData.applicationID}/{discordData
-              .assets.large_image}.png"
-            alt="RPC Large"
-          />
-        {/if}
+            {#if discordData.assets.large_image}
+              <img
+                class="coverImg h-24 w-24 max-w-none rounded-md object-left shadow-lg"
+                src="https://cdn.discordapp.com/app-assets/{discordData.applicationID}/{discordData
+                  .assets.large_image}.png"
+                alt="RPC Large"
+              />
+            {/if}
+          </div>
+        </div>
+        <div class="text-white">
+          <p class="text-xl font-semibold">
+            {discordData.activityName}
+          </p>
+          <p class="text-sm text-gray-400">
+            {discordData.activityDetails}
+          </p>
+          {#if discordData.activityDetails != undefined}
+            <p class="text-xs text-gray-400">
+              {discordData.activityState}
+            </p>
+          {/if}
+        </div>
       </div>
     </div>
-    <div class="text-white">
-      <p class="text-xl font-semibold">
-        {discordData.activityName}
-      </p>
-      <p class="text-sm text-gray-400">
-        {discordData.activityDetails}
-      </p>
-      {#if discordData.activityDetails != undefined}
-        <p class="text-xs text-gray-400">
-          {discordData.activityState}
-        </p>
-      {/if}
-    </div>
-  </div>
-</div>
-{/if}
-
+  {/if}
 </div>

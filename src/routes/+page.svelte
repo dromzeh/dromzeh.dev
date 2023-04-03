@@ -101,7 +101,8 @@ onMount(() => {
               >
                 active projects
                 <Tooltip tooltipText="Projects that I often update." />
-              </div>. All of my projects can be viewed on my
+              </div>
+              - all of my projects can be viewed on my
               <a
                 href="/projects"
                 rel="noreferrer"
@@ -159,14 +160,18 @@ onMount(() => {
             </h2>
             <div class="font-light text-neutral-100/80">
               I aim to respond to all messages, no matter the contact method
-              within <div class="group inline-flex items-center justify-center font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline">
+              within <div
+                class="group inline-flex items-center justify-center font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline"
+              >
                 24 hours
                 <Tooltip tooltipText="Most active from 10AM until 1AM" />
               </div>
             </div>
             <div class="text-sm font-light text-neutral-100/80">
-              It is currently 
-              <div class="group inline-flex items-center justify-center font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline">
+              It is currently
+              <div
+                class="group inline-flex items-center justify-center font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline"
+              >
                 {myTime}
                 <Tooltip tooltipText="Europe/London" />
               </div>
