@@ -9,6 +9,7 @@
   position: fixed;
   z-index: 9999;
   pointer-events: none;
+  opacity: 0;
   transition: 0.3s all cubic-bezier(0.12, 0.46, 0.36, 0.92); /* https://cubic-bezier.com */
 }
 
@@ -29,24 +30,43 @@
 let mouseX;
 let mouseY;
 
+let opacity = 0;
 // pointer scale
 let scale = 1;
 
-function mouseMove(e) {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-} // update the x and y coordinates of the mouse pointer when it moves.
+function handleMove(e) {
+  opacity = 1;
+  if (e.type === "mousemove") {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  } else if (e.type === "touchmove") {
+    mouseX = e.touches[0].clientX;
+    mouseY = e.touches[0].clientY;
+  }
+}
+
+function handleDown() {
+  scale = 1.25;
+}
+
+function handleUp() {
+  scale = 1;
+}
 </script>
 
 <svelte:window
-  on:mousemove="{mouseMove}"
-  on:mousedown="{() => (scale = 1.25)}"
-  on:mouseup="{() => (scale = 1)}"
+  on:mousemove="{handleMove}"
+  on:mousedown="{handleDown}"
+  on:mouseup="{handleUp}"
+  on:touchmove="{handleMove}"
+  on:touchstart="{handleDown}"
+  on:touchend="{handleUp}"
 />
 
 <div
   class="pointer-ring"
   style="transform: translate({mouseX}px, {mouseY}px) scale({scale})"
+  style:opacity="{opacity}"
 >
   <div class="pointer-dot"></div>
 </div>
