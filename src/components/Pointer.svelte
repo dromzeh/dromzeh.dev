@@ -31,22 +31,20 @@ let mouseX;
 let mouseY;
 
 let opacity = 0;
-// pointer scale
 let scale = 1;
 
 function handleMove(e) {
-  opacity = 1;
   if (e.type === "mousemove") {
     mouseX = e.clientX;
     mouseY = e.clientY;
+    opacity = 1;
   } else if (e.type === "touchmove") {
-    mouseX = e.touches[0].clientX;
-    mouseY = e.touches[0].clientY;
+    opactiy = 0;
   }
 }
 
 function handleDown() {
-  scale = 1.25;
+  scale = 1.35;
 }
 
 function handleUp() {
@@ -58,9 +56,6 @@ function handleUp() {
   on:mousemove="{handleMove}"
   on:mousedown="{handleDown}"
   on:mouseup="{handleUp}"
-  on:touchmove="{handleMove}"
-  on:touchstart="{handleDown}"
-  on:touchend="{handleUp}"
 />
 
 <div
