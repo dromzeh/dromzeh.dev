@@ -16,8 +16,11 @@
 // TODO: edit this whole component
 import axios from "axios";
 import { onMount } from "svelte";
+// import VanillaTilt from "vanilla-tilt";
 let discordData = "";
 let statusColor = "";
+let customStatus = "";
+// let songProgress = 0;
 
 async function getDiscordData() {
   try {
@@ -65,7 +68,7 @@ async function getDiscordData() {
           let activity = discordData.activities.find(
             (activity) => activity.type === 0 && activity.state != undefined
           );
-          console.log(activity);
+          // console.log(activity);
           if (activity != undefined) {
             discordData.RPCExists = true;
             discordData.activityName = activity.name; // e.g Visual Studio Code
@@ -75,6 +78,12 @@ async function getDiscordData() {
             discordData.timestamps = activity.timestamps; // e.g {start: 1620000000000}
             discordData.assets = activity.assets; // e.g {large_image: "vscode", large_text: "Visual Studio Code"}
           }
+          // find the first entry that has a type of 4 and name is 'Custom Status', if so, get 'state' and 'emoji'
+          customStatus = discordData.activities.find(
+            (activity) =>
+              activity.type === 4 && activity.name === "Custom Status"
+          );
+          console.log(customStatus);
         }
       });
   } catch (e) {
@@ -96,8 +105,8 @@ onMount(() => {
     </h1>
     <div
       class="rounded-lg border-[0.5px] border-white/20 bg-white/5 text-neutral-100/90 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/40 hover:bg-white hover:bg-opacity-[6.9%] hover:text-neutral-100"
-    >
-      <p class="absolute right-0 top-0 m-2 text-2xl">
+      >
+      <p class="absolute right-0 top-0 m-2 text-2xl sm:block hidden">
         <span style="color: {statusColor}"
           ><i class="fa-solid fa-circle animate-pulse"></i>
         </span>
@@ -128,6 +137,11 @@ onMount(() => {
           <p class="text-xs text-gray-400">
             {discordData.onlineOnDevices}
           </p>
+          {#if customStatus != undefined}
+            <p class="text-xs text-gray-400">
+              "{customStatus.state}"
+            </p>
+          {/if}
         </div>
       </div>
     </div>
@@ -141,7 +155,7 @@ onMount(() => {
       <div class="flex items-center">
         <div class="p-5">
           <i
-            class="fab fa-spotify absolute right-0 top-0 m-2 animate-pulse text-2xl text-white"
+            class="fab fa-spotify absolute right-0 top-0 m-2 animate-pulse text-2xl text-white sm:block hidden"
           ></i>
           <div class="relative opacity-80 hover:opacity-100">
             <a
@@ -161,7 +175,6 @@ onMount(() => {
           </div>
         </div>
         <div class="text-white">
-          <p class="text-xs text-gray-400">Currently Listening to</p>
           <p class="text-xl font-semibold">
             {discordData.spotify.song}
           </p>

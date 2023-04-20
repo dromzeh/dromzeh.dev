@@ -7,7 +7,7 @@
 <script>
 import dayjs from "dayjs";
 import moment from "moment-timezone";
-import InfoGrid from "../components/InfoGrid.svelte";
+import Lanyard from "../components/Lanyard.svelte";
 import { onMount } from "svelte";
 import StarHover from "../components/StarHover.svelte";
 import Tooltip from "../components/Tooltip.svelte";
@@ -65,14 +65,14 @@ onMount(() => {
               goes towards
               <div class="group inline-flex items-center justify-center">
                 <a
-                  href="https://wanderer.moe/"
+                  href="https://wanderer.moe/?ref=dromzeh.dev"
                   rel="noreferrer"
                   target="_blank"
                   class="font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline"
                   >wanderer.moe</a
                 >.
                 <Tooltip
-                  tooltipText="Pretty cool websites to get game assets from."
+                  tooltipText="Pretty cool website to get game assets from."
                 />
               </div>
               I also contribute to and create many Open Source Projects - the source
@@ -89,7 +89,7 @@ onMount(() => {
               </div>
             </div>
           </div>
-          <InfoGrid />
+          <Lanyard />
           <div class="space-y-2">
             <h2 class="text-2xl font-semibold tracking-wide sm:text-[1.67rem]">
               Projects
@@ -140,6 +140,12 @@ onMount(() => {
                           {project.description}
                         </div>
                         <div class="mt-2 flex flex-row gap-1">
+                          {#if project.isopenSource}
+                            <span
+                              class="mb-2 rounded-full bg-gray-300/10 px-3 py-1.5 text-xs text-gray-300 ring-1 ring-inset ring-gray-400/20"
+                              >Open Source</span
+                            >
+                          {/if}
                           {#each project.tags as tag}
                             <span
                               class="mb-2 rounded-full bg-indigo-300/10 px-3 py-1.5 text-xs text-indigo-300 ring-1 ring-inset ring-indigo-400/20"
@@ -219,8 +225,7 @@ onMount(() => {
                   </div>
                   <div class="mb-3 flex h-full flex-col justify-between px-3.5">
                     <div class="text-sm font-light">
-                      I am most active on Discord, so feel free to send me a
-                      message about anything.
+                      I am most active on Discord, preferred for more informal enquiries.
                     </div>
                   </div>
                 </div>

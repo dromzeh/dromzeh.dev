@@ -30,7 +30,15 @@
       "url": "https://github.com/dromzeh/dromzeh.dev",
       "tags": ["sveltekit", "svelte", "tailwind"],
       "isopenSource": true,
-      "active": false
+      "active": true
+    },
+    {
+      "name": "vmt",
+      "description": "A Discord Voice Message Transcriber and Translator. Made with discord.py, using Google's SpeechRecognition and DeepL's Translation API.",
+      "url": "https://github.com/dromzeh/vmt",
+      "tags": ["python", "discord.py"],
+      "isopenSource": true,
+      "active": true
     },
     {
       "name": "????",
