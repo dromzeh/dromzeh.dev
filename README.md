@@ -9,7 +9,7 @@ Source code for my personal website, `dromzeh.dev`.
 - [MDSveX](https://mdsvex.com/) is used for Markdown parsing paired with [Tailwind Typography](https://tailwindcss.com/docs/typography-plugin) for styling.
 - Deployment is done using [Cloudflare Pages](https://pages.cloudflare.com/).
 
-[Lanyard](https://api.lanyard.rest/) is used to show Discord Status, Spotify Information, etc. You can view how this is done inside `./src/components/InfoGrid.svelte`.
+[Lanyard](https://api.lanyard.rest/) is used to show Discord Status, Spotify Information, etc. You can view how this is done inside `./src/components/Lanyard.svelte`.
 
 ## Running the Site
 
