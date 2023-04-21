@@ -67,14 +67,19 @@ function handleInput(event) {
 }
 
 function updateFilter() {
+  // remove whitespace at the start of the query
+  query = query.trimStart();
+  const keywords = query.split(' '); // split the query string into an array of keywords
   filteredPosts = data.posts.filter((post) => {
-    return (
-      post.meta.title.toLowerCase().includes(query.toLowerCase()) ||
-      post.meta.tags.some((tag) =>
-        tag.toLowerCase().includes(query.toLowerCase())
-      ) ||
-      post.meta.description.toLowerCase().includes(query.toLowerCase())
-    );
+    return keywords.every((keyword) => { // check if every keyword matches any property of the post
+      return (
+        post.meta.title.toLowerCase().includes(keyword.toLowerCase()) ||
+        post.meta.tags.some((tag) =>
+          tag.toLowerCase().includes(keyword.toLowerCase())
+        ) ||
+        post.meta.description.toLowerCase().includes(keyword.toLowerCase())
+      );
+    });
   });
 }
 </script>
@@ -136,7 +141,7 @@ function updateFilter() {
                           <!-- svelte-ignore a11y-click-events-have-key-events -->
                           <span
                             on:click="{() => {
-                              query = tag;
+                              query = query + ' ' + tag;
                               event.preventDefault();
                               updateFilter();
                             }}"
