@@ -33,16 +33,17 @@ function handleInput(event) {
 function updateFilter() {
   // remove whitespace at the start of the query
   query = query.trimStart();
-  const keywords = query.split(' '); // split the query string into an array of keywords
+  const keywords = query.split(" "); // split the query string into an array of keywords
   filteredProjects = allProjects.filter((project) => {
-    return keywords.every((keyword) => { // check if every keyword matches any property of the project
+    return keywords.every((keyword) => {
+      // check if every keyword matches any property of the project
       return (
         project.name.toLowerCase().includes(keyword.toLowerCase()) ||
         project.tags.some((tag) =>
           tag.toLowerCase().includes(keyword.toLowerCase())
         ) ||
         project.description.toLowerCase().includes(keyword.toLowerCase()) ||
-        (keyword === 'oss' && project.isopenSource) // if keyword is 'oss' and project is open source :3
+        (keyword === "oss" && project.isopenSource) // if keyword is 'oss' and project is open source :3
       );
     });
   });
@@ -107,17 +108,16 @@ function updateFilter() {
                       </div>
                       <div class="mt-2 flex flex-row gap-1">
                         {#if project.isopenSource}
-                        <!-- svelte-ignore a11y-click-events-have-key-events -->
-                        <span
-                          class="mb-2 rounded-full bg-gray-300/10 px-3 py-1.5 text-xs text-gray-300 ring-1 ring-inset ring-gray-400/20"
-                          on:click="{() => {
-                            event.preventDefault();
-                            query = query + ' oss';
-                            updateFilter();
-                          }}"
-                          >Open Source</span
-                        >
-                      {/if}
+                          <!-- svelte-ignore a11y-click-events-have-key-events -->
+                          <span
+                            class="mb-2 rounded-full bg-gray-300/10 px-3 py-1.5 text-xs text-gray-300 ring-1 ring-inset ring-gray-400/20"
+                            on:click="{() => {
+                              event.preventDefault();
+                              query = query + ' oss';
+                              updateFilter();
+                            }}">Open Source</span
+                          >
+                        {/if}
                         {#each project.tags as tag}
                           <!-- svelte-ignore a11y-click-events-have-key-events -->
                           <span

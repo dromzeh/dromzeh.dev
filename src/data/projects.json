@@ -2,7 +2,7 @@
   "projects": [
     {
       "name": "wanderer.moe",
-      "description": "Resource website for assets from Games with over 1 million users globally. Built using SvelteKit, TailwindCSS & Cloudflare Pages with its own API.",
+      "description": "Resource website for assets from Games with over 1 million users globally. Built using SvelteKit, TailwindCSS & Cloudflare Pages with its own API and i18n support.",
       "url": "https://wanderer.moe/",
       "tags": ["sveltekit", "svelte", "tailwind"],
       "isopenSource": false,

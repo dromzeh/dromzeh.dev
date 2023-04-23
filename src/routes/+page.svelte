@@ -24,7 +24,7 @@ let myTime = moment().tz("Europe/London").format("HH:mm:ss");
 
 setInterval(() => {
   let time = dayjs().diff(dayjs(1156118401000), "year", true);
-  age = time.toString().substring(0, 7);
+  age = time.toString().substring(0, 13);
   myTime = moment().tz("Europe/London").format("HH:mm:ss");
 }, 50);
 
@@ -59,33 +59,43 @@ onMount(() => {
             <h1 class="text-3xl font-bold tracking-wide sm:text-3xl">
               dromzeh.dev
             </h1>
-            <div class="font-light text-neutral-100/80">
-              Hi - I'm Marcel, a {age} year old Software & Reverse Engineer. I work
-              with Svelte, C#, Javascript, Python & IDA. Most of my time currently
-              goes towards
-              <div class="group inline-flex items-center justify-center">
-                <a
-                  href="https://wanderer.moe/?ref=dromzeh.dev"
-                  rel="noreferrer"
-                  target="_blank"
-                  class="font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline"
-                  >wanderer.moe</a
-                >.
-                <Tooltip
-                  tooltipText="Pretty cool website to get game assets from."
-                />
-              </div>
-              I also contribute to and create many Open Source Projects - the source
-              code to this website is
-              <div class="group inline-flex items-center justify-center">
-                <a
-                  href="https://github.com/dromzeh/dromzeh.dev"
-                  rel="noreferrer"
-                  target="_blank"
-                  class="font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline"
-                  >Open Source</a
-                >.
-                <StarHover repository="dromzeh/dromzeh.dev" />
+            <div>
+              <div class="font-light text-neutral-100/80">
+                Hi - I'm Marcel, a
+                <div class="group inline-flex items-center justify-center">
+                  <span
+                    class="cursor-pointer font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline"
+                  >
+                    {age.substring(0, 7)}
+                  </span>
+                  <Tooltip tooltipText="{age}" />
+                </div>
+                year old Software & Reverse Engineer. I work with Svelte, C#, Javascript,
+                Python & IDA. Most of my time currently goes towards
+                <div class="group inline-flex items-center justify-center">
+                  <a
+                    href="https://wanderer.moe/?ref=dromzeh.dev"
+                    rel="noreferrer"
+                    target="_blank"
+                    class="font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline"
+                    >wanderer.moe</a
+                  >.
+                  <Tooltip
+                    tooltipText="Pretty cool website to get game assets from."
+                  />
+                </div>
+                I also contribute to and create many Open Source Projects - the source
+                code to this website is
+                <div class="group inline-flex items-center justify-center">
+                  <a
+                    href="https://github.com/dromzeh/dromzeh.dev"
+                    rel="noreferrer"
+                    target="_blank"
+                    class="font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline"
+                    >Open Source</a
+                  >.
+                  <StarHover repository="dromzeh/dromzeh.dev" />
+                </div>
               </div>
             </div>
           </div>
@@ -100,7 +110,7 @@ onMount(() => {
                 class="group inline-flex cursor-pointer items-center justify-center font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline"
               >
                 active projects
-                <Tooltip tooltipText="Projects that I often update." />
+                <Tooltip tooltipText="Projects that I often update / maintain." />
               </div>
               - all of my projects can be viewed on my
               <a
@@ -176,7 +186,7 @@ onMount(() => {
             <div class="text-sm font-light text-neutral-100/80">
               It is currently
               <div
-                class="group inline-flex items-center justify-center font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline"
+                class="group inline-flex items-center justify-center font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline cursor-pointer"
               >
                 {myTime}
                 <Tooltip tooltipText="Europe/London" />
@@ -225,7 +235,8 @@ onMount(() => {
                   </div>
                   <div class="mb-3 flex h-full flex-col justify-between px-3.5">
                     <div class="text-sm font-light">
-                      I am most active on Discord, preferred for more informal enquiries.
+                      I am most active on Discord, preferred for more informal
+                      enquiries.
                     </div>
                   </div>
                 </div>

@@ -105,8 +105,8 @@ onMount(() => {
     </h1>
     <div
       class="rounded-lg border-[0.5px] border-white/20 bg-white/5 text-neutral-100/90 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/40 hover:bg-white hover:bg-opacity-[6.9%] hover:text-neutral-100"
-      >
-      <p class="absolute right-0 top-0 m-2 text-2xl sm:block hidden">
+    >
+      <p class="absolute right-0 top-0 m-2 hidden text-2xl sm:block">
         <span style="color: {statusColor}"
           ><i class="fa-solid fa-circle animate-pulse"></i>
         </span>
@@ -156,7 +156,7 @@ onMount(() => {
       <div class="flex items-center">
         <div class="p-5">
           <i
-            class="fab fa-spotify absolute right-0 top-0 m-2 animate-pulse text-2xl text-white sm:block hidden"
+            class="fab fa-spotify absolute right-0 top-0 m-2 hidden animate-pulse text-2xl text-white sm:block"
           ></i>
           <div class="relative opacity-80 hover:opacity-100">
             <a
