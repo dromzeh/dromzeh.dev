@@ -69,9 +69,10 @@ function handleInput(event) {
 function updateFilter() {
   // remove whitespace at the start of the query
   query = query.trimStart();
-  const keywords = query.split(' '); // split the query string into an array of keywords
+  const keywords = query.split(" "); // split the query string into an array of keywords
   filteredPosts = data.posts.filter((post) => {
-    return keywords.every((keyword) => { // check if every keyword matches any property of the post
+    return keywords.every((keyword) => {
+      // check if every keyword matches any property of the post
       return (
         post.meta.title.toLowerCase().includes(keyword.toLowerCase()) ||
         post.meta.tags.some((tag) =>

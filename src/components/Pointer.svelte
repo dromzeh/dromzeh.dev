@@ -44,13 +44,12 @@ function handleMove(e) {
     opacity = 0;
   }
 }
-
 </script>
 
 <svelte:window
-  on:mousemove={handleMove}
-  on:mousedown={() => (scale = 1.3)}
-  on:mouseup={() => (scale = 1)}
+  on:mousemove="{handleMove}"
+  on:mousedown="{() => (scale = 1.3)}"
+  on:mouseup="{() => (scale = 1)}"
 />
 
 <div
