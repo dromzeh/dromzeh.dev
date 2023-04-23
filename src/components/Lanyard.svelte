@@ -137,11 +137,12 @@ onMount(() => {
           <p class="text-xs text-gray-400">
             {discordData.onlineOnDevices}
           </p>
-          {#if customStatus != undefined}
+          <!-- 
+          {#if customStatus.state != undefined}
             <p class="text-xs text-gray-400">
               "{customStatus.state}"
             </p>
-          {/if}
+          {/if} -->
         </div>
       </div>
     </div>
