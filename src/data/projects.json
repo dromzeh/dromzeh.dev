@@ -1,11 +1,18 @@
 {
-  "projects": [
-    {
+  "projects": [{
       "name": "wanderer.moe",
       "description": "Resource website for assets from Games with over 1 million users globally. Built using SvelteKit, TailwindCSS & Cloudflare Pages with its own API and i18n support.",
       "url": "https://wanderer.moe/",
       "tags": ["sveltekit", "svelte", "tailwind"],
       "isopenSource": false,
+      "active": true
+    },
+    {
+      "name": "hsr-fps-unlocker",
+      "description": "Node.JS program that bypasses Honkai: Star Rail's 60 FPS Cap by modifying the registry values.",
+      "url": "https://github.com/dromzeh/hsr-fps-unlocker",
+      "tags": ["javascript", "node.js"],
+      "isopenSource": true,
       "active": true
     },
     {
@@ -49,17 +56,9 @@
       "active": false
     },
     {
-      "name": "roblox filter for discord",
+      "name": "roblox-filter-for-discord",
       "description": "Discord bot programmed in discord.py that adds 'Roblox-style' moderation to a channel using webhooks to imitate user communication, using their avatar and username.",
       "url": "https://github.com/dromzeh/roblox-filter-for-discord",
-      "tags": ["python", "discord.py"],
-      "isopenSource": true,
-      "active": false
-    },
-    {
-      "name": "discord custom stream status",
-      "description": "Self-bot made in Python which allows setting your Discord Status to a custom streaming status with Name and URL customization options.",
-      "url": "https://github.com/dromzeh/discord-custom-stream-status",
       "tags": ["python", "discord.py"],
       "isopenSource": true,
       "active": false
