@@ -113,7 +113,11 @@ function updateFilter() {
                             class="mb-2 rounded-full bg-gray-300/10 px-3 py-1.5 text-xs text-gray-300 ring-1 ring-inset ring-gray-400/20"
                             on:click="{() => {
                               event.preventDefault();
-                              query = query + ' oss';
+                              if (query.includes('oss')) {
+                                query = query.replace('oss', '');
+                              } else {
+                                query = query + ' oss';
+                              }
                               updateFilter();
                             }}">Open Source</span
                           >
@@ -123,7 +127,11 @@ function updateFilter() {
                           <span
                             on:click="{() => {
                               event.preventDefault();
-                              query = query + ' ' + tag;
+                              if (query.includes(tag)) {
+                                query = query.replace(tag, '');
+                              } else {
+                                query = query + ' ' + tag;
+                              }
                               updateFilter();
                             }}"
                             class="mb-2 rounded-full bg-indigo-300/10 px-3 py-1.5 text-xs text-indigo-300 ring-1 ring-inset ring-indigo-400/20 backdrop-blur-lg"
