@@ -142,8 +142,12 @@ function updateFilter() {
                           <!-- svelte-ignore a11y-click-events-have-key-events -->
                           <span
                             on:click="{() => {
-                              query = query + ' ' + tag;
                               event.preventDefault();
+                              if (query.includes(tag)) {
+                                query = query.replace(tag, '');
+                              } else {
+                                query = query + ' ' + tag;
+                              }
                               updateFilter();
                             }}"
                             class="mb-2 rounded-full bg-indigo-300/10 px-3 py-1.5 text-xs text-indigo-300 ring-1 ring-inset ring-indigo-400/20"
