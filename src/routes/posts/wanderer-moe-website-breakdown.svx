@@ -1,0 +1,79 @@
+---
+title: "wanderer.moe - Website Breakdown"
+description: "Breaking down wanderer.moe, including how it works and using analytics to calculate how much it costs yearly and monthly to run the site."
+date: "12/05/2023"
+tags: ["finance", "cloudflare", "r2", "workers", "pages"]
+---
+
+
+## completexity?? why so much sections for a website literally no one has ever heard of???
+
+wanderer.moe is mostly powered with Cloudflare, it's a collection of all sorts of different services, I go into detail about each service below.
+
+The main site is hosted on Cloudflare Pages, the CDN is hosted on Cloudflare R2, the API is hosted on Cloudflare Workers, and the status page is [open source, hosted with Github Pages & Actions](https://github.com/dromzeh/status.wanderer.moe/). 
+
+The reason why I've split the website like this instead of hosting all assets on the main site is because it's **cheaper, and it's easier to manage, build and deploy the specific sections of the site**.
+
+This means that if I wanted to add more assets, **I can just upload them to the CDN, and they will be automatically added to the site immediately**, without having to rebuild the site.
+
+The same applies for the OC Generator, I just have to upload a folder into the `oc-generator` folder on the CDN, include a json file with the data, and it will be automatically added to the site.
+
+
+## cdn.wanderer.moe (R2, where all assets are hosted)
+
+The CDN is hosted using Cloudflare's [R2 Storage](https://www.cloudflare.com/products/r2/). The CDN is used to host all static assets, such as images, json files, and other files that are not hosted on the main site. 
+
+I upload and manage the R2 Bucket using [rclone](https://rclone.org/), which is a free tool that allows you to manage cloud storage.
+
+According to Cloudflare's statistics, on average there are `30,000` requests made per hour, equal to `720,000` requests per day.
+
+To get the total amount of requests per month, we multiply `720,000` by `30`, which is equal to `21,600,000` requests per month.
+
+Using [Cloudflare's R2 Pricing Calculator](https://r2-calculator.cloudflare.com/) we can calculate the total cost of the CDN, this is set to be `4.18 USD` per month, equal to `50.11 USD` per year.
+
+
+## api.wanderer.moe (Workers, where all requests are handled)
+
+The API is hosted using Cloudflare Workers.
+
+This manages reading data from the cdn (R2) and returning it to the website in a format that can be interpreted by the website, such as getting all assets and games & other tools such as the OC Generators.
+
+My Cloudflare account is under the [paid plan](https://developers.cloudflare.com/workers/platform/pricing/), this allows for 10 million requests per month, which is more than enough for the site. This costs me `5 USD` per month, equal to `60 USD` per year.
+
+
+## status.wanderer.moe (Github Pages & Actions, where the status page is hosted)
+
+The status page is powered by [upptime](https://github.com/upptime/upptime), a free uptime monitor and completely open-source. 
+
+The status page is hosted on [Github Pages](https://github.com/dromzeh/status.wanderer.moe/), and the uptime monitor is hosted on [Github Actions](https://github.com/dromzeh/status.wanderer.moe/actions).
+
+
+## wanderer.moe (Cloudflare Pages, where the main site is hosted)
+
+The main site is hosted using Cloudflare's Pages, using SvelteKit, TailwindCSS & then Adapter Cloudflare.
+
+Cloudflare's Workers Paid plan is [bundled with Pages](https://developers.cloudflare.com/workers/platform/pricing/), so I don't have to pay separately. This costs me nothing as the price is included in the Workers Paid plan.
+
+
+## crowdin (where the site is translated)
+
+[Crowdin](https://crowdin.com/) is the website that is used to translate the site into other languages.
+
+Crowdin is [directly linked to wanderer.moe](https://support.crowdin.com/github-integration/), so whenever new text is added to the site, it is automatically added to crowdin for translators to translate.
+
+The same applies the other way around, if a translation is changed, removed or added on crowdin, it is automatically added to the site.
+
+Crowdin is currently [free for me to use](https://crowdin.com/page/github-students), so this costs me nothing to implement (for now..).
+
+
+## Domain Names Pricing
+
+The domain `wanderer.moe` is registered with Namecheap, everything else is managed by Cloudflare. The domain name costs around `17 USD` per year.
+
+I include `dromzeh.dev` into the price ofn wanderer.moe because `wtf.dromzeh.dev` was the old domain name of `wanderer.moe`, costing the same as `wanderer.moe`, which is another `17 USD` per year.
+
+## Cost Breakdown
+
+The total cost of wanderer.moe is `144.11 USD` per year, equal to `12.01 USD` per month.
+
+(btw, if you like the site [or the other stuff i do](https://github.com/dromzeh?tab=repositories), consider [donating](https://buymeacoffee.com/marcelmd) to help me keep it running :3)
