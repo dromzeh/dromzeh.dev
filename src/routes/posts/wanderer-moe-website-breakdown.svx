@@ -6,9 +6,9 @@ tags: ["finance", "cloudflare", "r2", "workers", "pages"]
 ---
 
 
-## completexity?? why so much sections for a website literally no one has ever heard of???
+## Basic Explanation
 
-wanderer.moe is mostly powered with Cloudflare, it's a collection of all sorts of different services, I go into detail about each service below.
+wanderer.moe is mostly powered with Cloudflare, it's a collection of all sorts of different services & I go into detail about each service below.
 
 The main site is hosted on Cloudflare Pages, the CDN is hosted on Cloudflare R2, the API is hosted on Cloudflare Workers, and the status page is [open source, hosted with Github Pages & Actions](https://github.com/dromzeh/status.wanderer.moe/). 
 
