@@ -16,12 +16,12 @@ The reason why I've split the website like this instead of hosting all assets on
 
 This means that if I wanted to add more assets, **I can just upload them to the CDN, and they will be automatically added to the site immediately**, without having to rebuild the site.
 
-The same applies for the OC Generator, I just have to upload a folder into the `oc-generator` folder on the CDN, include a json file with the data, and it will be automatically added to the site.
+The same applies for the OC Generator, I just have to upload a folder into the `oc-generator` folder on the CDN, include a `.json`` file with the data, and it will be automatically added to the site.
 
 
 ## cdn.wanderer.moe (R2, where all assets are hosted)
 
-The CDN is hosted using Cloudflare's [R2 Storage](https://www.cloudflare.com/products/r2/). The CDN is used to host all static assets, such as images, json files, and other files that are not hosted on the main site. 
+The CDN is hosted using Cloudflare's [R2 Storage](https://www.cloudflare.com/products/r2/). The CDN is used to host all static assets, such as images, `.json`` files, and other files that are not hosted on the main site. 
 
 I upload and manage the R2 Bucket using [rclone](https://rclone.org/), which is a free tool that allows you to manage cloud storage.
 
@@ -49,13 +49,13 @@ The worker has the following routes:
 
 Workers works great for my use-case as it is directly bound to the R2 Bucket, meaning workers can directly access the Bucket & making the API easier to manage. I can just upload a folder or assets to the R2 Bucket where it will automatically be added to the site.
 
-If I wanted to add a new game to the OC Generator, I can just upload a folder with a json file containing data to the R2 Bucket's `oc-generator` folder, and it will automatically be added to the site - continously saving on build times.
+If I wanted to add a new game to the OC Generator, I can just upload a folder with a `.json` file containing data to the R2 Bucket's `oc-generator` folder, and it will automatically be added to the site - continuously saving on build times.
 
 My Cloudflare account is under the [paid plan](https://developers.cloudflare.com/workers/platform/pricing/), this allows for 10 million requests per month, which is more than enough for the site. This costs me `5 USD` per month, equal to `60 USD` per year.
 
 ## status.wanderer.moe (Github Pages & Actions, where the status page is hosted)
 
-The status page is powered by [upptime](https://github.com/upptime/upptime), a free uptime monitor and completely open-source. 
+The status page is powered by [upptime](https://github.com/upptime/upptime), a free uptime monitor and is completely open-source. 
 
 The status page is hosted on [Github Pages](https://github.com/dromzeh/status.wanderer.moe/), and the uptime monitor is hosted on [Github Actions](https://github.com/dromzeh/status.wanderer.moe/actions).
 
@@ -64,9 +64,9 @@ The status page is hosted on [Github Pages](https://github.com/dromzeh/status.wa
 
 The main site is hosted using Cloudflare's Pages, using SvelteKit, TailwindCSS & then `@sveltejs/adapter-cloudflare`
 
-`@sveltejs/adapter-cloudflare` is a custom adapter for SvelteKit, it also means that wanderer.moe is not a Static website, but it is Server Side Rendered, meaning that the site is rendered on the server, and then sent to the client.
+`@sveltejs/adapter-cloudflare` is a custom adapter for SvelteKit, it also means that wanderer.moe is not a Static website but Server Side Rendered, meaning that the site is rendered on the server; then sent to the client.
 
-Routes for Games has `[game]` subfolders and then an `[asset]` subfolder, which are both parameters, where `+page.server.js` is used to get the data for the game, and then `+page.svelte` is used to render the data.
+The game and assets route is done by having a `[game]` folder in `src/routes` and then an `[asset]` subfolder, which are both parameters, where `+page.server.js` is used to get the data for the game, and then `+page.svelte` is used to render the data.
 
 Code snippet `+page.server.js` used on the `[game]/[asset]` page:
 
@@ -119,4 +119,4 @@ I include `dromzeh.dev` into the price on wanderer.moe because `wtf.dromzeh.dev`
 
 The total cost of wanderer.moe is `144.11 USD` per year, equal to `12.01 USD` per month.
 
-(btw, if you like the site [or the other stuff i do](https://github.com/dromzeh?tab=repositories), consider [donating](https://buymeacoffee.com/marcelmd) to help me keep it running :3)
+(btw, if you like the site [or the other stuff I do](https://github.com/dromzeh?tab=repositories), consider [donating](https://buymeacoffee.com/marcelmd) to help me keep it running :3)
