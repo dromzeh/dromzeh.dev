@@ -25,7 +25,7 @@ The CDN is hosted using Cloudflare's [R2 Storage](https://www.cloudflare.com/pro
 
 I upload and manage the R2 Bucket using [rclone](https://rclone.org/), which is a free tool that allows you to manage cloud storage.
 
-Why use R2 to host assets instead of another service? R2 has Zero egress fee storage, meaning nothing is charged extra any users downloading data, making it great for hosting assets.
+Why use R2 to host assets instead of another service? R2 has Zero egress fee storage, meaning nothing is charged extra for any users downloading data, making it great for hosting assets.
 
 wanderer.moe **used to store all Static Images on the root domain**, as more images started to be uploaded but this caused the site to be slow, build times to be long, and it was hard to manage the images without having to rebuild the site each time.
 
