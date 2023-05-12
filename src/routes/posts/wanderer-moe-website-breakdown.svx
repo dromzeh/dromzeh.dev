@@ -41,11 +41,11 @@ Using [Cloudflare's R2 Pricing Calculator](https://r2-calculator.cloudflare.com/
 The API is hosted using a Cloudflare Worker, a serverless function that is hosted on Cloudflare's edge network. In wanderer.moe, it is used to handle all the following for the website:
 
 The worker has the following routes:
-- `/games` - Used to get all the games for the OC Generator [(View Request Example)](https://api.wanderer.moe/games)
+- `/games` - Used to get all the games that have assets [(View Request Example)](https://api.wanderer.moe/games)
 - `/game/:game` - Used to get the subfolders (asset folders) for a specific game. [(View Request Example)](https://api.wanderer.moe/game/genshin-impact)
 - `/game/:game/:asset` - Returns the data for a specific asset [(View Request Example)](https://api.wanderer.moe/game/genshin-impact/character-sheets)
 - `/oc-generators` - Used to get the data for the OC Generator [(View Request)](https://api.wanderer.moe/oc-generators)
-- `/oc-generators/:game` - Used to get the data for a specific OC Generator [(View Request Example)](https://api.wanderer.moe/oc-generators/genshin-impact)
+- `/oc-generators/:game` - Used to get the data for a specific OC Generator [(View Request Example)](https://api.wanderer.moe/oc-generator/genshin-impact)
 
 Workers works great for my use-case as it is directly bound to the R2 Bucket, meaning workers can directly access the Bucket & making the API easier to manage. I can just upload a folder or assets to the R2 Bucket where it will automatically be added to the site.
 
