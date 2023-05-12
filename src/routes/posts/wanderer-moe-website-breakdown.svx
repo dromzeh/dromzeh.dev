@@ -16,12 +16,12 @@ The reason why I've split the website like this instead of hosting all assets on
 
 This means that if I wanted to add more assets, **I can just upload them to the CDN, and they will be automatically added to the site immediately**, without having to rebuild the site.
 
-The same applies for the OC Generator, I just have to upload a folder into the `oc-generator` folder on the CDN, include a `.json`` file with the data, and it will be automatically added to the site.
+The same applies for the OC Generator, I just have to upload a folder into the `oc-generator` folder on the CDN, include a `.json` file with the data, and it will be automatically added to the site.
 
 
 ## cdn.wanderer.moe (R2, where all assets are hosted)
 
-The CDN is hosted using Cloudflare's [R2 Storage](https://www.cloudflare.com/products/r2/). The CDN is used to host all static assets, such as images, `.json`` files, and other files that are not hosted on the main site. 
+The CDN is hosted using Cloudflare's [R2 Storage](https://www.cloudflare.com/products/r2/). The CDN is used to host all static assets, such as images, `.json` files, and other files that are not hosted on the main site. 
 
 I upload and manage the R2 Bucket using [rclone](https://rclone.org/), which is a free tool that allows you to manage cloud storage.
 
