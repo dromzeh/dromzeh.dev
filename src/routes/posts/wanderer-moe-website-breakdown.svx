@@ -25,6 +25,10 @@ The CDN is hosted using Cloudflare's [R2 Storage](https://www.cloudflare.com/pro
 
 I upload and manage the R2 Bucket using [rclone](https://rclone.org/), which is a free tool that allows you to manage cloud storage.
 
+Why use R2 to host assets instead of another service? R2 has Zero egress fee storage, meaning nothing is charged extra any users downloading data, making it great for hosting assets.
+
+wanderer.moe **used to store all Static Images on the root domain**, as more images started to be uploaded but this caused the site to be slow, build times to be long, and it was hard to manage the images without having to rebuild the site each time.
+
 According to Cloudflare's statistics, on average there are `30,000` requests made per hour, equal to `720,000` requests per day.
 
 To get the total amount of requests per month, we multiply `720,000` by `30`, which is equal to `21,600,000` requests per month.
@@ -34,12 +38,20 @@ Using [Cloudflare's R2 Pricing Calculator](https://r2-calculator.cloudflare.com/
 
 ## api.wanderer.moe (Workers, where all requests are handled)
 
-The API is hosted using Cloudflare Workers.
+The API is hosted using a Cloudflare Worker, a serverless function that is hosted on Cloudflare's edge network. In wanderer.moe, it is used to handle all the following for the website:
 
-This manages reading data from the cdn (R2) and returning it to the website in a format that can be interpreted by the website, such as getting all assets and games & other tools such as the OC Generators.
+The worker has the following routes:
+- `/games` - Used to get all the games for the OC Generator [(View Request Example)](https://api.wanderer.moe/games)
+- `/game/:game` - Used to get the subfolders (asset folders) for a specific game. [(View Request Example)](https://api.wanderer.moe/game/genshin-impact)
+- `/game/:game/:asset` - Returns the data for a specific asset [(View Request Example)](https://api.wanderer.moe/game/genshin-impact/character-sheets)
+- `/oc-generators` - Used to get the data for the OC Generator [(View Request)](https://api.wanderer.moe/oc-generators)
+- `/oc-generators/:game` - Used to get the data for a specific OC Generator [(View Request Example)](https://api.wanderer.moe/oc-generators/genshin-impact)
+
+Workers works great for my use-case as it is directly bound to the R2 Bucket, meaning workers can directly access the Bucket & making the API easier to manage. I can just upload a folder or assets to the R2 Bucket where it will automatically be added to the site.
+
+If I wanted to add a new game to the OC Generator, I can just upload a folder with a json file containing data to the R2 Bucket's `oc-generator` folder, and it will automatically be added to the site - continously saving on build times.
 
 My Cloudflare account is under the [paid plan](https://developers.cloudflare.com/workers/platform/pricing/), this allows for 10 million requests per month, which is more than enough for the site. This costs me `5 USD` per month, equal to `60 USD` per year.
-
 
 ## status.wanderer.moe (Github Pages & Actions, where the status page is hosted)
 
@@ -50,20 +62,51 @@ The status page is hosted on [Github Pages](https://github.com/dromzeh/status.wa
 
 ## wanderer.moe (Cloudflare Pages, where the main site is hosted)
 
-The main site is hosted using Cloudflare's Pages, using SvelteKit, TailwindCSS & then Adapter Cloudflare.
+The main site is hosted using Cloudflare's Pages, using SvelteKit, TailwindCSS & then `@sveltejs/adapter-cloudflare`
+
+`@sveltejs/adapter-cloudflare` is a custom adapter for SvelteKit, it also means that wanderer.moe is not a Static website, but it is Server Side Rendered, meaning that the site is rendered on the server, and then sent to the client.
+
+Routes for Games has `[game]` subfolders and then an `[asset]` subfolder, which are both parameters, where `+page.server.js` is used to get the data for the game, and then `+page.svelte` is used to render the data.
+
+Code snippet `+page.server.js` used on the `[game]/[asset]` page:
+
+```
+mport { error } from "@sveltejs/kit";
+
+export async function load({ params }) {
+  const { game, asset } = params;
+  try {
+    const res = await fetch(`https://api.wanderer.moe/game/${game}/${asset}`);
+    if (res.ok) {
+      const response = await res.json();
+      const images = response.images;
+      return {
+        response,
+        game,
+        asset,
+        images,
+      };
+    }
+  } catch (err) {
+    throw error(404, "API Error or Page Not Found");
+  }
+}
+```
+
+This is used to get the data for the game, and then the data is passed to `+page.svelte` to render the data. 
+
+This works great as it means I don't have to write each asset page or every possible outcome unlike what was previously used when wanderer.moe was a CSR Static Site.
 
 Cloudflare's Workers Paid plan is [bundled with Pages](https://developers.cloudflare.com/workers/platform/pricing/), so I don't have to pay separately. This costs me nothing as the price is included in the Workers Paid plan.
 
 
-## crowdin (where the site is translated)
+## Crowdin (where the site is translated)
 
 [Crowdin](https://crowdin.com/) is the website that is used to translate the site into other languages.
 
-Crowdin is [directly linked to wanderer.moe](https://support.crowdin.com/github-integration/), so whenever new text is added to the site, it is automatically added to crowdin for translators to translate.
+Crowdin is linked with wanderer.moe's `development` branch with [GitHub Integration](https://support.crowdin.com/github-integration/), so whenever new text is added to the site, it is automatically added to crowdin for translators to translate.
 
 The same applies the other way around, if a translation is changed, removed or added on crowdin, it is automatically added to the site.
-
-Crowdin is currently [free for me to use](https://crowdin.com/page/github-students), so this costs me nothing to implement (for now..).
 
 
 ## Domain Names Pricing
