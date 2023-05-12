@@ -9,7 +9,7 @@
     },
     {
       "name": "hsr-fps-unlocker",
-      "description": "Node.JS program that bypasses Honkai: Star Rail's 60 FPS Cap by modifying the registry values.",
+      "description": "Node.JS program that modifies the FPS value in the settings registry entry to go past the 60FPS limit in Honkai: Star Rail",
       "url": "https://github.com/dromzeh/hsr-fps-unlocker",
       "tags": ["javascript", "node.js"],
       "isopenSource": true,
@@ -17,7 +17,7 @@
     },
     {
       "name": "hi3-fps-unlocker",
-      "description": "Node.JS program that modifies registry entries to allow for custom modification value of Honkai Impact 3rd FPS in and out of combat.",
+      "description": "Node.JS program that modifies registry entries to allow for custom modification value of Honkai Impact 3rd FPS in and out of levels ('combat').",
       "url": "https://github.com/dromzeh/hi3-fps-unlocker",
       "tags": ["javascript", "node.js"],
       "isopenSource": true,

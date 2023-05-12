@@ -110,7 +110,9 @@ onMount(() => {
                 class="group inline-flex cursor-pointer items-center justify-center font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline"
               >
                 active projects
-                <Tooltip tooltipText="Projects that I often update / maintain." />
+                <Tooltip
+                  tooltipText="Projects that I often update / maintain."
+                />
               </div>
               - all of my projects can be viewed on my
               <a
@@ -210,7 +212,7 @@ onMount(() => {
                   </div>
                   <div class="mb-3 flex h-full flex-col justify-between px-3.5">
                     <div class="text-sm font-light">
-                      Preferred for more formal enquiries.
+                      Preferred for more formal enquiries, but not required.
                     </div>
                   </div>
                 </div>
@@ -235,8 +237,8 @@ onMount(() => {
                   </div>
                   <div class="mb-3 flex h-full flex-col justify-between px-3.5">
                     <div class="text-sm font-light">
-                      I am most active on Discord, preferred for more informal
-                      enquiries.
+                      I am mostly active on Discord, preferred for more informal
+                      enquiries and for quicker responses.
                     </div>
                   </div>
                 </div>
