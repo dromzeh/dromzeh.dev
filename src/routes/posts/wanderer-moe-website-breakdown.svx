@@ -51,6 +51,8 @@ Workers works great for my use-case as it is directly bound to the R2 Bucket, me
 
 If I wanted to add a new game to the OC Generator, I can just upload a folder with a `.json` file containing data to the R2 Bucket's `oc-generator` folder, and it will automatically be added to the site - continuously saving on build times.
 
+If you're interested, the code for the API is open-source on GitHub and can be found [here](https://github.com/dromzeh/api.wanderer.moe/).
+
 My Cloudflare account is under the [paid plan](https://developers.cloudflare.com/workers/platform/pricing/), this allows for 10 million requests per month, which is more than enough for the site. This costs me `5 USD` per month, equal to `60 USD` per year.
 
 ## status.wanderer.moe (Github Pages & Actions, where the status page is hosted)
