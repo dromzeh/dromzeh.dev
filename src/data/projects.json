@@ -1,10 +1,18 @@
 {
   "projects": [{
       "name": "wanderer.moe",
-      "description": "Resource website for assets from Games with over 1 million users globally. Built using SvelteKit, TailwindCSS & Cloudflare Stack (Workers, Pages & R2), utilizes Workers & R2 for api and cdn with Pages for the website. i18n support implemented using crowdin.",
+      "description": "Resource website for assets from Games with over 1 million users globally. Built using SvelteKit, TailwindCSS & Cloudflare Stack (Workers, Pages & R2) i18n support implemented using crowdin.",
       "url": "https://wanderer.moe/",
       "tags": ["sveltekit", "svelte", "tailwind"],
       "isopenSource": false,
+      "active": true
+    },
+    {
+      "name": "api.wanderer.moe",
+      "description": "API for wanderer.moe, built using Cloudflare Workers & itty-router to manage routes & parameters. Used to generate Game, Asset & OC Generator Routes by directly fetching data from the R2 Bucket.",
+      "url": "https://github.com/dromzeh/api.wanderer.moe",
+      "tags": ["javascript", "cloudflare workers"],
+      "isopenSource": true,
       "active": true
     },
     {
