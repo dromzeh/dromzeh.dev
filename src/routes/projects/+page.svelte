@@ -63,30 +63,25 @@ function updateFilter() {
           <div class="space-y-2 sm:space-y-3">
             <div class="space-y-2">
               <h2
-                class="text-3xl font-semibold tracking-wide sm:text-[1.67rem]"
-              >
+                class="text-3xl font-semibold tracking-wide sm:text-[1.67rem]">
                 Projects
               </h2>
             </div>
             <div
-              class="h-full w-full rounded-lg border-[0.5px] border-white/20 bg-white/5 text-neutral-100/90 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/40 hover:bg-white hover:bg-opacity-[6.9%] hover:text-neutral-100"
-            >
+              class="h-full w-full rounded-lg border-[0.5px] border-white/20 bg-white/5 text-neutral-100/90 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/40 hover:bg-white hover:bg-opacity-[6.9%] hover:text-neutral-100">
               <input
                 class="h-14 w-full rounded-lg bg-[#121212] text-center text-indigo-300 focus:shadow focus:outline-none"
                 placeholder="Search by name, tags or description"
                 on:input="{handleInput}"
-                bind:value="{query}"
-              />
+                bind:value="{query}" />
             </div>
             <div class="grid grid-cols-1 gap-1.5 pt-2">
               {#each filteredProjects as project}
                 <a href="{project.url}" target="_blank">
                   <div
-                    class="flex h-full w-full flex-col rounded-lg border-[0.5px] border-white/20 bg-white/5 text-neutral-100/90 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/40 hover:bg-white hover:bg-opacity-[6.9%] hover:text-neutral-100"
-                  >
+                    class="flex h-full w-full flex-col rounded-lg border-[0.5px] border-white/20 bg-white/5 text-neutral-100/90 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/40 hover:bg-white hover:bg-opacity-[6.9%] hover:text-neutral-100">
                     <div
-                      class="group flex w-full select-none items-center justify-between px-4 py-3"
-                    >
+                      class="group flex w-full select-none items-center justify-between px-4 py-3">
                       <div class="font-medium">
                         {#if project.isopenSource}
                           <i
@@ -101,8 +96,7 @@ function updateFilter() {
                       </div>
                     </div>
                     <div
-                      class="mb-3 flex h-full flex-col justify-between px-3.5"
-                    >
+                      class="mb-3 flex h-full flex-col justify-between px-3.5">
                       <div class="text-sm font-light">
                         {project.description}
                       </div>
@@ -119,8 +113,7 @@ function updateFilter() {
                                 query = query + ' oss';
                               }
                               updateFilter();
-                            }}">Open Source</span
-                          >
+                            }}">Open Source</span>
                         {/if}
                         {#each project.tags as tag}
                           <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -135,8 +128,7 @@ function updateFilter() {
                               updateFilter();
                             }}"
                             class="mb-2 rounded-full bg-indigo-300/10 px-3 py-1.5 text-xs text-indigo-300 ring-1 ring-inset ring-indigo-400/20 backdrop-blur-lg"
-                            >{tag}</span
-                          >
+                            >{tag}</span>
                         {/each}
                       </div>
                     </div>
@@ -144,8 +136,7 @@ function updateFilter() {
                 </a>
               {:else}
                 <h2
-                  class="text-2xl text-center font-semibold tracking-wide sm:text-[1.67rem]"
-                >
+                  class="text-2xl text-center font-semibold tracking-wide sm:text-[1.67rem]">
                   No projects matching your query by tag, title or description
                   were found.
                 </h2>

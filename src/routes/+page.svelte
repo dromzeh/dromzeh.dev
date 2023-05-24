@@ -64,8 +64,7 @@ onMount(() => {
                 Hi - I'm Marcel, a
                 <div class="group inline-flex items-center justify-center">
                   <span
-                    class="cursor-pointer font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline"
-                  >
+                    class="cursor-pointer font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline">
                     {age.substring(0, 7)}
                   </span>
                   <Tooltip tooltipText="{age}" />
@@ -81,14 +80,13 @@ onMount(() => {
                     >wanderer.moe</a
                   >.
                   <Tooltip
-                    tooltipText="Pretty cool website to get game assets from."
-                  />
+                    tooltipText="Pretty cool website to get game assets from." />
                 </div>
                 I also contribute to and create many Open Source Projects - the source
                 code to this website is
                 <div class="group inline-flex items-center justify-center">
                   <a
-                    href="https://github.com/dromzeh/dromzeh.dev"
+                    href="https://git.dromzeh.dev/dromzeh.dev"
                     rel="noreferrer"
                     target="_blank"
                     class="font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline"
@@ -107,31 +105,26 @@ onMount(() => {
             <div class="font-light text-neutral-100/80">
               This is a list of my current
               <div
-                class="group inline-flex cursor-pointer items-center justify-center font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline"
-              >
+                class="group inline-flex cursor-pointer items-center justify-center font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline">
                 active projects
                 <Tooltip
-                  tooltipText="Projects that I often update / maintain."
-                />
+                  tooltipText="Projects that I often update / maintain." />
               </div>
               - all of my projects can be viewed on my
               <a
                 href="/projects"
                 rel="noreferrer"
                 class="font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline"
-                >/projects</a
-              > page.
+                >/projects</a> page.
             </div>
             <div class="grid grid-cols-1 gap-1.5 pt-2">
               {#each allProjects as project}
                 {#if project.active === true}
                   <a href="{project.url}" target="_blank">
                     <div
-                      class="flex h-full w-full flex-col rounded-lg border-[0.5px] border-white/20 bg-white/5 text-neutral-100/90 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/40 hover:bg-white hover:bg-opacity-[6.9%] hover:text-neutral-100"
-                    >
+                      class="flex h-full w-full flex-col rounded-lg border-[0.5px] border-white/20 bg-white/5 text-neutral-100/90 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/40 hover:bg-white hover:bg-opacity-[6.9%] hover:text-neutral-100">
                       <div
-                        class="group flex w-full select-none items-center justify-between px-4 py-3"
-                      >
+                        class="group flex w-full select-none items-center justify-between px-4 py-3">
                         <div class="font-medium">
                           {#if project.isopenSource}
                             <i
@@ -146,8 +139,7 @@ onMount(() => {
                         </div>
                       </div>
                       <div
-                        class="mb-3 flex h-full flex-col justify-between px-3.5"
-                      >
+                        class="mb-3 flex h-full flex-col justify-between px-3.5">
                         <div class="text-sm font-light">
                           {project.description}
                         </div>
@@ -155,14 +147,12 @@ onMount(() => {
                           {#if project.isopenSource}
                             <span
                               class="mb-2 rounded-full bg-gray-300/10 px-3 py-1.5 text-xs text-gray-300 ring-1 ring-inset ring-gray-400/20"
-                              >Open Source</span
-                            >
+                              >Open Source</span>
                           {/if}
                           {#each project.tags as tag}
                             <span
                               class="mb-2 rounded-full bg-indigo-300/10 px-3 py-1.5 text-xs text-indigo-300 ring-1 ring-inset ring-indigo-400/20"
-                              >{tag}</span
-                            >
+                              >{tag}</span>
                           {/each}
                         </div>
                       </div>
@@ -179,8 +169,7 @@ onMount(() => {
             <div class="font-light text-neutral-100/80">
               I aim to respond to all messages, no matter the contact method
               within <div
-                class="group inline-flex items-center justify-center font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline"
-              >
+                class="group inline-flex items-center justify-center font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline">
                 24 hours
                 <Tooltip tooltipText="Most active from 10AM until 1AM" />
               </div>
@@ -188,8 +177,7 @@ onMount(() => {
             <div class="text-sm font-light text-neutral-100/80">
               It is currently
               <div
-                class="group inline-flex items-center justify-center font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline cursor-pointer"
-              >
+                class="group inline-flex cursor-pointer items-center justify-center font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline">
                 {myTime}
                 <Tooltip tooltipText="Europe/London" />
               </div>
@@ -198,11 +186,9 @@ onMount(() => {
             <div class="grid grid-cols-1 gap-1.5 pt-2">
               <a href="mailto:marcel@dromzeh.dev" target="_blank">
                 <div
-                  class="flex h-full w-full flex-col rounded-lg border-[0.5px] border-white/20 bg-white/5 text-neutral-100/90 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/40 hover:bg-white hover:bg-opacity-[6.9%] hover:text-neutral-100"
-                >
+                  class="flex h-full w-full flex-col rounded-lg border-[0.5px] border-white/20 bg-white/5 text-neutral-100/90 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/40 hover:bg-white hover:bg-opacity-[6.9%] hover:text-neutral-100">
                   <div
-                    class="group flex w-full select-none items-center justify-between px-4 py-3"
-                  >
+                    class="group flex w-full select-none items-center justify-between px-4 py-3">
                     <div class="font-medium">
                       <i
                         class="fas fa-envelope text-[1.1rem] text-neutral-100/80 group-hover:text-neutral-100/90"
@@ -220,14 +206,11 @@ onMount(() => {
 
               <a
                 href="https://discord.com/users/492731761680187403"
-                target="_blank"
-              >
+                target="_blank">
                 <div
-                  class="flex h-full w-full flex-col rounded-lg border-[0.5px] border-white/20 bg-white/5 text-neutral-100/90 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/40 hover:bg-white hover:bg-opacity-[6.9%] hover:text-neutral-100"
-                >
+                  class="flex h-full w-full flex-col rounded-lg border-[0.5px] border-white/20 bg-white/5 text-neutral-100/90 backdrop-blur-sm transition-all duration-200 ease-in-out hover:border-white/40 hover:bg-white hover:bg-opacity-[6.9%] hover:text-neutral-100">
                   <div
-                    class="group flex w-full select-none items-center justify-between px-4 py-3"
-                  >
+                    class="group flex w-full select-none items-center justify-between px-4 py-3">
                     <div class="font-medium">
                       <i
                         class="fab fa-discord text-[1.1rem] text-neutral-100/80 group-hover:text-neutral-100/90"
