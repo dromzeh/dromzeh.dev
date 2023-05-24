@@ -49,13 +49,11 @@ function handleMove(e) {
 <svelte:window
   on:mousemove="{handleMove}"
   on:mousedown="{() => (scale = 1.3)}"
-  on:mouseup="{() => (scale = 1)}"
-/>
+  on:mouseup="{() => (scale = 1)}" />
 
 <div
   class="pointer-ring"
   style="transform: translate({mouseX - 10}px, {mouseY - 10}px) scale({scale})"
-  style:opacity="{opacity}"
->
+  style:opacity="{opacity}">
   <div class="pointer-dot"></div>
 </div>

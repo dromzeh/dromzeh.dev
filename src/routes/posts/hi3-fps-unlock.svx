@@ -133,4 +133,4 @@ As you can see, the game successfully runs at the new FPS value, in this case `2
 
 # Conclusion
 
-This program is open source, and can be found on my [GitHub](https://github.com/dromzeh/hi3-fps-unlocker).  
+This program is open source, and can be found on my [GitHub](https://git.dromzeh.dev/hi3-fps-unlocker).  

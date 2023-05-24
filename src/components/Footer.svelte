@@ -35,27 +35,23 @@ const currentYear = new Date().getFullYear();
         <p class="text-sm font-light text-neutral-100/80">
           © 2020-{currentYear} • dromzeh.dev, powered by
           <span class="text-[#EC8224]"
-            ><i class="fab fa-cloudflare"></i> Cloudflare<span> </span></span
-          >
+            ><i class="fab fa-cloudflare"></i> Cloudflare<span> </span></span>
         </p>
         <p class="text-sm font-light text-neutral-100/80">
           <a
             class="font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline"
-            href="https://buymeacoffee.com/marcelmd">buymeacoffee</a
-          >
+            href="https://buymeacoffee.com/marcelmd">buymeacoffee</a>
           •
           <a
             class="font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline"
-            href="https://mit.dromzeh.dev/">mit</a
-          >
+            href="https://mit.dromzeh.dev/">mit</a>
           •
           <a
             class="font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline"
-            href="https://github.com/dromzeh/">github</a
-          >
+            href="https://git.dromzeh.dev/">github</a>
         </p>
         {#if recentCommit}
-          <a href="https://github.com/dromzeh/dromzeh.dev/commit/{sha}">
+          <a href="https://git.dromzeh.dev/dromzeh.dev/commit/{sha}">
             <p class="mt-4 text-xs text-gray-500">
               [{shaSpliced}] {recentCommit}
             </p>
