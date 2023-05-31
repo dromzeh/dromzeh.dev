@@ -10,13 +10,13 @@ tags: ["finance", "cloudflare", "r2", "workers", "pages"]
 
 wanderer.moe is mostly powered with Cloudflare, it's a collection of all sorts of different services & I go into detail about each service below.
 
-The whole website is open source, main site is hosted on Cloudflare Pages, the CDN is hosted on Cloudflare R2, the API is hosted on Cloudflare Workers, and the status page is [hosted with Github Pages & Actions](https://git.dromzeh.dev/status.wanderer.moe/). 
+The whole website is [open source](https://git.wanderer.moe/), main site is hosted on Cloudflare Pages, the CDN is hosted on Cloudflare R2, the API is hosted on Cloudflare Workers, and the status page is [hosted with Github Pages & Actions](https://git.wanderer.moe/status/). 
 
 The reason why I've split the website like this instead of hosting all assets on the main site is because it's **cheaper, and it's easier to manage, build and deploy the specific sections of the site**.
 
 This means that if I wanted to add more assets, **I can just upload them to the CDN, and they will be automatically added to the site immediately**, without having to rebuild the site.
 
-The same applies for the OC Generator, I just have to upload a folder into the `oc-generator` folder on the CDN, include a `.json` file with the data, and it will be automatically added to the site.
+The same applies for the websites OC Generator, I just have to upload a folder into the `oc-generator` folder on the CDN, include a `.json` file with the data, and it will be automatically added to the site.
 
 
 ## cdn.wanderer.moe (R2, where all assets are hosted)
@@ -51,7 +51,7 @@ Workers works great for my use-case as it is directly bound to the R2 Bucket, me
 
 If I wanted to add a new game to the OC Generator, I can just upload a folder with a `.json` file containing data to the R2 Bucket's `oc-generator` folder, and it will automatically be added to the site - continuously saving on build times.
 
-If you're interested, the code for the API is open-source on GitHub and can be found [here](https://git.dromzeh.dev/api.wanderer.moe/).
+If you're interested, the code for the API is open-source on GitHub and can be found [here](https://git.wanderer.moe/api/).
 
 My Cloudflare account is under the [paid plan](https://developers.cloudflare.com/workers/platform/pricing/), this allows for 10 million requests per month, which is more than enough for the site. This costs me `5 USD` per month, equal to `60 USD` per year.
 
@@ -59,12 +59,12 @@ My Cloudflare account is under the [paid plan](https://developers.cloudflare.com
 
 The status page is powered by [upptime](https://github.com/upptime/upptime), a free uptime monitor and is completely open-source. 
 
-The status page is hosted on [Github Pages](https://git.dromzeh.dev/status.wanderer.moe/), and the uptime monitor is hosted on [Github Actions](https://git.dromzeh.dev/status.wanderer.moe/actions).
+The status page is hosted on [Github Pages](https://git.wanderer.moe/status/), and the uptime monitor is hosted on [Github Actions](https://git.wanderer.moe/status/actions).
 
 
 ## wanderer.moe (Cloudflare Pages, where the main site is hosted)
 
-The main site is hosted using Cloudflare's Pages, using SvelteKit, TailwindCSS & then `@sveltejs/adapter-cloudflare`, open source [here](https://git.dromzeh.dev/wanderer.moe)
+The main site is hosted using Cloudflare's Pages, using SvelteKit, TailwindCSS & then `@sveltejs/adapter-cloudflare`, open source [here](https://git.wanderer.moe/site/)
 
 `@sveltejs/adapter-cloudflare` is a custom adapter for SvelteKit, it also means that wanderer.moe is not a Static website but Server Side Rendered, meaning that the site is rendered on the server; then sent to the client.
 

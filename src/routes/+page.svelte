@@ -15,7 +15,6 @@ import Tooltip from "../components/Tooltip.svelte";
 export let data;
 
 let allProjects = data.projects.projects;
-let allAlbums = data.albums.albums;
 
 let age = "16"; // also incase getAge function fails for some reason..
 let myTime = moment().tz("Europe/London").format("HH:mm:ss");
@@ -69,8 +68,8 @@ onMount(() => {
                   </span>
                   <Tooltip tooltipText="{age}" />
                 </div>
-                year old Software & Reverse Engineer. I work with Svelte, C#, Javascript,
-                Python & IDA. Most of my time currently goes towards
+                year old Software & Reverse Engineer. Experienced with Svelte, C#, Javascript, Node.js, Tailwind,
+                Python & IDA. <br><br> Most of my time currently goes towards
                 <div class="group inline-flex items-center justify-center">
                   <a
                     href="https://wanderer.moe/?ref=dromzeh.dev"
@@ -78,11 +77,10 @@ onMount(() => {
                     target="_blank"
                     class="font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline"
                     >wanderer.moe</a
-                  >.
-                  <Tooltip
-                    tooltipText="Pretty cool website to get game assets from." />
+                  >,
+                  <StarHover repository="wanderer-moe/site" />
                 </div>
-                I also contribute to and create many Open Source Projects - the source
+                an Open Source centralized database of various game assets. I also contribute to and create many Open Source Projects - the source
                 code to this website is
                 <div class="group inline-flex items-center justify-center">
                   <a
@@ -169,7 +167,7 @@ onMount(() => {
             <div class="font-light text-neutral-100/80">
               I aim to respond to all messages, no matter the contact method
               within <div
-                class="group inline-flex items-center justify-center font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline">
+                class="group inline-flex cursor-pointer items-center justify-center font-medium text-neutral-100/80 hover:text-neutral-100/90 hover:underline">
                 24 hours
                 <Tooltip tooltipText="Most active from 10AM until 1AM" />
               </div>

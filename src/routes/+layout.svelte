@@ -1,10 +1,10 @@
 <script>
 import Nav from "../components/Nav.svelte";
 import Footer from "../components/Footer.svelte";
-import Pointer from "../components/Pointer.svelte";
 
 import NProgress from "nprogress";
 import { navigating } from "$app/stores";
+import "../app.css";
 
 // Progress css
 import "nprogress/nprogress.css";
