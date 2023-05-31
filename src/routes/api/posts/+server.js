@@ -1,4 +1,3 @@
-import { json } from "@sveltejs/kit";
 import { fetchMarkdownPosts } from "$lib/utils";
 
 export const GET = async () => {
@@ -15,5 +14,9 @@ export const GET = async () => {
     return dateB - dateA;
   });
 
-  return json(sortedPosts);
+  return new Response(JSON.stringify(sortedPosts), {
+    headers: {
+      "content-type": "application/json",
+    },
+  });
 };

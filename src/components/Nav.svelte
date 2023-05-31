@@ -6,7 +6,6 @@
 
 <script>
 import { page } from "$app/stores";
-import Icon from "@iconify/svelte";
 
 const nav = [
   { title: "home", path: "/" },
@@ -30,12 +29,11 @@ const nav = [
       {/each}
     </div>
 
-    <div class="ml-6 text-white">
+    <div class="ml-6">
       <p>
         <a href="https://git.dromzeh.dev/dromzeh.dev"
-          ><Icon
-            icon="codicon:github-alt"
-            class="hover:text-white-100 text-2xl text-white" />
+          ><i
+            class="fab fa-github hover:text-white text-2xl text-gray-400 bg-white bg-opacity-0 hover:bg-opacity-5 rounded-md p-2"></i>
         </a>
       </p>
     </div>

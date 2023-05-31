@@ -2,8 +2,9 @@ import adapter from "@sveltejs/adapter-static";
 import { mdsvex } from "mdsvex";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
-import shiki from "shiki";
 import preprocess from "svelte-preprocess";
+import { vitePreprocess } from "@sveltejs/kit/vite";
+
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -18,6 +19,7 @@ const config = {
       rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
       highlight: (str, lang) => whatever(str, lang),
     }),
+    vitePreprocess(),
   ],
   kit: {
     adapter: adapter(),
