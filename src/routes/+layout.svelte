@@ -1,6 +1,7 @@
 <script lang="ts">
 import '../app.css?v=05062023'
 import Navbar from '../components/Navbar.svelte'
+import Footer from '../components/Footer.svelte'
 import LoadingTransition from '../components/LoadingTransition.svelte'
 
 export let data
@@ -12,5 +13,6 @@ export let data
 		<main class="relative mx-auto max-w-[90ch] break-normal px-4 sm:px-6 lg:px-8">
 			<slot />
 		</main>
+		<Footer />
 	</LoadingTransition>
 </div>
