@@ -4,7 +4,7 @@
 		--d: 0.5px;
 		background: radial-gradient(
 				circle at var(--d) var(--d),
-				rgba(156, 156, 156, 0.15) calc(var(--d) - 1px),
+				rgba(156, 156, 156, 0.05) calc(var(--d) - 1px),
 				#0b0b0b var(--d)
 			)
 			0 0 / 7px 7px;

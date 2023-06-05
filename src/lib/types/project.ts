@@ -3,6 +3,6 @@ export type Project = {
 	description: string
 	url: string
 	isOpenSource: boolean
-	tags: []
+	categories: string[]
 	active: boolean
 }

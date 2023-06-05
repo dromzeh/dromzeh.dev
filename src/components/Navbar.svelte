@@ -1,3 +1,9 @@
+<style lang="postcss">
+.active {
+	@apply text-white;
+}
+</style>
+
 <script lang="ts">
 import { page } from '$app/stores'
 
@@ -44,9 +50,3 @@ const nav: NavItems[] = [
 		</div>
 	</nav>
 </header>
-
-<style lang="postcss">
-.active {
-	@apply text-white;
-}
-</style>

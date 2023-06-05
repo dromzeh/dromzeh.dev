@@ -27,19 +27,20 @@ async function updateLanyard() {
 }
 
 onMount(() => {
-    updateLanyard()
-    intervalId = setInterval(() => {
-        if (lanyard?.data?.listening_to_spotify) {
-            currentStatus = currentStatus === 'discord' ? 'spotify' : 'discord'
-        } else {
-            currentStatus = 'discord'
-        }
-    }, 10000)
+	updateLanyard()
+	// update status every 10 seconds
+	intervalId = setInterval(() => {
+		if (lanyard?.data?.listening_to_spotify) {
+			currentStatus = currentStatus === 'discord' ? 'spotify' : 'discord'
+		} else {
+			currentStatus = 'discord'
+		}
+	}, 10000)
 
-    // Update lanyard every 15 seconds
-    setInterval(() => {
-        updateLanyard()
-    }, 15000)
+	// update lanyard every 15 seconds
+	setInterval(() => {
+		updateLanyard()
+	}, 15000)
 })
 
 onDestroy(() => {

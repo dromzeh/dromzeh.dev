@@ -1,4 +1,5 @@
 {
+	"svelteSortOrder": "options-styles-scripts-markup",
 	"svelteStrictMode": true,
 	"bracketSameLine": true,
 	"semi": false,

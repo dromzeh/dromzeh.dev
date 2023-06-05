@@ -7,15 +7,14 @@ import projectsListData from '../data/projects.json'
 export let showProjects = 0
 
 let projectsList: Project[] = projectsListData.projects.map((project) => ({
-	...project,
-	tags: []
+	...project
 }))
 
 onMount(async () => {
 	if (showProjects > 0) {
 		projectsList = projectsList.slice(0, showProjects)
 	}
-	// console.log(projectsList)
+	console.log(projectsList)
 })
 </script>
 
@@ -29,6 +28,13 @@ onMount(async () => {
 						{proj.name}
 						<span class="text-sm font-normal text-gray-500"
 							>({#if proj.isOpenSource}Open Source{:else}Closed Source{/if})</span>
+					</p>
+					<p class="mb-2">
+						{#each proj.categories as category}
+							<span class="text-xs font-semibold uppercase text-gray-400"
+								>{category}{#if category !== proj.categories[proj.categories.length - 1]},
+								{/if}</span>
+						{/each}
 					</p>
 					<p>{proj.description}</p>
 				</div>

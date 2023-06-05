@@ -3,7 +3,7 @@ export type Post = {
 	id: string
 	description: string
 	date: string
-	categories: []
+	categories: string[]
 	published: boolean
 	author: string
 }

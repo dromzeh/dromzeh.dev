@@ -12,7 +12,6 @@ onMount(async () => {
 	if (showPosts > 0) {
 		posts = posts.slice(0, showPosts)
 	}
-	// console.log(posts)
 })
 </script>
 
@@ -25,6 +24,13 @@ onMount(async () => {
 					<p class="font-semibold text-primary-100">
 						{post.title}
 						<span class="text-sm font-normal text-gray-500">{post.date}</span>
+					</p>
+					<p class="mb-2">
+						{#each post.categories as category}
+							<span class="text-xs font-semibold uppercase text-gray-400"
+								>{category}{#if category !== post.categories[post.categories.length - 1]},
+								{/if}</span>
+						{/each}
 					</p>
 					<p>{post.description}</p>
 				</div>
