@@ -1,8 +1,13 @@
 ---
-title: "Claws Mail with ProtonMail Bridge"
-description: "A step-by-step guide to setting up Claws Mail to work with Protonmail Bridge for secure email on Arch Linux and Windows."
-date: "25/01/2023"
-tags: ["linux", "protonmail", "claws-mail", "windows"]
+title: 'Claws Mail with ProtonMail Bridge'
+description: 'A step-by-step guide to setting up Claws Mail to work with Protonmail Bridge for secure email on Arch Linux and Windows.'
+date: '2023-01-05'
+categories:
+    - linux
+    - protonmail
+    - claws-mail
+published: true
+author: 'dromzeh'
 ---
 
 ## Why Protonmail and Claws Mail?
@@ -14,16 +19,16 @@ Claws Mail with ProtonMail, a secure email service with end-to-end encryption, y
 
 ProtonMail is free and open source; it also protects your communications through encryption and secure access, making it the ideal choice for those who value their privacy and security.
 
+As a result, by integrating ProtonMail with Claws Mail, you are taking the necessary steps to secure your communications and protect your privacy.
 
-As a result, by integrating ProtonMail with Claws Mail, you are taking the necessary steps to secure your communications and protect your privacy. 
-
-## Installing Protonmail Bridge 
+## Installing Protonmail Bridge
 
 Installing the ProtonMail Bridge software on your computer is the first step in configuring Claws Mail with ProtonMail Bridge.
 The Windows installer is available from the ProtonMail website.
 
 Those using Arch Linux, on the other hand, can download the ProtonMail Bridge from the Arch User Repository (AUR):
-``` 
+
+```
 yay -S protonmail-bridge
 ```
 
@@ -34,16 +39,19 @@ Note that a ProtonMail Plus account is required to use ProtonMail Bridge.
 
 To do so, use ProtonMail Bridge and log in with your ProtonMail email address and password.
 
-I recommend that you enable ProtonMail Bridge to run on startup. 
+I recommend that you enable ProtonMail Bridge to run on startup.
 
 ## Installing Claws Mail
 
 On Windows, download the installer from the Claws Mail website.
 To install Claws Mail on Arch Linux, you can use the AUR.
+
 ```
 yay -S claws-mail
 ```
+
 On Arch, I pair Claws Mail with the Claws Mail theme Papirus. You can install it from the AUR.
+
 ```
 yay -S papirus-claws-mail-theme-git
 ```
@@ -55,12 +63,14 @@ After connecting ProtonMail Bridge to your ProtonMail account, the next step is 
 It is crucial to remember for first-time Claws Mail users that Claws Mail will instantly propose the establishment of a new account for you to utilise.
 It will prompt you to enter your Send and Receive settings, which you can easily copy and paste from the ProtonMail Bridge settings.
 
-IMAP's default port is 1143; SMTP's is 1025. 
+IMAP's default port is 1143; SMTP's is 1025.
 
 ### Recieve Settings (Enable STARTTLS):
+
 ![Recieve](/images/proton-claws-1.png)
 
 ### Send Settings (Enable STARTTLS):
+
 ![Send](/images/proton-claws-2.png)
 
 Claws Mail will prompt you if you want to trust the TLS certificate, click 'Accept and Save':
