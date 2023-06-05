@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit'
 import type { Load } from '@sveltejs/kit'
-import type { Post } from '$lib/types'
+import type { Post } from '$lib/types/post'
 
 export const load: Load = async ({ params }) => {
 	try {

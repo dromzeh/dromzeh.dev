@@ -1,6 +1,6 @@
 <script lang="ts">
 import { onMount } from 'svelte'
-import type { Post } from '$lib/types'
+import type { Post } from '$lib/types/post'
 
 export let showPosts = 0
 
@@ -18,12 +18,12 @@ onMount(async () => {
 
 <div>
 	<div class="grid gap-3 py-2">
-		{#each posts as post, i}
+		{#each posts as post}
 			<a href="/posts/{post.id}">
 				<div
 					class="relative rounded-lg bg-white bg-opacity-0 p-2 transition-all hover:bg-opacity-5">
 					<p class="font-semibold text-primary-100">
-						{i + 1}. {post.title}
+						{post.title}
 						<span class="text-sm font-normal text-gray-500">{post.date}</span>
 					</p>
 					<p>{post.description}</p>

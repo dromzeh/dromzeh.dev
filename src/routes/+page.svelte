@@ -3,6 +3,7 @@
 import Posts from '../components/Posts.svelte'
 import Projects from '../components/Projects.svelte'
 import Contact from '../components/Contact.svelte'
+import Lanyard from '../components/Lanyard.svelte'
 import dayjs from 'dayjs'
 import moment from 'moment-timezone'
 
@@ -43,6 +44,7 @@ const showPosts = 2
 				>here</a
 			>.
 		</div>
+		<Lanyard />
 		<hr class="border-primary-600/10" />
 	</div>
 	<div>

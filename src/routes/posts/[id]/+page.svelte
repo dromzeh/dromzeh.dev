@@ -1,5 +1,5 @@
 <script lang="ts">
-import { formatDate } from '$lib/utils'
+import { formatDate } from '$lib/utils/formatDate'
 
 export let data
 const { title, author, date, categories } = data.meta

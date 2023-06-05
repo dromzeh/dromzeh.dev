@@ -1,6 +1,6 @@
 <script lang="ts">
 // import { onMount } from 'svelte'
-import type { Contact } from '$lib/types'
+import type { Contact } from '$lib/types/contact'
 import contactListData from '../data/contact.json'
 
 let contactList: Contact[] = contactListData.contact.map((contact) => ({
