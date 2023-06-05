@@ -1,13 +1,19 @@
 ---
-title: "Setting up h5ai as a file server with nginx and Cloudflare"
-description: "Tutorial on how to set up h5ai as a lightweight HTTP file server including custom CSS themes using your own VPS, domain, nginx and Cloudflare."
-date: "03/02/2023"
-tags: ["nginx", "cloudflare", "linux"]
+title: 'Setting up h5ai as a file server with nginx and Cloudflare'
+description: 'Tutorial on how to set up h5ai as a lightweight HTTP file server including custom CSS themes using your own VPS, domain, nginx and Cloudflare.'
+date: '2023-02-03'
+categories:
+    - linux
+    - nginx
+    - cloudflare
+    - h5ai
+published: true
+author: 'dromzeh'
 ---
 
 ## Why h5ai?
 
-As stated from h5ai's website: **"h5ai is a modern file indexer for HTTP web servers with focus on your files. ". **
+As stated from h5ai's website: **"h5ai is a modern file indexer for HTTP web servers with focus on your files."**
 
 It's exactly that, a modern file indexer, it's free, open source and easy to set up.
 
@@ -37,7 +43,7 @@ Then, extract the files to your web server's root directory:
 
 ```bash
 cd /var/www
-mkdir h5ai  
+mkdir h5ai
 cd h5ai
 wget https://release.larsjung.de/h5ai/h5ai-0.30.0.zip
 unzip h5ai-0.30.0.zip
@@ -72,13 +78,13 @@ server {
     listen 80;
     index index.php /_h5ai/public/index.php;
     server_name  yourdomain.dev;
-    
+
     root /var/www/h5ai;
 
     # individual nginx logs for this vhost
     access_log  /var/log/nginx/yourdomain.dev_access.log;
-    error_log   /var/log/nginx/yourdomain.dev_error.log;  
-        
+    error_log   /var/log/nginx/yourdomain.dev_error.log;
+
     location /_h5ai/private {
         return 403;
     }
@@ -127,4 +133,3 @@ If you want to use the dark theme, copy `dark-theme.css` to the `_h5ai/public/cs
 Then, open `config.json` and change the `theme` value to `theme.css`.
 
 To upload files to h5ai, I setup [FileZilla](https://filezilla-project.org/) to connect to the server, and uploaded the files to the h5ai folder, as soon as I uploaded the files I wanted to share and refreshed the page they were available to download.
-

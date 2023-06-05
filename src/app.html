@@ -1,82 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- meta stuff -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#4C80CB" />
-    <meta property="og:title" content="dromzeh.dev" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://dromzeh.dev/favicon.png" />
-    <title>dromzeh.dev</title>
-    <meta charset="UTF-8" />
-    <meta name="title" content="dromzeh.dev" />
-    <meta name="description" content="get real" />
-    <meta property="og:description" content="get real" />
+	<head>
+		<!-- meta stuff -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="theme-color" content="#4C80CB" />
+		<meta property="og:title" content="dromzeh.dev" />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content="https://dromzeh.dev/favicon.png" />
+		<title>dromzeh.dev</title>
+		<meta charset="UTF-8" />
+		<meta name="title" content="dromzeh.dev" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+			integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Ubuntu+Mono&display=swap"
+			rel="stylesheet" />
+		<script
+			src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			crossorigin="anonymous"></script>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+		<script>
+			function playSound() {
+				let audio = new Audio('/audio/click.ogg')
+				audio.volume = 0.1
+				audio.play()
+			}
+		</script>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- for mobile devices -->
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<link rel="apple-touch-icon" href="/favicon.png" />
 
-    <!-- import jquery -->
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"></script>
+		%sveltekit.head%
+	</head>
 
-    <script>
-      // play a sound on mouse click
-      function playSound() {
-        let audio = new Audio("/audio/click.ogg");
-        audio.volume = 0.1;
-        audio.play();
-      }
-
-      // run playSound() on mouse click
-      document.addEventListener("click", playSound);
-
-      function onKonamiCode(cb) {
-        var input = "";
-        var key = "3838404037393739666513";
-        document.addEventListener("keydown", function (e) {
-          input += "" + e.keyCode;
-          if (input === key) {
-            return cb();
-          }
-          if (!key.indexOf(input)) return;
-          input = "" + e.keyCode;
-        });
-      }
-
-      onKonamiCode(function () {
-        alert(":3");
-      });
-    </script>
-
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="apple-touch-icon" href="/favicon.png" />
-
-    <style lang="postcss">
-      html {
-        background: #090909;
-      }
-    </style>
-
-    %sveltekit.head%
-  </head>
-
-  <body>
-    <div id="svelte">%sveltekit.body%</div>
-  </body>
+	<body>
+		<div id="svelte">%sveltekit.body%</div>
+	</body>
 </html>

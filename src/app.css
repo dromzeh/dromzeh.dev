@@ -1,50 +1,59 @@
 @tailwind base;
+@layer base {
+	body {
+		--d: 0.5px;
+		background: radial-gradient(
+				circle at var(--d) var(--d),
+				rgba(156, 156, 156, 0.15) calc(var(--d) - 1px),
+				#0b0b0b var(--d)
+			)
+			0 0 / 7px 7px;
+	}
+
+	html {
+		scroll-behavior: smooth;
+		font-family: 'Noto Sans', sans-serif;
+		@apply bg-secondary-100;
+	}
+
+	.monofont {
+		font-family: 'Ubuntu Mono', monospace !important;
+	}
+
+	.link-underline {
+		@apply bg-white bg-opacity-5 px-1 hover:bg-opacity-10;
+	}
+
+	.all-prose {
+		@apply prose-a:link-underline prose max-w-full overflow-clip break-words font-normal text-gray-400 prose-headings:text-white prose-a:font-semibold prose-a:text-white prose-a:no-underline prose-strong:font-semibold prose-strong:text-white prose-code:text-white prose-code:before:hidden prose-code:after:hidden;
+	}
+}
+
 @tailwind components;
 @tailwind utilities;
-
 /* changes the colour of when you select text */
 ::-moz-selection {
-  color: rgb(255, 255, 255);
-  background: rgba(165, 180, 252, 0.2);
+	color: rgb(255, 255, 255);
+	background: rgba(165, 180, 252, 0.2);
 }
 
 ::selection {
-  color: rgb(255, 255, 255);
-  background: rgba(165, 180, 252, 0.2);
-}
-
-@font-face {
-  font-family: unifont;
-  src: url("/assets/fonts/unifont-min.ttf");
-  /* font-family: "unifont", monospace !important; */
-}
-
-@font-face {
-  font-family: Inter var;
-  src: url("/assets/fonts/Inter-roman.var.woff2") format("woff2-variations");
-}
-
-/* smooth scrolling */
-html {
-  scroll-behavior: smooth;
-  font-family: Inter var, ui-sans-serif, system-ui, -apple-system,
-    BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol,
-    "Noto Color Emoji";
+	color: rgb(255, 255, 255);
+	background: rgba(165, 180, 252, 0.2);
 }
 
 /* styles the scrollbar instead of using the default one to fit with the site's color scheme */
 * {
-  scrollbar-width: thin;
-  scrollbar-color: #a5b4fc #1f2937;
+	scrollbar-width: thin;
+	scrollbar-color: #ffffff #1f2937;
 }
 ::-webkit-scrollbar {
-  width: 2px;
+	width: 2px;
 }
 ::-webkit-scrollbar-track {
-  background: #1f2937;
+	background: #1f2937;
 }
 ::-webkit-scrollbar-thumb {
-  background: #a5b4fc;
-  border-radius: 6px;
+	background: #ffffff;
+	border-radius: 2px;
 }
