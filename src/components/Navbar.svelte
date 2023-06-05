@@ -30,11 +30,11 @@ const nav: NavItems[] = [
 					class:active="{item.path === '/'
 						? $page.url.pathname === '/'
 						: $page.url.pathname.startsWith(item.path)}"
-					class="relative p-1 px-2 text-lg text-gray-400 transition-colors hover:text-white">
+					class="relative p-1 text-gray-400 transition-colors hover:text-white">
 					{item.title}
-					<i
+					<!-- <i
 						class="fa-solid fa-arrow-up-right-from-square absolute right-[-3] top-2 ml-1 text-xs"
-					></i>
+					></i> -->
 				</a>
 			{/each}
 		</div>
@@ -43,7 +43,7 @@ const nav: NavItems[] = [
 			<p>
 				<a href="https://git.dromzeh.dev/dromzeh.dev">
 					<i
-						class="fab fa-github bg-opacity-0 px-2 text-2xl text-gray-400 transition-colors hover:text-white"
+						class="fab fa-github bg-opacity-0 px-2 text-lg text-gray-400 transition-colors hover:text-white"
 					></i>
 				</a>
 			</p>

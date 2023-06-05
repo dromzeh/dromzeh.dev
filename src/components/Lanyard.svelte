@@ -23,7 +23,6 @@ let currentStatus = 'discord'
 async function updateLanyard() {
 	const response = await fetch('https://api.lanyard.rest/v1/users/492731761680187403')
 	lanyard = await response.json()
-	console.log(lanyard)
 }
 
 onMount(() => {

@@ -26,13 +26,13 @@ const showPosts = 2
 
 <div class="py-24 text-gray-400">
 	<p class="font-semibold text-primary-100">dromzeh.dev</p>
-	<div class="grid gap-3 py-2">
+	<div class="grid gap-3 py-2 ">
 		<div>
 			Hi, I'm Marcel - known as dromzeh on the internet. I'm a {age} year old Reverse & Software
 			Engineer, experienced with Svelte, C#, Typescript, Javascript, Node.js, Tailwind, Python
 			& IDA.
 		</div>
-		<div class="mb-2">
+		<div>
 			I'm the Project Lead (& creator) of <a
 				class="link-underline font-semibold text-white"
 				href="https://wanderer.moe">wanderer.moe</a
@@ -44,13 +44,17 @@ const showPosts = 2
 				>here</a
 			>.
 		</div>
+		<div class = "mb-2">
+			Outside of programming stuff, I've played rhythm games since 2015, primarily onto VSRG since 2019. And, I "occasionally" write <a class="link-underline font-semibold text-white"
+				href="https://dromzeh.dev/posts">posts</a> too.
+		</div>
 		<Lanyard />
 		<hr class="border-primary-600/10" />
 	</div>
 	<div>
 		<div>
 			<p class="mt-2 font-semibold text-primary-100">Projects</p>
-			<p class="text-sm text-gray-400">{showProjects} projects shown</p>
+			<p class="text-sm text-gray-400">Top {showProjects} projects shown</p>
 		</div>
 		<Projects showProjects="{showProjects}" />
 		<div>
@@ -66,7 +70,7 @@ const showPosts = 2
 	<div>
 		<div>
 			<p class="mt-4 font-semibold text-primary-100">Posts</p>
-			<p class="text-sm text-gray-400">{showPosts} posts shown</p>
+			<p class="text-sm text-gray-400">Top {showPosts} posts shown</p>
 		</div>
 		<Posts showPosts="{showPosts}" />
 		<div>
