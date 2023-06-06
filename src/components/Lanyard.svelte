@@ -18,7 +18,6 @@ const statusColors: Record<string, string> = {
 
 let lanyard: LanyardData
 let intervalId: number
-let currentStatus = 'discord'
 
 async function updateLanyard() {
 	const response = await fetch('https://api.lanyard.rest/v1/users/492731761680187403')
@@ -40,7 +39,7 @@ onDestroy(() => {
 </script>
 
 <!-- TODO: RPC support? -->
-<div class = "text-sm">
+<div class="text-sm">
 	{#if lanyard}
 		<div>
 			<p>
@@ -69,7 +68,7 @@ onDestroy(() => {
 		</div>
 	{:else}
 		<div>
-			<p class = "animate-pulse">
+			<p class="animate-pulse">
 				<i class="fas fa-circle-notch animate-spin"></i>
 				Loading Discord status...
 			</p>
