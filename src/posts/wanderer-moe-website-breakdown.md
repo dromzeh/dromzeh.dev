@@ -107,7 +107,7 @@ The same applies the other way around, if a translation is changed, removed or a
 
 ## Site Performance
 
-A lot of work has gone into site performance over the past couple months, with the recent switch from storing images onto the CDN & having a better API, the success rate across the site being **99.9%** with load times becoming significantly faster.
+A lot of work has gone into site performance over the past couple months. With the recent switch from storing images onto the CDN & having a better API - the success rate across the site's now over **99.9%** and load times always becoming significantly faster.
 
 ## Analytics Breakdown
 
