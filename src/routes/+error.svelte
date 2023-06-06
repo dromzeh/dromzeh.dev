@@ -1,19 +1,19 @@
 <script>
-import { page } from "$app/stores";
-const dev = process.env.NODE_ENV === "development";
+import { page } from '$app/stores'
 </script>
 
 <svelte:head>
-  <title>{$page.status} — dromzeh.dev</title>
+	<title>{$page.status} • dromzeh.dev</title>
 </svelte:head>
 
-<!-- centers page status text in the middle of the screen in red .... -->
 <div class="flex h-screen">
-  <div class="m-auto text-center">
-    <p class="text-5xl font-semibold text-red-400">{$page.status}</p>
-    <p class="text-2xl text-white">{$page.error.message}</p>
-    {#if dev}
-      <p class="text-xs text-gray-400">{$page.error.stack}</p>
-    {/if}
-  </div>
+	<div class="m-auto text-center">
+		<p
+			class="mb-4 rounded-lg border-2 border-white bg-white px-2 text-6xl font-semibold text-secondary-300 transition-colors hover:bg-secondary-300 hover:text-white">
+			{$page.status}
+		</p>
+		{#if $page.error?.message}
+			<p class="text-xl text-gray-300">{$page.error.message}</p>
+		{/if}
+	</div>
 </div>

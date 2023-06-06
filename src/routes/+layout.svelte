@@ -1,38 +1,18 @@
-<script>
-import Nav from "../components/Nav.svelte";
-import Footer from "../components/Footer.svelte";
+<script lang="ts">
+import '../app.css?v=05062023'
+import Navbar from '../components/Navbar.svelte'
+import Footer from '../components/Footer.svelte'
+import LoadingTransition from '../components/LoadingTransition.svelte'
 
-import NProgress from "nprogress";
-import { navigating } from "$app/stores";
-import "../app.css";
-
-// Progress css
-import "nprogress/nprogress.css";
-
-NProgress.configure({
-  // Full list: https://github.com/rstacruz/nprogress#configuration
-  minimum: 0.16,
-  showSpinner: false,
-  // 3476CF
-});
-
-$: {
-  if ($navigating) {
-    NProgress.start();
-  }
-  if (!$navigating) {
-    NProgress.done();
-  }
-}
-
-// nprogress is used to show loading progress bar at the top of the page
+export let data
 </script>
 
-<!-- <Pointer /> -->
-<Nav />
-
-<main>
-  <slot />
-</main>
-
-<Footer />
+<div class="layout">
+	<LoadingTransition url="{data.url}">
+		<Navbar />
+		<main class="relative mx-auto max-w-[90ch] break-normal px-4 sm:px-6 lg:px-8">
+			<slot />
+		</main>
+		<Footer />
+	</LoadingTransition>
+</div>

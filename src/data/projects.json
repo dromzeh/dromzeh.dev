@@ -1,85 +1,76 @@
 {
-  "projects": [
-    {
-      "name": "wanderer.moe",
-      "description": "Open-Source resource website for assets used by over 1 million users. Built using SvelteKit, TailwindCSS & Cloudflare Stack (Workers, Pages & R2) i18n support implemented using crowdin.",
-      "url": "https://wanderer.moe/",
-      "tags": ["sveltekit", "svelte", "tailwind"],
-      "isopenSource": true,
-      "active": true,
-      "focusedProject": true
-    },
-    {
-      "name": "api.wanderer.moe",
-      "description": "API for wanderer.moe, built using Cloudflare Workers & itty-router to manage routes & parameters. Used to generate Game, Asset & OC Generator Routes by directly fetching data from the R2 Bucket.",
-      "url": "https://git.wanderer.moe/api",
-      "tags": ["javascript", "cloudflare workers"],
-      "isopenSource": true,
-      "active": true,
-      "focusedProject": false
-    },
-    {
-      "name": "hsr-fps-unlocker",
-      "description": "Node.JS program that modifies the FPS value in the settings registry entry to go past the 60FPS limit in Honkai: Star Rail",
-      "url": "https://git.dromzeh.dev/hsr-fps-unlocker",
-      "tags": ["javascript", "node.js"],
-      "isopenSource": true,
-      "active": true,
-      "focusedProject": false
-    },
-    {
-      "name": "hi3-fps-unlocker",
-      "description": "Node.JS program that modifies registry entries to allow for custom modification value of Honkai Impact 3rd FPS in and out of levels ('combat').",
-      "url": "https://git.dromzeh.dev/hi3-fps-unlocker",
-      "tags": ["javascript", "node.js"],
-      "isopenSource": true,
-      "active": true,
-      "focusedProject": false
-    },
-    {
-      "name": "qbit-rpc",
-      "description": "A simple, lightweight, and easy to use Discord Rich Presence for qBittorrent, made with Javascript and Node.JS. Shows statistics such current and overall download and upload speeds, with average ratios.",
-      "url": "https://git.dromzeh.dev/qbit-rpc",
-      "tags": ["javascript", "node.js"],
-      "isopenSource": true,
-      "active": true,
-      "focusedProject": false
-    },
-    {
-      "name": "dromzeh.dev",
-      "description": "My personal website, programmed with SvelteKit, TailwindCSS, and Cloudflare Pages. Includes a static blog done with MDSVeX and Tailwind Typography. Lanyard API integration for Discord RPC.",
-      "url": "https://git.dromzeh.dev/dromzeh.dev",
-      "tags": ["sveltekit", "svelte", "tailwind"],
-      "isopenSource": true,
-      "active": true,
-      "focusedProject": false
-    },
-    {
-      "name": "vmt",
-      "description": "A Discord Voice Message Transcriber and Translator. Made with discord.py, using Google's SpeechRecognition and DeepL's Translation API.",
-      "url": "https://git.dromzeh.dev/vmt",
-      "tags": ["python", "discord.py"],
-      "isopenSource": true,
-      "active": true,
-      "focusedProject": false
-    },
-    {
-      "name": "????",
-      "description": "Svelte open-source music player with offline support. Customizable interface with CSS & keyboard shortcuts. Includes audio visualization, smart playlists, and LAN sharing.",
-      "url": "#",
-      "tags": ["sveltekit", "svelte", "tailwind"],
-      "isopenSource": false,
-      "active": false,
-      "focusedProject": false
-    },
-    {
-      "name": "roblox-filter-for-discord",
-      "description": "Discord bot programmed in discord.py that adds 'Roblox-style' moderation to a channel using webhooks to imitate user communication, using their avatar and username.",
-      "url": "https://git.dromzeh.dev/roblox-filter-for-discord",
-      "tags": ["python", "discord.py"],
-      "isopenSource": true,
-      "active": false,
-      "focusedProject": false
-    }
-  ]
+	"projects": [
+		{
+			"name": "wanderer.moe",
+			"description": "Open-Source resource website for assets used by over 1 million users. Built using SvelteKit, TailwindCSS & Cloudflare Stack (Workers, Pages & R2) i18n support implemented using crowdin.",
+			"url": "https://wanderer.moe/",
+			"categories": ["sveltekit", "svelte", "tailwind"],
+			"isOpenSource": true,
+			"active": true
+		},
+		{
+			"name": "api.wanderer.moe",
+			"description": "API for wanderer.moe, built using Cloudflare Workers & itty-router to manage routes & parameters. Used to generate Game, Asset & OC Generator Routes by directly fetching data from the R2 Bucket.",
+			"url": "https://git.wanderer.moe/api",
+			"categories": ["javascript", "cloudflare workers"],
+			"isOpenSource": true,
+			"active": true
+		},
+		{
+			"name": "hsr-fps-unlocker",
+			"description": "Node.JS program that modifies the FPS value in the settings registry entry to go past the 60FPS limit in Honkai: Star Rail",
+			"url": "https://git.dromzeh.dev/hsr-fps-unlocker",
+			"categories": ["javascript", "node.js"],
+			"isOpenSource": true,
+			"active": true
+		},
+		{
+			"name": "hi3-fps-unlocker",
+			"description": "Node.JS program that modifies registry entries to allow for custom modification value of Honkai Impact 3rd FPS in and out of levels ('combat').",
+			"url": "https://git.dromzeh.dev/hi3-fps-unlocker",
+			"categories": ["javascript", "node.js"],
+			"isOpenSource": true,
+			"active": true
+		},
+		{
+			"name": "qbit-rpc",
+			"description": "A simple, lightweight, and easy to use Discord Rich Presence for qBittorrent, made with Javascript and Node.JS. Shows statistics such current and overall download and upload speeds, with average ratios.",
+			"url": "https://git.dromzeh.dev/qbit-rpc",
+			"categories": ["javascript", "node.js"],
+			"isOpenSource": true,
+			"active": true
+		},
+		{
+			"name": "dromzeh.dev",
+			"description": "My personal website, programmed with SvelteKit, TailwindCSS, and Cloudflare Pages. Includes a static blog done with MDSVeX and Tailwind Typography. Lanyard API integration for Discord RPC.",
+			"url": "https://git.dromzeh.dev/dromzeh.dev",
+			"categories": ["sveltekit", "svelte", "tailwind", "typescript"],
+			"isOpenSource": true,
+			"active": true
+		},
+		{
+			"name": "vmt",
+			"description": "A Discord Voice Message Transcriber and Translator. Made with discord.py, using Google's SpeechRecognition and DeepL's Translation API.",
+			"url": "https://git.dromzeh.dev/vmt",
+			"categories": ["python", "discord.py"],
+			"isOpenSource": true,
+			"active": true
+		},
+		{
+			"name": "????",
+			"description": "Svelte open-source music player with offline support. Customizable interface with CSS & keyboard shortcuts. Includes audio visualization, smart playlists, and LAN sharing.",
+			"url": "#",
+			"categories": ["sveltekit", "svelte", "tailwind"],
+			"isOpenSource": false,
+			"active": false
+		},
+		{
+			"name": "roblox-filter-for-discord",
+			"description": "Discord bot programmed in discord.py that adds 'Roblox-style' moderation to a channel using webhooks to imitate user communication, using their avatar and username.",
+			"url": "https://git.dromzeh.dev/roblox-filter-for-discord",
+			"categories": ["python", "discord.py"],
+			"isOpenSource": true,
+			"active": false
+		}
+	]
 }
