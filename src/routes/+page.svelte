@@ -26,7 +26,7 @@ const showPosts = 2
 
 <div class="py-24 text-gray-400">
 	<p class="font-semibold text-primary-100">dromzeh.dev</p>
-	<div class="grid gap-3 py-2 ">
+	<div class="grid gap-3 py-2">
 		<div>
 			Hi, I'm Marcel - known as dromzeh on the internet. I'm a {age} year old Reverse & Software
 			Engineer, experienced with Svelte, C#, Typescript, Javascript, Node.js, Tailwind, Python
@@ -44,8 +44,10 @@ const showPosts = 2
 				>here</a
 			>.
 		</div>
-		<div class = "mb-2">
-			Outside of programming stuff, I've played rhythm games since 2015, primarily onto VSRG since 2019. And, I "occasionally" write <a class="link-underline font-semibold text-white"
+		<div class="mb-2">
+			Outside of programming stuff, I've played rhythm games since 2015, primarily onto VSRG
+			since 2019. And, I "occasionally" write <a
+				class="link-underline font-semibold text-white"
 				href="https://dromzeh.dev/posts">posts</a> too.
 		</div>
 		<Lanyard />
