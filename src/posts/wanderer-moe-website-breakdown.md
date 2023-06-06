@@ -1,6 +1,6 @@
 ---
 title: 'wanderer.moe - Website Breakdown'
-description: 'Breaking down wanderer.moe, including how it works and using analytics to calculate how much it costs yearly and monthly to run the site.'
+description: 'Breaking down wanderer.moe and how it works, including the CDN, API, and overall site statistics'
 date: '2023-05-12'
 categories:
     - cloudflare
@@ -27,15 +27,11 @@ The CDN is hosted using Cloudflare's [R2 Storage](https://www.cloudflare.com/pro
 
 I upload and manage the R2 Bucket using [rclone](https://rclone.org/), which is a free tool that allows you to manage cloud storage.
 
+All files on the CDN are currently open source on [wanderer-moe/cdn](https://git.wanderer.moe/cdn/), anyone can upload files to the CDN, via pull request, and it'll be synced to the R2 bucket using a Github Workflow with rclone.
+
 Why use R2 to host assets instead of another service? R2 has Zero egress fee storage, meaning nothing is charged extra for any users downloading data, making it great for hosting assets, and it's also very affordable compared to other services such as AWS S3.
 
 wanderer.moe **used to store all Static Images on the root domain**, as more images started to be uploaded but this caused the site to be slow, build times to be long, and it was hard to manage the images without having to rebuild the site each time.
-
-According to Cloudflare's statistics, on average there are `30,000` requests made per hour, equal to `720,000` requests per day.
-
-To get the total amount of requests per month, we multiply `720,000` by `30`, which is equal to `21,600,000` requests per month.
-
-Using [Cloudflare's R2 Pricing Calculator](https://r2-calculator.cloudflare.com/) we can calculate the total cost of the CDN, this is set to be `4.18 USD` per month, equal to `50.11 USD` per year.
 
 ## api.wanderer.moe (CF Workers)
 
@@ -54,8 +50,6 @@ Workers works great for my use-case as it is directly bound to the R2 Bucket, me
 If I wanted to add a new game to the OC Generator, I can just upload a folder with a `.json` file containing data to the R2 Bucket's `oc-generator` folder, and it will automatically be added to the site - continuously saving on build times.
 
 If you're interested, the code for the API is open-source on GitHub and can be found [here](https://git.wanderer.moe/api/).
-
-My Cloudflare account is under the [paid plan](https://developers.cloudflare.com/workers/platform/pricing/), this allows for 10 million requests per month, which is more than enough for the site. This costs me `5 USD` per month, equal to `60 USD` per year.
 
 ## status.wanderer.moe (Github Pages & Actions)
 
@@ -101,8 +95,6 @@ This is used to get the data for the game, and then the data is passed to `+page
 
 This works great as it means I don't have to write each asset page or every possible outcome unlike what was previously used when wanderer.moe was a CSR Static Site.
 
-Cloudflare's Workers Paid plan is [bundled with Pages](https://developers.cloudflare.com/workers/platform/pricing/), so I don't have to pay separately. This costs me nothing as the price is included in the Workers Paid plan.
-
 ## Crowdin (Localization & Translations)
 
 [Crowdin](https://crowdin.com/) is what wanderer.moe uses for translations and localization.
@@ -113,14 +105,10 @@ Plus, Crowdin has free plans for open-source projects, and also offers a 1 year 
 
 The same applies the other way around, if a translation is changed, removed or added on crowdin, it is automatically added to the site.
 
-## Domain Names Pricing
+## Site Performance
 
-The domain `wanderer.moe` is registered with Namecheap, everything else is managed by Cloudflare. The domain name costs around `17 USD` per year.
+A lot of work has gone into site performance over the past couple months, with the recent switch from storing images onto the CDN & having a better API, the success rate across the site being **99.9%** with load times becoming significantly faster.
 
-I include `dromzeh.dev` into the price on wanderer.moe because `wtf.dromzeh.dev` was the old domain name of `wanderer.moe`, costing the same as `wanderer.moe`, which is another `17 USD` per year.
+## Analytics Breakdown
 
-## Cost Breakdown
-
-The total cost of wanderer.moe is `144.11 USD` per year, equal to `12.01 USD` per month.
-
-(btw, if you like the site [or the other stuff I do](https://git.dromzeh.dev?tab=repositories), consider [donating](https://buymeacoffee.com/marcelmd) to help me keep it running :3)
+What's the Monthly Average like? Short answer: it varies in the range of **60K-100K**, the website is updated frequently, therefore the MAU is always changing. As of June 2023, Google Analytics is no longer used to track data. Based on when it was used and taking into account data that's lost due to the GA4 migration, around **35-45% of users return to the site after their first visit, with an average engagement time of 5 minutes**.
