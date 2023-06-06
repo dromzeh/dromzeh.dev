@@ -10,7 +10,7 @@ jobs:
             deployments: write
         steps:
             - uses: actions/checkout@v2 
-            - name: Wait for CF Pages # waits for CF to finish building
+            - name: Wait for CF Pages # waits for CF pages to finish building
               id: cf-pages
               uses: WalshyDev/cf-pages-await@v1
               with:
@@ -18,9 +18,9 @@ jobs:
                   accountId: 'ba4e8f7f9ffbc23dba6acd0d9bd3ef46'
                   project: 'dromzeh-dev'
                   githubToken: ${{ secrets.GITHUB_TOKEN }}
-            - run: | # clears cache on CF
+            - run: | # purges cache on CF
                   curl -X \
                     -H "Authorization: ${{ secrets.CF_API_TOKEN }}" \
                     -H "Content-Type: application/json" \
                     --data '{"purge_everything":true}' \
-                    https://api.cloudflare.com/client/v4/zones/ba4e8f7f9ffbc23dba6acd0d9bd3ef46/purge_cache
+                    https://api.cloudflare.com/client/v4/zones/2f0aebc3d15e4c1c38f303de3b34aa1f/purge_cache
