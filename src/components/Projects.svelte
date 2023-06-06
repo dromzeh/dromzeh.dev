@@ -1,5 +1,4 @@
 <script lang="ts">
-// src/components/Projects.svelte
 import { onMount } from 'svelte'
 import type { Project } from '$lib/types/project'
 import projectsListData from '../data/projects.json'

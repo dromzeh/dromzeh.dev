@@ -1,5 +1,4 @@
 <script lang="ts">
-// import { page } from '$app/stores'
 import Posts from '../components/Posts.svelte'
 import Projects from '../components/Projects.svelte'
 import Contact from '../components/Contact.svelte'
@@ -7,7 +6,7 @@ import Lanyard from '../components/Lanyard.svelte'
 import dayjs from 'dayjs'
 import moment from 'moment-timezone'
 
-let age = '16' // also incase getAge function fails for some reason..
+let age = '16' // placeholder
 let myTime = moment().tz('Europe/London').format('HH:mm:ss')
 
 setInterval(() => {
