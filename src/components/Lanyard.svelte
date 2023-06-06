@@ -34,7 +34,7 @@ onMount(() => {
 		} else {
 			currentStatus = 'discord'
 		}
-	}, 10000)
+	}, 15000)
 
 	// update lanyard every 15 seconds
 	setInterval(() => {
@@ -47,13 +47,14 @@ onDestroy(() => {
 })
 </script>
 
+<!-- TODO: Fade animations &  RPC support -->
 <div>
 	{#if lanyard}
 		<div>
 			{#if currentStatus === 'discord'}
 				<p>
 					<i class="fas fa-circle {statusColors[lanyard?.data.discord_status]}"></i>
-					Currently
+					I'm currently
 					<a
 						class="link-underline font-semibold text-white"
 						href="https://discord.com/users/{lanyard?.data?.discord_user.id}"
@@ -61,7 +62,7 @@ onDestroy(() => {
 				</p>
 			{:else if currentStatus === 'spotify'}
 				<p>
-					<i class="fab fa-spotify text-green-200"></i> Currently listening to
+					<i class="fab fa-spotify text-green-200"></i> I'm currently listening to
 					<a
 						class="link-underline font-semibold text-white"
 						href="https://open.spotify.com/track/{lanyard?.data?.spotify.track_id}"
