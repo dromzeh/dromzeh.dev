@@ -1,0 +1,18 @@
+{
+	"contact": [
+		{
+			"type": "email",
+			"url": "mailto:marcel@dromzeh.dev",
+			"title": "Email (marcel@dromzeh.dev)",
+			"description": "Preferred for more formal enquiries, but not required.",
+			"icon": "fas fa-envelope"
+		},
+		{
+			"type": "discord",
+			"url": "https://discord.com/users/492731761680187403",
+			"title": "Discord (dromzeh#1337)",
+			"description": "Preferred for more casual/informal enquiries, with a faster response time.",
+			"icon": "fab fa-discord"
+		}
+	]
+}
