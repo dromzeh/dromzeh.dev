@@ -62,11 +62,11 @@ It will prompt you to enter your Send and Receive settings, which you can easily
 
 IMAP's default port is 1143; SMTP's is 1025.
 
-### Recieve Settings (Enable STARTTLS):
+### Recieve Settings (Enable STARTTLS)
 
 ![Recieve](/images/proton-claws-1.png)
 
-### Send Settings (Enable STARTTLS):
+### Send Settings (Enable STARTTLS)
 
 ![Send](/images/proton-claws-2.png)
 
