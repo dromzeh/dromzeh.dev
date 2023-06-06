@@ -27,14 +27,6 @@ async function updateLanyard() {
 
 onMount(() => {
 	updateLanyard()
-	// update status every 10 seconds
-	intervalId = setInterval(() => {
-		if (lanyard?.data?.listening_to_spotify) {
-			currentStatus = currentStatus === 'discord' ? 'spotify' : 'discord'
-		} else {
-			currentStatus = 'discord'
-		}
-	}, 15000)
 
 	// update lanyard every 15 seconds
 	setInterval(() => {
@@ -47,33 +39,40 @@ onDestroy(() => {
 })
 </script>
 
-<!-- TODO: Fade animations &  RPC support -->
-<div>
+<!-- TODO: RPC support? -->
+<div class = "text-sm">
 	{#if lanyard}
 		<div>
-			{#if currentStatus === 'discord'}
-				<p>
-					<i class="fas fa-circle {statusColors[lanyard?.data.discord_status]}"></i>
-					I'm currently
-					<a
-						class="link-underline font-semibold text-white"
-						href="https://discord.com/users/{lanyard?.data?.discord_user.id}"
-						>{statusDict[lanyard?.data.discord_status]}</a> on Discord
-				</p>
-			{:else if currentStatus === 'spotify'}
-				<p>
-					<i class="fab fa-spotify text-green-200"></i> I'm currently listening to
-					<a
-						class="link-underline font-semibold text-white"
-						href="https://open.spotify.com/track/{lanyard?.data?.spotify.track_id}"
-						>{lanyard?.data?.spotify.song}</a>
-					by
-					<a
-						class="link-underline font-semibold text-white"
-						href="https://open.spotify.com/search/{lanyard?.data?.spotify.artist}"
-						>{lanyard?.data?.spotify.artist}</a>
-				</p>
-			{/if}
+			<p>
+				<i class="fas fa-circle {statusColors[lanyard?.data.discord_status]}"></i>
+				I'm currently
+				<a
+					class="link-underline font-semibold text-white"
+					href="https://discord.com/users/{lanyard?.data?.discord_user.id}"
+					>{statusDict[lanyard?.data.discord_status]}</a>
+				on Discord
+				{#if lanyard?.data?.listening_to_spotify}
+					- listening to
+					<span class="inline-block">
+						<a
+							class="link-underline font-semibold text-white"
+							href="https://open.spotify.com/track/{lanyard?.data?.spotify.track_id}"
+							>{lanyard?.data?.spotify.song}</a>
+						by
+						<a
+							class="link-underline font-semibold text-white"
+							href="https://open.spotify.com/search/{lanyard?.data?.spotify.artist}"
+							>{lanyard?.data?.spotify.artist}</a>
+					</span>
+				{/if}
+			</p>
+		</div>
+	{:else}
+		<div>
+			<p class = "animate-pulse">
+				<i class="fas fa-circle-notch animate-spin"></i>
+				Loading Discord status...
+			</p>
 		</div>
 	{/if}
 </div>
