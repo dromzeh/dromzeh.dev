@@ -24,7 +24,7 @@ const showPosts = 2
 </svelte:head>
 
 <div class="py-24 text-gray-400">
-	<p class="font-semibold text-primary-100">dromzeh.dev</p>
+	<p class="text-lg font-semibold text-white">dromzeh.dev</p>
 	<div class="grid gap-3 py-2">
 		<div>
 			Hi, I'm Marcel - known as dromzeh on the internet. I'm a {age} year old Reverse & Software
@@ -54,14 +54,13 @@ const showPosts = 2
 	</div>
 	<div>
 		<div>
-			<p class="mt-2 font-semibold text-primary-100">Projects</p>
-			<p class="text-sm text-gray-400">Top {showProjects} projects shown</p>
+			<p class="mt-2 text-lg font-semibold text-white">Projects</p>
+			<p class="text-sm text-gray-400">{showProjects} recent posts shown</p>
 		</div>
 		<Projects showProjects="{showProjects}" />
 		<div>
 			<a href="/projects">
-				<p
-					class="mb-2 text-right text-sm text-gray-400 transition-all hover:text-primary-100">
+				<p class="mb-2 text-right text-sm text-gray-400 transition-all hover:text-white">
 					View More <i class="fas fa-arrow-right"></i>
 				</p>
 			</a>
@@ -70,14 +69,13 @@ const showPosts = 2
 	</div>
 	<div>
 		<div>
-			<p class="mt-4 font-semibold text-primary-100">Posts</p>
-			<p class="text-sm text-gray-400">Top {showPosts} posts shown</p>
+			<p class="mt-4 text-lg font-semibold text-white">Posts</p>
+			<p class="text-sm text-gray-400">{showPosts} recent posts shown</p>
 		</div>
 		<Posts showPosts="{showPosts}" />
 		<div>
 			<a href="/posts">
-				<p
-					class="mb-2 text-right text-sm text-gray-400 transition-all hover:text-primary-100">
+				<p class="mb-2 text-right text-sm text-gray-400 transition-all hover:text-white">
 					View More <i class="fas fa-arrow-right"></i>
 				</p>
 			</a>
@@ -86,7 +84,7 @@ const showPosts = 2
 	</div>
 	<div>
 		<div class="mb-2">
-			<p class="mt-4 font-semibold text-primary-100">Contact</p>
+			<p class="mt-4 font-semibold text-white">Contact</p>
 			<p class="text-sm text-gray-400">
 				I aim to respond to all messages within 24 hours, it is currently {myTime} for me (Europe/London).
 			</p>

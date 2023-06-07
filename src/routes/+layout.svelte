@@ -1,5 +1,5 @@
 <script lang="ts">
-import '../app.css?v=05062023'
+import '../app.css?v=070620231'
 import Navbar from '../components/Navbar.svelte'
 import Footer from '../components/Footer.svelte'
 import LoadingTransition from '../components/LoadingTransition.svelte'

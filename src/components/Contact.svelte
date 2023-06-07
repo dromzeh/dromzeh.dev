@@ -12,8 +12,8 @@ let contactList: Contact[] = contactListData.contact.map((contact) => ({
 		{#each contactList as contact}
 			<a href="{contact.url}" target="_blank">
 				<div
-					class="relative rounded-lg bg-white bg-opacity-0 p-2 transition-all hover:bg-opacity-5">
-					<p class="font-semibold text-primary-100">
+					class="relative rounded-md bg-gray-400 bg-opacity-5 p-3 transition-all hover:bg-opacity-10 hover:text-gray-300">
+					<p class="font-semibold text-white">
 						<i class="{contact.icon} mr-2"></i>{contact.title}
 					</p>
 					<p>{contact.description}</p>
