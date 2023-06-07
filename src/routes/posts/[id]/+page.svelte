@@ -12,7 +12,7 @@ const { title, author, date, categories } = data.meta
 
 <article class="flex flex-grow flex-col py-24">
 	<a href="/posts">
-		<p class="mb-2 text-sm text-gray-400 transition-all hover:text-primary-100">
+		<p class="mb-2 text-lg text-gray-400 transition-all hover:text-white">
 			<i class="fas fa-arrow-left"></i> View all posts
 		</p>
 	</a>

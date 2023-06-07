@@ -22,15 +22,13 @@ onMount(async () => {
 		{#each projectsList as proj}
 			<a href="{proj.url}">
 				<div
-					class="relative rounded-lg bg-white bg-opacity-0 p-2 transition-all hover:bg-opacity-5">
-					<p class="font-semibold text-primary-100">
-						{proj.name}
-						<span class="text-sm font-normal text-gray-500"
-							>({#if proj.isOpenSource}Open Source{:else}Closed Source{/if})</span>
+					class="relative rounded-md bg-gray-400 bg-opacity-5 p-3 transition-all hover:bg-opacity-10 hover:text-gray-300">
+					<p class="font-semibold text-white">
+						{proj.name} ({#if proj.isOpenSource}Open Source{:else}Closed Source{/if})
 					</p>
-					<p class="mb-2">
+					<p class="mb-2 text-white">
 						{#each proj.categories as category}
-							<span class="text-xs font-semibold uppercase text-gray-400"
+							<span class="text-xs font-semibold uppercase"
 								>{category}{#if category !== proj.categories[proj.categories.length - 1]},
 								{/if}</span>
 						{/each}

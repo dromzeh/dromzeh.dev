@@ -21,7 +21,7 @@
 	}
 
 	.link-underline {
-		@apply bg-white bg-opacity-5 px-1 hover:bg-opacity-10;
+		@apply rounded-md bg-gray-400 bg-opacity-5 px-1 hover:bg-opacity-10;
 	}
 
 	.all-prose {
