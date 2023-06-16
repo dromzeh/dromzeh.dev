@@ -4,7 +4,7 @@
 			"name": "wanderer.moe",
 			"description": "Resource website for game assets used by over 1 million users. Built using SvelteKit, TailwindCSS & Cloudflare Stack (Workers, Pages & R2) i18n support implemented using crowdin.",
 			"url": "https://wanderer.moe/",
-			"categories": ["sveltekit", "svelte", "tailwind"],
+			"categories": ["sveltekit", "tailwind"],
 			"isOpenSource": true,
 			"active": true
 		},
@@ -12,7 +12,7 @@
 			"name": "api.wanderer.moe",
 			"description": "API for wanderer.moe, built using Cloudflare Workers & itty-router to manage routes & parameters. Used to generate Game, Asset & OC Generator Routes by directly fetching data from the R2 Bucket.",
 			"url": "https://git.wanderer.moe/api",
-			"categories": ["javascript", "cloudflare workers"],
+			"categories": ["typescript", "cloudflare workers"],
 			"isOpenSource": true,
 			"active": true
 		},
@@ -44,7 +44,7 @@
 			"name": "dromzeh.dev",
 			"description": "My personal website, programmed with SvelteKit, TailwindCSS, and Cloudflare Pages. Includes a static blog done with MDSVeX and Tailwind Typography. Lanyard API integration for Discord RPC.",
 			"url": "https://git.dromzeh.dev/dromzeh.dev",
-			"categories": ["sveltekit", "svelte", "tailwind", "typescript"],
+			"categories": ["sveltekit", "tailwind", "typescript"],
 			"isOpenSource": true,
 			"active": true
 		},
@@ -60,7 +60,7 @@
 			"name": "????",
 			"description": "Svelte open-source music player with offline support. Customizable interface with CSS & keyboard shortcuts. Includes audio visualization, smart playlists, and LAN sharing.",
 			"url": "#",
-			"categories": ["sveltekit", "svelte", "tailwind"],
+			"categories": ["sveltekit", "tailwind"],
 			"isOpenSource": false,
 			"active": false
 		},
