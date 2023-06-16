@@ -10,7 +10,7 @@
 		},
 		{
 			"name": "api.wanderer.moe",
-			"description": "API for wanderer.moe, built using Cloudflare Workers & itty-router to manage routes & parameters. Used to generate Game, Asset & OC Generator Routes by directly fetching data from the R2 Bucket.",
+			"description": "API for wanderer.moe, built using Cloudflare Workers & itty-router to manage routes & parameters. Used to generate Game, Asset & OC Generator Routes by directly fetching data from the R2 Bucket & D1 to store popularity for sorting on the website.",
 			"url": "https://git.wanderer.moe/api",
 			"categories": ["typescript", "cloudflare workers"],
 			"isOpenSource": true,

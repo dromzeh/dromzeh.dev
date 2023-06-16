@@ -28,7 +28,7 @@ const showPosts = 2
 	<div class="grid gap-3 py-2">
 		<div>
 			Hi, I'm Marcel - known as dromzeh on the internet. I'm a {age} year old Reverse & Software
-			Engineer, experienced with Svelte, C#, Typescript, Javascript, Node.js, Tailwind, Python
+			Engineer, experienced with Svelte, C#, Typescript, Javascript, Node.js, TailwindCSS, Python
 			& IDA.
 		</div>
 		<div>
@@ -36,7 +36,7 @@ const showPosts = 2
 				class="link-underline font-semibold text-white"
 				href="https://wanderer.moe">wanderer.moe</a
 			>, a centralized database of various game assets. Created in March 2022, it's built with
-			Node.js, Tailwind & SvelteKit and utilizes Cloudflare's Stack (R2, Workers & Pages),
+			Node.js, Tailwind & SvelteKit and utilizes Cloudflare's Stack (R2, D1, Workers & Pages),
 			relied on by thousands of users per day. Our codebase is completely open source, and can
 			be found
 			<a class="link-underline font-semibold text-white" href="https://git.wanderer.moe/"
