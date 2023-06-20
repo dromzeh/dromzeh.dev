@@ -113,4 +113,4 @@ However, if the FPS values in the settings are changed, the FPS values in the re
 
 # Conclusion
 
-This program is open source, and can be found on my [GitHub](https://git.dromzeh.dev/hi3-fps-unlocker).
+This program is open source, and can be found on my [GitHub](https://git.dromzeh.dev/hyv-fps-unlocker).
