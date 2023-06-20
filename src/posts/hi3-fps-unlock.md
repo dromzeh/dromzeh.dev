@@ -1,18 +1,17 @@
 ---
 title: 'Modifying the FPS of Honkai Impact 3rd (Hi3) on PC'
-description: 'How I created a program using Node.js that allows me to modify the FPS value in Honkai Impact 3rd (Hi3) to any number I desire.'
-date: '2023-02-26'
+description: 'How I created a program using Rust that allows me to modify the FPS value in Honkai Impact 3rd (Hi3) to any number I desire.'
+date: '2023-06-20'
 categories:
-    - nodejs
-    - javascript
+    - rust
 published: true
 author: 'dromzeh'
 ---
 
 [Honkai Impact 3rd (Hi3)](https://en.wikipedia.org/wiki/Honkai_Impact_3rd) is a pretty popular mobile game that has been [ported to PC](https://honkaiimpact3.hoyoverse.com/global/en-us/news/1977?cate=).
-However, the options for custom FPS are limited to up to 60 out of 'combat' (level) and up to 120 in 'combat' (level).
+However, the options for custom FPS are limited to up to 60 out of level and up to 120 in level.
 
-For many, this is not enough. I personally like to play at 144 FPS (the same FPS as my Primary Monitor), but I can't do that in Hi3, so I decided to make a program that allows me to modify the FPS value in Hi3 to any number I desire.
+For many, this is not enough. I personally like to play at 144 FPS (my primary monitor's refresh rate is at 144hz), but I can't do that in Hi3, so I decided to make a program that allows me to modify the FPS value in Hi3 to any number I desire.
 
 ## Research
 
@@ -51,89 +50,66 @@ These values are the FPS values that are used in the game.
 
 ## The Program
 
-I decided to use `Node.js` and `javascript` to create this program, as I could use the `winreg` module to read and write to the registry & also to help me with my javascript skills.
+Note: this program was originally written using NodeJS, but I decided to rewrite it in Rust for fun.
 
-The first step is to check to find the Hi3 registry entry. I do this by using the `winreg` module to search for the registry entry.
+### Getting the Registry Value
 
-```javascript
-const winreg = require('winreg')
+The first thing I need to do is read the registry value, so we are using the `winreg` crate to do this.
 
-const regKey = new winreg({
-	hive: winreg.HKCU,
-	key: '\\Software\\miHoYo\\Honkai Impact 3rd'
-})
+```rust
+let hkcu = RegKey::predef(HKEY_CURRENT_USER);
+
+let hi3_regkey =
+    hkcu.open_subkey_with_flags("Software\\miHoYo\\Honkai Impact 3rd", KEY_ALL_ACCESS)?;
+
+let values = hi3_regkey
+    .enum_values()
+    .map(|x| x.unwrap().0)
+    .collect::<Vec<_>>();
+
+let value_name = values
+    .iter()
+    .find(|&x| x.contains("PersonalGraphicsSettingV2"))
+    .unwrap();
+
+println!("Found PersonalGraphicsSettingV2 at {:?}", value_name);
+let raw_value = hi3_regkey.get_raw_value(value_name)?;
 ```
 
-Now, we need to search for the value that contains `GENERAL_DATA_V2_PersonalGraphicsSettingV2`.
+### The JSON
 
-```javascript
-const value = items.find(
-	(item) =>
-		item.type === 'REG_BINARY' &&
-		item.name.includes('GENERAL_DATA_V2_PersonalGraphicsSettingV2')
-)
-if (value) {
-	// Found the binary value, now we can start parsing the data
-}
+Now that we have the raw value, we need to parse it as JSON.
+
+```rust
+let json_value: Value = serde_json::from_slice(&raw_value.bytes)?;
 ```
 
-Now that we have the value, we need to parse the data inside of it. The data is stored as `HEX`, so we need to convert it to a `string`. The `buffer` module is used to convert the `HEX` data to a `string`.
+## Updating the FPS Values
 
-```javascript
-// Convert the hex data to a string
-const hexData = value.value.toString('hex')
-const buffer = Buffer.from(hexData, 'hex')
-const dataString = buffer.toString()
+Now that we have the JSON & collecting user input, we can update the FPS values.
+
+```rust
+// update the json value with the new FPS values
+let mut json_value: Value = serde_json::from_slice(&raw_value.bytes)?;
+json_value["TargetFrameRateForInLevel"] = json!(target_frame_rate_for_in_level);
+json_value["TargetFrameRateForOthers"] = json!(target_frame_rate_for_others);
+
+// convert the json back to bytes, and update the registry value
+let new_raw_value = RegValue {
+    bytes: serde_json::to_vec(&json_value)?,
+    vtype: raw_value.vtype,
+};
+
+hi3_regkey.set_raw_value(value_name, &new_raw_value)?;
 ```
 
-Now that we have the data as a `string`, we can parse it as `JSON`. We are also going to clean up the string a little bit, as it contains some extra characters that we don't need.
+## The Result
 
-```javascript
-// Clean the data string to remove all non-printable characters, then parse it to JSON
-const printableAscii = /[\x20-\x7E]+/g
-const cleanDataString = dataString.match(printableAscii).join('')
-const graphicsSettings = JSON.parse(cleanDataString)
-```
-
-Now that we have the data as JSON, we can modify the FPS values. I decided to make the program take in `2 arguments` from the user, the first being the FPS value for when you're in 'combat' (level), and the second being the FPS value for when you're not in 'combat' (level).
-This is done using `readline` to get the arguments from the user.
-
-```javascript
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
-
-rl.question('Enter the desired FPS in combat (level): ', (combatFPS) => {
-    rl.question('Enter the desired FPS outside of combat (level): ', (outOfCombatFPS) => {
-        graphicsSettings.TargetFrameRateForInLevel = parseInt(combatFPS);
-         graphicsSettings.TargetFrameRateForOthers = parseInt(outOfCombatFPS);
-         /// ...
-```
-
-Now, we modify the `JSON` data, and then convert it back to `HEX`. We then `write` the new data to the registry.
-
-```javascript
-const modifiedDataString = JSON.stringify(graphicsSettings)
-const modifiedBuffer = Buffer.from(modifiedDataString)
-const modifiedHexData = modifiedBuffer.toString('hex')
-
-// Updating the binary value with the new hex data
-regKey.set(value.name, Registry.REG_BINARY, modifiedHexData, function (err) {
-	if (err) {
-		console.log(err)
-	} else {
-		console.log(`Updated value ${value.name} to ${modifiedHexData}\n`)
-	}
-})
-```
-
-Now after putting all of this together, we have a program that can modify the FPS values in Hi3.
-The good thing is you don't have to run this program every time you want to use a Non-Default FPS value, as the values are stored in the registry, so you can just run it once each time you want to change the FPS value.
-
-As you can see, the game successfully runs at the new FPS value, in this case `200 FPS`. (In and out of a level)
+The game successfully runs at the new FPS value, in this case `200 FPS`, as shown below:
 
 ![OOC Hi3](/images/ooc-hi3-200fps.png)
+
+However, if the FPS values in the settings are changed, the FPS values in the registry will be overwritten, so the program will need to be run again.
 
 # Conclusion
 
