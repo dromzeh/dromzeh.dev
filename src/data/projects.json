@@ -34,9 +34,9 @@
 		},
 		{
 			"name": "hi3-fps-unlocker",
-			"description": "Node.JS program that modifies registry entries to allow for custom modification value of Honkai Impact 3rd FPS in and out of levels ('combat').",
+			"description": "Rust program that modifies the FPS value in the settings registry entry to go past the 60FPS limit in Honkai Impact 3rd (PC)",
 			"url": "https://git.dromzeh.dev/hi3-fps-unlocker",
-			"categories": ["javascript", "node.js"],
+			"categories": ["rust"],
 			"isOpenSource": true,
 			"active": true
 		},
