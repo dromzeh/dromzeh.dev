@@ -25,17 +25,9 @@
 			"active": true
 		},
 		{
-			"name": "hsr-fps-unlocker",
-			"description": "Node.JS program that modifies the FPS value in the settings registry entry to go past the 60FPS limit in Honkai: Star Rail",
-			"url": "https://git.dromzeh.dev/hsr-fps-unlocker",
-			"categories": ["javascript", "node.js"],
-			"isOpenSource": true,
-			"active": true
-		},
-		{
-			"name": "hi3-fps-unlocker",
-			"description": "Rust program that modifies the FPS value in the settings registry entry to go past the 60FPS limit in Honkai Impact 3rd (PC)",
-			"url": "https://git.dromzeh.dev/hi3-fps-unlocker",
+			"name": "hyv-fps-unlocker",
+			"description": "Rust program that modifies the FPS value in the settings registry entry to go past the default 60FPS limit in Honkai Impact 3rd and Honkai: Star Rail",
+			"url": "https://git.dromzeh.dev/hyv-fps-unlocker",
 			"categories": ["rust"],
 			"isOpenSource": true,
 			"active": true
