@@ -25,21 +25,21 @@ The data inside this value was stored as HEX. Looking into it, it is formatted l
 
 ```json
 {
-    "ResolutionQuality": "High",
-    "ShadowLevel": "ULTRA",
-    "TargetFrameRateForInLevel": 60,
-    "TargetFrameRateForOthers": 60,
-    "ReflectionQuality": "HIGH",
-    "UseDynamicBone": true,
-    "UseFXAA": true,
-    "GlobalIllumination": "High",
-    "AmbientOcclusion": "HIGH",
-    "VolumetricLight": "High",
-    "UsePostFX": true,
-    "PostFXGrade": "High",
-    "UseHDR": true,
-    "UseDistortion": true,
-    "LodGrade": 0
+	"ResolutionQuality": "High",
+	"ShadowLevel": "ULTRA",
+	"TargetFrameRateForInLevel": 60,
+	"TargetFrameRateForOthers": 60,
+	"ReflectionQuality": "HIGH",
+	"UseDynamicBone": true,
+	"UseFXAA": true,
+	"GlobalIllumination": "High",
+	"AmbientOcclusion": "HIGH",
+	"VolumetricLight": "High",
+	"UsePostFX": true,
+	"PostFXGrade": "High",
+	"UseHDR": true,
+	"UseDistortion": true,
+	"LodGrade": 0
 }
 ```
 

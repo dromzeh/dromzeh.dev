@@ -34,15 +34,5 @@ const nav: NavItems[] = [
 						: $page.url.pathname.startsWith(item.path)}">{item.title}</a>
 			{/each}
 		</div>
-
-		<!-- <div class="ml-6 mr-2">
-			<p>
-				<a href="https://git.dromzeh.dev/dromzeh.dev"
-					><i
-						class="fab fa-github bg-gray-400 bg-opacity-0 p-2 text-lg text-gray-400 hover:bg-opacity-5 hover:text-white"
-					></i>
-				</a>
-			</p>
-		</div> -->
 	</nav>
 </header>

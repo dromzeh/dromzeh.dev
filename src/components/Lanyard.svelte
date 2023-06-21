@@ -26,8 +26,6 @@ async function updateLanyard() {
 
 onMount(() => {
 	updateLanyard()
-
-	// update lanyard every 15 seconds
 	setInterval(() => {
 		updateLanyard()
 	}, 15000)
