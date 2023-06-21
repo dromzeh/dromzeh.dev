@@ -25,21 +25,21 @@ The data inside this value was stored as HEX. Looking into it, it is formatted l
 
 ```json
 {
-	"ResolutionQuality": "High",
-	"ShadowLevel": "ULTRA",
-	"TargetFrameRateForInLevel": 60,
-	"TargetFrameRateForOthers": 60,
-	"ReflectionQuality": "HIGH",
-	"UseDynamicBone": true,
-	"UseFXAA": true,
-	"GlobalIllumination": "High",
-	"AmbientOcclusion": "HIGH",
-	"VolumetricLight": "High",
-	"UsePostFX": true,
-	"PostFXGrade": "High",
-	"UseHDR": true,
-	"UseDistortion": true,
-	"LodGrade": 0
+    "ResolutionQuality": "High",
+    "ShadowLevel": "ULTRA",
+    "TargetFrameRateForInLevel": 60,
+    "TargetFrameRateForOthers": 60,
+    "ReflectionQuality": "HIGH",
+    "UseDynamicBone": true,
+    "UseFXAA": true,
+    "GlobalIllumination": "High",
+    "AmbientOcclusion": "HIGH",
+    "VolumetricLight": "High",
+    "UsePostFX": true,
+    "PostFXGrade": "High",
+    "UseHDR": true,
+    "UseDistortion": true,
+    "LodGrade": 0
 }
 ```
 
@@ -111,6 +111,6 @@ The game successfully runs at the new FPS value, in this case `200 FPS`, as show
 
 However, if the FPS values in the settings are changed, the FPS values in the registry will be overwritten, so the program will need to be run again.
 
-# Conclusion
+## Conclusion
 
 This program is open source, and can be found on my [GitHub](https://git.dromzeh.dev/hyv-fps-unlocker).
