@@ -1,5 +1,5 @@
 <script lang="ts">
-import type { Contact } from '$lib/types/contact'
+import type { Contact } from '../lib/types/contact'
 import contactListData from '../data/contact.json'
 
 let contactList: Contact[] = contactListData.contact.map((contact) => ({

@@ -33,7 +33,6 @@ onMount(async () => {
 						{/each}
 					</p>
 					<p>{post.description}</p>
-					<p></p>
 				</div>
 			</a>
 		{/each}

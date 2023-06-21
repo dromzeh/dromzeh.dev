@@ -1,7 +1,7 @@
 {
 	"projects": [
 		{
-			"name": "wanderer.moe",
+			"name": "@wanderer-moe/site",
 			"description": "Resource website for game assets used by over 1 million users. Built using SvelteKit, TailwindCSS & Cloudflare Stack (Workers, Pages & R2) i18n support implemented using crowdin.",
 			"url": "https://wanderer.moe/",
 			"categories": ["sveltekit", "tailwind"],
@@ -9,7 +9,7 @@
 			"active": true
 		},
 		{
-			"name": "api.wanderer.moe",
+			"name": "@wanderer-moe/api",
 			"description": "API for wanderer.moe, built using Cloudflare Workers & itty-router to manage routes & parameters. Used to generate Game, Asset & OC Generator Routes by directly fetching data from the R2 Bucket & D1 to store popularity for sorting on the website.",
 			"url": "https://git.wanderer.moe/api",
 			"categories": ["typescript", "cloudflare workers"],
