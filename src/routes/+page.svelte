@@ -5,6 +5,7 @@ import Contact from '../components/Contact.svelte'
 import Lanyard from '../components/Lanyard.svelte'
 import dayjs from 'dayjs'
 import moment from 'moment-timezone'
+import Technologies from '../components/Technologies.svelte'
 
 let age = '16' // placeholder
 let myTime = moment().tz('Europe/London').format('HH:mm:ss')
@@ -27,9 +28,7 @@ const showPosts = 2
 	<p class="text-lg font-semibold text-white">dromzeh.dev</p>
 	<div class="grid gap-3 py-2">
 		<div>
-			Hi, I'm Marcel - known as dromzeh on the internet. I'm a {age} year old Reverse & Software
-			Engineer, experienced with Svelte, C#, Typescript, Javascript, Node.js, TailwindCSS, Python
-			& IDA.
+			Hi, I'm Marcel - a {age} year old Self-Taught Reverse & Software Engineer.
 		</div>
 		<div>
 			I'm the Project Lead (& creator) of <a
@@ -50,6 +49,13 @@ const showPosts = 2
 				href="https://dromzeh.dev/posts">posts</a> too.
 		</div>
 		<Lanyard />
+		<hr class="border-primary-600/10" />
+	</div>
+	<div>
+		<div class="mb-2">
+			<p class="mt-2 text-lg font-semibold text-white">Technologies</p>
+			<Technologies />
+		</div>
 		<hr class="border-primary-600/10" />
 	</div>
 	<div>

@@ -1,6 +1,6 @@
 ---
 title: 'Modifying the FPS of Honkai Impact 3rd (Hi3) on PC'
-description: 'How I created a program using Rust that allows me to modify the FPS value in Honkai Impact 3rd (Hi3) to any number I desire.'
+description: 'How I created a program using Rust that allows me to bypass the FPS limit in Hi3'
 date: '2023-06-20'
 categories:
     - rust

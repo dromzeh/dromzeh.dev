@@ -1,0 +1,23 @@
+<div class="my-4 flex flex-wrap justify-center gap-2 text-2xl text-white">
+	<iconify-icon icon="simple-icons:cloudflarepages"></iconify-icon>
+	<iconify-icon icon="devicon-plain:cloudflareworkers-wordmark"></iconify-icon>
+	<iconify-icon icon="simple-icons:cloudflare"></iconify-icon>
+	<iconify-icon icon="simple-icons:digitalocean"></iconify-icon>
+	<iconify-icon icon="simple-icons:googleanalytics"></iconify-icon>
+	<iconify-icon icon="simple-icons:docker"></iconify-icon>
+	<iconify-icon icon="simple-icons:svelte"></iconify-icon>
+	<iconify-icon icon="simple-icons:tailwindcss"></iconify-icon>
+	<iconify-icon icon="simple-icons:html5"></iconify-icon>
+	<iconify-icon icon="simple-icons:css3"></iconify-icon>
+	<iconify-icon icon="simple-icons:node-dot-js"></iconify-icon>
+	<iconify-icon icon="simple-icons:rust"></iconify-icon>
+	<iconify-icon icon="nonicons:c-sharp-16"></iconify-icon>
+	<iconify-icon icon="simple-icons:python"></iconify-icon>
+	<iconify-icon icon="simple-icons:javascript"></iconify-icon>
+	<iconify-icon icon="simple-icons:typescript"></iconify-icon>
+	<iconify-icon icon="simple-icons:ubuntu"></iconify-icon>
+	<iconify-icon icon="simple-icons:linux"></iconify-icon>
+	<iconify-icon icon="simple-icons:git"></iconify-icon>
+	<iconify-icon icon="simple-icons:github"></iconify-icon>
+	<iconify-icon icon="simple-icons:visualstudiocode"></iconify-icon>
+</div>

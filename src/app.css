@@ -57,3 +57,11 @@
 	background: #ffffff;
 	border-radius: 2px;
 }
+
+#nprogress {
+	@apply pointer-events-none;
+}
+
+#nprogress .bar {
+	@apply fixed left-0 top-0 z-[99] h-[2px] w-full rounded-md bg-white opacity-70;
+}
