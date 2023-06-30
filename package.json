@@ -35,20 +35,25 @@
 		"vite": "^4.3.9"
 	},
 	"dependencies": {
+		"@icons-pack/svelte-simple-icons": "^3.0.0",
 		"@sveltejs/adapter-auto": "^2.1.0",
 		"@sveltejs/adapter-cloudflare": "^2.3.0",
 		"@sveltejs/adapter-static": "^2.0.2",
 		"@tailwindcss/typography": "^0.5.9",
 		"axios": "^1.4.0",
 		"dayjs": "^1.11.8",
+		"iconify": "^1.4.0",
+		"iconify-icon": "^1.0.8",
 		"moment": "^2.29.4",
 		"moment-timezone": "^0.5.43",
+		"nprogress": "^0.2.0",
 		"open-props": "^1.5.9",
 		"rehype-autolink-headings": "^6.1.1",
 		"rehype-slug": "^5.1.0",
 		"remark-github": "^11.2.4",
 		"remark-toc": "^8.0.1",
 		"remark-unwrap-images": "^3.0.1",
-		"shiki": "^0.14.2"
+		"shiki": "^0.14.2",
+		"simple-icons": "^9.3.0"
 	}
 }

@@ -2,17 +2,25 @@
 import '../app.css?v=070620231'
 import Navbar from '../components/Navbar.svelte'
 import Footer from '../components/Footer.svelte'
-import LoadingTransition from '../components/LoadingTransition.svelte'
+import 'iconify-icon'
 
-export let data
+import NProgress from 'nprogress'
+
+import { afterNavigate, beforeNavigate } from '$app/navigation'
+
+beforeNavigate(() => {
+	NProgress.start()
+})
+
+afterNavigate(() => {
+	NProgress.done()
+})
 </script>
 
 <div class="layout">
-	<LoadingTransition url="{data.url}">
-		<Navbar />
-		<main class="relative mx-auto max-w-[90ch] break-normal px-4 sm:px-6 lg:px-8">
-			<slot />
-		</main>
-		<Footer />
-	</LoadingTransition>
+	<Navbar />
+	<main class="relative mx-auto max-w-[90ch] break-normal px-4 sm:px-6 lg:px-8">
+		<slot />
+	</main>
+	<Footer />
 </div>
