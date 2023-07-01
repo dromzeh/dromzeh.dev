@@ -27,27 +27,29 @@ const showPosts = 2
 <div class="py-24 text-gray-400">
 	<p class="text-lg font-semibold text-white">dromzeh.dev</p>
 	<div class="grid gap-3 py-2">
-		<div>
-			Hi, I'm Marcel - a {age} year old Self-Taught Reverse & Software Engineer.
-		</div>
-		<div>
-			I'm the Project Lead (& creator) of <a
+		<p>
+			I'm Marcel - a {age} year old Self-Taught Full-Stack Developer & Reverse Engineer.
+		</p>
+		<p>
+			I specialize in Full-Stack Web Development, with experience in a variety of languages
+			and frameworks. My current focus is on Front-End Web Development, currently working with
+			SvelteKit and TailwindCSS. I'm also big fan of Serverless - frequently utilizing
+			Cloudflare Workers for my projects. I also have experience with UX/UI design, with a11y
+			in mind.
+		</p>
+		<p>
+			I'm currently building <a
 				class="link-underline font-semibold text-white"
-				href="https://wanderer.moe">wanderer.moe</a
-			>, a centralized database of various game assets. Created in March 2022, it's built with
-			Node.js, Tailwind & SvelteKit and utilizes Cloudflare's Stack (R2, D1, Workers & Pages),
-			relied on by thousands of users per day. Our codebase is completely open source, and can
-			be found
-			<a class="link-underline font-semibold text-white" href="https://git.wanderer.moe/"
-				>here</a
-			>.
-		</div>
-		<div class="mb-2">
-			Outside of programming stuff, I've played rhythm games since 2015, primarily onto VSRG
-			since 2019. And, I "occasionally" write <a
+				href="https://wanderer.moe/">wanderer.moe</a> - a centralized database of thousands of
+			Game Assets. Still under heavy development, running with SvelteKit, TailwindCSS, and Cloudflare
+			Workers, D1 & R2.
+		</p>
+		<p class="mb-2">
+			Outside of anything development related, I've played Rhythm Games since 2015, primary
+			VSRGs. And, I "occasionally" write <a
 				class="link-underline font-semibold text-white"
-				href="https://dromzeh.dev/posts">posts</a> too.
-		</div>
+				href="https://dromzeh.dev/posts">posts</a> about what I get up to.
+		</p>
 		<Lanyard />
 		<hr class="border-primary-600/10" />
 	</div>
