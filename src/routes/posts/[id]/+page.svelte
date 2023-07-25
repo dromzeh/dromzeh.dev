@@ -12,12 +12,10 @@ const { title, author, date, categories } = data.meta
 
 <article class="flex flex-grow flex-col py-24">
 	<a href="/posts">
-		<p class="mb-2 text-lg text-gray-400 transition-all hover:text-white">
-			<i class="fas fa-arrow-left"></i> View all posts
-		</p>
+		<p class="mb-2 text-lg text-gray-400 transition-all hover:text-white">View all posts</p>
 	</a>
 	<div class="mb-4 text-white">
-		<p class="text-4xl font-bold">{title}</p>
+		<p class="text-4xl font-semibold">{title}</p>
 		<p class="text-lg text-gray-400">
 			Published by {author} on {formatDate(date)}
 		</p>
@@ -25,8 +23,7 @@ const { title, author, date, categories } = data.meta
 
 	<div class="mb-2 flex flex-row gap-1">
 		{#each categories as category}
-			<p
-				class="rounded-full bg-primary-400/10 px-3 py-1.5 text-xs text-primary-300 ring-1 ring-inset ring-primary-500/20">
+			<p class="bg-primary-200/10 px-1 text-sm uppercase text-primary-200">
 				{category}
 			</p>
 		{/each}

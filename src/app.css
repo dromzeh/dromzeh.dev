@@ -1,5 +1,30 @@
 @tailwind base;
+
 @layer base {
+	@font-face {
+		font-family: 'SpaceMono Regular';
+		font-style: normal;
+		font-weight: 400;
+		font-display: swap;
+		src: url('/fonts/SpaceMono-Regular.ttf') format('truetype');
+	}
+
+	@font-face {
+		font-family: 'TT Firs Neue';
+		font-style: normal;
+		font-weight: 400;
+		font-display: swap;
+		src: url('/fonts/TT-Firs-Neue-Regular.ttf') format('truetype');
+	}
+
+	@font-face {
+		font-family: 'TT Firs Bold';
+		font-style: normal;
+		font-weight: 700;
+		font-display: swap;
+		src: url('/fonts/TT-Firs-Neue-Bold.ttf') format('truetype');
+	}
+
 	body {
 		/* --d: 0.5px;
 		background: radial-gradient(
@@ -11,14 +36,18 @@
 		@apply bg-secondary-600;
 	}
 
+	.font-semibold {
+		font-family: 'TT Firs Bold', sans-serif;
+	}
+
 	html {
 		scroll-behavior: smooth;
-		font-family: 'Noto Sans', sans-serif;
-		@apply bg-[#010101];
+		font-family: 'TT Firs Neue', sans-serif;
+		@apply bg-secondary-600;
 	}
 
 	.monofont {
-		font-family: 'Ubuntu Mono', monospace !important;
+		font-family: 'SpaceMono Regular', monospace !important;
 	}
 
 	.link-underline {

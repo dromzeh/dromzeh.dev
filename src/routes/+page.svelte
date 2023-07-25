@@ -1,23 +1,7 @@
 <script lang="ts">
-import Posts from '../components/Posts.svelte'
-import Projects from '../components/Projects.svelte'
-import Contact from '../components/Contact.svelte'
-import Lanyard from '../components/Lanyard.svelte'
-import dayjs from 'dayjs'
-import moment from 'moment-timezone'
-import Technologies from '../components/Technologies.svelte'
-
-let age = '16' // placeholder
-let myTime = moment().tz('Europe/London').format('HH:mm:ss')
-
-setInterval(() => {
-	let time = dayjs().diff(dayjs(1156118401000), 'year', true)
-	age = time.toString().substring(0, 13)
-	myTime = moment().tz('Europe/London').format('HH:mm:ss')
-}, 50)
-
-const showProjects = 5
-const showPosts = 2
+import Intro from '../components/main/Intro.svelte'
+import PostsContainer from '../components/posts/PostsContainer.svelte'
+import ProjectsContainer from '../components/Projects/ProjectsContainer.svelte'
 </script>
 
 <svelte:head>
@@ -25,73 +9,24 @@ const showPosts = 2
 </svelte:head>
 
 <div class="py-24 text-gray-400">
-	<p class="text-xl font-semibold text-white">dromzeh.dev</p>
-	<div class="grid gap-3 py-2">
-		<p>
-			I'm Marcel - a {age} year old Self-Taught Full-Stack Developer & Occasional Reverse Engineer.
-		</p>
-		<p>
-			I specialize in Full-Stack Web Development, with experience in a large variety of
-			languages and frameworks, currently working on using Serverless Technologies to build
-			scalable and secure web applications.
-		</p>
-		<p>
-			I'm currently building <a
-				class="link-underline font-semibold text-white"
-				href="https://wanderer.moe/">wanderer.moe</a> - a centralized database of thousands of
-			Game Assets. Still under heavy development, running with SvelteKit, TailwindCSS, and Cloudflare
-			Workers, PlanetScale & R2.
-		</p>
-		<p class="mb-2">
-			Outside of anything development related, I've played Rhythm Games since 2015, primary
-			VSRGs. And, I "occasionally" write <a
-				class="link-underline font-semibold text-white"
-				href="https://dromzeh.dev/posts">posts</a> about what I get up to.
-		</p>
-	</div>
-	<div>
+	<div class="flex flex-col gap-3">
 		<div>
-			<p class="mt-6 text-xl font-semibold text-white">Projects</p>
-			<div class="flex">
-				<p class="text-sm text-gray-400">
-					{showProjects} projects shown.
-				</p>
-				<div class="ml-auto">
-					<a href="/projects">
-						<p class="text-sm text-gray-400 transition-all hover:text-white">
-							View All <i class="fas fa-arrow-right"></i>
-						</p>
-					</a>
-				</div>
-			</div>
+			<h1 class="mb-2 text-4xl font-semibold text-white">dromzeh.dev</h1>
+			<Intro />
 		</div>
-		<Projects showProjects="{showProjects}" />
-	</div>
-	<div>
-		<div>
-			<p class="mt-6 text-xl font-semibold text-white">Posts</p>
-			<div class="flex">
-				<p class="text-sm text-gray-400">
-					{showPosts} recent posts shown.
-				</p>
-				<div class="ml-auto">
-					<a href="/posts" class="">
-						<p class="text-sm text-gray-400 transition-all hover:text-white">
-							View All <i class="fas fa-arrow-right"></i>
-						</p>
-					</a>
-				</div>
-			</div>
+		<div class="mb-2 mt-8">
+			<h1 class="text-2xl font-semibold text-white">Some Projects</h1>
+			<ProjectsContainer numProjectsToShow="{3}" />
+			<a href="/projects">
+				<p class="mt-2 text-right text-lg font-semibold text-white">View all projects</p>
+			</a>
 		</div>
-		<Posts showPosts="{showPosts}" />
-	</div>
-	<div>
-		<div class="mb-2">
-			<p class="mt-6 text-xl font-semibold text-white">Contact</p>
-			<p class="text-sm text-gray-400">
-				I aim to respond to all messages within 24 hours, it is currently {myTime} for me (Europe/London).
-			</p>
+		<div class="mb-2 mt-8">
+			<h1 class="text-2xl font-semibold text-white">Posts</h1>
+			<PostsContainer numPostsToShow="{2}" />
+			<a href="/posts">
+				<p class="mt-2 text-right text-lg font-semibold text-white">View all posts</p>
+			</a>
 		</div>
-		<Contact />
 	</div>
 </div>

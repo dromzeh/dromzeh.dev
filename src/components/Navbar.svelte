@@ -23,7 +23,7 @@ const nav: NavItems[] = [
 <header
 	class="sticky top-0 z-10 border-b border-gray-600/10 pb-0 pt-0 backdrop-blur-lg backdrop-filter">
 	<nav
-		class="after:shadow-hr flex flex-wrap items-center justify-between bg-[#010101] bg-opacity-70 text-sm after:absolute after:inset-x-0 after:z-[-1] after:h-12 after:w-full">
+		class="after:shadow-hr flex flex-wrap items-center justify-between bg-secondary-600 bg-opacity-70 text-sm after:absolute after:inset-x-0 after:z-[-1] after:h-12 after:w-full">
 		<div class="align-center m-2 flex gap-3">
 			{#each nav as item}
 				<a
