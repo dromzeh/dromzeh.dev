@@ -25,8 +25,7 @@ onMount(async () => {
 			<div class="mb-3">
 				<p>
 					© 2020-{currentYear} • dromzeh.dev, powered by
-					<span class="text-[#EC8224]"
-						><i class="fab fa-cloudflare"></i> Cloudflare<span> </span></span>
+					<span class="text-[#EC8224]"> Cloudflare<span> </span></span>
 				</p>
 				<p>
 					<a

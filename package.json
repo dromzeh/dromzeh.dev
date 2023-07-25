@@ -16,6 +16,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/kit": "^1.20.4",
+		"@types/nprogress": "^0.2.0",
 		"@types/three": "^0.154.0",
 		"@typescript-eslint/eslint-plugin": "^5.60.0",
 		"@typescript-eslint/parser": "^5.60.0",
@@ -50,6 +51,7 @@
 		"dayjs": "^1.11.8",
 		"iconify": "^1.4.0",
 		"iconify-icon": "^1.0.8",
+		"lucide-svelte": "^0.263.0",
 		"moment": "^2.29.4",
 		"moment-timezone": "^0.5.43",
 		"nprogress": "^0.2.0",

@@ -130,6 +130,6 @@ For my use case, I set the theme to a [dark theme I found on GitHub](https://git
 
 If you want to use the dark theme, copy `dark-theme.css` to the `_h5ai/public/css` folder, and rename it to `style.css` (overwrite the existing file)
 
-Then, open `config.json` and change the `theme` value to `theme.css`.
+Then, open `config.json` and change the `theme` value to `style.css`.
 
 To upload files to h5ai, I setup [FileZilla](https://filezilla-project.org/) to connect to the server, and uploaded the files to the h5ai folder, as soon as I uploaded the files I wanted to share and refreshed the page they were available to download.

@@ -1,5 +1,5 @@
-<script>
-import Projects from '../../components/Projects.svelte'
+<script lang="ts">
+import ProjectsContainer from '../../components/Projects/ProjectsContainer.svelte'
 </script>
 
 <svelte:head>
@@ -7,9 +7,12 @@ import Projects from '../../components/Projects.svelte'
 </svelte:head>
 
 <div class="py-24 text-gray-400">
-	<div>
-		<p class="mt-2 text-lg font-semibold text-white">Projects</p>
-		<p class="text-sm text-gray-400">All of my Projects</p>
+	<h1 class="text-4xl font-semibold text-white">Projects</h1>
+	<p class="text-lg font-semibold text-white">
+		Some things I've made. I make most of my stuff open-source, so feel free to check out the
+		code on GitHub.
+	</p>
+	<div class="mb-2 mt-8 flex flex-col gap-3">
+		<ProjectsContainer />
 	</div>
-	<Projects />
 </div>

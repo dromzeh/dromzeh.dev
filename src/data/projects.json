@@ -3,10 +3,10 @@
 		{
 			"id": "wanderer-moe",
 			"name": "@wanderer-moe/site",
-			"description": "Resource website for game assets used by 100,000 monthly active users. Built using SvelteKit, TailwindCSS & Cloudflare Stack (Workers, Pages, PlanetScale & R2) i18n support implemented using crowdin.",
+			"description": "Resource website for game assets used by 100,000 monthly active users. Built using Cloudflare's Stack w/ i18n support implemented using crowdin.",
 			"url": "https://wanderer.moe/",
 			"gitUrl": "https://git.wanderer.moe/site",
-			"categories": ["sveltekit", "tailwind", "lucia-auth", "prisma", "r2"],
+			"categories": ["next.js", "tailwind", "lucia-auth", "prisma", "r2"],
 			"active": true
 		},
 		{
@@ -15,14 +15,14 @@
 			"description": "API for wanderer.moe, built using Cloudflare Workers & itty-router to manage routes & parameters. Used to generate Game, Asset & OC Generator Routes by directly fetching data from the R2 Bucket & PlanetScale.",
 			"url": "https://api.wanderer.moe/",
 			"gitUrl": "https://git.wanderer.moe/api",
-			"categories": ["typescript", "cloudflare workers", "planetscale", "r2"],
+			"categories": ["typescript", "cf workers", "planetscale", "r2"],
 			"active": true
 		},
 		{
 			"id": "hyv-fps-unlocker",
 			"name": "hyv-fps-unlocker",
 			"description": "Rust program that modifies the FPS value in the settings registry entry to go past the default 60FPS limit in Honkai Impact 3rd and Honkai: Star Rail",
-			"url": "https://git.dromzeh.dev/hyv-fps-unlocker",
+			"gitUrl": "https://git.dromzeh.dev/hyv-fps-unlocker",
 			"categories": ["rust"],
 			"active": true
 		},
@@ -30,7 +30,7 @@
 			"id": "beforefx",
 			"name": "BeforeFX",
 			"url": "https://beforefx.cc",
-			"description": "(pun intended) Yet to be released, heavy in development website which allows for editors to share their After Effects and Videostar presets, colourings and effects. Built using Next.JS, TailwindCSS & hosted on Vercel. Uses Vercel's Postgres to store presets and NextAuth for authentication w/ Prisma ORM",
+			"description": "(pun intended) Yet to be released, heavy in development website which allows for editors to share their After Effects and Videostar presets, colourings and effects. Built using Next.JS, TailwindCSS & hosted on CF. Uses Planetscale to store presets and NextAuth for authentication w/ Prisma ORM",
 			"categories": ["next.js", "typescript", "tailwind", "prisma"],
 			"active": true
 		},

@@ -41,10 +41,11 @@ onDestroy(() => {
 	{#if lanyard}
 		<div>
 			<p>
-				<i class="fas fa-circle {statusColors[lanyard?.data.discord_status]}"></i>
 				I'm currently
 				<a
-					class="link-underline font-semibold text-white"
+					class="link-underline font-semibold {statusColors[
+						lanyard?.data.discord_status
+					]}"
 					href="https://discord.com/users/{lanyard?.data?.discord_user.id}"
 					>{statusDict[lanyard?.data.discord_status]}</a>
 				on Discord
@@ -66,10 +67,7 @@ onDestroy(() => {
 		</div>
 	{:else}
 		<div>
-			<p class="animate-pulse">
-				<i class="fas fa-circle-notch animate-spin"></i>
-				Loading Discord status...
-			</p>
+			<p class="animate-pulse">Loading Discord status...</p>
 		</div>
 	{/if}
 </div>

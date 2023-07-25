@@ -41,6 +41,9 @@ dependencies:
     iconify-icon:
         specifier: ^1.0.8
         version: 1.0.8
+    lucide-svelte:
+        specifier: ^0.263.0
+        version: 0.263.0(svelte@3.59.2)
     moment:
         specifier: ^2.29.4
         version: 2.29.4
@@ -85,6 +88,9 @@ devDependencies:
     '@sveltejs/kit':
         specifier: ^1.20.4
         version: 1.20.4(svelte@3.59.2)(vite@4.3.9)
+    '@types/nprogress':
+        specifier: ^0.2.0
+        version: 0.2.0
     '@types/three':
         specifier: ^0.154.0
         version: 0.154.0
@@ -827,6 +833,13 @@ packages:
         dependencies:
             '@types/unist': 2.0.6
         dev: false
+
+    /@types/nprogress@0.2.0:
+        resolution:
+            {
+                integrity: sha512-1cYJrqq9GezNFPsWTZpFut/d4CjpZqA0vhqDUPFWYKF1oIyBz5qnoYMzR+0C/T96t3ebLAC1SSnwrVOm5/j74A==
+            }
+        dev: true
 
     /@types/pug@2.0.6:
         resolution:
@@ -2639,6 +2652,17 @@ packages:
         dependencies:
             yallist: 4.0.0
         dev: true
+
+    /lucide-svelte@0.263.0(svelte@3.59.2):
+        resolution:
+            {
+                integrity: sha512-1cB+DPsX7PbHJ+aDbc2nKKRdv3DYHK81mRVUw7kNb7bVw2Dh9QsNVON918WjnSlmXEt9lUnJ7TkNymreZwnLgg==
+            }
+        peerDependencies:
+            svelte: '>=3 <5'
+        dependencies:
+            svelte: 3.59.2
+        dev: false
 
     /magic-string@0.27.0:
         resolution:
