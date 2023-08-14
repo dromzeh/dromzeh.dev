@@ -1,21 +1,20 @@
 {
-	"projects": [
-		{
+	"projects": [{
 			"id": "wanderer-moe",
 			"name": "@wanderer-moe/site",
-			"description": "Resource website for game assets used by 100,000 monthly active users. Built using Cloudflare's Stack w/ i18n support implemented using crowdin.",
+			"description": "Frontend for wanderer.moe - built using Nextjs, Tailwind & Typescript hosted w/ next-on-pages - i18n support implemented using crowdin.",
 			"url": "https://wanderer.moe/",
 			"gitUrl": "https://git.wanderer.moe/site",
-			"categories": ["next.js", "tailwind", "lucia-auth", "prisma", "r2"],
+			"categories": ["next.js", "tailwind", "typescript"],
 			"active": true
 		},
 		{
 			"id": "api-wanderer-moe",
 			"name": "@wanderer-moe/api",
-			"description": "API for wanderer.moe, built using Cloudflare Workers & itty-router to manage routes & parameters. Used to generate Game, Asset & OC Generator Routes by directly fetching data from the R2 Bucket & PlanetScale.",
+			"description": "Backend API for wanderer.moe created with CF Workers & Hono, authenticated routes using lucia-auth, files stored on R2 and data stored on Planetscale.",
 			"url": "https://api.wanderer.moe/",
 			"gitUrl": "https://git.wanderer.moe/api",
-			"categories": ["typescript", "cf workers", "planetscale", "r2"],
+			"categories": ["typescript", "cf workers", "planetscale", "lucia-auth", "cf r2"],
 			"active": true
 		},
 		{
@@ -30,7 +29,7 @@
 			"id": "beforefx",
 			"name": "BeforeFX",
 			"url": "https://beforefx.cc",
-			"description": "(pun intended) Yet to be released, heavy in development website which allows for editors to share their After Effects and Videostar presets, colourings and effects. Built using Next.JS, TailwindCSS & hosted on CF. Uses Planetscale to store presets and NextAuth for authentication w/ Prisma ORM",
+			"description": "(pun intended) Yet to be released, heavy in development website which allows for editors to share their After Effects and Videostar presets, colourings and effects. Built using Next.JS, TailwindCSS & hosted on CF. Uses Planetscale & Lucia-Auth, prisma for ORM.",
 			"categories": ["next.js", "typescript", "tailwind", "prisma"],
 			"active": true
 		},
