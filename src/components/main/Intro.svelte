@@ -18,24 +18,30 @@ setInterval(() => {
 		<span class=" bg-primary-200/10 px-1 text-sm text-primary-200">[he/him]</span>
 		- a
 		<span class=" bg-primary-200/10 px-1 text-sm text-primary-200">{age}</span>
-		year old self taught Full-Stack web developer from the UK. I'm a big serverless fan, primarily
-		working on
+		year old self taught Full-Stack web developer from the UK. I'm a big serverless fan, mostly
 		<span class=" bg-primary-200/10 px-1 text-sm text-primary-200"
 			>infrastructure and backend systems, creating stuff that scales</span
-		>. I also enjoy working on frontend just as much, mostly UX.
+		>.
 	</p>
 	<p>
-		I primarily work with Cloudflare's Technologies, such as Workers, R2 and KV, paired with
-		Typescript and sometimes Svelte.
+		I primarily work with Cloudflare's Technologies, including Workers, Pages, R2 and KV, paired
+		with Typescript and SvelteKit / Next. A full list of technologies can be found on my
+		<a
+			href="https://git.dromzeh.dev"
+			target="_blank"
+			class="bg-primary-200/10 px-1 text-sm text-primary-200">
+			GitHub
+		</a>
+		profile.
 	</p>
 	<p>
 		I created and spend most of my time working on
 		<a href="https://wanderer.moe" class="bg-primary-200/10 px-1 text-sm text-primary-200"
 			>wanderer.moe</a>
-		- a website which hosts thousands of various game assets. Relied on by thousands of people every
-		day, this includes content creators, developers, artists and animators. We're also
+		- a website which hosts thousands of various game assets. Relied on by thousands daily. The codebase
+		is
 		<a href="https://git.wanderer.moe/" class="bg-primary-200/10 px-1 text-sm text-primary-200"
-			>completely open source</a
+			>100% open source</a
 		>.
 	</p>
 </div>

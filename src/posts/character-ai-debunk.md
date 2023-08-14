@@ -1,6 +1,6 @@
 ---
-title: 'Debunking character.ais most outrageous claims'
-description: 'Fairly in-depth blog post debunking character.ais most outrageous claims'
+title: 'Debunking popular character.ai claims'
+description: 'Fairly in-depth blog post debunking claims made about character.ai'
 date: '2023-07-23'
 categories:
     - ai
@@ -15,7 +15,9 @@ tldr: character.ai is a website which allows for users to create their own "char
 
 ## What even happened?
 
-As of recent, character.ai has been under fire on social media, mainly TikTok, for various, absurd reasons. Misinformation is often spread on social media platforms about all sorts of things, and character.ai is no exception, people tend to believe what they see on social media, and don't bother to do any research themselves. This post will be debunking all claims made about character.ai, and explaining why they're false.
+As of recent, character.ai has been under fire on social media, mainly TikTok, for various reasons. Misinformation is often spread on social media platforms about all sorts of things, and character.ai is no exception, people tend to believe what they see on social media, and don't bother to do any research themselves. This post will be debunking all claims made about character.ai, and explaining why they're false.
+
+Note: this post has been edited for clarity and to add more information on the 14th August 2023.
 
 ## character.ai is "purposely rate limiting users" to buy a subscription
 
@@ -31,11 +33,17 @@ Another common claim is that users are being unknowingly "banned" from character
 
 People are mistaking IP blocks, used by Cloudflare, for being banned. This can be caused by using something like a VPN, or by using a shared IP address, which has been banned. You're expected to be banned if you break their terms of service, which is a reasonable thing to do.
 
-## Incorrect Prompt Engineering
+## Prompt Engineering Misunderstanding
 
 Prompt engineering is the process of creating a prompt which will be fed into an AI model. This helps to create a more realistic response from the AI model.
 
 Prompt engineering is somehow being mistaken for programming languages, such as Python, which is completely false. Prompt engineering is just a way of creating a prompt, which will be fed into an AI model. It's not a programming language.
+
+Markdown is a markup language, and may also be used to recieve more realistic responses from the AI model, but it's not a programming language either.
+
+character.ai uses markdown to format text, and to allow for users to create more realistic responses from their AI models.
+
+There is a method of hiding text in markdown using invisible embeds. Using this, you can hide text in markdown, which will be invisible to the user, but will still be fed into the AI model, allowing for more realistic responses without ruining the overall "immersion" of the conversation.
 
 ## Slow response times
 
@@ -47,9 +55,9 @@ Responses from the AI model are filtered to remove any offensive content, this i
 
 ## Alternatives and their security
 
-Not everyone is happy with character.ai's "filter", stating it's too "strict", leading them to go to alternative platforms which don't have a filter.
+Not everyone is happy with character.ai's "filter", stating it's too "strict" or the response times are too long, leading them to go to alternative platforms which don't have a filter.
 
-These users are not taking into account the security of these platforms, and the fact that they are not being filtered. This means that these platforms are not safe for children, and can be used to create offensive content.
+These users are not taking into account the security of these platforms, and the fact that they are not being filtered. This is a major security risk, as these platforms could be used to create offensive content, which could be used to harass people.
 
 ### Case Study 1: janitor.ai
 
@@ -59,10 +67,6 @@ There was recently a databreach within one of janitor.ai's "AI providers", this 
 
 This shows that the safety of alternative platforms is not guaranteed, and that character.ai is overall a much safer option.
 
-## Markdown, and how it works
+## Conclusion
 
-Markdown is a markup language, not a programming language, used to format text. It's used on many websites, including GitHub, Reddit, and Discord, as well as this blog post.
-
-character.ai uses markdown to format text, and to allow for users to create more realistic responses from their AI models.
-
-There is a method of hiding text in markdown using invisible embeds. Using this, you can hide text in markdown, which will be invisible to the user, but will still be fed into the AI model, allowing for more realistic responses without ruining the overall "immersion" of the conversation.
+character.ai is a safe platform, which is being unfairly targeted by social media, and is being unfairly compared to other platforms which are not as safe as character.ai. Users shouldn't make assumptions about a platform without doing any research beforehand.
