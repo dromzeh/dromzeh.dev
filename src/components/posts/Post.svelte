@@ -21,10 +21,10 @@ let postHovered = false
 		<p class="text-lg font-semibold text-white">{post.title}</p>
 		<div class="mb-3 flex flex-row gap-2">
 			{#each post.categories.slice(0, 3) as c}
-				<div class="bg-primary-200/10 px-1 text-xs uppercase text-primary-200">{c}</div>
+				<div class="bg-white/5 text-xs uppercase text-white">{c}</div>
 			{/each}
 			{#if post.categories.length > 3}
-				<div class=" bg-primary-200/10 px-1 text-xs uppercase text-primary-200">
+				<div class=" bg-white/5 text-xs uppercase text-white">
 					{#if post.categories.length > 4}
 						+{post.categories.length - 3}
 						more

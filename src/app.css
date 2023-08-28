@@ -51,7 +51,7 @@
 	}
 
 	.link-underline {
-		@apply rounded-md bg-gray-400 bg-opacity-5 px-1 hover:bg-opacity-10;
+		@apply rounded-md bg-white/5 px-1 text-white;
 	}
 
 	.all-prose {

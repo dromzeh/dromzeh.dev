@@ -1,5 +1,6 @@
 {
-	"projects": [{
+	"projects": [
+		{
 			"id": "wanderer-moe",
 			"name": "@wanderer-moe/site",
 			"description": "Frontend for wanderer.moe - built using Nextjs, Tailwind & Typescript hosted w/ next-on-pages - i18n support implemented using crowdin.",
