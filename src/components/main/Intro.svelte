@@ -2,7 +2,7 @@
 import dayjs from 'dayjs'
 import moment from 'moment-timezone'
 
-let age = '16' // placeholder
+let age = '17'
 let myTime = moment().tz('Europe/London').format('HH:mm:ss')
 
 setInterval(() => {
@@ -14,34 +14,24 @@ setInterval(() => {
 
 <div class="flex flex-col gap-3">
 	<p>
-		Hey! I'm Marcel
-		<span class=" bg-primary-200/10 px-1 text-sm text-primary-200">[he/him]</span>
-		- a
-		<span class=" bg-primary-200/10 px-1 text-sm text-primary-200">{age}</span>
+		Hey! I'm Marcel - a
+		<span class=" bg-white/5 text-white">{age}</span>
 		year old self taught Full-Stack web developer from the UK. I'm a big serverless fan, mostly
-		<span class=" bg-primary-200/10 px-1 text-sm text-primary-200"
+		<span class=" bg-white/5 text-white"
 			>infrastructure and backend systems, creating stuff that scales</span
 		>.
 	</p>
 	<p>
 		I primarily work with Cloudflare's Technologies, including Workers, Pages, R2 and KV, paired
 		with Typescript and SvelteKit / Next. A full list of technologies can be found on my
-		<a
-			href="https://git.dromzeh.dev"
-			target="_blank"
-			class="bg-primary-200/10 px-1 text-sm text-primary-200">
-			GitHub
-		</a>
+		<a href="https://git.dromzeh.dev" target="_blank" class="bg-white/5 text-white"> GitHub </a>
 		profile.
 	</p>
 	<p>
 		I created and spend most of my time working on
-		<a href="https://wanderer.moe" class="bg-primary-200/10 px-1 text-sm text-primary-200"
-			>wanderer.moe</a>
+		<a href="https://wanderer.moe" class="bg-white/5 text-white">wanderer.moe</a>
 		- a website which hosts thousands of various game assets. Relied on by thousands daily. The codebase
 		is
-		<a href="https://git.wanderer.moe/" class="bg-primary-200/10 px-1 text-sm text-primary-200"
-			>100% open source</a
-		>.
+		<a href="https://git.wanderer.moe/" class="bg-white/5 text-white">100% open source</a>.
 	</p>
 </div>

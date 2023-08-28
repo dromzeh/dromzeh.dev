@@ -23,7 +23,7 @@ const { title, author, date, categories } = data.meta
 
 	<div class="mb-2 flex flex-row gap-1">
 		{#each categories as category}
-			<p class="bg-primary-200/10 px-1 text-sm uppercase text-primary-200">
+			<p class="bg-white/5 text-xs uppercase text-white">
 				{category}
 			</p>
 		{/each}

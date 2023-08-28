@@ -27,10 +27,10 @@ let projectHovered = false
 		<p class="text-lg font-semibold text-white">{project.name}</p>
 		<div class="mb-3 flex flex-row gap-2">
 			{#each project.categories.slice(0, 3) as c}
-				<div class="bg-primary-200/10 px-1 text-xs uppercase text-primary-200">{c}</div>
+				<div class="bg-white/5 text-xs uppercase text-white">{c}</div>
 			{/each}
 			{#if project.categories.length > 3}
-				<div class=" bg-primary-200/10 px-1 text-xs uppercase text-primary-200">
+				<div class=" bg-white/5 text-xs uppercase text-white">
 					{#if project.categories.length > 4}
 						+{project.categories.length - 3}
 						more
