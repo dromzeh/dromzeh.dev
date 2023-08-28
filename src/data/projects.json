@@ -12,10 +12,10 @@
 		{
 			"id": "api-wanderer-moe",
 			"name": "@wanderer-moe/api",
-			"description": "Backend API for wanderer.moe created with CF Workers & Hono, authenticated routes using lucia-auth, files stored on R2 and data stored on Planetscale.",
+			"description": "Backend API for wanderer.moe created with CF Workers & Hono, authenticated routes using Lucia for Auth, files stored on R2 and data stored on Turso using Drizzle as ORM.",
 			"url": "https://api.wanderer.moe/",
 			"gitUrl": "https://git.wanderer.moe/api",
-			"categories": ["typescript", "cf workers", "planetscale", "lucia-auth", "cf r2"],
+			"categories": ["typescript", "cf workers", "turso", "drizzle", "lucia-auth", "r2"],
 			"active": true
 		},
 		{
