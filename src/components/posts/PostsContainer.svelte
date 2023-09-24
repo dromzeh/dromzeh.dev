@@ -4,7 +4,7 @@ import Post from './Post.svelte'
 import { onMount } from 'svelte'
 
 let posts: PostTyped[] = []
-export let numPostsToShow: number = 0
+export let numPostsToShow = 0
 
 onMount(async () => {
 	const response = await fetch('api/posts')
