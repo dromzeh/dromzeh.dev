@@ -8,7 +8,7 @@ export const load: Load = async ({ params }) => {
 		const { metadata, default: content } = post as { metadata: Post; default: unknown }
 
 		if (!metadata || !content) {
-			throw new Error('Invalid post format')
+			throw new Error('Post format is invalid')
 		}
 
 		return { content, meta: metadata }

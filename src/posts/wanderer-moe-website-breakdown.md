@@ -1,6 +1,6 @@
 ---
 title: 'wanderer.moe - Website Breakdown'
-description: 'Breaking down wanderer.moe and how it works, including the CDN, API, and overall site statistics'
+description: 'Breaking down wanderer.moe and how it works, including the CDN, API, and overall site statistics [outdated]'
 date: '2023-05-12'
 categories:
     - cloudflare

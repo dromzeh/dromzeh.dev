@@ -77,6 +77,9 @@ dependencies:
     simple-icons:
         specifier: ^9.3.0
         version: 9.3.0
+    svelte-lanyard:
+        specifier: ^1.0.2
+        version: 1.0.2
     svelte-sequential-preprocessor:
         specifier: ^2.0.1
         version: 2.0.1
@@ -85,6 +88,9 @@ dependencies:
         version: 0.151.0
 
 devDependencies:
+    '@iconify/json':
+        specifier: ^2.2.119
+        version: 2.2.119
     '@sveltejs/kit':
         specifier: ^1.20.4
         version: 1.20.4(svelte@3.59.2)(vite@4.3.9)
@@ -148,6 +154,9 @@ devDependencies:
     typescript:
         specifier: ^5.1.3
         version: 5.1.3
+    unplugin-icons:
+        specifier: ^0.17.0
+        version: 0.17.0
     vite:
         specifier: ^4.3.9
         version: 4.3.9
@@ -170,6 +179,23 @@ packages:
             '@jridgewell/gen-mapping': 0.3.3
             '@jridgewell/trace-mapping': 0.3.18
         dev: false
+
+    /@antfu/install-pkg@0.1.1:
+        resolution:
+            {
+                integrity: sha512-LyB/8+bSfa0DFGC06zpCEfs89/XoWZwws5ygEa5D+Xsm3OfI+aXQ86VgVG7Acyef+rSZ5HE7J8rrxzrQeM3PjQ==
+            }
+        dependencies:
+            execa: 5.1.1
+            find-up: 5.0.0
+        dev: true
+
+    /@antfu/utils@0.7.6:
+        resolution:
+            {
+                integrity: sha512-pvFiLP2BeOKA/ZOS6jxx4XhKzdVLHDhGlFEaZ2flWWYf2xOqVniqpk38I04DFRyz+L0ASggl7SkItTc+ZLju4w==
+            }
+        dev: true
 
     /@changesets/changelog-github@0.4.8:
         resolution:
@@ -530,12 +556,37 @@ packages:
             }
         dev: true
 
+    /@iconify/json@2.2.119:
+        resolution:
+            {
+                integrity: sha512-tYvxJpBds6UgXe6/iq2pW7hblsniDGWuKEwCr8PnSKLmZMilrtzHX7v+pg7FFmV2l2qA2Iw4toMRpe11tWBI4Q==
+            }
+        dependencies:
+            '@iconify/types': 2.0.0
+            pathe: 1.1.1
+        dev: true
+
     /@iconify/types@2.0.0:
         resolution:
             {
                 integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==
             }
-        dev: false
+
+    /@iconify/utils@2.1.10:
+        resolution:
+            {
+                integrity: sha512-0/+5hxjzCZ9RoYpqxnOzbnpQyMdZRuHcMxPJeuX+x/aZkAAD/N4TajDjAPT7LpX+M0bfLExj/p0bbDkUfp0lrg==
+            }
+        dependencies:
+            '@antfu/install-pkg': 0.1.1
+            '@antfu/utils': 0.7.6
+            '@iconify/types': 2.0.0
+            debug: 4.3.4
+            kolorist: 1.8.0
+            local-pkg: 0.4.3
+        transitivePeerDependencies:
+            - supports-color
+        dev: true
 
     /@icons-pack/svelte-simple-icons@3.0.0:
         resolution:
@@ -1087,6 +1138,15 @@ packages:
         engines: { node: '>=0.4.0' }
         hasBin: true
         dev: false
+
+    /acorn@8.10.0:
+        resolution:
+            {
+                integrity: sha512-F0SAmZ8iUtS//m8DmCTA0jlh6TDKkHQyK6xc6V4KDTyZKA9dnvX9/3sRTVQrWm79glUAZbnmmNcdYwUIHWVybw==
+            }
+        engines: { node: '>=0.4.0' }
+        hasBin: true
+        dev: true
 
     /acorn@8.9.0:
         resolution:
@@ -1937,6 +1997,24 @@ packages:
             }
         engines: { node: '>=0.10.0' }
 
+    /execa@5.1.1:
+        resolution:
+            {
+                integrity: sha512-8uSpZZocAZRBAPIEINJj3Lo9HyGitllczc27Eh5YYojjMFMn8yHMDMaUHE2Jqfq05D/wucwI4JGURyXt1vchyg==
+            }
+        engines: { node: '>=10' }
+        dependencies:
+            cross-spawn: 7.0.3
+            get-stream: 6.0.1
+            human-signals: 2.1.0
+            is-stream: 2.0.1
+            merge-stream: 2.0.0
+            npm-run-path: 4.0.1
+            onetime: 5.1.2
+            signal-exit: 3.0.7
+            strip-final-newline: 2.0.0
+        dev: true
+
     /extend@3.0.2:
         resolution:
             {
@@ -2094,6 +2172,14 @@ packages:
             {
                 integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==
             }
+
+    /get-stream@6.0.1:
+        resolution:
+            {
+                integrity: sha512-ts6Wi+2j3jQjqi70w5AlN8DFnkSwC+MqmxEzdEALB2qXZYV3X/b1CTfgPLGJNMeAWxdPfU8FO1ms3NUfaHCPYg==
+            }
+        engines: { node: '>=10' }
+        dev: true
 
     /github-slugger@2.0.0:
         resolution:
@@ -2289,6 +2375,14 @@ packages:
             - supports-color
         dev: false
 
+    /human-signals@2.1.0:
+        resolution:
+            {
+                integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==
+            }
+        engines: { node: '>=10.17.0' }
+        dev: true
+
     /iconify-icon@1.0.8:
         resolution:
             {
@@ -2457,6 +2551,14 @@ packages:
             '@types/estree': 1.0.1
         dev: false
 
+    /is-stream@2.0.1:
+        resolution:
+            {
+                integrity: sha512-hFoiJiTl63nn+kstHGBtewWSKnQLpyb155KHheA1l39uvtO9nWIop1p3udqPcUd/xbF1VLMO4n7OI6p7RbngDg==
+            }
+        engines: { node: '>=8' }
+        dev: true
+
     /isexe@2.0.0:
         resolution:
             {
@@ -2575,6 +2677,13 @@ packages:
             }
         dev: true
 
+    /kolorist@1.8.0:
+        resolution:
+            {
+                integrity: sha512-Y+60/zizpJ3HRH8DCss+q95yr6145JXZo46OTpFvDZWLfRCE4qChOyk1b26nMaNpfHHgxagk9dXT5OP0Tfe+dQ==
+            }
+        dev: true
+
     /levn@0.4.1:
         resolution:
             {
@@ -2605,6 +2714,14 @@ packages:
             {
                 integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==
             }
+
+    /local-pkg@0.4.3:
+        resolution:
+            {
+                integrity: sha512-SFppqq5p42fe2qcZQqqEOiVRXl+WCP1MdT6k7BDEW1j++sp5fIY+/fdRQitvKgB5BrBcmrs5m/L0v2FrU5MY1g==
+            }
+        engines: { node: '>=14' }
+        dev: true
 
     /locate-character@3.0.0:
         resolution:
@@ -2741,6 +2858,13 @@ packages:
             vfile-message: 2.0.4
         dev: true
 
+    /merge-stream@2.0.0:
+        resolution:
+            {
+                integrity: sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==
+            }
+        dev: true
+
     /merge2@1.4.1:
         resolution:
             {
@@ -2790,6 +2914,14 @@ packages:
             }
         engines: { node: '>=10.0.0' }
         hasBin: true
+
+    /mimic-fn@2.1.0:
+        resolution:
+            {
+                integrity: sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==
+            }
+        engines: { node: '>=6' }
+        dev: true
 
     /min-indent@1.0.1:
         resolution:
@@ -2928,6 +3060,16 @@ packages:
         engines: { node: '>=0.10.0' }
         dev: true
 
+    /npm-run-path@4.0.1:
+        resolution:
+            {
+                integrity: sha512-S48WzZW777zhNIrn7gxOlISNAqi9ZC/uQFnRdbeIHhZhCA6UqpkOT8T1G7BvfdgP4Er8gF4sUbaS0i7QvIfCWw==
+            }
+        engines: { node: '>=8' }
+        dependencies:
+            path-key: 3.1.1
+        dev: true
+
     /nprogress@0.2.0:
         resolution:
             {
@@ -2963,6 +3105,16 @@ packages:
             }
         dependencies:
             wrappy: 1.0.2
+
+    /onetime@5.1.2:
+        resolution:
+            {
+                integrity: sha512-kbpaSSGJTWdAY5KPVeMOKXSrPtr8C8C7wodJbcsd51jRnmD+GZu8Y0VoU6Dm5Z4vWr0Ig/1NKuWRKf7j5aaYSg==
+            }
+        engines: { node: '>=6' }
+        dependencies:
+            mimic-fn: 2.1.0
+        dev: true
 
     /open-props@1.5.9:
         resolution:
@@ -3058,6 +3210,13 @@ packages:
                 integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
             }
         engines: { node: '>=8' }
+        dev: true
+
+    /pathe@1.1.1:
+        resolution:
+            {
+                integrity: sha512-d+RQGp0MAYTIaDBIMmOfMwz3E+LOZnxx1HZd5R18mmCZY0QBlK0LDZfPc8FW8Ed2DlvsuE6PRjroDY+wg4+j/Q==
+            }
         dev: true
 
     /periscopic@3.1.0:
@@ -3630,6 +3789,13 @@ packages:
             vscode-textmate: 8.0.0
         dev: false
 
+    /signal-exit@3.0.7:
+        resolution:
+            {
+                integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
+            }
+        dev: true
+
     /simple-icons@9.3.0:
         resolution:
             {
@@ -3702,6 +3868,14 @@ packages:
         engines: { node: '>=8' }
         dependencies:
             ansi-regex: 5.0.1
+        dev: true
+
+    /strip-final-newline@2.0.0:
+        resolution:
+            {
+                integrity: sha512-BrpvfNAE3dcvq7ll3xVumzjKjZQ5tI1sEUIKr3Uoks0XUl45St3FlatVqef9prk4jRDzhW6WZg+3bk93y6pLjA==
+            }
+        engines: { node: '>=6' }
         dev: true
 
     /strip-indent@3.0.0:
@@ -3815,6 +3989,13 @@ packages:
             svelte: ^3.19.0 || ^4.0.0-next.0
         dependencies:
             svelte: 3.59.2
+
+    /svelte-lanyard@1.0.2:
+        resolution:
+            {
+                integrity: sha512-JxXHaTkIyDE7BAg6PHP/QP9qsqYcQO/SOmCokb6rKfDHAKsn09XtRC8mBcLKjaqDG/MVSONCaQSsXi85hUhWCQ==
+            }
+        dev: false
 
     /svelte-preprocess@5.0.4(postcss@8.4.24)(svelte@3.59.2)(typescript@5.1.3):
         resolution:
@@ -4212,6 +4393,52 @@ packages:
         engines: { node: '>= 4.0.0' }
         dev: false
 
+    /unplugin-icons@0.17.0:
+        resolution:
+            {
+                integrity: sha512-gMv66eY/Hj64heM55XrfDH3LUCWI51mtkBVUPVl9VkpvLgAYhdVe9nRuzu6p+idmCLSQVq7xiPxQcD4aXCgW5A==
+            }
+        peerDependencies:
+            '@svgr/core': '>=7.0.0'
+            '@svgx/core': ^1.0.1
+            '@vue/compiler-sfc': ^3.0.2 || ^2.7.0
+            vue-template-compiler: ^2.6.12
+            vue-template-es2015-compiler: ^1.9.0
+        peerDependenciesMeta:
+            '@svgr/core':
+                optional: true
+            '@svgx/core':
+                optional: true
+            '@vue/compiler-sfc':
+                optional: true
+            vue-template-compiler:
+                optional: true
+            vue-template-es2015-compiler:
+                optional: true
+        dependencies:
+            '@antfu/install-pkg': 0.1.1
+            '@antfu/utils': 0.7.6
+            '@iconify/utils': 2.1.10
+            debug: 4.3.4
+            kolorist: 1.8.0
+            local-pkg: 0.4.3
+            unplugin: 1.5.0
+        transitivePeerDependencies:
+            - supports-color
+        dev: true
+
+    /unplugin@1.5.0:
+        resolution:
+            {
+                integrity: sha512-9ZdRwbh/4gcm1JTOkp9lAkIDrtOyOxgHmY7cjuwI8L/2RTikMcVG25GsZwNAgRuap3iDw2jeq7eoqtAsz5rW3A==
+            }
+        dependencies:
+            acorn: 8.10.0
+            chokidar: 3.5.3
+            webpack-sources: 3.2.3
+            webpack-virtual-modules: 0.5.0
+        dev: true
+
     /update-browserslist-db@1.0.11(browserslist@4.21.9):
         resolution:
             {
@@ -4385,6 +4612,21 @@ packages:
             }
         engines: { node: '>=12' }
         dev: false
+
+    /webpack-sources@3.2.3:
+        resolution:
+            {
+                integrity: sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==
+            }
+        engines: { node: '>=10.13.0' }
+        dev: true
+
+    /webpack-virtual-modules@0.5.0:
+        resolution:
+            {
+                integrity: sha512-kyDivFZ7ZM0BVOUteVbDFhlRt7Ah/CSPwJdi8hBpkK7QLumUqdLtVfm/PX/hkcnrvr0i77fO5+TjZ94Pe+C9iw==
+            }
+        dev: true
 
     /whatwg-encoding@2.0.0:
         resolution:

@@ -7,7 +7,7 @@ Source code for my personal website, `dromzeh.dev`.
 **Uses:**
 
 -   [Svelte](https://svelte.dev/) & [SvelteKit](https://kit.svelte.dev/).
--   [TailwindCSS](https://tailwindcss.com/) & [Font Awesome](https://fontawesome.com/).
+-   [TailwindCSS](https://tailwindcss.com/)
 -   [MDSveX](https://mdsvex.com/) & [Tailwind Typography](https://tailwindcss.com/docs/typography-plugin)
 -   Deployment is done using [Cloudflare Pages](https://pages.cloudflare.com/), read [here](#cf-pages-configuration).
 
