@@ -1,5 +1,5 @@
 <script lang="ts">
-import { ExternalLink, Github } from 'lucide-svelte'
+// import { ExternalLink, Github } from 'lucide-svelte'
 import type { Project } from '$lib/types/project'
 
 export let project: Project
@@ -8,38 +8,29 @@ let projectHovered = false
 </script>
 
 <div
-	class="flex bg-secondary-100 transition-all"
+	class="flex flex-col"
 	on:mouseenter="{() => (projectHovered = true)}"
 	on:mouseleave="{() => (projectHovered = false)}">
-	<div class="flex flex-col gap-1 bg-secondary-300 p-3">
-		{#if project.url}
-			<a href="{project.url}" target="_blank" rel="noopener noreferrer">
-				<ExternalLink class="transition-colors hover:text-white" />
+	<div class="py-3">
+		<div class="mb-2 flex items-center justify-between gap-2">
+			<a
+				href="{project.url ? project.url : project.gitUrl}"
+				target="_blank"
+				class="text-lg text-white underline decoration-zinc-600 transition-colors hover:text-violet-300 hover:decoration-violet-300">
+				{project.name}
 			</a>
-		{/if}
-		{#if project.gitUrl}
-			<a href="{project.gitUrl}" target="_blank" rel="noopener noreferrer">
-				<Github class="transition-colors hover:text-white" />
-			</a>
-		{/if}
-	</div>
-	<div class="p-3">
-		<p class="text-lg font-semibold text-white">{project.name}</p>
-		<div class="mb-3 flex flex-row gap-2">
-			{#each project.categories.slice(0, 3) as c}
-				<div class="bg-white/5 text-xs uppercase text-white">{c}</div>
-			{/each}
-			{#if project.categories.length > 3}
-				<div class=" bg-white/5 text-xs uppercase text-white">
-					{#if project.categories.length > 4}
-						+{project.categories.length - 3}
-						more
-					{:else}
-						{project.categories[3]}
-					{/if}
-				</div>
+			{#if project.gitUrl}
+				<a
+					href="{project.gitUrl}"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="bg-zinc-800 px-1 font-mono text-xs text-white">
+					Open Source
+				</a>
 			{/if}
 		</div>
-		<p class="text-sm">{project.description}</p>
+		<p class="">
+			{project.description}
+		</p>
 	</div>
 </div>

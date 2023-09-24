@@ -1,7 +1,6 @@
 import adapter from '@sveltejs/adapter-cloudflare'
 import { vitePreprocess } from '@sveltejs/kit/vite'
-import { mdsvex, escapeSvelte } from 'mdsvex'
-import shiki from 'shiki'
+import { mdsvex } from 'mdsvex'
 import remarkUnwrapImages from 'remark-unwrap-images'
 import remarkToc from 'remark-toc'
 import rehypeSlug from 'rehype-slug'
@@ -12,19 +11,6 @@ import { preprocessThrelte } from '@threlte/preprocess'
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
 	extensions: ['.md'],
-	highlight: {
-		highlighter: async (code, lang = 'text') => {
-			const highlighter = await shiki.getHighlighter({
-				theme: 'vitesse-dark'
-			})
-			const html = escapeSvelte(
-				highlighter.codeToHtml(code, {
-					lang
-				})
-			)
-			return `{@html \`${html}\` }`
-		}
-	},
 	remarkPlugins: [
 		remarkUnwrapImages,
 		[
