@@ -1,5 +1,4 @@
 <script lang="ts">
-// import { ExternalLink, Github } from 'lucide-svelte'
 import type { Project } from '$lib/types/project'
 
 export let project: Project

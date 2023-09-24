@@ -1,6 +1,5 @@
 <script lang="ts">
-import { onMount, onDestroy } from 'svelte'
-import type { LanyardData } from '$lib/types/lanyard'
+import { useLanyard } from 'svelte-lanyard'
 
 const statusDict: Record<string, string> = {
 	online: 'Online',
@@ -16,51 +15,32 @@ const statusColors: Record<string, string> = {
 	offline: 'text-gray-200'
 }
 
-let lanyard: LanyardData
-let intervalId: number
-
-async function updateLanyard() {
-	const response = await fetch('https://api.lanyard.rest/v1/users/492731761680187403')
-	lanyard = await response.json()
-}
-
-onMount(() => {
-	updateLanyard()
-	setInterval(() => {
-		updateLanyard()
-	}, 15000)
-})
-
-onDestroy(() => {
-	clearInterval(intervalId)
-})
+const lanyard = useLanyard('492731761680187403')
 </script>
 
 <!-- TODO: RPC support? -->
-<div class="">
-	{#if lanyard}
+<div>
+	{#if $lanyard}
 		<div>
 			<p>
 				I'm currently
 				<a
-					class="link-underline font-semibold {statusColors[
-						lanyard?.data.discord_status
-					]}"
-					href="https://discord.com/users/{lanyard?.data?.discord_user.id}"
-					>{statusDict[lanyard?.data.discord_status]}</a>
+					class="link-underline font-semibold {statusColors[$lanyard.discord_status]}"
+					href="https://discord.com/users/{$lanyard.discord_user.id}"
+					>{statusDict[$lanyard.discord_status]}</a>
 				on Discord
-				{#if lanyard?.data?.listening_to_spotify}
+				{#if $lanyard.listening_to_spotify && $lanyard.spotify}
 					- listening to
 					<span class="inline-block">
 						<a
 							class="link-underline font-semibold text-white"
-							href="https://open.spotify.com/track/{lanyard?.data?.spotify.track_id}"
-							>{lanyard?.data?.spotify.song}</a>
+							href="https://open.spotify.com/track/{$lanyard.spotify.track_id}"
+							>{$lanyard.spotify.song}</a>
 						by
 						<a
 							class="link-underline font-semibold text-white"
-							href="https://open.spotify.com/search/{lanyard?.data?.spotify.artist}"
-							>{lanyard?.data?.spotify.artist}</a>
+							href="https://open.spotify.com/search/{$lanyard.spotify.artist}"
+							>{$lanyard.spotify.artist}</a>
 					</span>
 				{/if}
 			</p>
