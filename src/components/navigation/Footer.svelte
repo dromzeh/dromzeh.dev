@@ -4,6 +4,8 @@ import { onMount } from 'svelte'
 import Lanyard from '../Lanyard.svelte'
 
 const currentYear = new Date().getFullYear()
+
+// eslint-disable-next-line  @typescript-eslint/no-explicit-any
 let commits: any[] = []
 
 onMount(async () => {
