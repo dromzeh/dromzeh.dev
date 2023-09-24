@@ -1,5 +1,5 @@
 ---
-title: 'Modifying the FPS of Honkai Impact 3rd (Hi3) on PC'
+title: 'Modifying FPS in Honkai Impact 3rd'
 description: 'How I created a program using Rust that allows me to bypass the FPS limit in Hi3'
 date: '2023-06-20'
 categories:
@@ -11,13 +11,12 @@ author: 'dromzeh'
 [Honkai Impact 3rd (Hi3)](https://en.wikipedia.org/wiki/Honkai_Impact_3rd) is a pretty popular mobile game that has been [ported to PC](https://honkaiimpact3.hoyoverse.com/global/en-us/news/1977?cate=).
 However, the options for custom FPS are limited to up to 60 out of level and up to 120 in level.
 
-For many, this is not enough. I personally like to play at 144 FPS (my primary monitor's refresh rate is at 144hz), but I can't do that in Hi3, so I decided to make a program that allows me to modify the FPS value in Hi3 to any number I desire.
+For many, this is not enough. I personally like to play at 144 FPS (my primary monitor's refresh rate is at 144hz), but I can't do that in Hi3, so I decided to make a program that allows me to modify the FPS value in Hi3 to any value.
 
 ## Research
 
-Before starting, I need to understand where Hi3 stores its FPS values.
 As you're able to modify FPS values in the settings, my first look was inside the registry `HKEY_CURRENT_USER\Software\miHoYo\Honkai Impact 3rd\`.
-Inside of here I found the following entry: `GENERAL_DATA_V2_PersonalGraphicsSettingV2`.
+Inside of here, I found the following entry: `GENERAL_DATA_V2_PersonalGraphicsSettingV2`.
 
 ![hxd view](/images/hxd-hi3-regview.png)
 
@@ -43,18 +42,24 @@ The data inside this value was stored as HEX. Looking into it, it is formatted l
 }
 ```
 
-Inside of here, the values that I'm interested in are `TargetFrameRateForInLevel` and `TargetFrameRateForOthers`.
-These values are the FPS values that are used in the game.
+The values that I'm interested in are `TargetFrameRateForInLevel` and `TargetFrameRateForOthers`.
 
 `TargetFrameRateForInLevel` is the FPS value that is used when you're in a level, and `TargetFrameRateForOthers` is the FPS value that is used when you're not in a level.
 
-## The Program
+## Program Structure
 
-Note: this program was originally written using NodeJS, but I decided to rewrite it in Rust for fun.
+This program will need to do the following:
 
-### Getting the Registry Value
+-   Read the registry value
+-   Parse the value as JSON
+-   Collect user input for the FPS values
+-   Update the FPS values in the Registry
+
+I decided to use Rust, why? Becuase I can.
 
 The first thing I need to do is read the registry value, so we are using the `winreg` crate to do this.
+
+### Reading the Registry Value
 
 ```rust
 let hkcu = RegKey::predef(HKEY_CURRENT_USER);
@@ -76,7 +81,7 @@ println!("Found PersonalGraphicsSettingV2 at {:?}", value_name);
 let raw_value = hi3_regkey.get_raw_value(value_name)?;
 ```
 
-### The JSON
+### Parsing the Value as JSON
 
 Now that we have the raw value, we need to parse it as JSON.
 
@@ -84,7 +89,7 @@ Now that we have the raw value, we need to parse it as JSON.
 let json_value: Value = serde_json::from_slice(&raw_value.bytes)?;
 ```
 
-## Updating the FPS Values
+## Updating the FPS Values in the Registry
 
 Now that we have the JSON & collecting user input, we can update the FPS values.
 
@@ -113,4 +118,4 @@ However, if the FPS values in the settings are changed, the FPS values in the re
 
 ## Conclusion
 
-This program is open source, and can be found on my [GitHub](https://git.dromzeh.dev/hyv-fps-unlocker).
+I decided to go with the Registry Route as some consider it to be "safer" than modifying in-game memory. This program is also [Open Source](https://git.dromzeh.dev/hyv-fps-unlocker) as a CLI and has support for Honkai: Star Rail with the same registry editing method.

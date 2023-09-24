@@ -37,7 +37,7 @@ onDestroy(() => {
 </script>
 
 <!-- TODO: RPC support? -->
-<div class="text-sm">
+<div class="">
 	{#if lanyard}
 		<div>
 			<p>

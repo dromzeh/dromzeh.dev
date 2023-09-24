@@ -4,6 +4,4 @@ export type Project = {
 	description: string
 	url?: string
 	gitUrl?: string
-	categories: string[]
-	active: boolean
-}
+} & ({ url: string } | { gitUrl: string })
