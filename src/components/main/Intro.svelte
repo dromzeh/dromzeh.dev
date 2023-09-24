@@ -1,18 +1,14 @@
 <script lang="ts">
 import dayjs from 'dayjs'
-import moment from 'moment-timezone'
 
 const date = dayjs(1156118401000)
 let age = '17'
 
 const fileCount = '11,000+' // TODO: get this data directly from API when it's ready
 
-let myTime = moment().tz('Europe/London').format('HH:mm:ss')
-
 setInterval(() => {
 	let time = dayjs().diff(date, 'year', true)
 	age = time.toString().substring(0, 7)
-	myTime = moment().tz('Europe/London').format('HH:mm:ss')
 }, 50)
 </script>
 

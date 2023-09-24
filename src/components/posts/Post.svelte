@@ -1,17 +1,10 @@
 <script lang="ts">
-import { ExternalLink } from 'lucide-svelte'
 import type { Post } from '$lib/types/post'
-import { formatDate } from '$lib/utils/formatDate'
 
 export let post: Post
-
-let postHovered = false
 </script>
 
-<div
-	class="flex flex-col"
-	on:mouseenter="{() => (postHovered = true)}"
-	on:mouseleave="{() => (postHovered = false)}">
+<div class="flex flex-col">
 	<div class="py-3">
 		<div class="mb-2 flex items-center justify-between gap-2">
 			<a
@@ -27,7 +20,7 @@ let postHovered = false
 				</div>
 			</div>
 		</div>
-		<p class="">
+		<p>
 			{post.description}
 		</p>
 	</div>

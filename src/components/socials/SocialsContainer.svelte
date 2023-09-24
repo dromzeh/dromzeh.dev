@@ -1,5 +1,5 @@
 <script>
-import { Github, Twitter, Mail } from 'lucide-svelte'
+import { Github, Twitter } from 'lucide-svelte'
 // import dayjs from 'dayjs'
 // import moment from 'moment-timezone'
 

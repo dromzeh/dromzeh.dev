@@ -3,7 +3,7 @@ import { formatDate } from '$lib/utils/formatDate'
 
 export let data
 const { title, author, date, categories } = data.meta
-// @ts-ignore - content type needs to be fixed
+// eslint-disable-next-line  @typescript-eslint/no-explicit-any
 const { content } = data as { content: any }
 </script>
 

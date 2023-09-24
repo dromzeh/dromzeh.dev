@@ -3,14 +3,9 @@
 import type { Project } from '$lib/types/project'
 
 export let project: Project
-
-let projectHovered = false
 </script>
 
-<div
-	class="flex flex-col"
-	on:mouseenter="{() => (projectHovered = true)}"
-	on:mouseleave="{() => (projectHovered = false)}">
+<div class="flex flex-col">
 	<div class="py-3">
 		<div class="mb-2 flex items-center justify-between gap-2">
 			<a
