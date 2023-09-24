@@ -3,7 +3,8 @@ import { formatDate } from '$lib/utils/formatDate'
 
 export let data
 const { title, author, date, categories } = data.meta
-const { content } = data as { content: any } // TODO: fix types
+// @ts-ignore - content type needs to be fixed
+const { content } = data as { content: any }
 </script>
 
 <svelte:head>
