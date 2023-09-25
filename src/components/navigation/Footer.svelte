@@ -1,7 +1,7 @@
 <script lang="ts">
 import { getCommitsRecent } from '$lib/helpers/github'
 import { onMount } from 'svelte'
-import Lanyard from '../Lanyard.svelte'
+import Lanyard from '../LanyardFooter.svelte'
 
 const currentYear = new Date().getFullYear()
 

@@ -16,7 +16,7 @@ import { Github, Twitter } from 'lucide-svelte'
 			href="mailto:marcel@dromzeh.dev"
 			target="_blank"
 			class="text-white underline decoration-zinc-600 transition-colors hover:text-violet-300 hover:decoration-violet-300"
-			>marcel@dromzeh.dev</a> or via the socials below.
+			>marcel@dromzeh.dev</a>
 	</div>
 	<div class="my-4 flex flex-wrap gap-4">
 		<a
