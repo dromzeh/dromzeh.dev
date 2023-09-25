@@ -1,4 +1,5 @@
 <script lang="ts">
+import LanyardContainer from '../components/LanyardContainer.svelte'
 import Intro from '../components/main/Intro.svelte'
 import SocialsContainer from '../components/socials/SocialsContainer.svelte'
 </script>
