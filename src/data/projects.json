@@ -28,6 +28,12 @@
 			"url": "https://discord-lookup.dromzeh.dev/"
 		},
 		{
+			"id": "vmt",
+			"name": "vmt",
+			"description": "A Discord Voice Message Transcriber and Translator. Made with discord.py, using Google's SpeechRecognition and DeepL's Translation API.",
+			"gitUrl": "https://git.dromzeh.dev/vmt"
+		},
+		{
 			"id": "qbit-rpc",
 			"name": "qbit-rpc",
 			"description": "A simple, lightweight, and easy to use Discord Rich Presence for qBittorrent, made with Javascript and Node.JS. Shows statistics such current and overall download and upload speeds, with average ratios.",
@@ -41,10 +47,10 @@
 			"url": "https://dromzeh.dev/"
 		},
 		{
-			"id": "vmt",
-			"name": "vmt",
-			"description": "A Discord Voice Message Transcriber and Translator. Made with discord.py, using Google's SpeechRecognition and DeepL's Translation API.",
-			"gitUrl": "https://git.dromzeh.dev/vmt"
+			"id": "cf-workers-hono-llama2",
+			"name": "cf-workers-hono-llama2 ",
+			"description": "Simple skeleton for llama-2 integration within a Cloudflare Worker alongside Hono using Typescript and Zod for extra form validation.",
+			"gitUrl": "https://git.dromzeh.dev/cf-workers-hono-llama2 "
 		},
 		{
 			"id": "roblox-filter-for-discord",
