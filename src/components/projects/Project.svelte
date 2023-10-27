@@ -18,7 +18,7 @@ export let project: Project
 					href="{project.gitUrl}"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="bg-zinc-800 px-1 font-mono text-xs text-white">
+					class="monofont bg-zinc-800 px-1 text-xs text-white">
 					Open Source
 				</a>
 			{/if}
