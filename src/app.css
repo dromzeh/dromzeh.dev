@@ -1,15 +1,36 @@
 @tailwind base;
 
+@font-face {
+	font-family: 'Geist Mono';
+	src: url('/font/GeistMono-Regular.otf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Geist Bold';
+	src: url('/font/Geist-Bold.otf');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Geist Semibold';
+	src: url('/font/Geist-SemiBold.otf');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Geist Regular';
+	src: url('/font/Geist-Regular.otf');
+	font-weight: normal;
+	font-style: normal;
+}
+
 @layer base {
 	body {
-		/* --d: 0.5px;
-		background: radial-gradient(
-				circle at var(--d) var(--d),
-				rgba(156, 156, 156, 0.05) calc(var(--d) - 1px),
-				#010101 var(--d)
-			)
-			0 0 / 7px 7px; */
-		font-family: 'Inter', sans-serif;
+		font-family: 'Geist Regular', sans-serif;
 		@apply bg-secondary-800;
 	}
 	html {
@@ -17,8 +38,16 @@
 		@apply bg-secondary-800;
 	}
 
+	.font-semibold {
+		font-family: 'Geist Semibold', sans-serif;
+	}
+
+	.font-bold {
+		font-family: 'Geist Bold', sans-serif;
+	}
+
 	.monofont {
-		font-family: 'Jetbrains Mono', monospace !important;
+		font-family: 'Geist Mono', monospace !important;
 	}
 
 	.proselink {
@@ -26,7 +55,7 @@
 	}
 
 	.prosecode {
-		@apply px-1 font-mono text-xs text-white;
+		@apply monofont px-1 text-xs text-white;
 	}
 
 	/* god almighty */
@@ -37,7 +66,6 @@
 
 @tailwind components;
 @tailwind utilities;
-/* changes the colour of when you select text */
 ::-moz-selection {
 	@apply bg-violet-300/70 text-white;
 }
