@@ -1,29 +1,31 @@
 <script lang="ts">
 import dayjs from 'dayjs'
 
-const date = dayjs(1156118401000)
-let age = '17'
+const ageDateTimestamp = 1156118401000
 
-const fileCount = '11,000+' // TODO: get this data directly from API when it's ready
+let age = '17'
+// const fileCount = '11,000+' // TODO: Get this data directly from the new API
 
 setInterval(() => {
-	let time = dayjs().diff(date, 'year', true)
-	age = time.toString().substring(0, 7)
+	const currentTimestamp = dayjs()
+	const ageDiff = currentTimestamp.diff(ageDateTimestamp, 'year', true)
+	age = ageDiff.toFixed(4)
 }, 50)
 </script>
 
 <div class="flex flex-col gap-3">
 	<p>
-		Hey! I'm Marcel (he/him/his), a {age} year-old fullstack developer from the UK. I'm passionate
-		about serverless computing, infrastructure and backend development.
+		Hey! I'm Marcel (he/him/his), a {age} year-old fullstack developer currently residing in the
+		UK. I'm passionate about serverless computing, infrastructure and backend development.
 	</p>
 	<p>
-		I'm also the creator of
+		I'm mostly known for creating
 		<a
 			href="https://wanderer.moe"
 			class="text-white underline decoration-zinc-600 transition-colors hover:text-violet-300 hover:decoration-violet-300"
 			>wanderer.moe</a>
-		- a website that hosts {fileCount} datamined assets from various games. Completely free and
+		- a website that hosts thousands of datamined assets from various games alongside thousands of
+		unique daily active users. It's also entirely
 		<a
 			href="https://git.wanderer.moe/"
 			class="text-white underline decoration-zinc-600 transition-colors hover:text-violet-300 hover:decoration-violet-300"
@@ -31,7 +33,7 @@ setInterval(() => {
 		>.
 	</p>
 	<p>
-		I occasionally contribute to open source and have a few projects of my own which are
+		I also occasionally contribute to open source and have a few projects of my own which are
 		actively maintained. You can find them on my
 		<a
 			href="/projects"
@@ -40,7 +42,11 @@ setInterval(() => {
 		>.
 	</p>
 	<p>
-		Programming aside, I play an unhealthy amount of
+		I mostly use Typescript, Rust and Svelte, prefer polyrepos over monorepos and use Cloudflare
+		plus AWS for projects.
+	</p>
+	<p>
+		Programming aside, I play
 		<a
 			href="https://enka.network/u/dromzeh"
 			class="text-white underline decoration-zinc-600 transition-colors hover:text-violet-300 hover:decoration-violet-300"
@@ -50,9 +56,9 @@ setInterval(() => {
 			href="https://quavergame.com/user/52916"
 			class="text-white underline decoration-zinc-600 transition-colors hover:text-violet-300 hover:decoration-violet-300"
 			target="_blank">
-			VSRG Rhythm Games
+			VSRG Rhythm
 		</a>
-		- I also sporadically write
+		games and sporadically write
 		<a
 			href="/posts"
 			class="text-white underline decoration-zinc-600 transition-colors hover:text-violet-300 hover:decoration-violet-300"
