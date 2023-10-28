@@ -1,6 +1,6 @@
 <style lang="postcss">
 .active {
-	@apply text-white;
+	@apply bg-zinc-800 bg-opacity-30 text-white;
 }
 </style>
 
@@ -22,17 +22,20 @@ const nav: NavItems[] = [
 
 <header
 	class="sticky top-0 z-10 border-b border-gray-600/10 pb-0 pt-0 backdrop-blur-lg backdrop-filter">
-	<nav
-		class="after:shadow-hr flex flex-wrap items-center justify-between bg-secondary-700 bg-opacity-70 after:absolute after:inset-x-0 after:z-[-1] after:h-12 after:w-full">
-		<div class="align-center m-2 flex gap-3">
-			{#each nav as item}
-				<a
-					href="{item.path}"
-					class="link-underline rounded-md p-1 px-2 font-semibold text-zinc-400 hover:text-white"
-					class:active="{item.path === '/'
-						? $page.url.pathname === '/'
-						: $page.url.pathname.startsWith(item.path)}">{item.title}</a>
-			{/each}
+	<nav class="flex flex-wrap items-center justify-between bg-secondary-700 bg-opacity-70">
+		<div class="mx-auto max-w-[90ch]">
+			<div class="align-center m-2 flex gap-3 transition-all">
+				{#each nav as item}
+					<a
+						href="{item.path}"
+						class="link-underline rounded-md p-1 px-2 font-semibold text-zinc-400 duration-300 hover:bg-zinc-700/30 hover:text-white"
+						class:active="{item.path === '/'
+							? $page.url.pathname === '/'
+							: $page.url.pathname.startsWith(item.path)}">
+						{item.title}
+					</a>
+				{/each}
+			</div>
 		</div>
 	</nav>
 </header>
