@@ -40,7 +40,7 @@ onMount(async () => {
 	{#each groupedProjects as [category, categoryProjects]}
 		<div class="relative">
 			<div
-				class="category absolute translate-x-[-30px] translate-y-[-50px] text-8xl font-bold opacity-10 sm:translate-y-[-20px]">
+				class="category absolute translate-x-[-30px] translate-y-[-50px] text-8xl font-bold opacity-20 sm:translate-y-[-20px]">
 				{category}
 			</div>
 			<div class="flex flex-col gap-6">
