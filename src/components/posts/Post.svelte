@@ -4,7 +4,7 @@ import type { Post } from '$lib/types/post'
 export let post: Post
 </script>
 
-<div class="flex flex-col">
+<div class="z-10 flex flex-col">
 	<div class="py-3">
 		<div class="mb-2 flex items-center justify-between gap-2">
 			<a

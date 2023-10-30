@@ -4,7 +4,7 @@ import type { Project } from '$lib/types/project'
 export let project: Project
 </script>
 
-<div class="flex flex-col">
+<div class="z-10 flex flex-col">
 	<div class="py-3">
 		<div class="mb-2 flex items-center justify-between gap-2">
 			<a
@@ -18,7 +18,7 @@ export let project: Project
 					href="{project.gitUrl}"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="monofont bg-zinc-800 px-1 text-xs text-white">
+					class="monofont bg-zinc-800 px-1 text-xs lowercase text-white">
 					Open Source
 				</a>
 			{/if}

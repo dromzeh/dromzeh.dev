@@ -67,11 +67,11 @@
 @tailwind components;
 @tailwind utilities;
 ::-moz-selection {
-	@apply bg-violet-300/70 text-white;
+	@apply bg-violet-400 text-white;
 }
 
 ::selection {
-	@apply bg-violet-300/70 text-white;
+	@apply bg-violet-400 text-white;
 }
 
 /* styles the scrollbar instead of using the default one to fit with the site's color scheme */
