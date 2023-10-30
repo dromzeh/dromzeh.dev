@@ -19,7 +19,7 @@ export let data
 </script>
 
 <main>
-	<Navbar />
+	<Navbar classNames="sticky sm:top-0 z-50 sm:block hidden" />
 	{#key data.url}
 		<div in:fly="{{ y: 20, duration: 300 }}">
 			<div class="mx-auto min-h-screen max-w-[90ch] break-normal px-4 sm:px-6 lg:px-8">
@@ -28,4 +28,5 @@ export let data
 		</div>
 	{/key}
 	<Footer />
+	<Navbar classNames="sticky bottom-0 z-50 sm:hidden block" />
 </main>
