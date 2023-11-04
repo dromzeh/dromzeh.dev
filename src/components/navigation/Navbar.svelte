@@ -25,8 +25,7 @@ const nav: NavItems[] = [
 export let classNames = ''
 </script>
 
-<header
-	class="{`border-b border-gray-600/30 pb-0 pt-0 backdrop-blur-lg backdrop-filter ${classNames}`}">
+<header class="{`backdrop-blur-lg backdrop-filter ${classNames}`}">
 	<nav class="flex flex-wrap items-center justify-between bg-[#050506] bg-opacity-50">
 		<div class="mx-auto max-w-[90ch]">
 			<div class="align-center m-2 flex gap-3 transition-all">

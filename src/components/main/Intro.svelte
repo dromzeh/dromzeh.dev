@@ -16,7 +16,7 @@ setInterval(() => {
 <div class="flex flex-col gap-3">
 	<p>
 		Hey! I'm Marcel (he/him/his), a {age} year-old fullstack developer currently residing in the
-		UK. I'm passionate about serverless computing, infrastructure and backend development.
+		UK. My primary focus is within serverless computing, infrastructure and backend development.
 	</p>
 	<p>
 		I'm mostly known for creating
