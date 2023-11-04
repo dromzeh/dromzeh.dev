@@ -1,5 +1,5 @@
 <script lang="ts">
-import '../app.css?v=24092023'
+import '../app.css?v=30102023'
 import Navbar from '../components/navigation/Navbar.svelte'
 import Footer from '../components/navigation/Footer.svelte'
 import 'iconify-icon'
@@ -19,6 +19,7 @@ export let data
 </script>
 
 <main>
+	<!-- TODO: fix duplicate navbar when this can be merged with correct css, current method is just temporary -->
 	<Navbar classNames="sticky sm:top-0 z-50 sm:block hidden" />
 	{#key data.url}
 		<div in:fly="{{ y: 20, duration: 300 }}">
