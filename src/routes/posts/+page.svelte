@@ -7,7 +7,7 @@ import PostsContainer from '../../components/posts/PostsContainer.svelte'
 </svelte:head>
 
 <div class="py-24 text-zinc-400">
-	<h1 class="text-4xl font-semibold text-white">Posts</h1>
+	<h1 class="font-mono text-4xl font-semibold text-white">Posts</h1>
 	<div class="mb-2 mt-8 flex flex-col gap-3">
 		<PostsContainer />
 	</div>
