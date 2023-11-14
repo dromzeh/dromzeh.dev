@@ -49,7 +49,7 @@
 		"@threlte/core": "^5.0.9",
 		"@threlte/extras": "^4.9.3",
 		"@threlte/preprocess": "^0.0.2",
-		"axios": "^1.4.0",
+		"axios": "^1.6.1",
 		"dayjs": "^1.11.8",
 		"iconify": "^1.4.0",
 		"iconify-icon": "^1.0.8",
