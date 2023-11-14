@@ -26,9 +26,9 @@ const { content } = data as { content: any }
 		</p>
 	</div>
 
-	<div class="mb-2 flex flex-row gap-1">
+	<div class="mb-2 flex flex-row gap-2">
 		{#each categories as category}
-			<p class="bg-zinc-800 px-1 font-mono text-xs text-white">
+			<p class="rounded-lg px-2 py-1 font-mono text-xs text-white ring-1 ring-white/50">
 				{category}
 			</p>
 		{/each}

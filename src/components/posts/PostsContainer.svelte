@@ -37,10 +37,10 @@ onMount(async () => {
 	{#each groupedPosts as [year, yearPosts]}
 		<div class="relative">
 			<div
-				class="year absolute translate-x-[-30px] translate-y-[-20px] text-8xl font-bold opacity-20">
+				class="year absolute translate-x-[-30px] translate-y-[-20px] font-mono text-8xl font-bold opacity-20">
 				{year}
 			</div>
-			<div class="flex flex-col gap-6">
+			<div class="flex flex-col gap-2">
 				{#each yearPosts as post}
 					<Post post="{post}" />
 				{/each}

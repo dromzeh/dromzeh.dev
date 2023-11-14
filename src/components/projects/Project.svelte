@@ -5,26 +5,26 @@ export let project: Project
 </script>
 
 <div class="z-10 flex flex-col">
-	<div class="py-3">
-		<div class="mb-2 flex items-center justify-between gap-2">
-			<a
-				href="{project.url ? project.url : project.gitUrl}"
-				target="_blank"
-				class="text-lg text-white underline decoration-zinc-600 transition-colors hover:text-violet-300 hover:decoration-violet-300">
-				{project.name}
-			</a>
-			{#if project.gitUrl}
-				<a
-					href="{project.gitUrl}"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="monofont bg-zinc-800 px-1 text-xs lowercase text-white">
-					Open Source
-				</a>
-			{/if}
+	<a href="{project.url ? project.url : project.gitUrl}">
+		<div
+			class="group rounded-lg p-3 transition-all duration-150 hover:bg-zinc-500/10 hover:ring-1 hover:ring-white/50">
+			<div class="flex items-center justify-between gap-2">
+				<p class="text-lg text-white">
+					{project.name}
+				</p>
+				{#if project.gitUrl}
+					<a
+						href="{project.gitUrl}"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="rounded-lg px-2 py-1 font-mono text-xs text-white ring-1 ring-white/50">
+						Open Source
+					</a>
+				{/if}
+			</div>
+			<p class="">
+				{project.description}
+			</p>
 		</div>
-		<p class="">
-			{project.description}
-		</p>
-	</div>
+	</a>
 </div>
