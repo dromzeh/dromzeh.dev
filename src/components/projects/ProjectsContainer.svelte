@@ -45,7 +45,7 @@ onMount(async () => {
 			</div>
 			<div class="flex flex-col gap-2">
 				{#each categoryProjects as project}
-					<Project project="{project}" />
+					<Project {project} />
 				{/each}
 			</div>
 		</div>
