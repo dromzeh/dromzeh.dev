@@ -42,7 +42,7 @@ onMount(async () => {
 			</div>
 			<div class="flex flex-col gap-2">
 				{#each yearPosts as post}
-					<Post post="{post}" />
+					<Post {post} />
 				{/each}
 			</div>
 		</div>
