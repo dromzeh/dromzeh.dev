@@ -6,7 +6,6 @@ import remarkToc from 'remark-toc'
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import seqPreprocessor from 'svelte-sequential-preprocessor'
-import { preprocessThrelte } from '@threlte/preprocess'
 
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
@@ -34,7 +33,7 @@ const mdsvexOptions = {
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	extensions: ['.svelte', '.md'],
-	preprocess: seqPreprocessor([vitePreprocess(), mdsvex(mdsvexOptions), preprocessThrelte()]),
+	preprocess: seqPreprocessor([vitePreprocess(), mdsvex(mdsvexOptions)]),
 	kit: {
 		adapter: adapter()
 	}

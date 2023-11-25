@@ -46,10 +46,6 @@
 		"@sveltejs/adapter-cloudflare": "^2.3.3",
 		"@sveltejs/adapter-static": "^2.0.3",
 		"@tailwindcss/typography": "^0.5.10",
-		"@threlte/core": "^6.1.1",
-		"@threlte/extras": "^7.5.1",
-		"@threlte/preprocess": "^0.0.2",
-		"axios": "^1.6.2",
 		"dayjs": "^1.11.10",
 		"iconify": "^1.4.0",
 		"iconify-icon": "^1.0.8",
@@ -66,7 +62,6 @@
 		"shiki": "^0.14.5",
 		"simple-icons": "^9.21.0",
 		"svelte-lanyard": "^1.0.2",
-		"svelte-sequential-preprocessor": "^2.0.1",
-		"three": "0.158.0"
+		"svelte-sequential-preprocessor": "^2.0.1"
 	}
 }

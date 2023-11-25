@@ -1,6 +1,3 @@
-import axios from 'axios'
-import type { AxiosResponse } from 'axios'
-
 interface AuthorInfo {
 	name: string
 	username: string
@@ -16,10 +13,13 @@ interface Commit {
 
 export async function getCommitsRecent(perPage: number): Promise<Commit[]> {
 	try {
-		const branch = window.location.href.startsWith('https://dromzeh.dev/') ? 'main' : 'rewrite'
-		const { data }: AxiosResponse = await axios.get(
+		// yes this is ugly as hell but it works and i dont want to spend time on it rn
+		const branch = window.location.href.startsWith('https://dromzeh.dev/') ? 'main' : 'main'
+		const response = await fetch(
 			`https://api.github.com/repos/dromzeh/dromzeh.dev/commits?per_page=${perPage}&sha=${branch}`
 		)
+
+		const data = await response.json()
 		const commits: Commit[] = await Promise.all(
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			data.map(async (commit: any) => {
