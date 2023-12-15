@@ -18,13 +18,13 @@ export function About() {
             <h2 className="text-neutral-100 mb-2">About</h2>
             <div className="flex flex-col space-y-2">
                 <p>
-                    👋 Hey! I&apos;m Marcel, a <Age /> year-old full-stack
+                    👋 Hey! I&apos;m Marcel - <Age /> year-old full-stack
                     developer currently residing in the UK. My primary focus is
                     within serverless computing, infrastructure and backend
                     development.
                 </p>
                 <p>
-                    I&apos;m mostly known for creating{" "}
+                    I made{" "}
                     <Link
                         href="https://wanderer.moe/"
                         target="_blank"
@@ -33,8 +33,7 @@ export function About() {
                         wanderer.moe
                     </Link>{" "}
                     - a site that hosts thousands of assets from various games
-                    with thousands of unique daily active users (~300K MAU).
-                    It&apos;s mostly{" "}
+                    with ~300,000 monthly users. We&apos;re also{" "}
                     <Link
                         href="https://git.wanderer.moe/"
                         target="_blank"
@@ -53,14 +52,14 @@ export function About() {
                     >
                         including this site
                     </Link>{" "}
-                    are open-source and
+                    are
                     {` `}
                     <Link
                         href="https://github.com/dromzeh"
                         target="_blank"
                         className="text-neutral-100 hover:text-neutral-500 transition-all duration-150"
                     >
-                        viewable on GitHub
+                        available on GitHub
                     </Link>
                     .
                 </p>
