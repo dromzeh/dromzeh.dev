@@ -1,4 +1,3 @@
-# clears the cache on dromzeh.dev for every push
 name: Clear Site Cache
 on: push
 
@@ -10,13 +9,14 @@ jobs:
             deployments: write
         steps:
             - uses: actions/checkout@v2
-            - name: Wait for CF Pages # waits for CF pages to finish building
+            - name: Wait for CF Pages
               id: cf-pages
               uses: WalshyDev/cf-pages-await@v1
               with:
+                  commitHash: ${{ github.sha }}
                   apiToken: ${{ secrets.CF_API_TOKEN  }}
-                  accountId: 'ba4e8f7f9ffbc23dba6acd0d9bd3ef46'
-                  project: 'dromzeh-dev'
+                  accountId: "ba4e8f7f9ffbc23dba6acd0d9bd3ef46"
+                  project: "dromzeh-dev"
                   githubToken: ${{ secrets.GITHUB_TOKEN }}
             - run: | # purges cache on CF
                   curl -X \

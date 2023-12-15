@@ -1,42 +1,36 @@
-# [dromzeh.dev]("https://dromzeh.dev")
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-![MIT](https://img.shields.io/badge/license-MIT-blue)
+## Getting Started
 
-Source code for my personal website, `dromzeh.dev`.
-
-**Uses:**
-
--   [Svelte](https://svelte.dev/) & [SvelteKit](https://kit.svelte.dev/).
--   [TailwindCSS](https://tailwindcss.com/)
--   [MDSveX](https://mdsvex.com/) & [Tailwind Typography](https://tailwindcss.com/docs/typography-plugin)
--   Deployment is done using [Cloudflare Pages](https://pages.cloudflare.com/), read [here](#cf-pages-configuration).
-
-[Lanyard](https://api.lanyard.rest/) is used to show Discord Status, Spotify Information, etc. You can view how this is done inside `./src/components/Lanyard.svelte`.
-
-## Workflows
-
-[cf-pages-await](https://github.com/WalshyDev/cf-pages-await/) is used to clear site cache after a CF pages deployment, inside `.github/workflows/deploy.yml`
-
-## Running the Site
-
-Development (port runs at `1337` unless changed in `package.json`)
+First, run the development server:
 
 ```bash
-  pnpm i && pnpm dev
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-Building:
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-```bash
-  pnpm i && pnpm build
-```
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-### CF Pages Configuration
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-`NODE_VERSION` is set to `18.15.0`.
+## Learn More
 
-`Build Output Directory` is set to `/.svelte-kit/cloudflare`
+To learn more about Next.js, take a look at the following resources:
 
-## License
+-   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+-   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-dromzeh.dev is licensed under [MIT](https://mit.dromzeh.dev/)
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
