@@ -12,7 +12,7 @@ export function About() {
             <h2 className="text-neutral-100 mb-2">About</h2>
             <div className="flex flex-col space-y-2">
                 <p>
-                    Hi, I&apos;m Marcel - a full-stack developer focused within
+                    Hey, I&apos;m Marcel - a full-stack developer focused within
                     serverless computing and backend development.
                 </p>
                 <p>
@@ -36,22 +36,44 @@ export function About() {
                     .
                 </p>
                 <p>
-                    All of my projects & contributions,{" "}
+                    Projects I&apos;ve worked on &{" "}
                     <Link
                         href="https://github.com/dromzeh/dromzeh.dev"
                         target="_blank"
                         className="text-neutral-100 hover:text-neutral-500 transition-all duration-150"
                     >
-                        including this site
+                        this site
                     </Link>{" "}
-                    are
+                    are available
                     {` `}
                     <Link
                         href="https://github.com/dromzeh"
                         target="_blank"
                         className="text-neutral-100 hover:text-neutral-500 transition-all duration-150"
                     >
-                        available on GitHub
+                        on my GitHub
+                    </Link>
+                    .
+                </p>
+                <p>
+                    If you have any questions or just want to chat, don&apos;t
+                    hesitate to reach out! I&apos;m most responsive on{" "}
+                    <Link
+                        href="https://discord.com/users/492731761680187403"
+                        target="_blank"
+                        className="text-neutral-100 hover:text-neutral-500 transition-all duration-150"
+                    >
+                        {" "}
+                        Discord
+                    </Link>{" "}
+                    or via email at
+                    <Link
+                        href="mailto:marcel@dromzeh.dev"
+                        target="_blank"
+                        className="text-neutral-100 hover:text-neutral-500 transition-all duration-150"
+                    >
+                        {" "}
+                        marcel@dromzeh.dev
                     </Link>
                     .
                 </p>

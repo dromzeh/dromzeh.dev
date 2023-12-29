@@ -9,21 +9,6 @@ export function FollowGrid() {
             <h2 className="text-neutral-100 mb-2">Links </h2>
             <div className="flex flex-col space-y-2">
                 <Link
-                    href="https://twitter.com/dromzeh"
-                    target="_blank"
-                    className="flex flex-row space-x-2 items-center group"
-                >
-                    <Image
-                        src="/x_dark.svg"
-                        alt="twitter"
-                        width={16}
-                        height={16}
-                    />
-                    <p className="text-neutral-100 group-hover:text-neutral-500 transition-colors duration-150">
-                        @dromzeh
-                    </p>
-                </Link>
-                <Link
                     href="https://github.com/dromzeh"
                     target="_blank"
                     className="flex flex-row space-x-2 items-center group"
@@ -53,6 +38,7 @@ export function FollowGrid() {
                         @dromzeh
                     </p>
                 </Link>
+
                 <Link
                     href="mailto:marcel@dromzeh.dev"
                     target="_blank"
@@ -63,8 +49,24 @@ export function FollowGrid() {
                         marcel@dromzeh.dev
                     </p>
                 </Link>
+                {/* it'll always be twitter in my heart */}
                 <Link
-                    href="https://open.spotify.com/user/fnn3ngyzaq9wir8jyevt96zrf?si=b15b54c15da848c1"
+                    href="https://twitter.com/dromzeh"
+                    target="_blank"
+                    className="flex flex-row space-x-2 items-center group"
+                >
+                    <Image
+                        src="/x_dark.svg"
+                        alt="twitter"
+                        width={16}
+                        height={16}
+                    />
+                    <p className="text-neutral-100 group-hover:text-neutral-500 transition-colors duration-150">
+                        @dromzeh
+                    </p>
+                </Link>
+                <Link
+                    href="https://open.spotify.com/user/fnn3ngyzaq9wir8jyevt96zrf"
                     target="_blank"
                     className="flex flex-row space-x-2 items-center group"
                 >
@@ -75,9 +77,10 @@ export function FollowGrid() {
                         height={16}
                     />
                     <p className="text-neutral-100 group-hover:text-neutral-500 transition-colors duration-150">
-                        Marcel
+                        marcel
                     </p>
                 </Link>
+
                 <Link
                     href="https://www.tiktok.com/@dromzeh"
                     target="_blank"

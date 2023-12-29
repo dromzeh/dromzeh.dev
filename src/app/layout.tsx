@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { GeistMono } from "geist/font/mono";
+// import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 
 const geist = GeistSans;
