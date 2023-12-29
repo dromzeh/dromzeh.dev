@@ -57,4 +57,12 @@
     body {
         @apply bg-background text-neutral-400;
     }
+
+    ::-moz-selection {
+        @apply bg-neutral-300 text-neutral-950;
+    }
+
+    ::selection {
+        @apply bg-neutral-300 text-neutral-950;
+    }
 }
