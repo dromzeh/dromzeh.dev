@@ -46,6 +46,7 @@
         "cmdk": "^0.2.0",
         "date-fns": "^2.30.0",
         "dayjs": "^1.11.10",
+        "framer-motion": "^10.16.16",
         "geist": "^1.2.0",
         "lucide-react": "^0.295.0",
         "million": "^2.6.4",

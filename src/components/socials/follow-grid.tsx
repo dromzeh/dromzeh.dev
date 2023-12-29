@@ -90,7 +90,7 @@ export function FollowGrid() {
                         height={16}
                     />
                     <p className="text-neutral-100 group-hover:text-neutral-500 transition-colors duration-150">
-                        @dromzeh (7.5K)
+                        @dromzeh
                     </p>
                 </Link>
             </div>
