@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 
 const geist = GeistSans;
 
 export const metadata: Metadata = {
-    title: "home • dromzeh.dev",
+    title: "dromzeh.dev",
     metadataBase: new URL("https://dromzeh.dev"),
 };
 
