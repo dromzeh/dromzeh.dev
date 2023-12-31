@@ -27,10 +27,12 @@ export function About() {
                 <p>
                     Hey, I&apos;m Marcel - <Age /> year old full-stack developer
                     focused within infrastructure, serverless computing and
-                    backend development.
+                    backend development. My first experience with programming
+                    was making Shell Scripts to automate my Minecraft Servers
+                    then making websites at <AgeTooltip />.
                 </p>
                 <p>
-                    I&apos;m the creator of{" "}
+                    I&apos;m now the creator of{" "}
                     <Link
                         href="https://wanderer.moe/"
                         target="_blank"
@@ -39,7 +41,7 @@ export function About() {
                         wanderer.moe
                     </Link>{" "}
                     - a site that hosts thousands of assets from various games
-                    with ~300,000 monthly users. We&apos;re also{" "}
+                    with thousands of daily users. We&apos;re also{" "}
                     <Link
                         href="https://git.wanderer.moe/"
                         target="_blank"
@@ -50,7 +52,7 @@ export function About() {
                     .
                 </p>
                 <p>
-                    Projects I&apos;ve worked on &{" "}
+                    All projects I&apos;ve worked on &{" "}
                     <Link
                         href="https://github.com/dromzeh/dromzeh.dev"
                         target="_blank"
@@ -66,12 +68,13 @@ export function About() {
                         className="text-neutral-100 hover:text-neutral-500 transition-all duration-150"
                     >
                         on my GitHub
-                    </Link>
-                    .
+                    </Link>{" "}
+                    to view.
                 </p>
                 <p>
-                    Feel free to reach out for anything, or just to chat!
-                    I&apos;m most responsive on{" "}
+                    Feel free to contact me for any reason, even if it&apos;s
+                    just to chat - expect asynchronous responses. You can
+                    contact me through{" "}
                     <Link
                         href="https://discord.com/users/492731761680187403"
                         target="_blank"
@@ -80,7 +83,7 @@ export function About() {
                         {" "}
                         Discord
                     </Link>{" "}
-                    or you can email me at{" "}
+                    or send an email to
                     <Link
                         href="mailto:marcel@dromzeh.dev"
                         target="_blank"
@@ -93,6 +96,26 @@ export function About() {
                 </p>
             </div>
         </div>
+    );
+}
+
+export function AgeTooltip() {
+    return (
+        <TooltipProvider delayDuration={100}>
+            <Tooltip>
+                <TooltipTrigger asChild>
+                    <span className="text-neutral-100 hover:text-neutral-500 transition-all duration-150 cursor-pointer">
+                        6 years old
+                    </span>
+                </TooltipTrigger>
+                <TooltipContent className="text-center max-w-[250px]">
+                    <p>
+                        Seriously, I did everything (including self hosting) on
+                        an unused hand-me-down laptop running Windows 7.
+                    </p>
+                </TooltipContent>
+            </Tooltip>
+        </TooltipProvider>
     );
 }
 
