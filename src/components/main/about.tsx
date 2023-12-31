@@ -7,13 +7,21 @@ import * as React from "react";
 // const fallBackAge = 17;
 
 export function About() {
+    React.useEffect(() => {
+        console.log(
+            "%c 👋 plz leave a ⭐ on github, thx: https://git.dromzeh.dev/dromzeh.dev",
+            "font-size: 12px; font-family: monospace; background: black; display: inline-block; color: white; padding: 12px; border-radius: 4px;",
+        );
+    }, []);
+
     return (
         <div>
             <h2 className="text-neutral-100 mb-2">About</h2>
             <div className="flex flex-col space-y-2">
                 <p>
                     Hey, I&apos;m Marcel - a full-stack developer focused within
-                    serverless computing and backend development.
+                    infrastructure, serverless computing and backend
+                    development.
                 </p>
                 <p>
                     I&apos;m the creator of{" "}
@@ -56,8 +64,8 @@ export function About() {
                     .
                 </p>
                 <p>
-                    If you have any questions or just want to chat, don&apos;t
-                    hesitate to reach out! I&apos;m most responsive on{" "}
+                    Feel free to reach out for anything, or just to chat!
+                    I&apos;m most responsive on{" "}
                     <Link
                         href="https://discord.com/users/492731761680187403"
                         target="_blank"
@@ -66,7 +74,7 @@ export function About() {
                         {" "}
                         Discord
                     </Link>{" "}
-                    or via email at
+                    or you can email me at{" "}
                     <Link
                         href="mailto:marcel@dromzeh.dev"
                         target="_blank"

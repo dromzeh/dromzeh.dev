@@ -3,7 +3,6 @@
 import { Skeleton } from "~/components/ui/skeleton";
 import { useLanyard } from "react-use-lanyard";
 import Image from "next/image";
-import { Badge } from "~/components/ui/badge";
 
 const statusMap = {
     online: "Online",
