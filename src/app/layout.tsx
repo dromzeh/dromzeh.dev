@@ -10,18 +10,22 @@ export const metadata: Metadata = {
     metadataBase: new URL("https://dromzeh.dev"),
 };
 
+interface RootLayoutProps {
+    children: React.ReactNode;
+}
+
 export default function RootLayout({
     children,
-}: {
-    children: React.ReactNode;
-}) {
+}: RootLayoutProps): React.ReactElement {
     return (
         <html lang="en">
             <body
                 className={`${geist.className} min-h-screen flex items-center justify-center`}
             >
-                <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-                    {children}
+                <main className="max-w-5xl mx-auto">
+                    <section className="px-4 sm:px-6 lg:px-8 py-16">
+                        {children}
+                    </section>
                 </main>
             </body>
         </html>
