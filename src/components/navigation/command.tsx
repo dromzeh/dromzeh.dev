@@ -8,10 +8,10 @@ import {
     CommandGroup,
     CommandInput,
     CommandSeparator,
-    CommandShortcut,
-    Command,
+    // CommandShortcut,
+    // Command,
 } from "../ui/command";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation"; // usePathname
 import { Command as CommandIcon } from "lucide-react";
 
 import {
@@ -61,7 +61,7 @@ export function CommandMenu() {
         <>
             <Button
                 variant={"outline"}
-                className="px-3 rounded-full absolute top-0 right-0 mt-4 mr-4 z-50"
+                className="px-3 rounded-full absolute top-0 right-0 mt-4 mr-4 z-50" // maybe i can make this sticky? idk css is scary
                 onClick={() => setIsOpen(!isOpen)}
             >
                 {" "}
@@ -103,18 +103,18 @@ export function CommandMenu() {
                     </CommandGroup>
                     <CommandSeparator />
                     <CommandGroup heading="Actions">
-                        {/* TODO(dromzeh): would be cool if it showed source code of the active page? maybe.. considering it's file based routing */}
+                        {/* TODO(dromzeh): would be cool if it showed source code of the active page? maybe.. considering it's file based routing: tree/main/src/app..  */}
                         <CommandItem
                             onSelect={() =>
                                 runCommand(() =>
                                     router.push(
-                                        "https://git.dromzeh.dev/dromzeh.dev/tree/main/src/app",
+                                        "https://git.dromzeh.dev/dromzeh.dev/",
                                     ),
                                 )
                             }
                         >
                             <Github size={16} />
-                            <span className="ml-2">View Source</span>
+                            <span className="ml-2">View Source Code</span>
                         </CommandItem>
                         <CommandItem
                             onSelect={() =>
