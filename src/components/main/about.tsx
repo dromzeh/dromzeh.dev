@@ -21,18 +21,13 @@ export function About() {
     }, []);
 
     return (
-        <div>
+        <div className="">
             <h2 className="text-neutral-100 mb-2">About</h2>
             <div className="flex flex-col space-y-2">
                 <p>
                     Hey, I&apos;m Marcel - <Age /> year old full-stack developer
                     focused within infrastructure, serverless computing and
-                    backend development. My first experience with programming
-                    was making Shell Scripts to automate my Minecraft Servers
-                    then making websites at <AgeTooltip />.
-                </p>
-                <p>
-                    I&apos;m now the creator of{" "}
+                    backend development. I&apos;m now the creator of{" "}
                     <Link
                         href="https://wanderer.moe/"
                         target="_blank"
@@ -52,7 +47,10 @@ export function About() {
                     .
                 </p>
                 <p>
-                    All projects I&apos;ve worked on &{" "}
+                    My first experience with programming was making Shell
+                    Scripts to automate my Minecraft Servers then making
+                    websites at <AgeTooltip />. All projects I&apos;ve worked on
+                    &{" "}
                     <Link
                         href="https://github.com/dromzeh/dromzeh.dev"
                         target="_blank"
@@ -71,6 +69,7 @@ export function About() {
                     </Link>{" "}
                     to view.
                 </p>
+
                 <p>
                     Feel free to contact me for any reason, even if it&apos;s
                     just to chat - expect asynchronous responses. You can

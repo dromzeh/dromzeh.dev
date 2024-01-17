@@ -1,0 +1,41 @@
+{
+    "projects": [
+        {
+            "name": "wanderer.moe",
+            "description": "Frontend for wanderer.moe",
+            "languages": ["NextJS", "Tailwind", "Typescript"],
+            "projecturl": "https://wanderer.moe/",
+            "oss": true,
+            "giturl": "https://git.wanderer.moe/site",
+            "active": true,
+            "iconurl": "ksjldfjk"
+        },
+        {
+            "name": "api.wanderer.moe",
+            "description": "CF workers api for wanderer.moe",
+            "languages": ["Hono", "Turso", "Drizzle", "Cloudflare Workers"],
+            "projecturl": "https://git.wanderer.moe/api",
+            "oss": true,
+            "giturl": "https://git.wanderer.moe/api",
+            "active": true,
+            "iconurl": "ksjldfjk"
+        },
+        {
+            "name": "hyv-fps-unlocker",
+            "description": "FPS unlocker for some 'anime' games",
+            "languages": ["Rust"],
+            "oss": true,
+            "giturl": "https://git.dromzeh.dev/hyv-fps-unlocker",
+            "active": true,
+            "iconurl": "ksjldfjk"
+        },
+        {
+            "name": "vmt",
+            "description": "Voice message transcriber Discord bot",
+            "languages": ["Python"],
+            "oss": true,
+            "giturl": "https://git.dromzeh.dev/vmt",
+            "active": true
+        }
+    ]
+}

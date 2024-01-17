@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 // import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
+import { CommandMenu } from "~/components/navigation/command";
 
 const geist = GeistSans;
 
@@ -22,8 +23,9 @@ export default function RootLayout({
             <body
                 className={`${geist.className} min-h-screen flex items-center justify-center`}
             >
-                <main className="max-w-5xl mx-auto">
-                    <section className="px-4 sm:px-6 lg:px-8 py-16">
+                <main className="max-w-4xl mx-auto">
+                    <section className="px-6 sm:px-8 lg:px-10 py-16">
+                        <CommandMenu />
                         {children}
                     </section>
                 </main>
