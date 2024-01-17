@@ -1,11 +1,10 @@
-import { Twitter, Github } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { MailIcon } from "lucide-react";
 
 export function FollowGrid() {
     return (
-        <div className="md:ml-12">
+        <div className="sm:order-1 order-2">
             <h2 className="text-neutral-100 mb-2">Links </h2>
             <div className="flex flex-col space-y-2">
                 <Link
