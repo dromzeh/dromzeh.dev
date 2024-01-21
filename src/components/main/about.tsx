@@ -69,11 +69,9 @@ export function About() {
                     </Link>{" "}
                     to view.
                 </p>
-
                 <p>
-                    Feel free to contact me for any reason, even if it&apos;s
-                    just to chat - expect asynchronous responses. You can
-                    contact me through{" "}
+                    Feel free to reach out; expect asynchronous responses. You
+                    can contact me through{" "}
                     <Link
                         href="https://discord.com/users/492731761680187403"
                         target="_blank"
