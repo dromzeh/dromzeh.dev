@@ -1,20 +1,20 @@
-import { Button } from "~/components/ui/button";
 import Link from "next/link";
 import { WavyBackground } from "~/components/background";
+import { GoBackButton } from "~/components/navigation/go-back-button";
 
 export default function NotFound() {
     return (
-        <WavyBackground>
+        <WavyBackground position={0.5}>
             <div className="text-center text-white">
-                <div className="max-w-lg space-y-2 flex flex-col">
-                    <h1 className="text-7xl font-bold ">404</h1>
+                <div className="max-w-lg space-y-4 flex flex-col">
+                    <h1 className="text-7xl font-bold">404</h1>
                     <p className="text-xl">
                         The page you&apos;re looking for doesn&apos;t exist or
                         has been moved elsewhere.
                     </p>
-                    <Link href="/">
-                        <Button className="mt-4">Go Back Home</Button>
-                    </Link>
+                    <div className="flex justify-center">
+                        <GoBackButton />
+                    </div>
                 </div>
             </div>
         </WavyBackground>
