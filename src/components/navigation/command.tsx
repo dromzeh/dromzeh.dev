@@ -79,27 +79,17 @@ export function CommandMenu() {
                             <Home size={16} />
                             <span className="ml-2">Home</span>
                         </CommandItem>
-                        <CommandItem
+                        {/* <CommandItem
                             className="transition-all duration-100"
                             onSelect={() =>
-                                runCommand(() =>
-                                    router.push("https://github.com/dromzeh/"),
-                                )
+                                runCommand(() => router.push("/#work"))
                             }
                         >
                             <Package size={16} />
-                            <span className="ml-2">Projects</span>
-                        </CommandItem>
-                        <CommandItem
-                            disabled
-                            className="transition-all duration-100 text-neutral-500"
-                            onSelect={() =>
-                                runCommand(() => router.push("/posts"))
-                            }
-                        >
-                            <Layers3 size={16} />
-                            <span className="ml-2">Posts</span>
-                        </CommandItem>
+                            <span className="ml-2">
+                                Previous & Current Work
+                            </span>
+                        </CommandItem> */}
                     </CommandGroup>
                     <CommandSeparator />
                     <CommandGroup heading="Actions">

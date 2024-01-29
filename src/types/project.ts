@@ -1,4 +1,4 @@
-export interface Project {
+export interface Work {
     name: string;
     description: string;
     languages: string[];

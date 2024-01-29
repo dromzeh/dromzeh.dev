@@ -1,0 +1,52 @@
+{
+    "work": [
+        {
+            "name": "wanderer.moe",
+            "description": "Created wanderer.moe, an open-source centralized game assets hosting website that handles thousands of daily requests and users. \nDeveloped API and Microservices on Cloudflare Workers using Rust & Typescript. Frontend using NextJS, TailwindCSS, and Typescript with shadcn/ui. \nSite translations handled through Crowdin.",
+            "languages": ["NextJS", "Hono", "Typescript", "Cloudflare", "Rust"],
+            "projecturl": "https://wanderer.moe/",
+            "oss": true,
+            "giturl": "https://git.wanderer.moe/",
+            "active": true
+        },
+        {
+            "name": "hyv-fps-unlocker",
+            "description": "Developed a lightweight Rust CLI which modifies Registry Entries for various games, allowing users to bypass defaults and set custom FPS values. \nCurrently undergoing a rewrite with Tauri (Rust & Svelte) to support additional methods of unlocking.",
+            "languages": ["Rust"],
+            "oss": true,
+            "giturl": "https://git.dromzeh.dev/hyv-fps-unlocker",
+            "active": true
+        },
+        {
+            "name": "Lucia Auth",
+            "description": "Lucia is a lightweight Authentication Library in Typescript suitable for practically any environment. \nContributed towards documentation, specifically usage within Cloudflare Workers environments.",
+            "languages": ["Typescript"],
+            "oss": true,
+            "giturl": "https://github.com/lucia-auth/lucia-auth",
+            "projecturl": "https://lucia-auth.com/",
+            "active": true
+        },
+        {
+            "name": "vmt",
+            "description": "Developed a Discord bot in discord.py utilizing DeepL and Google Speech Recognition API for transcribing and translating voice messages. \nParticularly useful for overcoming communication barriers. Includes a Dockerfile for straightforward deployment.",
+            "languages": [
+                "Python",
+                "discord.py",
+                "DeepL",
+                "Speech Recognition"
+            ],
+            "oss": true,
+            "giturl": "https://git.dromzeh.dev/vmt",
+            "active": true
+        },
+        {
+            "name": "dromzeh.dev",
+            "description": "My  personal website using NextJS App Router, Typescript, and TailwindCSS. Optimized for performance with Million.js. \nDeployed on Cloudflare Pages with @cloudflare/next-on-pages.",
+            "languages": ["NextJS", "Tailwind", "Typescript"],
+            "projecturl": "https://dromzeh.dev/",
+            "oss": true,
+            "giturl": "https://git.dromzeh.dev/dromzeh.dev",
+            "active": true
+        }
+    ]
+}
