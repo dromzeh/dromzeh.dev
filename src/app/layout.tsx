@@ -21,13 +21,11 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${geist.className} min-h-screen flex items-center justify-center`}
+                className={`${geist.className} h-full scroll-smooth antialiased`}
             >
-                <main className="max-w-4xl mx-auto">
-                    <section className="px-6 sm:px-8 lg:px-10 py-16">
-                        <CommandMenu />
-                        {children}
-                    </section>
+                <main>
+                    <CommandMenu />
+                    {children}
                 </main>
             </body>
         </html>

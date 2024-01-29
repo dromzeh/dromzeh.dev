@@ -4,7 +4,7 @@ import { MailIcon } from "lucide-react";
 
 export function FollowGrid() {
     return (
-        <div className="sm:order-1 order-2">
+        <div className="">
             <h2 className="text-neutral-100 mb-2">Links </h2>
             <div className="flex flex-col space-y-2">
                 <Link

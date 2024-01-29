@@ -3,7 +3,8 @@ import { LanyardProfile } from "~/components/main/lanyard/profile";
 import { FollowGrid } from "~/components/socials/follow-grid";
 import type { Metadata } from "next";
 import { JoinWaitlist } from "~/components/main/waitlist";
-// import { ProjectContainer } from "~/components/project/project-container";
+import { MoreInfo } from "~/components/main/detail";
+import { WorkContainer } from "~/components/work/work-container";
 
 export const metadata: Metadata = {
     title: "home • dromzeh.dev",
@@ -12,20 +13,15 @@ export const metadata: Metadata = {
 
 export default function Home() {
     return (
-        <>
-            <JoinWaitlist />
-            <div className="flex flex-col gap-10">
-                <LanyardProfile />
-                <div className="flex flex-col md:flex-row md:justify-between gap-10">
-                    <FollowGrid />
-                    <div className="sm:order-2 order-1">
-                        <div className="flex flex-col gap-4">
-                            <About />
-                            {/* <ProjectContainer /> */}
-                        </div>
-                    </div>
-                </div>
+        <div className="min-h-screen max-w-xl mx-auto flex items-center justify-center">
+            <div className="py-12 px-4 text-sm">
+                <section className="flex flex-col space-y-6">
+                    <LanyardProfile />
+                    <About />
+                    <WorkContainer />
+                    <MoreInfo />
+                </section>
             </div>
-        </>
+        </div>
     );
 }
