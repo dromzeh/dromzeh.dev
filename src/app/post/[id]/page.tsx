@@ -21,6 +21,8 @@ type Props = {
     params: { id: string };
 };
 
+export const runtime = "edge";
+
 async function PostPage({ params: { id } }: Props) {
     const post = await getPost(id);
 
