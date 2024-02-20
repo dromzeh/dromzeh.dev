@@ -1,78 +1,69 @@
-import { Button } from "~/components/ui/button";
-import { Input } from "~/components/ui/input";
-import { Label } from "~/components/ui/label";
-import {
-    Sheet,
-    SheetClose,
-    SheetContent,
-    SheetDescription,
-    SheetFooter,
-    SheetHeader,
-    SheetTitle,
-    SheetTrigger,
-} from "~/components/ui/sheet";
-import type { Work } from "~/types/project";
-import { GithubIcon, Link as LinkIcon } from "lucide-react";
+import { GithubIcon, Package } from "lucide-react";
+import * as React from "react";
 import Link from "next/link";
-import { Badge } from "../ui/badge";
+import { Button } from "~/components/ui/button";
+import {
+    Drawer,
+    DrawerContent,
+    DrawerDescription,
+    DrawerFooter,
+    DrawerHeader,
+    DrawerTitle,
+    DrawerTrigger,
+} from "~/components/ui/drawer";
+import type { Work } from "~/types/project";
 
-function WorkSheetTagBadge(props: { tag: string }) {
-    return <Badge variant="secondary">{props.tag}</Badge>;
-}
-
-export function WorkSheet(props: Work): React.ReactElement {
+export function WorkSheet(props: Work) {
     return (
-        <Sheet>
-            <SheetTrigger asChild>
+        <Drawer>
+            <DrawerTrigger asChild>
                 <div className="text-white group-hover:text-neutral-500 transition-colors duration-150 hover:cursor-pointer">
                     Read More
                 </div>
-            </SheetTrigger>
-            <SheetContent
-                side="bottom"
-                className="flex items-center justify-center"
-            >
-                <div className="text-center">
-                    <SheetHeader>
-                        <SheetTitle className="text-left">
+            </DrawerTrigger>
+            <DrawerContent>
+                <div className="mx-auto w-full max-w-xl">
+                    <DrawerHeader>
+                        <DrawerTitle className="text-white">
                             {props.name}
-                        </SheetTitle>
-                        <SheetDescription className="text-left max-w-xl">
-                            <div className="flex flex-col space-y-2">
-                                {props.description
-                                    .split("\n")
-                                    .map((line, i) => (
-                                        <p key={i}>{line}</p>
-                                    ))}
-                            </div>
-                        </SheetDescription>
-                    </SheetHeader>
-                    <div className="flex flex-row mt-8 space-x-2 justify-center">
+                        </DrawerTitle>
+                        <DrawerDescription className="mt-2 text-left">
+                            {props.description.split("\n").map((line, i) => (
+                                <p key={i} className="mb-2">
+                                    {line}
+                                </p>
+                            ))}
+                        </DrawerDescription>
+                    </DrawerHeader>
+                    <div className="p-4 pb-0">
+                        <div className="flex items-center justify-center space-x-2"></div>
+                    </div>
+                    <DrawerFooter>
                         {props.projecturl && (
-                            <Button size="sm" variant="secondary">
-                                <Link
-                                    href={props.projecturl}
-                                    target="_blank"
-                                    className="flex flex-row gap-2"
+                            <Link href={props.projecturl}>
+                                <Button
+                                    variant={"secondary"}
+                                    className="w-full"
                                 >
-                                    <LinkIcon size={16} /> View Project
-                                </Link>
-                            </Button>
+                                    <Package className="h-4 w-4 mr-2 inline" />
+                                    View Project
+                                </Button>
+                            </Link>
                         )}
                         {props.giturl && (
-                            <Button size="sm" variant="secondary">
-                                <Link
-                                    href={props.giturl}
-                                    target="_blank"
-                                    className="flex flex-row gap-2"
+                            <Link href={props.giturl}>
+                                <Button
+                                    className="w-full"
+                                    variant={"secondary"}
                                 >
-                                    <GithubIcon size={16} /> View Source
-                                </Link>
-                            </Button>
+                                    <GithubIcon className="h-4 w-4 mr-2 inline" />
+                                    View Source
+                                </Button>
+                            </Link>
                         )}
-                    </div>
+                    </DrawerFooter>
                 </div>
-            </SheetContent>
-        </Sheet>
+            </DrawerContent>
+        </Drawer>
     );
 }

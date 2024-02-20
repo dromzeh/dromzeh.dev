@@ -3,7 +3,7 @@ import { LanyardProfile } from "~/components/main/lanyard/profile";
 import { FollowGrid } from "~/components/socials/follow-grid";
 import type { Metadata } from "next";
 import { JoinWaitlist } from "~/components/main/waitlist";
-import { MoreInfo } from "~/components/main/detail";
+import { MoreInfo } from "~/components/main/more-info";
 import { WorkContainer } from "~/components/work/work-container";
 
 export const metadata: Metadata = {
