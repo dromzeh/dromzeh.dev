@@ -3,6 +3,8 @@ import "./globals.css";
 // import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import { CommandMenu } from "~/components/navigation/command";
+import { Toaster } from "~/components/ui/sonner";
+import { HydrationOverlay } from "@builder.io/react-hydration-overlay";
 
 const geist = GeistSans;
 
@@ -25,7 +27,8 @@ export default function RootLayout({
             >
                 <main>
                     <CommandMenu />
-                    {children}
+                    <HydrationOverlay>{children}</HydrationOverlay>
+                    <Toaster />
                 </main>
             </body>
         </html>

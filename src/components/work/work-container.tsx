@@ -10,7 +10,7 @@ export function WorkContainer({ work = AllWork.work }: WorkContainerProps) {
     return (
         <div className="flex flex-col my-2">
             <h2 className="text-neutral-100 text-lg font-semibold mb-2">
-                Recent Work
+                Selected Work
             </h2>
             <div className="flex flex-col space-y-2">
                 {work.map((work: Work) => (

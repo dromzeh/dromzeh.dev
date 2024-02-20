@@ -10,20 +10,11 @@ export function MoreInfo() {
                 <MoreInfoItem question="Timezone" answer="Europe/London" />
                 <MoreInfoItem
                     question="Languages"
-                    answer="TS, Rust, Python, Svelte."
+                    answer="TypeScript, Rust, Python, Svelte."
                 />
                 <MoreInfoItem
                     question="Frameworks"
                     answer="Hono, Next.js, SvelteKit."
-                />
-                <MoreInfoItem
-                    question="Infrastructure"
-                    answer="Cloudflare & DigitalOcean."
-                />
-                <MoreInfoItem question="Database" answer="LibSQL, flawless." />
-                <MoreInfoItem
-                    question="Open to Work"
-                    answer="Feel free to reach out."
                 />
             </ul>
         </div>

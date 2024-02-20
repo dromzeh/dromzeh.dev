@@ -27,13 +27,13 @@ export function About() {
             </h2>
             <div className="flex flex-col space-y-2">
                 <p>
-                    Hey, I&apos;m Marcel (/mɑɹˈsɛl/) - <Age /> year old
-                    full-stack developer specializing in infrastructure,
-                    serverless computing, and backend development.
+                    Hey! I&apos;m Marcel (/mɑɹˈsɛl/) - <Age /> year old Software
+                    Engineer specializing in infrastructure, serverless
+                    computing, and backend development.
                 </p>
                 <p>
-                    Started programming at <AgeTooltip />. All active projects
-                    are available on my{" "}
+                    I started programming at <AgeTooltip />. All projects I
+                    maintain are available on my{" "}
                     <Link
                         href="https://github.com/dromzeh"
                         target="_blank"
