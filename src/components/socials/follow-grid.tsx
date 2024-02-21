@@ -5,7 +5,7 @@ import { MailIcon } from "lucide-react";
 export function FollowGrid() {
     return (
         <div className="">
-            <h2 className="text-neutral-100 mb-2">Links </h2>
+            <h2 className="text-foreground mb-2">Links </h2>
             <div className="flex flex-col space-y-2">
                 <Link
                     href="https://github.com/dromzeh"
@@ -18,7 +18,7 @@ export function FollowGrid() {
                         width={16}
                         height={16}
                     />
-                    <p className="text-neutral-100 group-hover:text-neutral-500 transition-colors duration-150">
+                    <p className="text-foreground group-hover:text-muted-foreground/50 transition-colors duration-150">
                         @dromzeh
                     </p>
                 </Link>
@@ -33,7 +33,7 @@ export function FollowGrid() {
                         width={16}
                         height={16}
                     />
-                    <p className="text-neutral-100 group-hover:text-neutral-500 transition-colors duration-150">
+                    <p className="text-foreground group-hover:text-muted-foreground/50 transition-colors duration-150">
                         @dromzeh
                     </p>
                 </Link>
@@ -44,7 +44,7 @@ export function FollowGrid() {
                     className="flex flex-row space-x-2 items-center group"
                 >
                     <MailIcon size={16} />
-                    <p className="text-neutral-100 group-hover:text-neutral-500 transition-colors duration-150">
+                    <p className="text-foreground group-hover:text-muted-foreground/50 transition-colors duration-150">
                         marcel@dromzeh.dev
                     </p>
                 </Link>
@@ -60,7 +60,7 @@ export function FollowGrid() {
                         width={16}
                         height={16}
                     />
-                    <p className="text-neutral-100 group-hover:text-neutral-500 transition-colors duration-150">
+                    <p className="text-foreground group-hover:text-muted-foreground/50 transition-colors duration-150">
                         @dromzeh
                     </p>
                 </Link>
@@ -75,7 +75,7 @@ export function FollowGrid() {
                         width={16}
                         height={16}
                     />
-                    <p className="text-neutral-100 group-hover:text-neutral-500 transition-colors duration-150">
+                    <p className="text-foreground group-hover:text-muted-foreground/50 transition-colors duration-150">
                         marcel
                     </p>
                 </Link>
@@ -91,7 +91,7 @@ export function FollowGrid() {
                         width={16}
                         height={16}
                     />
-                    <p className="text-neutral-100 group-hover:text-neutral-500 transition-colors duration-150">
+                    <p className="text-foreground group-hover:text-muted-foreground/50 transition-colors duration-150">
                         @dromzeh
                     </p>
                 </Link>

@@ -46,7 +46,7 @@ export function Lanyard() {
         }
     }, [status]);
 
-    if (!status) {
+    if (loading || !status) {
         return null;
     }
 
@@ -76,13 +76,13 @@ export function Lanyard() {
                 </div>
             </div>
             <div className="flex flex-col space-y-1">
-                <p className="text-neutral-100">
+                <p className="text-foreground">
                     {status.discord_user.username}
                 </p>
 
                 <div className="flex flex-row space-x-1 items-center">
                     {activity ? (
-                        <p className="text-neutral-400 text-sm">
+                        <p className="text-muted-foreground text-sm">
                             {activity.type === 2 ? (
                                 <span>
                                     Listening to
@@ -103,7 +103,7 @@ export function Lanyard() {
                             )}
                         </p>
                     ) : (
-                        <p className="text-neutral-400 text-sm">
+                        <p className="text-muted-foreground text-sm">
                             {statusMap[status.discord_status]} on Discord
                         </p>
                     )}

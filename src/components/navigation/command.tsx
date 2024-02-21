@@ -120,7 +120,7 @@ export function CommandMenu() {
                 </CommandList>
                 <CommandSeparator />
                 {/* TODO(dromzeh): alignments :3 */}
-                <div className="text-neutral-400 flex gap-4 text-sm p-3 justify-end">
+                <div className="text-muted-foreground flex gap-4 text-sm p-3 justify-end">
                     <div className="flex flex-row gap-1 items-center">
                         <ArrowUpDown
                             size={20}

@@ -4,25 +4,25 @@
 
 @layer base {
     :root {
-        --background: 0 0% 3.9%;
-        --foreground: 0 0% 98%;
-        --card: 0 0% 3.9%;
-        --card-foreground: 0 0% 98%;
-        --popover: 0 0% 3.9%;
-        --popover-foreground: 0 0% 98%;
-        --primary: 0 0% 98%;
-        --primary-foreground: 0 0% 9%;
-        --secondary: 0 0% 14.9%;
-        --secondary-foreground: 0 0% 98%;
-        --muted: 0 0% 14.9%;
-        --muted-foreground: 0 0% 63.9%;
-        --accent: 0 0% 14.9%;
-        --accent-foreground: 0 0% 98%;
-        --destructive: 0 62.8% 30.6%;
-        --destructive-foreground: 0 0% 98%;
-        --border: 0 0% 14.9%;
-        --input: 0 0% 14.9%;
-        --ring: 0 0% 83.1%;
+        --background: 53 22% 93%;
+        --foreground: 70 5% 22%;
+        --muted: 53 12% 89%;
+        --muted-foreground: 53 12% 29%;
+        --popover: 52 22% 90%;
+        --popover-foreground: 70 5% 12%;
+        --card: 52 22% 91%;
+        --card-foreground: 70 5% 17%;
+        --border: 52 12% 88%;
+        --input: 52 12% 85%;
+        --primary: 70 5% 22%;
+        --primary-foreground: 70 5% 82%;
+        --secondary: 0 0% 75%;
+        --secondary-foreground: 0 0% 15%;
+        --accent: 53 22% 78%;
+        --accent-foreground: 53 22% 18%;
+        --destructive: 10 88% 40%;
+        --destructive-foreground: 0 0% 100%;
+        --ring: 70 5% 22%;
         --radius: 0.5rem;
     }
 
@@ -55,14 +55,12 @@
         @apply border-border;
     }
     body {
-        @apply bg-background text-neutral-400;
+        @apply bg-background text-muted-foreground;
     }
-
     ::-moz-selection {
-        @apply bg-neutral-300 text-neutral-950;
+        @apply bg-primary text-primary-foreground;
     }
-
     ::selection {
-        @apply bg-neutral-300 text-neutral-950;
+        @apply bg-primary text-primary-foreground;
     }
 }

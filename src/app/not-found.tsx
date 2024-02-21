@@ -5,7 +5,7 @@ export default function NotFound() {
     return (
         <div className="flex items-center justify-center h-screen">
             <WavyBackground position={0.5}>
-                <div className="text-center text-white">
+                <div className="text-center text-foreground">
                     <div className="max-w-lg space-y-4 flex flex-col">
                         <h1 className="text-7xl font-bold">404</h1>
                         <p className="text-lg">

@@ -4,9 +4,7 @@ import { Age, AgeTooltip } from "~/components/main/age-info";
 export function About() {
     return (
         <div className="">
-            <h2 className="text-neutral-100 font-bold text-lg mb-2">
-                About Me
-            </h2>
+            <h2 className="text-foreground font-bold text-lg mb-2">About Me</h2>
             <div className="flex flex-col space-y-2">
                 <p>
                     Hey! I&apos;m Marcel (/mɑɹˈsɛl/) - <Age /> year old Software
@@ -19,7 +17,7 @@ export function About() {
                     <Link
                         href="https://github.com/dromzeh"
                         target="_blank"
-                        className="text-neutral-100 hover:text-neutral-500 transition-all duration-150"
+                        className="text-foreground hover:text-muted-foreground/50 transition-all duration-150"
                     >
                         GitHub
                     </Link>
@@ -30,7 +28,7 @@ export function About() {
                     <Link
                         href="https://wanderer.moe/"
                         target="_blank"
-                        className="text-neutral-100 hover:text-neutral-500 transition-all duration-150"
+                        className="text-foreground hover:text-muted-foreground/50 transition-all duration-150"
                     >
                         wanderer.moe
                     </Link>
@@ -38,7 +36,7 @@ export function About() {
                     <Link
                         href="https://git.wanderer.moe/"
                         target="_blank"
-                        className="text-neutral-100 hover:text-neutral-500 transition-all duration-150"
+                        className="text-foreground hover:text-muted-foreground/50 transition-all duration-150"
                     >
                         open-source
                     </Link>{" "}
@@ -51,7 +49,7 @@ export function About() {
                     <Link
                         href="https://discord.com/users/492731761680187403"
                         target="_blank"
-                        className="text-neutral-100 hover:text-neutral-500 transition-all duration-150"
+                        className="text-foreground hover:text-muted-foreground/50 transition-all duration-150"
                     >
                         Discord
                     </Link>{" "}
@@ -59,7 +57,7 @@ export function About() {
                     <Link
                         href="mailto:marcel@dromzeh.dev"
                         target="_blank"
-                        className="text-neutral-100 hover:text-neutral-500 transition-all duration-150"
+                        className="text-foreground hover:text-muted-foreground/50 transition-all duration-150"
                     >
                         marcel@dromzeh.dev
                     </Link>
