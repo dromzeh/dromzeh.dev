@@ -14,6 +14,7 @@ const nextConfig = {
     experimental: {
         // optimizeCss: true,
         mdxRs: true,
+        ppr: true,
     },
 };
 
