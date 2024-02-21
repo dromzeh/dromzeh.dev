@@ -3,7 +3,7 @@ import { ChevronRight } from "lucide-react";
 export function MoreInfo() {
     return (
         <div>
-            <h2 className="text-neutral-100 font-bold text-lg mb-2">
+            <h2 className="text-foreground font-bold text-lg mb-2">
                 More Info
             </h2>
             <ul className="pl-4 list-disc">
@@ -30,7 +30,7 @@ function MoreInfoItem({
 }) {
     return (
         <li className="mb-2">
-            <span className="text-white">{question}</span>{" "}
+            <span className="text-foreground">{question}</span>{" "}
             <ChevronRight className="h-3 w-3 text-gray-500 inline" />
             <span>{answer}</span>
         </li>

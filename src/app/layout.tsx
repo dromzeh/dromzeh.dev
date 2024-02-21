@@ -5,6 +5,8 @@ import { GeistSans } from "geist/font/sans";
 import { CommandMenu } from "~/components/navigation/command";
 import { Toaster } from "~/components/ui/sonner";
 // import { HydrationOverlay } from "@builder.io/react-hydration-overlay";
+import { ThemeProvider } from "~/components/navigation/theme-provider";
+import { ThemeToggle } from "~/components/navigation/theme-toggle";
 
 const geist = GeistSans;
 
@@ -25,11 +27,12 @@ export default function RootLayout({
             <body
                 className={`${geist.className} h-full scroll-smooth antialiased`}
             >
-                <div>
+                <ThemeProvider attribute="class" defaultTheme="dark">
                     <CommandMenu />
+                    <ThemeToggle />
                     {children}
                     <Toaster />
-                </div>
+                </ThemeProvider>
             </body>
         </html>
     );

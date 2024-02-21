@@ -17,14 +17,14 @@ export function WorkSheet(props: Work) {
     return (
         <Drawer>
             <DrawerTrigger asChild>
-                <div className="text-white group-hover:text-neutral-500 transition-colors duration-150 hover:cursor-pointer">
+                <div className="text-foreground group-hover:text-muted-foreground/50 transition-colors duration-150 hover:cursor-pointer">
                     Read More
                 </div>
             </DrawerTrigger>
             <DrawerContent>
                 <div className="mx-auto w-full max-w-xl">
                     <DrawerHeader>
-                        <DrawerTitle className="text-white">
+                        <DrawerTitle className="text-foreground">
                             {props.name}
                         </DrawerTitle>
                         <DrawerDescription className="mt-2 text-left">

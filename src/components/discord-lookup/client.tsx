@@ -154,18 +154,18 @@ export function LookupClient() {
                                     className="w-24 h-24 rounded-sm"
                                 />
                                 <div>
-                                    <h1 className="text-white text-lg font-semibold flex gap-2 items-center">
+                                    <h1 className="text-foreground text-lg font-semibold flex gap-2 items-center">
                                         {discordUser.user.globalName ||
                                             discordUser.user.username}
-                                        <span className="text-neutral-300 text-xs">
+                                        <span className="text-muted-foreground/50 text-xs">
                                             {discordUser.user.globalName &&
                                                 `${discordUser.user.username}`}
                                         </span>
                                     </h1>
-                                    <p className="text-neutral-300 text-xs">
+                                    <p className="text-muted-foreground/50 text-xs">
                                         {discordUser.user.id}
                                     </p>
-                                    <p className="text-neutral-300 text-xs">
+                                    <p className="text-muted-foreground/50 text-xs">
                                         Account created{" "}
                                         {validateSnowflake(
                                             parseInt(discordUser.user.id),

@@ -18,7 +18,7 @@ export function AgeTooltip() {
         <TooltipProvider delayDuration={100}>
             <Tooltip>
                 <TooltipTrigger asChild>
-                    <span className="text-neutral-100 hover:text-neutral-500 transition-all duration-150 cursor-pointer">
+                    <span className="text-foreground hover:text-muted-foreground/50 transition-all duration-150 cursor-pointer">
                         6 years old
                     </span>
                 </TooltipTrigger>
@@ -49,7 +49,7 @@ export function Age() {
         <TooltipProvider delayDuration={100}>
             <Tooltip>
                 <TooltipTrigger asChild>
-                    <span className="text-neutral-100 hover:text-neutral-500 transition-all duration-150 cursor-pointer">
+                    <span className="text-foreground hover:text-muted-foreground/50 transition-all duration-150 cursor-pointer">
                         {typeof age === "number" ? age.toFixed(4) : age}
                     </span>
                 </TooltipTrigger>
