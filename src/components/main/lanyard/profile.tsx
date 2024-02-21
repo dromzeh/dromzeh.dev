@@ -31,9 +31,7 @@ export function LanyardProfile() {
 }
 
 export function Lanyard() {
-    const [activity, setActivity] = useState<Activity | undefined>(
-        undefined,
-    );
+    const [activity, setActivity] = useState<Activity | undefined>(undefined);
 
     const { loading, status } = useLanyard({
         userId: "492731761680187403",
@@ -49,7 +47,7 @@ export function Lanyard() {
     }, [status]);
 
     if (!status) {
-        return null
+        return null;
     }
 
     return (
