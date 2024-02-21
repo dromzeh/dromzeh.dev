@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LookupClient } from "./_components/client";
+import { LookupClient } from "../../../components/discord-lookup/client";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
