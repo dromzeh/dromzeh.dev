@@ -11,11 +11,11 @@ const nextConfig = {
     },
     reactStrictMode: true,
     swcMinify: true,
-    experimental: {
-        // optimizeCss: true,
-        mdxRs: true,
-        ppr: true,
-    },
+    // experimental: {
+    //     // optimizeCss: true,
+    //     mdxRs: true,
+    //     ppr: true,
+    // },
 };
 
 const millionConfig = {
