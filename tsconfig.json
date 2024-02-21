@@ -15,16 +15,17 @@
         "incremental": true,
         "plugins": [
             {
-                "name": "next",
-            },
+                "name": "next"
+            }
         ],
         "paths": {
-            "~/*": ["./src/*"],
+            "~/*": ["./src/*"]
         },
+        "baseUrl": "."
     },
     "mdx": {
-        "plugins": [["remark-frontmatter", ["toml", "yaml"]], "remark-gfm"],
+        "plugins": [["remark-frontmatter", ["toml", "yaml"]], "remark-gfm"]
     },
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-    "exclude": ["node_modules"],
+    "exclude": ["node_modules"]
 }

@@ -1,8 +1,8 @@
 import matter from "gray-matter";
+import fs from "fs/promises";
 import path from "path";
 import type { Post } from "../types";
-import fs from "fs/promises";
-import { cache } from "react";
+import { unstable_cache as cache } from "next/cache";
 
 export const getPosts = cache(async () => {
     const posts = await fs.readdir("./src/posts/");

@@ -4,7 +4,7 @@ import "./globals.css";
 import { GeistSans } from "geist/font/sans";
 import { CommandMenu } from "~/components/navigation/command";
 import { Toaster } from "~/components/ui/sonner";
-import { HydrationOverlay } from "@builder.io/react-hydration-overlay";
+// import { HydrationOverlay } from "@builder.io/react-hydration-overlay";
 
 const geist = GeistSans;
 
@@ -25,11 +25,11 @@ export default function RootLayout({
             <body
                 className={`${geist.className} h-full scroll-smooth antialiased`}
             >
-                <main>
+                <div>
                     <CommandMenu />
-                    <HydrationOverlay>{children}</HydrationOverlay>
+                    {children}
                     <Toaster />
-                </main>
+                </div>
             </body>
         </html>
     );

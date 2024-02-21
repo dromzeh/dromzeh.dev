@@ -4,6 +4,9 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 
+export const runtime = "nodejs";
+export const dynamic = "force-static";
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { id } = params;
     const post = await getPost(id);
@@ -20,8 +23,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 type Props = {
     params: { id: string };
 };
-
-export const runtime = "edge";
 
 async function PostPage({ params: { id } }: Props) {
     const post = await getPost(id);
