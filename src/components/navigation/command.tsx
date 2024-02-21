@@ -13,6 +13,7 @@ import {
 } from "../ui/command";
 import { useRouter } from "next/navigation"; // usePathname
 import { Command as CommandIcon } from "lucide-react";
+import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 
 import {
     ArrowUpDown,
@@ -28,8 +29,12 @@ import {
 import { useState, useEffect, useCallback } from "react";
 import { Button } from "../ui/button";
 
+import { useTheme } from "next-themes";
+
 export function CommandMenu() {
     const [isOpen, setIsOpen] = useState<boolean>(false);
+
+    const { setTheme, theme } = useTheme();
 
     const router = useRouter();
 
@@ -79,20 +84,19 @@ export function CommandMenu() {
                             <Home size={16} />
                             <span className="ml-2">Home</span>
                         </CommandItem>
-                        {/* <CommandItem
-                            className="transition-all duration-100"
-                            onSelect={() =>
-                                runCommand(() => router.push("/#work"))
-                            }
-                        >
-                            <Package size={16} />
-                            <span className="ml-2">
-                                Previous & Current Work
-                            </span>
-                        </CommandItem> */}
                     </CommandGroup>
                     <CommandSeparator />
                     <CommandGroup heading="Actions">
+                        <CommandItem
+                            className="transition-all duration-100"
+                            onSelect={() =>
+                                setTheme(theme === "dark" ? "light" : "dark")
+                            }
+                        >
+                            <SunIcon className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                            <MoonIcon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                            <span className="ml-2">Toggle Theme</span>
+                        </CommandItem>
                         {/* TODO(dromzeh): would be cool if it showed source code of the active page? maybe.. considering it's file based routing: tree/main/src/app..  */}
                         <CommandItem
                             onSelect={() =>
