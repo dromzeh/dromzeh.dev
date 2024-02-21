@@ -9,12 +9,19 @@ const nextConfig = {
             { hostname: "i.scdn.co" },
         ],
     },
+    reactStrictMode: true,
+    swcMinify: true,
+    experimental: {
+        // optimizeCss: true,
+        mdxRs: true,
+    },
 };
 
 const millionConfig = {
-    auto: true,
-    // if you're using RSC:
-    // auto: { rsc: true },
+    auto: {
+        rsc: true,
+    },
+    rsc: true,
 };
 
 // export default withHydrationOverlay({

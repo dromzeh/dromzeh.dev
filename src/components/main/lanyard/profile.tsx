@@ -3,7 +3,8 @@
 import { Skeleton } from "~/components/ui/skeleton";
 import { useLanyard } from "react-use-lanyard";
 import Image from "next/image";
-// import { useEffect } from "react";
+import type { Activity } from "react-use-lanyard";
+import { Suspense, useEffect, useState } from "react";
 
 const statusMap = {
     online: "Online",
@@ -20,16 +21,36 @@ const statusColorMap = {
 };
 
 export function LanyardProfile() {
+    return (
+        <Suspense
+            fallback={<Skeleton className="h-[84px] w-[300px] rounded-md" />}
+        >
+            <Lanyard />
+        </Suspense>
+    );
+}
+
+export function Lanyard() {
+    const [activity, setActivity] = useState<Activity | undefined>(
+        undefined,
+    );
+
     const { loading, status } = useLanyard({
         userId: "492731761680187403",
         socket: true,
     });
 
-    if (loading || !status) {
-        return <Skeleton className="h-[84px] w-[300px] rounded-md" />;
-    }
+    useEffect(() => {
+        if (status) {
+            setActivity(
+                status.activities.find((activity) => activity.type !== 4),
+            );
+        }
+    }, [status]);
 
-    const activity = status.activities.find((activity) => activity.type !== 4);
+    if (!status) {
+        return null
+    }
 
     return (
         <div className="flex flex-row space-x-2 items-center">
