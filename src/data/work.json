@@ -2,7 +2,7 @@
     "work": [
         {
             "name": "wanderer.moe",
-            "description": "Created wanderer.moe at 15, an open-source centralized game assets hosting website that handles thousands of daily requests and users. \nBackend: Typescript, LibSQL (SQLite Compat), Hono, Cloudflare R2, DO & Resend hosted on Cloudflare Workers. \nFrontend: NextJS, TailwindCSS, and Typescript with shadcn/ui on Cloudflare Pages. \nSite translations handled through Crowdin.",
+            "description": "Created wanderer.moe at 15, an open-source centralized game assets hosting website that handles thousands of daily requests and users. \nBackend: Typescript, Turso (LibSQL), Hono, Cloudflare R2, DO & Resend hosted on Cloudflare Workers. \nFrontend: NextJS, TailwindCSS, and Typescript with shadcn/ui on Cloudflare Pages. \nSite translations handled through Crowdin.",
             "languages": ["NextJS", "Hono", "Typescript", "Cloudflare", "Rust"],
             "projecturl": "https://wanderer.moe/",
             "oss": true,

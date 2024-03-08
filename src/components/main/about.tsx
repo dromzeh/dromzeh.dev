@@ -42,7 +42,7 @@ export function About() {
                     </Link>{" "}
                     website hosting game assets with thousands of daily users.
                     Currently developing an OC Sharing platform alongside,
-                    expected to release Q1-Q2 2024.
+                    expected to release Q2 2024.
                 </p>
                 <p>
                     Contact me through{" "}

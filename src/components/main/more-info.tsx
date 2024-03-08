@@ -8,14 +8,7 @@ export function MoreInfo() {
             </h2>
             <ul className="pl-4 list-disc">
                 <MoreInfoItem question="Timezone" answer="Europe/London" />
-                <MoreInfoItem
-                    question="Languages"
-                    answer="TypeScript, Rust, Python, Svelte."
-                />
-                <MoreInfoItem
-                    question="Frameworks"
-                    answer="Hono, Next.js, SvelteKit."
-                />
+                <MoreInfoItem question="Pronouns" answer="He/Him/His" />
             </ul>
         </div>
     );
