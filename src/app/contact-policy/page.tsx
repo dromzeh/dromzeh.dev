@@ -10,7 +10,7 @@ export default function Page() {
     return (
         <div className="min-h-screen max-w-xl mx-auto flex items-center justify-center">
             <div className="py-12 px-4 text-sm">
-                <section className="flex flex-col space-y-6 lowercase">
+                <section className="flex flex-col my-6 space-y-6">
                     <p>
                         I currently receive hundreds of messages a week,
                         therefore I maintain a strict contact policy to manage
@@ -20,10 +20,6 @@ export default function Page() {
                     <p>
                         I&apos;m not open to unsolicited casual, informal, or
                         personal discussions.
-                    </p>
-                    <p>
-                        I&apos;m not interested in receiving unsolicited job
-                        offers, freelance work, or business proposals.
                     </p>
                     <p>
                         If you need help regarding a project I own or maintain,
