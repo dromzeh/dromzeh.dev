@@ -66,7 +66,7 @@ export default function Page() {
                         <br />
                         Twitter:{" "}
                         <Link
-                            href="https://dm.me/marc"
+                            href="https://dm.new/marc"
                             target="_blank"
                             className="text-foreground hover:text-muted-foreground/50 transition-all duration-150"
                         >
