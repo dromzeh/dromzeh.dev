@@ -41,8 +41,8 @@ export function About() {
                         open-source
                     </Link>{" "}
                     website hosting game assets with thousands of daily users.
-                    Currently developing an OC Sharing platform alongside,
-                    expected to release Q2 2024.
+                    Currently bootstrapping and developing an OC & Art Sharing
+                    platform alongside full-time, expected to release Q2 2024.
                 </p>
                 <p>
                     Contact me through{" "}
@@ -61,7 +61,14 @@ export function About() {
                     >
                         marcel@dromzeh.dev
                     </Link>
-                    . Expect responses to be prioritized based on importance.{" "}
+                    . Before reaching out, please read my{" "}
+                    <Link
+                        href="/contact-policy"
+                        className="text-foreground hover:text-muted-foreground/50 transition-all duration-150"
+                    >
+                        contact policy
+                    </Link>
+                    .
                 </p>
             </div>
         </div>
