@@ -52,8 +52,17 @@ export function About() {
                         className="text-foreground hover:text-muted-foreground/50 transition-all duration-150"
                     >
                         Discord
-                    </Link>{" "}
-                    or email{" "}
+                    </Link>
+                    ,{" "}
+                    <Link
+                        href="htps://dm.new/marc"
+                        target="_blank"
+                        className="text-foreground hover:text-muted-foreground/50 transition-all duration-150"
+                    >
+                        {" "}
+                        Twitter
+                    </Link>
+                    , or email{" "}
                     <Link
                         href="mailto:marcel@dromzeh.dev"
                         target="_blank"
