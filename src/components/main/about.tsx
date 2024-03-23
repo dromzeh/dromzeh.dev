@@ -41,36 +41,20 @@ export function About() {
                         open-source
                     </Link>{" "}
                     website hosting game assets with thousands of daily users.
-                    Currently bootstrapping and developing an OC & Art Sharing
-                    platform alongside full-time, expected to release Q2 2024.
                 </p>
                 <p>
-                    Contact me through{" "}
+                    Currently bootstrapping and developing an{" "}
                     <Link
-                        href="https://discord.com/users/492731761680187403"
+                        href="https://x.com/originoidco"
                         target="_blank"
                         className="text-foreground hover:text-muted-foreground/50 transition-all duration-150"
                     >
-                        Discord
-                    </Link>
-                    ,{" "}
-                    <Link
-                        href="htps://dm.new/marc"
-                        target="_blank"
-                        className="text-foreground hover:text-muted-foreground/50 transition-all duration-150"
-                    >
-                        {" "}
-                        Twitter
-                    </Link>
-                    , or email{" "}
-                    <Link
-                        href="mailto:marcel@dromzeh.dev"
-                        target="_blank"
-                        className="text-foreground hover:text-muted-foreground/50 transition-all duration-150"
-                    >
-                        marcel@dromzeh.dev
-                    </Link>
-                    . Before reaching out, please read my{" "}
+                        OC & Art Sharing platform
+                    </Link>{" "}
+                    alongside full-time, expected to release Q2 2024.
+                </p>
+                <p>
+                    If you want to reach out - please read my{" "}
                     <Link
                         href="/contact-policy"
                         className="text-foreground hover:text-muted-foreground/50 transition-all duration-150"
