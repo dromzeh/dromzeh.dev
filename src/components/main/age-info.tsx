@@ -13,26 +13,6 @@ import * as React from "react";
 const ageDateTimestamp = 1156118401000;
 const fallBackAge = 17;
 
-export function AgeTooltip() {
-    return (
-        <TooltipProvider delayDuration={100}>
-            <Tooltip>
-                <TooltipTrigger asChild>
-                    <span className="text-foreground hover:text-muted-foreground/50 transition-all duration-150 cursor-pointer">
-                        6 years old
-                    </span>
-                </TooltipTrigger>
-                <TooltipContent className="text-center max-w-[250px]">
-                    <p>
-                        Seriously, I did everything on an unused hand-me-down
-                        laptop running Windows 7.
-                    </p>
-                </TooltipContent>
-            </Tooltip>
-        </TooltipProvider>
-    );
-}
-
 export function Age() {
     const [age, setAge] = React.useState<number>(fallBackAge);
 

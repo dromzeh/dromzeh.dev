@@ -19,7 +19,13 @@ export default function Page() {
                     </p>
                     <p>
                         I&apos;m not open to unsolicited casual, informal, or
-                        personal discussions.
+                        personal discussions unless we have previously talked.
+                    </p>
+                    <p>
+                        I&apos;m open to receiving inquiries regarding
+                        networking, partnerships, investments, technical
+                        discussions or collaborations related to any projects I
+                        own.
                     </p>
                     <p>
                         If you need help regarding a project I own or maintain,
@@ -33,18 +39,10 @@ export default function Page() {
                         respond to reports within 24 hours.
                     </p>
                     <p>
-                        I&apos;m open to receiving inquiries regarding
-                        networking, partnerships, or collaborations related to
-                        any projects I own or maintain.
-                    </p>
-                    <p>
-                        Ensure your messages are concise, professional, and
-                        direct when reaching out. Failure to adhere to these
-                        guidelines may result in your message and any future
-                        messages{" "}
-                        <b className="text-foreground font-semibold">
-                            being ignored.
-                        </b>
+                        When reaching out, please be concise and clear about the
+                        purpose of your message. Messages that are vague,
+                        unclear or do not provide a clear purpose risk being
+                        ignored.
                     </p>
                     <p>
                         If you have read and understood the above, you may reach

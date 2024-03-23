@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Age, AgeTooltip } from "~/components/main/age-info";
+import { Age } from "~/components/main/age-info";
 
 export function About() {
     return (
@@ -12,16 +12,8 @@ export function About() {
                     computing, and backend development.
                 </p>
                 <p>
-                    I started programming at <AgeTooltip />. All projects I
-                    maintain are available on my{" "}
-                    <Link
-                        href="https://github.com/dromzeh"
-                        target="_blank"
-                        className="text-foreground hover:text-muted-foreground/50 transition-all duration-150"
-                    >
-                        GitHub
-                    </Link>
-                    .
+                    I occasionally allocate small investments into projects that
+                    I find interesting to support creators and their ambitions.
                 </p>
                 <p>
                     Mostly known for creating{" "}
@@ -32,15 +24,8 @@ export function About() {
                     >
                         wanderer.moe
                     </Link>
-                    , an{" "}
-                    <Link
-                        href="https://git.wanderer.moe/"
-                        target="_blank"
-                        className="text-foreground hover:text-muted-foreground/50 transition-all duration-150"
-                    >
-                        open-source
-                    </Link>{" "}
-                    website hosting game assets with thousands of daily users.
+                    , an open-source website hosting game assets with thousands
+                    of daily users.
                 </p>
                 <p>
                     Currently bootstrapping and developing an{" "}
@@ -51,17 +36,18 @@ export function About() {
                     >
                         OC & Art Sharing platform
                     </Link>{" "}
-                    alongside full-time, expected to release Q2 2024.
+                    expected to release Q2 2024 - actively looking for beta
+                    testers.
                 </p>
                 <p>
-                    If you want to reach out - please read my{" "}
+                    If you want to reach out, please read my{" "}
                     <Link
                         href="/contact-policy"
                         className="text-foreground hover:text-muted-foreground/50 transition-all duration-150"
                     >
                         contact policy
-                    </Link>
-                    .
+                    </Link>{" "}
+                    beforehand.
                 </p>
             </div>
         </div>
