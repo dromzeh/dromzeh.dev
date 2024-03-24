@@ -18,14 +18,14 @@ export default function Page() {
                         before reaching out.
                     </p>
                     <p>
-                        I&apos;m not open to unsolicited casual, informal, or
-                        personal discussions unless we have previously talked.
+                        I&apos;m not open to casual, informal, or personal
+                        discussions unless we have previously talked.
                     </p>
                     <p>
                         I&apos;m open to receiving inquiries regarding
-                        networking, partnerships, investments, technical
-                        discussions or collaborations related to any projects I
-                        own.
+                        networking, partnerships, technical discussions or
+                        collaborations related to any projects I own or
+                        investments.
                     </p>
                     <p>
                         If you need help regarding a project I own or maintain,

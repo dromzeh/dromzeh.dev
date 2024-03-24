@@ -7,13 +7,9 @@ export function About() {
             <h2 className="text-foreground font-bold text-lg mb-2">About Me</h2>
             <div className="flex flex-col space-y-2">
                 <p>
-                    Hey! I&apos;m Marcel (/mɑɹˈsɛl/) - <Age /> year old Software
-                    Engineer specializing in infrastructure, serverless
-                    computing, and backend development.
-                </p>
-                <p>
-                    I occasionally allocate small investments into projects that
-                    I find interesting to support creators and their ambitions.
+                    Hey! I&apos;m Marcel (/mɑɹˈsɛl/), a <Age />
+                    -year-old Software Engineer specializing in infrastructure,
+                    serverless computing, and backend development.
                 </p>
                 <p>
                     Mostly known for creating{" "}
@@ -28,7 +24,7 @@ export function About() {
                     of daily users.
                 </p>
                 <p>
-                    Currently bootstrapping and developing an{" "}
+                    Currently, I&apos;m bootstrapping and developing an{" "}
                     <Link
                         href="https://x.com/originoidco"
                         target="_blank"
@@ -36,8 +32,11 @@ export function About() {
                     >
                         OC & Art Sharing platform
                     </Link>{" "}
-                    expected to release Q2 2024 - actively looking for beta
-                    testers.
+                    expected to release Q2 2024.
+                </p>
+                <p>
+                    In addition to my work, I also enjoy making small
+                    investments in projects that I find interesting.
                 </p>
                 <p>
                     If you want to reach out, please read my{" "}
