@@ -23,8 +23,7 @@ export default function Page() {
                     </p>
                     <p>
                         I&apos;m open to receiving inquiries regarding
-                        networking, partnerships, technical discussions or
-                        collaborations related to any projects I own or
+                        networking, partnerships/collaborations, technical discussions or
                         investments.
                     </p>
                     <p>
@@ -39,13 +38,20 @@ export default function Page() {
                         respond to reports within 24 hours.
                     </p>
                     <p>
-                        When reaching out, please be concise and clear about the
-                        purpose of your message. Messages that are vague,
-                        unclear or do not provide a clear purpose risk being
-                        ignored.
+                        When reaching out -{" "}
+                        <Link
+                            href="https://nohello.net/"
+                            target="_blank"
+                            className="text-foreground hover:text-muted-foreground/50 transition-all duration-150"
+                        >
+                            please be concise and clear about the purpose of
+                            your message.
+                        </Link>{" "}
+                        Messages that are vague, unclear or do not provide a
+                        clear purpose risk being ignored.
                     </p>
                     <p>
-                        If you have read and understood the above, you may reach
+                        If you have read and understood the above, you can reach
                         out to me through the following methods:
                     </p>
                     <p>
