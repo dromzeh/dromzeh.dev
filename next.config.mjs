@@ -13,6 +13,7 @@ const nextConfig = {
 };
 
 const millionConfig = {
+    output: 'export',
     auto: {
         rsc: true,
     },
