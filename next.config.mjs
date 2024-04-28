@@ -10,10 +10,10 @@ const nextConfig = {
     },
     reactStrictMode: true,
     swcMinify: true,
+    output: 'export',
 };
 
 const millionConfig = {
-    output: 'export',
     auto: {
         rsc: true,
     },
