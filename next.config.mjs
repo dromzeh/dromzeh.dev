@@ -1,5 +1,4 @@
 import million from "million/compiler";
-// import { withHydrationOverlay } from "@builder.io/react-hydration-overlay/next"
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -11,11 +10,6 @@ const nextConfig = {
     },
     reactStrictMode: true,
     swcMinify: true,
-    // experimental: {
-    //     // optimizeCss: true,
-    //     mdxRs: true,
-    //     ppr: true,
-    // },
 };
 
 const millionConfig = {
@@ -24,9 +18,5 @@ const millionConfig = {
     },
     rsc: true,
 };
-
-// export default withHydrationOverlay({
-//     appRootSelector: "main",
-// })(million.next(nextConfig, millionConfig));
 
 export default million.next(nextConfig, millionConfig);
