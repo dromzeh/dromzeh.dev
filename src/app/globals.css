@@ -63,4 +63,26 @@
     ::selection {
         @apply bg-primary text-primary-foreground;
     }
+
+    .animated-line {
+        --dash-width: 10;
+        --gap-width: 100;
+
+        stroke-dasharray: var(--dash-width) var(--gap-width);
+        animation: pulse 2s cubic-bezier(0.65, 0, 0.35, 1) infinite
+            alternate-reverse;
+        animation-delay: var(--delay);
+    }
+
+    @keyframes pulse {
+        0% {
+            stroke-dashoffset: var(--dash-width);
+        }
+        50% {
+            stroke: aquamarine;
+        }
+        100% {
+            stroke-dashoffset: calc(var(--gap-width) * -8px + 40px);
+        }
+    }
 }

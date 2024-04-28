@@ -3,6 +3,7 @@ import { LanyardProfile } from "~/components/main/lanyard/profile";
 import type { Metadata } from "next";
 import { MoreInfo } from "~/components/main/more-info";
 import { WorkContainer } from "~/components/work/work-container";
+import { SocialsReveal } from "~/components/socials-buttons/background-variant";
 
 export const metadata: Metadata = {
     title: "home • dromzeh.dev",
