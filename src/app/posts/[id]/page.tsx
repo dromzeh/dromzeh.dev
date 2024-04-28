@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 
+export const runtime = "edge";
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { id } = params;
     const post = await getPost(id);
