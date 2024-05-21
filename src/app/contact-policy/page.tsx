@@ -13,29 +13,26 @@ export default function Page() {
                 <section className="flex flex-col my-6 space-y-6">
                     <p>
                         I currently receive hundreds of messages a week,
-                        therefore I maintain a strict contact policy to manage
-                        my time and energy effectively. Please read this page
-                        before reaching out.
+                        therefore I have a contact policy to manage my time and
+                        energy effectively. Please read this page before
+                        reaching out.
                     </p>
                     <p>
-                        I&apos;m not open to casual, informal, or personal
-                        discussions unless we have previously talked.
-                    </p>
-                    <p>
-                        I&apos;m open to receiving inquiries regarding
-                        networking, partnerships/collaborations, technical discussions or
-                        investments.
+                        I&apos;m open to messages from new people if they are in
+                        regards to networking, partnerships, collaborations,
+                        technical discussions or investments.
                     </p>
                     <p>
                         If you need help regarding a project I own or maintain,
-                        please redirect yourself to the documentation or
-                        community associated with the project.
+                        do not contact me. Instead, please redirect yourself to
+                        the documentation or community associated with the
+                        project.
                     </p>
                     <p>
-                        If you have a security or bug report for any of my
-                        projects, please send them to my email with a detailed
-                        description and [REPORT] in the subject. I aim to
-                        respond to reports within 24 hours.
+                        If you have a security or bug report for any project I
+                        own or maintain, please send them to my email with a
+                        detailed description and [REPORT] in the subject. I aim
+                        to respond to and fix reports within 24 hours.
                     </p>
                     <p>
                         When reaching out -{" "}
@@ -47,12 +44,9 @@ export default function Page() {
                             please be concise and clear about the purpose of
                             your message.
                         </Link>{" "}
-                        Messages that are vague, unclear or do not provide a
-                        clear purpose risk being ignored.
-                    </p>
-                    <p>
-                        If you have read and understood the above, you can reach
-                        out to me through the following methods:
+                        I am selective about who I respond to, and messages that
+                        are vague, unclear or do not provide a clear purpose
+                        risk being ignored.
                     </p>
                     <p>
                         Email:{" "}

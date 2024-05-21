@@ -1,5 +1,5 @@
-import million from "million/compiler";
-// import { withHydrationOverlay } from "@builder.io/react-hydration-overlay/next"
+import MillionLint from "@million/lint";
+// import million from "million/compiler";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -7,26 +7,19 @@ const nextConfig = {
         remotePatterns: [
             { hostname: "cdn.discordapp.com" },
             { hostname: "i.scdn.co" },
+            { hostname: "cdn.marcel.best" },
         ],
+        unoptimized: true,
     },
     reactStrictMode: true,
     swcMinify: true,
-    // experimental: {
-    //     // optimizeCss: true,
-    //     mdxRs: true,
-    //     ppr: true,
-    // },
+    output: "export",
 };
 
 const millionConfig = {
-    auto: {
-        rsc: true,
-    },
     rsc: true,
 };
 
-// export default withHydrationOverlay({
-//     appRootSelector: "main",
-// })(million.next(nextConfig, millionConfig));
+export default MillionLint.next(millionConfig)(nextConfig);
 
-export default million.next(nextConfig, millionConfig);
+// export default million.next(nextConfig, millionConfig);

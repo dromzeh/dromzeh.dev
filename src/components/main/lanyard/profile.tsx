@@ -29,14 +29,14 @@ export function LanyardProfile() {
     });
 
     useEffect(() => {
-        if (status) {
+        if (status && status.activities) {
             setActivity(
                 status.activities.find((activity) => activity.type !== 4),
             );
         }
     }, [status]);
 
-    if (loading || !status) {
+    if (loading || !status || !status.discord_user) {
         return null;
     }
 
