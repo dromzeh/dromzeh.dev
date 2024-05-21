@@ -33,9 +33,8 @@ export default function AIDisturbancePage() {
                         <div className="flex flex-col space-y-2">
                             <p>
                                 Apply a &quot;disturbance&quot; filter to
-                                overlay any image. The filter is a random noise
-                                pattern that distorts the image. The level of
-                                disturbance can be adjusted using the slider.
+                                overlay any image. The level of disturbance can
+                                be adjusted using the slider.
                             </p>
                             <p>
                                 The image processing is handled locally on the

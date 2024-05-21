@@ -6,10 +6,10 @@ import { DownloadIcon } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
 import { Skeleton } from "../ui/skeleton";
 import { Slider } from "~/components/ui/slider";
-import Link from "next/link";
 
 export function AIDisturbanceClient() {
     const [image, setImage] = useState<File | null>(null);
+    const [imageName, setImageName] = useState<string>("");
     const [isProcessing, setIsProcessing] = useState(false);
     const [disturbanceLevel, setDisturbanceLevel] = useState<number>(5);
     const [originalImage, setOriginalImage] = useState<string | null>(null);
@@ -39,14 +39,14 @@ export function AIDisturbanceClient() {
                         fetch(canvas.toDataURL("image/png"))
                             .then((res) => res.blob())
                             .then((blob) => {
-                                setImage(new File([blob], "disturbed.png"));
+                                setImage(new File([blob], imageName));
                                 setIsProcessing(false);
                             });
                     };
                 }
             };
         }
-    }, [originalImage, disturbanceLevel]);
+    }, [originalImage, disturbanceLevel, imageName]);
 
     useEffect(() => {
         applyDisturbanceFilter();
@@ -57,6 +57,7 @@ export function AIDisturbanceClient() {
             const reader = new FileReader();
             reader.onload = (e) => {
                 setOriginalImage(e.target?.result as string);
+                setImageName(event.target.files![0].name);
             };
             reader.readAsDataURL(event.target.files[0]);
         }
@@ -78,7 +79,7 @@ export function AIDisturbanceClient() {
                         }
                         const a = document.createElement("a");
                         a.href = URL.createObjectURL(image);
-                        a.download = "disturbed.png";
+                        a.download = `${image.name.split(".")[0]}-disturbed-${disturbanceLevel}.png`;
                         a.click();
                     }}
                 >
