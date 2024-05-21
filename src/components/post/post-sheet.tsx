@@ -27,7 +27,7 @@ export function PostSheet(post: Post) {
                             {post.title}
                         </DrawerTitle>
                         <DrawerDescription className="mt-2 text-left">
-                            <p>Uploaded on {post.date}</p>
+                            <p className="mb-2">Uploaded on {post.date}</p>
                             {post.description.split("\n").map((line, i) => (
                                 <p key={i} className="mb-2">
                                     {line}

@@ -54,21 +54,23 @@ async function PostPage({ params: { id } }: Props) {
                         <span className="text-neutral-500">
                             <Link
                                 href="/posts"
-                                className="text-white hover:text-neutral-500 transition-colors duration-150"
+                                className="text-foreground group-hover:text-muted-foreground/50 transition-colors duration-150 hover:cursor-pointer"
                             >
                                 Go Back
                             </Link>
                         </span>
                         <div className="flex-grow border-t border-dotted border-gray-400"></div>
-                        <span className="text-neutral-400">
+                        <span className="text-muted-foreground">
                             {formattedDate}
                         </span>
                     </div>
                     <div className="flex flex-col space-y-2">
-                        <h1 className="text-white text-lg font-semibold">
+                        <h1 className="text-foreground text-lg font-semibold">
                             {post.title}
                         </h1>
-                        <h2 className="text-neutral-400">{post.description}</h2>
+                        <h2 className="text-muted-foreground">
+                            {post.description}
+                        </h2>
                         <p className="text-xs">
                             Estimated read time: {readTime} min
                         </p>
