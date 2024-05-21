@@ -53,7 +53,7 @@ export function AIDisturbanceClient() {
     }, [applyDisturbanceFilter]);
 
     function handleFileChange(event: React.ChangeEvent<HTMLInputElement>) {
-        if (event.target.files && event.target.files.length > 0) {
+        if (event.target.files && event.target.files.length == 1) {
             const reader = new FileReader();
             reader.onload = (e) => {
                 setOriginalImage(e.target?.result as string);
