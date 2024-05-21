@@ -7,3 +7,9 @@ export type Post = {
     body?: string;
     content?: string;
 };
+
+export type Tool = {
+    title: string;
+    description: string;
+    link: string;
+};
