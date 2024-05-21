@@ -2,7 +2,8 @@ export type Post = {
     title: string;
     slug: string;
     date: string;
-    tags: string[];
     description: string;
-    body: string;
+    views: number | null;
+    body?: string;
+    content?: string;
 };

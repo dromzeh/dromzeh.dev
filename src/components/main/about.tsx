@@ -35,8 +35,8 @@ export function About() {
                     expected to release Q2 2024.
                 </p>
                 <p>
-                    In addition to my work, I also enjoy making small
-                    investments in projects that I find interesting.
+                    Alongside, I occasionally invest small cheques in projects
+                    that I find interesting.
                 </p>
                 <p>
                     If you want to reach out, please read my{" "}
