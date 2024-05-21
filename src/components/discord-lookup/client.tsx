@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
@@ -45,7 +44,7 @@ export function convertSnowflakeToDate(
 export function validateSnowflake(snowflake: number, epoch: number) {
     if (snowflake < 4194304) {
         throw new Error(
-            "That doesn't look like a snowflake. Snowflakes are much larger numbers.",
+            "invalid snowflake: snowflake must be greater than 4194304",
         );
     }
 
@@ -53,14 +52,14 @@ export function validateSnowflake(snowflake: number, epoch: number) {
 
     if (Number.isNaN(timestamp.getTime())) {
         throw new Error(
-            "That doesn't look like a snowflake. Snowflakes have fewer digits.",
+            "invalid snowflake: snowflake must be a valid 64-bit integer",
         );
     }
 
     return timestamp;
 }
 
-export function LookupClient() {
+export function DiscordLookupClient() {
     const [discordUser, setDiscordUser] = useState({} as ResponseType);
     const [loading, setLoading] = useState(false);
     const [user, setUser] = useState("");
@@ -133,7 +132,7 @@ export function LookupClient() {
     }
 
     return (
-        <section className="flex flex-col space-y-4 mt-8">
+        <section className="flex flex-col space-y-4">
             <div className="flex flex-row space-x-2">
                 <Input
                     placeholder="1081004946872352958"
@@ -240,6 +239,7 @@ export function LookupClient() {
                                     </Button>
                                 </div>
                                 <div className="flex items-center">
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
                                     <img
                                         src={`${discordUser.banner.url}?size=1024`}
                                         alt={`${discordUser.user.username}'s banner`}
