@@ -15,10 +15,10 @@ export default function AIDisturbancePage() {
                     <div className="flex flex-row space-x-2 items-center justify-between group">
                         <span className="text-neutral-500">
                             <Link
-                                href="/"
+                                href="/tools"
                                 className="text-foreground group-hover:text-muted-foreground/50 transition-colors duration-150 hover:cursor-pointer"
                             >
-                                Go Back
+                                Tools
                             </Link>
                         </span>
                         <div className="flex-grow border-t border-dotted border-gray-400"></div>
