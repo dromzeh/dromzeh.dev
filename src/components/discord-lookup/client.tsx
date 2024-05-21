@@ -156,61 +156,67 @@ export function DiscordLookupClient() {
                                     <h1 className="text-foreground text-lg font-semibold flex gap-2 items-center">
                                         {discordUser.user.globalName ||
                                             discordUser.user.username}
-                                        <span className="text-muted-foreground/50 text-xs">
+                                        <span className="text-muted-foreground text-xs">
                                             {discordUser.user.globalName &&
                                                 `${discordUser.user.username}`}
                                         </span>
                                     </h1>
-                                    <p className="text-muted-foreground/50 text-xs">
+                                    <p className="text-muted-foreground text-xs">
                                         {discordUser.user.id}
                                     </p>
-                                    <p className="text-muted-foreground/50 text-xs">
+                                    <p className="text-muted-foreground text-xs">
                                         Account created{" "}
                                         {validateSnowflake(
                                             parseInt(discordUser.user.id),
                                             DISCORD_EPOCH,
                                         ).toUTCString()}
                                     </p>
-                                    <div className="flex flex-row space-x-2 mt-2">
-                                        <Button
-                                            className="text-xs"
-                                            variant={"secondary"}
-                                            onClick={() =>
-                                                CopyActualImageToClipboard(
-                                                    discordUser.avatar.url,
-                                                )
-                                            }
-                                        >
-                                            <Copy
-                                                size={16}
-                                                className="mr-2 inline"
-                                            />{" "}
-                                            Copy PFP
-                                        </Button>
-                                        <Button
-                                            className="text-xs"
-                                            variant={"secondary"}
-                                            onClick={() =>
-                                                DownloadImage(
-                                                    discordUser.avatar.url,
-                                                )
-                                            }
-                                        >
-                                            <Download
-                                                size={16}
-                                                className="mr-2 inline"
-                                            />{" "}
-                                            Download PFP
-                                        </Button>
-                                    </div>
                                 </div>
+                            </div>
+                            <div className="w-full border-t " />
+                            <div className="flex flex-row space-x-2 p-2">
+                                <Button
+                                    className="w-full"
+                                    variant={"secondary"}
+                                    onClick={() =>
+                                        CopyActualImageToClipboard(
+                                            discordUser.avatar.url,
+                                        )
+                                    }
+                                >
+                                    <Copy size={16} className="mr-2 inline" />{" "}
+                                    Copy PFP
+                                </Button>
+                                <Button
+                                    className="w-full"
+                                    variant={"secondary"}
+                                    onClick={() =>
+                                        DownloadImage(discordUser.avatar.url)
+                                    }
+                                >
+                                    <Download
+                                        size={16}
+                                        className="mr-2 inline"
+                                    />{" "}
+                                    Download PFP
+                                </Button>
                             </div>
                         </Card>
                         {discordUser.banner.url && (
                             <Card className="w-full relative">
-                                <div className="absolute z-50 bottom-0 left-0 flex flex-row space-x-2 items-center p-3">
+                                <div className="flex items-center p-2">
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img
+                                        src={`${discordUser.banner.url}?size=1024`}
+                                        alt={`${discordUser.user.username}'s banner`}
+                                        className="w-full rounded-sm"
+                                    />
+                                </div>
+                                <div className="w-full border-t " />
+                                <div className="flex flex-row space-x-2 p-2">
                                     <Button
                                         variant={"secondary"}
+                                        className="w-full"
                                         onClick={() =>
                                             CopyActualImageToClipboard(
                                                 discordUser.banner.url!,
@@ -225,6 +231,7 @@ export function DiscordLookupClient() {
                                     </Button>
                                     <Button
                                         variant={"secondary"}
+                                        className="w-full"
                                         onClick={() =>
                                             DownloadImage(
                                                 discordUser.banner.url!,
@@ -237,14 +244,6 @@ export function DiscordLookupClient() {
                                         />{" "}
                                         Download Banner
                                     </Button>
-                                </div>
-                                <div className="flex items-center">
-                                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                                    <img
-                                        src={`${discordUser.banner.url}?size=1024`}
-                                        alt={`${discordUser.user.username}'s banner`}
-                                        className="w-full rounded-sm"
-                                    />
                                 </div>
                             </Card>
                         )}

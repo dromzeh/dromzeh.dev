@@ -15,6 +15,11 @@ export default function PostsPage() {
             description: `Apply a "disturbance" filter to overlay any image. The level of disturbance can be adjusted using the slider`,
             link: "ai-disturbance",
         },
+        {
+            title: "Discord Lookup",
+            description: `Lookup information about any Discord user by their User ID. Useful for finding out information about a user without having to add them as a friend or be in the same server as them.`,
+            link: "discord-lookup",
+        },
     ];
 
     return (
