@@ -6,6 +6,11 @@
 .pnp.js
 .yarn/install-state.gz
 
+# CF pages is broken w/ bun for some reason
+bun.lockb
+
+/.million/
+
 # testing
 /coverage
 
