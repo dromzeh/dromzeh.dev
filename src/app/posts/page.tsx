@@ -3,6 +3,7 @@ import { PostContainer } from "~/components/post/post-container";
 
 export const metadata: Metadata = {
     title: "posts • dromzeh.dev",
+    description: "posts list",
     metadataBase: new URL("https://dromzeh.dev"),
 };
 

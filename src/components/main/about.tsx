@@ -35,8 +35,23 @@ export function About() {
                     expected to release Q2 2024.
                 </p>
                 <p>
-                    Alongside, I occasionally invest small cheques in projects
-                    that I find interesting.
+                    Alongside, I occasionally invest in projects that I find
+                    interesting
+                    {/* write{" "}
+                    <Link
+                        href="/posts"
+                        className="text-foreground hover:text-muted-foreground/50 transition-all duration-150"
+                    >
+                        posts */}
+                    {/* </Link> */} and post various useful{" "}
+                    <Link
+                        href="/tools"
+                        className="text-foreground hover:text-muted-foreground/50 transition-all duration-150"
+                    >
+                        {" "}
+                        tools
+                    </Link>
+                    .
                 </p>
                 <p>
                     If you want to reach out, please read my{" "}

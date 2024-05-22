@@ -5,6 +5,7 @@ import { ToolItem } from "~/components/tools/tool-item";
 
 export const metadata: Metadata = {
     title: "tools • dromzeh.dev",
+    description: "list of somewhat useful tools for public use",
     metadataBase: new URL("https://dromzeh.dev"),
 };
 

@@ -3,7 +3,8 @@ import Link from "next/link";
 import { DiscordLookupClient } from "~/components/discord-lookup/client";
 
 export const metadata: Metadata = {
-    title: "discord lookup tool • dromzeh.dev",
+    title: "discord user lookup tool • dromzeh.dev",
+    description: "look up information about discord users from their user id",
     metadataBase: new URL("https://dromzeh.dev"),
 };
 
