@@ -4,7 +4,7 @@ import { AIDisturbanceClient } from "~/components/ai-disturbance/client";
 
 export const metadata: Metadata = {
     title: "ai 'disturbance' filter overlay tool • dromzeh.dev",
-    description: "apply a 'disturbance' filter overlay to any image.",
+    description: "apply a 'disturbance' filter overlay to any image",
     metadataBase: new URL("https://dromzeh.dev"),
 };
 
