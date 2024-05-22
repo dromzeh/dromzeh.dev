@@ -3,6 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
     title: "contact policy • dromzeh.dev",
+    description: "contact policy ^_^",
     metadataBase: new URL("https://dromzeh.dev"),
 };
 
@@ -44,9 +45,9 @@ export default function Page() {
                             please be concise and clear about the purpose of
                             your message.
                         </Link>{" "}
-                        I am selective about who I respond to, and messages that
-                        are vague, unclear or do not provide a clear purpose
-                        risk being ignored.
+                        I am incredibly selective about who I respond to, and
+                        messages that are vague, unclear or do not provide a
+                        clear purpose risk being ignored.
                     </p>
                     <p>
                         Email:{" "}

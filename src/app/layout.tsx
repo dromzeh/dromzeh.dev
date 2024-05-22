@@ -30,7 +30,7 @@ export default function RootLayout({
                 <ThemeProvider attribute="class" defaultTheme="dark">
                     <CommandMenu />
                     <ThemeToggle />
-                    <div className="my-4">{children}</div>
+                    <div className="my-8">{children}</div>
                     <Toaster />
                 </ThemeProvider>
             </body>
