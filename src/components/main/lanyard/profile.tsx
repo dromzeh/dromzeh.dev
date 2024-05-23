@@ -4,7 +4,7 @@ import { Skeleton } from "~/components/ui/skeleton";
 import { useLanyard } from "react-use-lanyard";
 import Image from "next/image";
 import type { Activity } from "react-use-lanyard";
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const statusMap = {
     online: "Online",
@@ -36,73 +36,71 @@ export function LanyardProfile() {
         }
     }, [status]);
 
-    if (loading || !status || !status.discord_user) {
-        return null;
-    }
+    // if (loading || !status || !status.discord_user) {
+    //     return null;
+    // }
 
-    return (
-        <Suspense
-            fallback={<Skeleton className="h-[84px] w-[300px] rounded-md" />}
-        >
-            <div className="flex flex-row space-x-2 items-center">
-                <div className="relative mr-2">
-                    <Image
-                        src={`https://cdn.discordapp.com/avatars/${status.discord_user.id}/${status.discord_user.avatar}`}
-                        alt="discord avatar"
-                        width={64}
-                        height={64}
-                        className="rounded-lg"
-                    />
-                    <div className="absolute bottom-0 right-0 transform translate-x-1 translate-y-1">
-                        <span className="relative flex h-4 w-4">
-                            <span
-                                className={`animate-ping transition-all absolute inline-flex h-full w-full rounded-full ${
-                                    statusColorMap[status.discord_status]
-                                }`}
-                            ></span>
-                            <span
-                                className={`relative inline-flex rounded-full h-4 w-4 ${
-                                    statusColorMap[status.discord_status]
-                                }`}
-                            ></span>
-                        </span>
-                    </div>
-                </div>
-                <div className="flex flex-col space-y-1">
-                    <p className="text-foreground">
-                        {status.discord_user.username}
-                    </p>
-
-                    <div className="flex flex-row space-x-1 items-center">
-                        {activity ? (
-                            <p className="text-muted-foreground text-sm">
-                                {activity.type === 2 ? (
-                                    <span>
-                                        Listening to
-                                        {status.spotify?.song.length! +
-                                            status.spotify?.artist.length! <
-                                        30 ? (
-                                            <span>
-                                                {" "}
-                                                {status.spotify?.song} by{" "}
-                                                {status.spotify?.artist}
-                                            </span>
-                                        ) : (
-                                            <span> Spotify</span>
-                                        )}
-                                    </span>
-                                ) : (
-                                    <span>Playing {activity.name}</span>
-                                )}
-                            </p>
-                        ) : (
-                            <p className="text-muted-foreground text-sm">
-                                {statusMap[status.discord_status]} on Discord
-                            </p>
-                        )}
-                    </div>
+    return loading || !status || !status.discord_user ? (
+        <Skeleton className="h-[74px] w-[300px] rounded-md" />
+    ) : (
+        <div className="flex flex-row space-x-2 items-center">
+            <div className="relative mr-2">
+                <Image
+                    src={`https://cdn.discordapp.com/avatars/${status.discord_user.id}/${status.discord_user.avatar}`}
+                    alt="discord avatar"
+                    width={64}
+                    height={64}
+                    className="rounded-lg"
+                />
+                <div className="absolute bottom-0 right-0 transform translate-x-1 translate-y-1">
+                    <span className="relative flex h-4 w-4">
+                        <span
+                            className={`animate-ping transition-all absolute inline-flex h-full w-full rounded-full ${
+                                statusColorMap[status.discord_status]
+                            }`}
+                        ></span>
+                        <span
+                            className={`relative inline-flex rounded-full h-4 w-4 ${
+                                statusColorMap[status.discord_status]
+                            }`}
+                        ></span>
+                    </span>
                 </div>
             </div>
-        </Suspense>
+            <div className="flex flex-col space-y-1">
+                <p className="text-foreground">
+                    {status.discord_user.username}
+                </p>
+
+                <div className="flex flex-row space-x-1 items-center">
+                    {activity ? (
+                        <p className="text-muted-foreground text-sm">
+                            {activity.type === 2 ? (
+                                <span>
+                                    Listening to
+                                    {status.spotify?.song.length! +
+                                        status.spotify?.artist.length! <
+                                    30 ? (
+                                        <span>
+                                            {" "}
+                                            {status.spotify?.song} by{" "}
+                                            {status.spotify?.artist}
+                                        </span>
+                                    ) : (
+                                        <span> Spotify</span>
+                                    )}
+                                </span>
+                            ) : (
+                                <span>Playing {activity.name}</span>
+                            )}
+                        </p>
+                    ) : (
+                        <p className="text-muted-foreground text-sm">
+                            {statusMap[status.discord_status]} on Discord
+                        </p>
+                    )}
+                </div>
+            </div>
+        </div>
     );
 }
