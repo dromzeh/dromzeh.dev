@@ -7,6 +7,7 @@ import { Toaster } from "~/components/ui/sonner";
 // import { HydrationOverlay } from "@builder.io/react-hydration-overlay";
 import { ThemeProvider } from "~/components/navigation/theme-provider";
 import { ThemeToggle } from "~/components/navigation/theme-toggle";
+import { FramerOverlay } from "~/components/framer-overlay";
 
 const geist = GeistSans;
 
@@ -30,7 +31,9 @@ export default function RootLayout({
                 <ThemeProvider attribute="class" defaultTheme="dark">
                     <CommandMenu />
                     <ThemeToggle />
-                    <div className="my-8">{children}</div>
+                    <div className="my-8">
+                        <FramerOverlay>{children}</FramerOverlay>
+                    </div>
                     <Toaster />
                 </ThemeProvider>
             </body>
