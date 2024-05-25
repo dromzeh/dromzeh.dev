@@ -41,7 +41,13 @@ export function LanyardProfile() {
     // }
 
     return loading || !status || !status.discord_user ? (
-        <Skeleton className="h-[74px] w-[300px] rounded-md" />
+        <div className="flex flex-row space-x-2 items-center">
+            <Skeleton className="h-[64px] mr-2 w-[64px] rounded-lg" />
+            <div className="flex flex-col space-y-1">
+                <Skeleton className="h-4 w-[4.5rem]" />
+                <Skeleton className="h-4 translate-y-1 w-36" />
+            </div>
+        </div>
     ) : (
         <div className="flex flex-row space-x-2 items-center">
             <div className="relative mr-2">
