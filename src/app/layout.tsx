@@ -26,12 +26,12 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${geist.className} h-full scroll-smooth antialiased`}
+                className={`${geist.className} h-full scroll-smooth antialiased pl-[calc(100vw-100%)]`}
             >
                 <ThemeProvider attribute="class" defaultTheme="dark">
                     <CommandMenu />
                     <ThemeToggle />
-                    <div className="my-8">
+                    <div>
                         <FramerOverlay>{children}</FramerOverlay>
                     </div>
                     <Toaster />
