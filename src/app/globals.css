@@ -55,7 +55,7 @@
         @apply border-border;
     }
     body {
-        @apply bg-background text-muted-foreground;
+        @apply bg-background text-muted-foreground min-w-full;
     }
     ::-moz-selection {
         @apply bg-primary text-primary-foreground;
