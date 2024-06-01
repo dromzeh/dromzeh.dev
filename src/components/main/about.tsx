@@ -32,11 +32,10 @@ export function About() {
                     >
                         OC & Art Sharing platform
                     </Link>{" "}
-                    expected to release Q2 2024.
+                    expected to release Q2-Q3 2024.
                 </p>
                 <p>
-                    Alongside, I occasionally invest in projects that I find
-                    interesting
+                    Alongside, I occasionally invest in cool stuff
                     {/* write{" "}
                     <Link
                         href="/posts"
@@ -50,11 +49,12 @@ export function About() {
                     >
                         {" "}
                         tools
-                    </Link>
-                    .
+                    </Link>{" "}
+                    on this site.
                 </p>
                 <p>
-                    If you want to reach out, please read my{" "}
+                    I&apos;m open to messages from new people, but please read
+                    my (fairly short){" "}
                     <Link
                         href="/contact-policy"
                         className="text-foreground hover:text-muted-foreground/50 transition-all duration-150"

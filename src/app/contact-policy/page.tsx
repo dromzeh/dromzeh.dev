@@ -12,22 +12,36 @@ export default function Page() {
         <div className="min-h-screen max-w-xl mx-auto flex items-center justify-center">
             <div className="py-12 px-4 text-sm">
                 <section className="flex flex-col my-6 space-y-6">
+                    <div className="flex flex-row space-x-2 items-center justify-between group">
+                        <span className="text-neutral-500">
+                            <Link
+                                href="/"
+                                className="text-foreground group-hover:text-muted-foreground/50 transition-colors duration-150 hover:cursor-pointer"
+                            >
+                                Go Back
+                            </Link>
+                        </span>
+                        <div className="flex-grow border-t border-dotted border-gray-400"></div>
+                        <span className="text-muted-foreground">
+                            Contact Policy
+                        </span>
+                    </div>
                     <p>
-                        I currently receive hundreds of messages a week,
+                        I currently receive hundreds of messages weekly,
                         therefore I have a contact policy to manage my time and
                         energy effectively. Please read this page before
-                        reaching out.
+                        reaching out for the first time.
                     </p>
                     <p>
                         I&apos;m open to messages from new people if they are in
-                        regards to networking, partnerships, collaborations,
-                        technical discussions or investments.
+                        regards to technological discussions or general
+                        networking.
                     </p>
                     <p>
                         If you need help regarding a project I own or maintain,
-                        do not contact me. Instead, please redirect yourself to
-                        the documentation or community associated with the
-                        project.
+                        do not contact me unless explicitly stated on said
+                        project. Else, please redirect yourself to the
+                        documentation or community associated.
                     </p>
                     <p>
                         If you have a security or bug report for any project I
