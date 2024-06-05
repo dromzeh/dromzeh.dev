@@ -18,6 +18,23 @@
             "active": true
         },
         {
+            "name": "wuwa-fps-unlocker",
+            "description": "Simple Rust program that alters the LocalStorage DB file for Wuthering Waves to set FPS to a non-default value. \nSupports automatic detection of primary monitor's refresh rate for ease of use.",
+            "languages": ["Rust"],
+            "oss": true,
+            "giturl": "https://git.dromzeh.dev/wuwa-fps-unlocker",
+            "active": true
+        },
+        {
+            "name": "dromzeh.dev",
+            "description": "My  personal website using NextJS App Router, Typescript, and TailwindCSS. Optimized for performance with Million.js. \nDeployed on Cloudflare Pages with @cloudflare/next-on-pages.",
+            "languages": ["NextJS", "Tailwind", "Typescript"],
+            "projecturl": "https://dromzeh.dev/",
+            "oss": true,
+            "giturl": "https://git.dromzeh.dev/dromzeh.dev",
+            "active": true
+        },
+        {
             "name": "Lucia Auth",
             "description": "Lucia is a lightweight Authentication Library in Typescript suitable for practically any environment. \nContributed towards documentation, specifically usage within Cloudflare Workers environments.",
             "languages": ["Typescript"],
@@ -37,15 +54,6 @@
             ],
             "oss": true,
             "giturl": "https://git.dromzeh.dev/vmt",
-            "active": true
-        },
-        {
-            "name": "dromzeh.dev",
-            "description": "My  personal website using NextJS App Router, Typescript, and TailwindCSS. Optimized for performance with Million.js. \nDeployed on Cloudflare Pages with @cloudflare/next-on-pages.",
-            "languages": ["NextJS", "Tailwind", "Typescript"],
-            "projecturl": "https://dromzeh.dev/",
-            "oss": true,
-            "giturl": "https://git.dromzeh.dev/dromzeh.dev",
             "active": true
         }
     ]
