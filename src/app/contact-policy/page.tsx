@@ -29,19 +29,19 @@ export default function Page() {
                     <p>
                         I currently receive hundreds of messages weekly,
                         therefore I have a contact policy to manage my time and
-                        energy effectively. Please read this page before
-                        reaching out for the first time.
+                        prioritize my work. Please read this before contacting
+                        me for the first time.
                     </p>
                     <p>
-                        I&apos;m open to messages from new people if they are in
-                        regards to technological discussions or general
-                        networking.
+                        I&apos;m welcome to messages from new people if they
+                        pertain to technological discussions, general
+                        networking, or topics of mutual interest.
                     </p>
                     <p>
                         If you need help regarding a project I own or maintain,
-                        do not contact me unless explicitly stated on said
-                        project. Else, please redirect yourself to the
-                        documentation or community associated.
+                        please redirect yourself to the documentation or
+                        community associated. Only contact me if explicitly
+                        stated in the project&apos;s documentation or community.
                     </p>
                     <p>
                         If you have a security or bug report for any project I

@@ -32,17 +32,11 @@ export function About() {
                     >
                         OC & Art Sharing platform
                     </Link>{" "}
-                    expected to release Q2-Q3 2024.
+                    scheduled to release Q3 2024.
                 </p>
                 <p>
-                    Alongside, I occasionally invest in cool stuff
-                    {/* write{" "}
-                    <Link
-                        href="/posts"
-                        className="text-foreground hover:text-muted-foreground/50 transition-all duration-150"
-                    >
-                        posts */}
-                    {/* </Link> */} and post various useful{" "}
+                    Alongside, I sometimes invest in cool stuff and post various
+                    useful{" "}
                     <Link
                         href="/tools"
                         className="text-foreground hover:text-muted-foreground/50 transition-all duration-150"
