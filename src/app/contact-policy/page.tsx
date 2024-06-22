@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function Page() {
     return (
         <div className="min-h-screen max-w-xl mx-auto flex items-center justify-center">
-            <div className="py-12 px-4 text-sm">
+            <div className="py-24 px-4 text-sm">
                 <section className="flex flex-col my-6 space-y-6">
                     <div className="flex flex-row space-x-2 items-center justify-between group">
                         <span className="text-neutral-500">

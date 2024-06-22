@@ -25,7 +25,7 @@ function CodeBlock(
                 {...rest}
                 theme="material-darker"
                 lineNumbers
-                className="rounded-sm"
+                className="rounded-sm max-w-[calc(100vw-2rem)] overflow-x-auto"
             >
                 {children}
             </Code>
@@ -78,6 +78,93 @@ function CustomLink(
     );
 }
 
+function Video(
+    props: React.DetailedHTMLProps<
+        React.VideoHTMLAttributes<HTMLVideoElement>,
+        HTMLVideoElement
+    >,
+) {
+    const { children, ...rest } = props;
+    return (
+        <video {...rest} className="rounded-sm" controls preload="metadata">
+            {children}
+        </video>
+    );
+}
+
+function h1(
+    props: React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLHeadingElement>,
+        HTMLHeadingElement
+    >,
+) {
+    const { children, ...rest } = props;
+    return (
+        <h1 {...rest} className="text-foreground text-2xl font-bold">
+            {children}
+        </h1>
+    );
+}
+
+function h2(
+    props: React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLHeadingElement>,
+        HTMLHeadingElement
+    >,
+) {
+    const { children, ...rest } = props;
+    return (
+        <h2 {...rest} className="text-foreground text-xl font-bold">
+            {children}
+        </h2>
+    );
+}
+
+function h3(
+    props: React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLHeadingElement>,
+        HTMLHeadingElement
+    >,
+) {
+    const { children, ...rest } = props;
+    return (
+        <h3 {...rest} className="text-foreground text-lg font-bold">
+            {children}
+        </h3>
+    );
+}
+
+function inlineCode(
+    props: React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLElement>,
+        HTMLElement
+    >,
+) {
+    const { children, ...rest } = props;
+    return (
+        <code
+            {...rest}
+            className="bg-background text-foreground code rounded-sm px-1"
+        >
+            {children}
+        </code>
+    );
+}
+
+function ListItem(
+    props: React.DetailedHTMLProps<
+        React.LiHTMLAttributes<HTMLLIElement>,
+        HTMLLIElement
+    >,
+) {
+    const { children, ...rest } = props;
+    return (
+        <li {...rest} className="ml-4 list-disc">
+            {children}
+        </li>
+    );
+}
+
 export const mdxComponents: MDXComponents = {
     pre: CodeBlock,
     strong: Strong,
@@ -85,4 +172,10 @@ export const mdxComponents: MDXComponents = {
     img: MDXImage as any,
     Image: NextImage as any,
     a: CustomLink,
+    Video: Video,
+    h1: h1,
+    h2: h2,
+    h3: h3,
+    code: inlineCode,
+    li: ListItem,
 };

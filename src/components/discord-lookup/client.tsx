@@ -141,7 +141,7 @@ export function DiscordLookupClient() {
                 <Button onClick={() => GetDiscordUser(user)}>Lookup</Button>
             </div>
             <div>
-                {loading ? (
+                {discordUser.id && (
                     <div className="flex flex-col space-y-4 items-center">
                         <Card className="w-full">
                             <div className="flex flex-row space-x-4 items-center p-2">
@@ -248,8 +248,6 @@ export function DiscordLookupClient() {
                             </Card>
                         )}
                     </div>
-                ) : (
-                    <Skeleton />
                 )}
             </div>
         </section>
