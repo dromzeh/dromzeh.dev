@@ -6,7 +6,7 @@ import { WorkContainer } from "~/components/work/work-container";
 
 export const metadata: Metadata = {
     title: "home • dromzeh.dev",
-    description: "marcel/dromzeh's personal site ^_^",
+    description: "marcel's personal site",
     metadataBase: new URL("https://dromzeh.dev"),
 };
 
