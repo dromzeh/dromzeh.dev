@@ -12,7 +12,7 @@ import {
     // Command,
 } from "../ui/command";
 import { useRouter } from "next/navigation"; // usePathname
-import { Command as CommandIcon, Wrench } from "lucide-react";
+import { Command as CommandIcon, File, Wrench } from "lucide-react";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 
 import {
@@ -92,6 +92,15 @@ export function CommandMenu() {
                         >
                             <Wrench size={16} />
                             <span className="ml-2">Tools</span>
+                        </CommandItem>
+                        <CommandItem
+                            className="transition-all duration-100"
+                            onSelect={() =>
+                                runCommand(() => router.push("/posts"))
+                            }
+                        >
+                            <File size={16} />
+                            <span className="ml-2">Posts</span>
                         </CommandItem>
                         {/* TODO(dromzeh): would be cool if it showed source code of the active page? maybe.. considering it's file based routing: tree/main/src/app..  */}
                         <CommandItem

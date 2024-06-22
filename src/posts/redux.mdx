@@ -1,0 +1,260 @@
+---
+title: Redux Persist & Cross-Tab State Syncing in Next.js
+description: How I implemented cross-tab & persisted state synchronization in Next.js App Router using Redux Persist and Redux State Sync.
+date: 22-06-2024
+slug: redux-persist-tab-syncing-on-nextjs
+---
+
+While working on mass downloading for [wanderer.moe](https://wanderer.moe), I wanted to implement a feature that would allow users to select multiple assets and download them in a single click. 
+
+To enhance the user experience further, I also wanted to synchronize the selected assets and download state across multiple browser tabs in real-time.
+
+<Video src="https://cdn.marcel.best/ShareX/2024/06/NVIDIA_Share_EcVTfGPyHw.mp4" />
+
+This article details my approach to implementing this feature using Next.js, Redux, Redux Persist, and Redux State Sync.
+
+## The Challenge I Faced
+
+My goal was to create a system that could:
+
+1. Share state across the entire application
+2. Persist state through page refreshes and tab closures
+3. Synchronize state in real-time across multiple browser tabs
+
+I quickly realized that while React's Context API can handle cross-component state sharing, it falls short for persistence and cross-tab synchronization.
+
+## My Solution: Redux, Redux Persist, and Redux State Sync
+
+To address these challenges, I implemented state management with Redux Persist and Redux State Sync. Here's how I approached it:
+
+### Storage Implementation
+
+First, I created a hybrid storage solution to accommodate both client-side and server-side rendering:
+
+```typescript
+import createWebStorage from "redux-persist/es/storage/createWebStorage";
+
+const createNoopStorage = () => {
+    return {
+        getItem() {
+            return Promise.resolve(null);
+        },
+        setItem(_key: string, value: number) {
+            return Promise.resolve(value);
+        },
+        removeItem() {
+            return Promise.resolve();
+        },
+    };
+};
+
+export const storage =
+    typeof window !== "undefined"
+        ? createWebStorage("local")
+        : createNoopStorage();
+```
+
+This storage configuration ensures that my application can run on both the client and server without issues.
+
+### Redux State Structure
+
+I designed the Redux state to encapsulate the essential data for cross-tab synchronization. In this case, we only need to manage:
+
+- **isMassDownloading**: A boolean flag to indicate if mass downloading, to compare against the local state for the download indicator.
+- **selectedAssets**: An array of the selected assets.
+
+```typescript
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import type { Asset } from "~/lib/types";
+
+export interface IAssetState {
+    isMassDownloading: boolean;
+    selectedAssets: Asset[];
+}
+
+const initialState: IAssetState = {
+    isMassDownloading: false,
+    selectedAssets: [],
+};
+```
+
+### Redux Slice Implementation
+
+I then implemented the `assetSlice` with appropriate actions and reducers:
+
+```typescript
+export const assetSlice = createSlice({
+    name: "assets",
+    initialState,
+    reducers: {
+        setSelectedAssets: (state, action: PayloadAction<Asset[]>) => {
+            state.selectedAssets = action.payload || [];
+        },
+        setIsMassDownloading: (state, action: PayloadAction<boolean>) => {
+            state.isMassDownloading = action.payload || false;
+        },
+        toggleAssetSelection: (state, action: PayloadAction<Asset>) => {
+            if (state.isMassDownloading) return;
+
+            const index = state.selectedAssets.findIndex(
+                (asset) => asset.path === action.payload.path,
+            );
+            if (index >= 0) {
+                state.selectedAssets.splice(index, 1);
+            } else {
+                state.selectedAssets.push(action.payload);
+            }
+        },
+        clearSelectedAssets: (state) => {
+            state.selectedAssets = [];
+        },
+    },
+});
+```
+
+### Redux Configuration
+
+
+I setup the Redux configuration with the `persistReducer` and `combineReducers` functions to persist the state across sessions:
+
+```typescript
+import { combineReducers } from "@reduxjs/toolkit";
+import { persistReducer } from "redux-persist";
+import { storage } from "./storage";
+import assetSlice from "./slice/asset-slice";
+
+export const persistConfig = {
+    key: "root",
+    storage: storage,
+    whitelist: ["assets"],
+};
+
+const rootReducer = combineReducers({
+    assets: assetSlice,
+});
+
+export const persistedReducer = persistReducer(persistConfig, rootReducer);
+```
+
+Then, I configured the Redux store with the `createStateSyncMiddleware` and `initMessageListener` to synchronize the state across tabs:
+
+```typescript
+import { configureStore } from "@reduxjs/toolkit";
+import { persistedReducer } from "./reducer";
+import {
+    createStateSyncMiddleware,
+    initMessageListener,
+} from "redux-state-sync";
+import {
+    useDispatch,
+    TypedUseSelectorHook,
+    useSelector,
+    useStore,
+} from "react-redux";
+import logger from "redux-logger";
+import { persistStore } from "redux-persist";
+
+const blacklist = ["persist/PERSIST", "persist/REHYDRATE"];
+
+export const store = configureStore({
+    reducer: persistedReducer,
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware().prepend(
+            logger,
+            createStateSyncMiddleware({
+                predicate: (action) => {
+                    if (typeof action !== "function") {
+                        if (Array.isArray(blacklist)) {
+                            return blacklist.indexOf(action.type) < 0;
+                        }
+                    }
+                    return false;
+                },
+            }),
+        ) as any, // typescript complains
+});
+
+export const persistor = persistStore(store);
+
+initMessageListener(store);
+```
+
+Certain actions are also blacklisted to ensure compatibility.
+
+### Redux Provider
+
+Finally, we import `Provider` and `PersistGate` from `react-redux` and `redux-persist/integration/react` to wrap the application with the Redux provider:
+
+```tsx
+"use client";
+
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import { store, persistor } from "./store";
+
+export const ReduxProvider = ({ children }: { children: React.ReactNode }) => {
+    return (
+        <Provider store={store}>
+            <PersistGate loading={null} persistor={persistor}>
+                {children}
+            </PersistGate>
+        </Provider>
+    );
+};
+
+export default ReduxProvider;
+```
+
+## Component Integration
+
+With the custom hooks I created, I can call this into any component as long as it is wrapped in the Redux provider. Here's how I implemented features for the `asset-item.tsx` component:
+
+```tsx
+import { useAppDispatch, useAppSelector } from "~/redux/store";
+
+const dispatch = useAppDispatch();
+
+const isSelected = isAssetSelected(
+    useAppSelector((state) => state.assets),
+    asset,
+);
+```
+
+With the above, you can access the Redux state and dispatch actions directly from the component.
+
+```ts
+<button onClick={() => dispatch(toggleAssetSelection(asset))}>
+    {isSelected ? "Deselect" : "Select"}
+</button>
+```
+
+### Download Indicator
+
+I created a local context to manage the download indicator state, where I can compare the local state with the global state to determine what should be conditionally rendered:
+
+```tsx
+const {
+    isUnsharedMassDownloading,
+    setIsUnsharedMassDownloading,
+    isIndicatorOpen,
+} = useContext(AssetDownloadIndicatorContext);
+
+const isMassDownloading = useAppSelector(
+    (state) => state.assets.isMassDownloading,
+);
+
+
+{isUnsharedMassDownloading && <ShowMassDownloadProgress />}
+
+{isMassDownloading && !isUnsharedMassDownloading && (
+    <MassDownloadInProgress />
+)}
+```
+
+## Conclusion
+
+While implementing cross-tab state synchronization may seem complex, it significantly enhances user experience in multi-tab scenarios. 
+
+In my case, this solution not only improved user engagement but also increased the probability of users revisiting the site.
+
+You can view the full source code on [GitHub](https://git.wanderer.moe/site) or try it out on [wanderer.moe](https://wanderer.moe).

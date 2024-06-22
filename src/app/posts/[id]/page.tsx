@@ -48,7 +48,7 @@ async function PostPage({ params: { id } }: Props) {
 
     return (
         <div className="min-h-screen max-w-xl mx-auto flex items-center justify-center">
-            <div className="py-12 px-4 text-sm">
+            <div className="py-24 px-4 text-sm">
                 <div className="flex flex-col space-y-6">
                     <div className="flex flex-row space-x-2 items-center justify-between group">
                         <span className="text-neutral-500">
@@ -65,7 +65,7 @@ async function PostPage({ params: { id } }: Props) {
                         </span>
                     </div>
                     <div className="flex flex-col space-y-2">
-                        <h1 className="text-foreground text-lg font-semibold">
+                        <h1 className="text-foreground text-2xl font-semibold">
                             {post.title}
                         </h1>
                         <h2 className="text-muted-foreground">
@@ -76,7 +76,7 @@ async function PostPage({ params: { id } }: Props) {
                         </p>
                     </div>
                 </div>
-                <section className="flex flex-col space-y-4 mt-8">
+                <section className="flex flex-col space-y-4 mt-8 max-w-xl">
                     <PostBody>{post.body!}</PostBody>
                 </section>
             </div>
