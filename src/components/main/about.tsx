@@ -32,7 +32,8 @@ export function About() {
                     >
                         OC & Art Sharing platform
                     </Link>{" "}
-                    scheduled to release Q3 2024.
+                    scheduled to release Q3 2024. If you're a developer or
+                    artist, and this interests you, please reach out!
                 </p>
                 <p>
                     Alongside, I sometimes invest in cool stuff and post various
@@ -43,6 +44,13 @@ export function About() {
                     >
                         {" "}
                         tools
+                    </Link>{" "}
+                    and occasionally release{" "}
+                    <Link
+                        href="/posts"
+                        className="text-foreground hover:text-muted-foreground/50 transition-all duration-150"
+                    >
+                        posts
                     </Link>{" "}
                     on this site.
                 </p>
