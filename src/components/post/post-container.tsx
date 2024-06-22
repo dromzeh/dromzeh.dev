@@ -1,5 +1,6 @@
 import getPosts from "~/lib/posts/fetch-posts";
 import { PostItem } from "./post-item";
+import { Post } from "~/lib/types";
 
 export async function PostContainer() {
     const posts = await getPosts();
@@ -14,7 +15,7 @@ export async function PostContainer() {
                 you can check them out below.
             </p>
             <div className="flex flex-col space-y-2">
-                {posts?.map((post) => <PostItem key={post.slug} {...post} />)}
+                {posts && posts.map((post) => <PostItem key={post!.slug} {...post as Post} />)}
             </div>
         </div>
     );
