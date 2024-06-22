@@ -23,7 +23,7 @@ export default function PostsPage() {
                             </Link>
                         </span>
                         <div className="flex-grow border-t border-dotted border-gray-400"></div>
-                        <span className="text-muted-foreground">Tools</span>
+                        <span className="text-muted-foreground">Posts</span>
                     </div>
                     <div className="flex flex-col space-y-2">
                         <h1 className="text-foreground font-bold text-lg mb-2">
