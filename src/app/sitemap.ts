@@ -23,7 +23,7 @@ const posts = await getPosts();
 export default function sitemap(): MetadataRoute.Sitemap {
     const postRoutes = posts.map((post) => ({
         ...defaults,
-        url: `${baseUrl}/posts/${post.slug}`,
+        url: `${baseUrl}/posts/${post!.slug}`,
         priority: 0.8,
     }));
 
