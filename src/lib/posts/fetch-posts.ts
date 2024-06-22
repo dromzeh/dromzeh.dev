@@ -4,7 +4,7 @@ import path from "path";
 import type { Post } from "../types";
 import { unstable_cache as cache } from "next/cache";
 
-export const getPosts = cache(async () => {
+export const getPosts = cache(async (): Promise<Post[]> => {
     const posts = await fs.readdir("./src/posts/");
 
     return Promise.all(
@@ -22,7 +22,7 @@ export const getPosts = cache(async () => {
                 }
 
                 return { ...data, body: content } as Post;
-            }),
+            }) as Promise<Post>[],
     );
 });
 
