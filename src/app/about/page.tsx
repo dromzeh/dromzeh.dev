@@ -40,19 +40,48 @@ export default function Page() {
                         youngest participant by 5 years.
                     </p>
                     <p>
-                        Now, I mostly work on Systems, Infrastructure, and Web
-                        Development in Typescript and Rust. I was accepted into
-                        college for extraordinary ability, but dropped out to
-                        work full-time on my projects, and have been doing so
-                        for the past 2 years.
+                        The above led me to freelancing & eventually working as
+                        a Systems Developer for a startup part-time, where I
+                        made enough to invest in various projects. I'm now
+                        dedicating everything to my own projects.
                     </p>
                     <p>
-                        Everything I know is entirely self-taught, tutorials are
-                        a waste of time - you learn by doing and failing. If you
-                        want to learn a programming language, take apart a
-                        project in said language and intentionally break it,
-                        then fix it. Just rinse and repeat until you understand
-                        the core concepts.
+                        My work mostly revolves around Systems, Infrastructure,
+                        and Web Development in Typescript and Rust. I was
+                        accepted into college for extraordinary ability as I had
+                        no secondary qualification due to medical reasons, but
+                        dropped out to work full-time on my projects, and have
+                        been doing so for the past 2 years.
+                    </p>
+                    <p>
+                        I've also been working solo on a project for sharing
+                        (Art)Work & OCs since the start of 2024, which is on
+                        track to release Early September/Late August 2024.
+                    </p>
+                    <p>
+                        Everything I know is entirely self-taught. You learn
+                        best by doing and failing and not blindly copying from
+                        tutorials. For example, if you want to learn a
+                        programming language, take apart a project in said
+                        language and intentionally break it, then fix it. Just
+                        rinse and repeat until you understand the core concepts.
+                    </p>
+                    <p>
+                        I used to play a lot of Gacha Games, which is what led
+                        me to create wanderer.moe at 15. I was tired of people
+                        sharing links behind obscure Google Drive/Mega links,
+                        where most of the time the link would be expired, and
+                        wanted people to find stuff easier. It started as a
+                        simple project, but exploded in popularity thanks to
+                        TikTok where it now averages hundreds of thousands of
+                        monthly users.
+                    </p>
+                    <p>
+                        Alongside, I also played rhythm games from 2016-2018,
+                        then quit for a while. Eventually picked it up again in
+                        2020 & now primarily play 4K VSRGs. My keybinds are AS
+                        on my left and 23 [numpad] on my right, I'm primarily a
+                        jack player as I can't read LN.
                     </p>
                 </section>
             </div>
