@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
     title: "contact policy • dromzeh.dev",
-    description: "contact policy ^_^",
+    description: "contact policy",
     metadataBase: new URL("https://dromzeh.dev"),
 };
 

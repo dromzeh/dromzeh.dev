@@ -1,23 +1,34 @@
 import matter from "gray-matter";
+import fs from "fs/promises";
+import path from "path";
 import type { Post } from "../types";
-// import { unstable_cache as cache } from "next/cache";
+import { unstable_cache as cache } from "next/cache";
 
-export const getPosts = async () => {
-    const posts = await fetch("https://api.dromzeh.dev/posts").then((res) =>
-        res.json(),
+export const getPosts = cache(async () => {
+    const posts = await fs.readdir("./src/posts/");
+
+    return Promise.all(
+        posts
+            .filter((file) => path.extname(file) === ".mdx")
+            .map(async (file) => {
+                const filePath = `./src/posts/${file}`;
+
+                const postContent = await fs.readFile(filePath, "utf8");
+
+                const { data, content } = matter(postContent);
+
+                if (data.published === false) {
+                    return null;
+                }
+
+                return { ...data, body: content } as Post;
+            }),
     );
-
-    return posts.posts as Post[];
-};
+});
 
 export async function getPost(slug: string) {
-    const post = await fetch(`https://api.dromzeh.dev/posts/${slug}`).then(
-        (res) => res.json(),
-    );
-
-    const { data, content } = matter(post.content);
-
-    return { ...data, body: content } as Post;
+    const posts = await getPosts();
+    return posts.find((post) => post!.slug === slug);
 }
 
 export default getPosts;
