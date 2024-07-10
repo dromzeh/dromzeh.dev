@@ -2,25 +2,13 @@
 
 ---
 
-Source code for my personal website, [dromzeh.dev](https://dromzeh.dev).
+Source code for my personal website & blog, [dromzeh.dev](https://dromzeh.dev).
 
-Built with [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/), [TypeScript](https://www.typescriptlang.org/) & [Million](https://www.million.dev).
+Built with [Next.js](https://nextjs.org/), [TailwindCSS](https://tailwindcss.com/), [TypeScript](https://www.typescriptlang.org/) & [Million](https://www.million.dev).
 
-Using [Lanyard](https://lanyard.rest) for Discord Presence.
+Using [Lanyard](https://lanyard.rest) for Discord presence.
 
-## Development
-
-```bash
-pnpm i && pnpm dev
-```
-
-## Build
-
-```bash
-pnpm i && pnpm build
-```
-
-## Deploy
+## Deployment
 
 Deployment is done via [Cloudflare Pages](https://pages.cloudflare.com/), using [next-on-pages](https://github.com/cloudflare/next-on-pages).
 
