@@ -13,6 +13,16 @@ import {
 import type { Post } from "~/lib/types";
 
 export function PostSheet(post: Post) {
+    const [day, month, year] = post.date.split("-");
+
+    const formattedDate = new Date(
+        `${month}-${day}-${year}`,
+    ).toLocaleDateString("en-GB", {
+        day: "2-digit",
+        month: "long",
+        year: "numeric",
+    });
+
     return (
         <Drawer>
             <DrawerTrigger asChild>
@@ -27,7 +37,7 @@ export function PostSheet(post: Post) {
                             {post.title}
                         </DrawerTitle>
                         <DrawerDescription className="mt-2 text-left">
-                            <p className="mb-2">Uploaded on {post.date}</p>
+                            <p className="mb-2">Posted on {formattedDate}</p>
                             {post.description.split("\n").map((line, i) => (
                                 <p key={i} className="mb-2">
                                     {line}
