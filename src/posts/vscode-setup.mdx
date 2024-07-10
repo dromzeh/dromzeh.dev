@@ -1,0 +1,141 @@
+---
+title: My VSCode Configuration
+description: My minimal VSCode configuration for development.
+date: 10-07-2024
+slug: vscode-config
+---
+
+<img src="https://cdn.marcel.best/ShareX/2024/07/KAGGcjg9nz.png" />
+
+After [Atom](https://atom.io/) was archived, I switched to [Visual Studio Code](https://code.visualstudio.com/) for my development needs.
+
+Over time, I ended up installing loads of extensions that were either unnecessary or redundant. This led to an incredibly slow and bloated editor.
+
+I decided to start fresh and only install the extensions I need. Here's my minimal VSCode setup for development.
+
+## The Extensions I Use
+
+Here's a list of the extensions I use in my minimal VSCode setup, alongside the required language support extensions:
+
+- [Mellow](https://marketplace.visualstudio.com/items?itemName=kvrohit.mellow-theme) - My favorite theme for VSCode.
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) - Code formatter
+- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) - Tailwind CSS IntelliSense
+- [Pretty Typescript Errors](https://marketplace.visualstudio.com/items?itemName=YoavBls.pretty-ts-errors) - Better TypeScript error messages
+- [Wakatime](https://marketplace.visualstudio.com/items?itemName=WakaTime.vscode-wakatime) - Time tracking
+- [Apc Customize UI++](https://marketplace.visualstudio.com/items?itemName=drcika.apc-extension) - Custom UI
+- [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost) - Display package sizes
+- [GlassIt-VSC](https://marketplace.visualstudio.com/items?itemName=s-nlf-fh.glassit) - Transparency effect
+- [Github Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) - AI pair programming
+- [Catppucin Perfect Icons](https://marketplace.visualstudio.com/items?itemName=thang-nm.catppuccin-perfect-icons) - Icon theme
+- [Discord Rich Presence](https://marketplace.visualstudio.com/items?itemName=LeonardSSH.vscord) - Shows your current project in Discord
+
+## My Settings
+
+Below is my `settings.json`, feel free to use it as a reference for your own configuration:
+
+```json
+{
+    "terminal.integrated.env.windows": {},
+    "terminal.integrated.smoothScrolling": true,
+    "terminal.integrated.fontFamily": "GeistMono Nerd Font",
+    "terminal.integrated.fontSize": 14,
+    
+    "editor.fontFamily": "GeistMono Nerd Font",
+    "editor.inlayHints.fontFamily": "GeistMono Nerd Font",
+    "editor.codeLensFontFamily": "GeistMono Nerd Font",
+    "editor.fontSize": 14,
+    "editor.tabSize": 4,
+    "editor.formatOnSave": true,
+    "editor.renderWhitespace": "all",
+    "editor.minimap.enabled": false,
+    "editor.renderLineHighlight": "none",
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.vertical": "hidden",
+    "editor.scrollbar.horizontalScrollbarSize": 2,
+    "editor.scrollbar.verticalScrollbarSize": 2,
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.inlineSuggest.enabled": true,
+    "editor.stickyScroll.enabled": false,
+    "editor.smoothScrolling": true,
+    "editor.fontLigatures": true,
+    // "editor.hover.sticky": true,
+    "editor.cursorStyle": "block",
+    "editor.cursorBlinking": "solid",
+    "editor.accessibilitySupport": "off",
+
+    "files.autoSave": "onWindowChange",
+    "files.insertFinalNewline": true,
+    "explorer.confirmDragAndDrop": false,
+    "breadcrumbs.enabled": false,
+    "workbench.layoutControl.enabled": false,
+    "workbench.list.smoothScrolling": true,
+    "workbench.colorTheme": "Mellow",
+    "workbench.iconTheme": "catppuccin-perfect-mocha",
+    "workbench.settings.editor": "json",
+    
+    "scm.inputFontFamily": "GeistMono Nerd Font",
+    "chat.editor.fontFamily": "GeistMono Nerd Font",
+    "debug.console.fontFamily": "GeistMono Nerd Font",
+    "markdown.preview.fontFamily": "GeistMono Nerd Font",
+
+    "files.associations": {
+        // prevents the 'unknown rule' error in .css files when working with TailwindCSS
+        "*.css": "tailwindcss",
+    },
+    
+    "window.titleBarStyle": "native",
+    "window.customTitleBarVisibility": "never",
+
+    "apc.activityBar": {
+        "position": "bottom",
+        "hideSettings": true,
+        "size": 28
+    },
+    
+    "apc.header": {
+        "height": 37,
+    },
+    
+    "apc.menubar.compact": true,
+    
+    "apc.electron": {
+        "titleBarStyle": "hidden",
+        "frame": false,
+        "trafficLightPosition": {
+            "x": 12,
+            "y": 10
+        }
+    },
+    
+    "apc.font.family": "GeistMono Nerd Font",
+    
+    "apc.monospace.font.family": "GeistMono Nerd Font",
+    
+    "apc.statusBar": {
+        "position": "editor-bottom",
+        "height": 28,
+        "fontSize": 12
+    },
+    
+    "apc.stylesheet": {
+        ".sidebar > .composite": "height: 12px !important",
+        ".composite.title": "display: block !important",
+        ".monaco-workbench .part.sidebar .title-actions .actions-container": "justify-content: space-evenly !important",
+        ".title-label": "display: none !important",
+        ".title-actions": "display: none !important",
+        ".tabs-and-actions-container > .editor-actions": "display: none !important",
+        ".titlebar-center": "display: none !important",
+        ".titlebar-right": "display: none !important",
+        ".inline-tabs-placeholder": "display: none !important",
+        ".split-view-view .visible": "background-color: #2a2a2d !important",
+    },
+
+    "glassit.alpha": 250,
+
+    // discord rpc
+    "vscord.status.idle.check": false,
+    "vscord.app.name": "Visual Studio Code",
+    "vscord.status.idle.disconnectOnIdle": false,
+    "vscord.status.idle.enabled": false,
+}
+```
