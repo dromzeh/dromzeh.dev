@@ -3,6 +3,9 @@ import { MDXComponents } from "mdx/types";
 import NextImage from "next/image";
 import { Code } from "bright";
 import { CopyCodeToClipboard } from "./code";
+import mellowTheme from "./mellow.json";
+
+Code.theme = mellowTheme;
 
 function CodeBlock(
     props: React.DetailedHTMLProps<
@@ -23,7 +26,6 @@ function CodeBlock(
             </div>
             <Code
                 {...rest}
-                theme="material-darker"
                 lineNumbers
                 className="rounded-sm max-w-[calc(100vw-2rem)] overflow-x-auto"
             >

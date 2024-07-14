@@ -9,8 +9,12 @@ export function CopyCodeToClipboard({ code }: { code: string }) {
             size="sm"
             variant="link"
             onClick={() => {
-                navigator.clipboard.writeText(code);
-                toast.success("Copied to clipboard");
+                try {
+                    navigator.clipboard.writeText(code);
+                    toast.success("Copied to clipboard");
+                } catch (err) {
+                    toast.error("Failed to copy to clipboard");
+                }
             }}
         >
             <Copy size={16} />
