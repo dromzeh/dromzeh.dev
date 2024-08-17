@@ -8,8 +8,8 @@ export function FramerOverlay({ children }: { children: React.ReactNode }) {
     const pathname = usePathname();
     return (
         <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             key={pathname}
         >

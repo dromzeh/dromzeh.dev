@@ -63,6 +63,22 @@
     ::selection {
         @apply bg-primary text-primary-foreground;
     }
+    
+    @font-face {
+        font-family: 'Geist Mono';
+        src: url('../fonts/GeistMonoVF.woff2') format('woff2'),
+            url('../fonts/GeistMonoVF.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    code {
+        font-family: 'Geist Mono', monospace !important;
+    }
+
+    pre {
+        font-family: 'Geist Mono', monospace !important;
+    }
 
     .animated-line {
         --dash-width: 10;

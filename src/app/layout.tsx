@@ -7,7 +7,8 @@ import { Toaster } from "~/components/ui/sonner";
 // import { HydrationOverlay } from "@builder.io/react-hydration-overlay";
 import { ThemeProvider } from "~/components/navigation/theme-provider";
 import { ThemeToggle } from "~/components/navigation/theme-toggle";
-import { FramerOverlay } from "~/components/framer-overlay";
+import { FramerOverlay } from "~/components/navigation/framer-overlay";
+import { NavigationBar } from "~/components/navigation/navigation-bar";
 
 const geist = GeistSans;
 
@@ -29,12 +30,19 @@ export default function RootLayout({
                 className={`${geist.className} h-full scroll-smooth antialiased pl-[calc(100vw-100%)]`}
             >
                 <ThemeProvider attribute="class" defaultTheme="dark">
-                    <CommandMenu />
-                    <ThemeToggle />
+                    <NavigationBar />
                     <div>
                         <FramerOverlay>{children}</FramerOverlay>
                     </div>
                     <Toaster />
+                    <div
+                        className="fixed top-[-10px] z-40 h-10 w-screen bg-background opacity-70 blur backdrop-blur-lg "
+                        aria-hidden
+                    />
+                    <div
+                        className="fixed bottom-[-10px] z-40 h-10 w-screen bg-background opacity-70 blur backdrop-blur-lg"
+                        aria-hidden
+                    />
                 </ThemeProvider>
             </body>
         </html>

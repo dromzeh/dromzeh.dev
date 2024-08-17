@@ -43,6 +43,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
             url: `${baseUrl}/posts`,
             priority: 0.8,
         },
+        {
+            ...defaults,
+            url: `${baseUrl}/work`,
+            priority: 0.8,
+        },
         ...postRoutes,
         {
             ...defaults,
