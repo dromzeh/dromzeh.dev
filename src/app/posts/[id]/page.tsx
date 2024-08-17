@@ -53,7 +53,7 @@ async function PostPage({ params: { id } }: Props) {
                     <div className="flex flex-row space-x-2 items-center justify-between group">
                         <span className="text-neutral-500">
                             <Link
-                                href="/posts"
+                                href="/"
                                 className="text-foreground group-hover:text-muted-foreground/50 transition-colors duration-150 hover:cursor-pointer"
                             >
                                 Go Back
