@@ -100,8 +100,8 @@ export function About() {
     );
 }
 
-const birthTimestamp = 1156118401000;
-const initialAge = 17;
+const birthTimestamp = 1156114801000;
+const initialAge = 18;
 
 export function Age() {
     const [age, setAge] = React.useState<number>(initialAge);
