@@ -1,4 +1,3 @@
-import { WavyBackground } from "~/components/background";
 import { GoBackButton } from "~/components/navigation/go-back-button";
 
 export default function NotFound() {

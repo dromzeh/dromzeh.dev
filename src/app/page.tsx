@@ -1,8 +1,6 @@
 import { About } from "~/components/main/about";
-import { LanyardProfile } from "~/components/main/lanyard/profile";
+import { LanyardProfile } from "~/components/main/lanyard";
 import type { Metadata } from "next";
-import { MoreInfo } from "~/components/main/more-info";
-import { WorkContainer } from "~/components/work/work-container";
 
 export const metadata: Metadata = {
     title: "home • dromzeh.dev",
@@ -17,8 +15,6 @@ export default function Home() {
                 <section className="flex flex-col space-y-6">
                     <LanyardProfile />
                     <About />
-                    <WorkContainer />
-                    <MoreInfo />
                 </section>
             </div>
         </div>

@@ -12,7 +12,7 @@ import {
     // Command,
 } from "../ui/command";
 import { useRouter } from "next/navigation"; // usePathname
-import { Command as CommandIcon, File, Wrench } from "lucide-react";
+import { Bookmark, Command as CommandIcon, Wrench, Layers } from "lucide-react";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 
 import {
@@ -65,12 +65,12 @@ export function CommandMenu() {
     return (
         <>
             <Button
-                variant={"outline"}
-                className="px-3 rounded-full absolute top-0 right-0 mt-4 mr-4 z-50" // maybe i can make this sticky? idk css is scary
+                variant={"ghost"}
+                className="rounded-full"
                 onClick={() => setIsOpen(!isOpen)}
             >
                 {" "}
-                <CommandIcon size={14} />{" "}
+                <CommandIcon size={16} />{" "}
             </Button>
             <CommandDialog open={isOpen} onOpenChange={setIsOpen}>
                 <CommandInput placeholder="Search" />
@@ -96,13 +96,25 @@ export function CommandMenu() {
                         <CommandItem
                             className="transition-all duration-100"
                             onSelect={() =>
+                                runCommand(() => router.push("/work"))
+                            }
+                        >
+                            <Layers size={16} />
+                            <span className="ml-2">Work</span>
+                        </CommandItem>
+                        <CommandItem
+                            className="transition-all duration-100"
+                            onSelect={() =>
                                 runCommand(() => router.push("/posts"))
                             }
                         >
-                            <File size={16} />
+                            <Bookmark size={16} />
                             <span className="ml-2">Posts</span>
                         </CommandItem>
-                        {/* TODO(dromzeh): would be cool if it showed source code of the active page? maybe.. considering it's file based routing: tree/main/src/app..  */}
+                    </CommandGroup>
+                    <CommandSeparator />
+                    <CommandGroup heading="Actions">
+                        {/* TODO(dromzeh): would be cool if it showed source code of the active page, could even open up on a sheet? maybe.. considering it's file based routing: tree/main/src/app..  */}
                         <CommandItem
                             onSelect={() =>
                                 runCommand(() =>
@@ -115,9 +127,6 @@ export function CommandMenu() {
                             <Github size={16} />
                             <span className="ml-2">Source Code</span>
                         </CommandItem>
-                    </CommandGroup>
-                    <CommandSeparator />
-                    <CommandGroup heading="Actions">
                         <CommandItem
                             className="transition-all duration-100"
                             onSelect={() =>

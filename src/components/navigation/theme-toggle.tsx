@@ -10,8 +10,8 @@ export function ThemeToggle() {
 
     return (
         <Button
-            variant="outline"
-            className="px-3 rounded-full absolute top-0 right-0 mt-4 mr-16 z-50"
+            variant="ghost"
+            className="rounded-full"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         >
             <SunIcon className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />

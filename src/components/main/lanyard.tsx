@@ -5,6 +5,7 @@ import { useLanyard } from "react-use-lanyard";
 import Image from "next/image";
 import type { Activity } from "react-use-lanyard";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const statusMap = {
     online: "Online",
@@ -78,33 +79,36 @@ export function LanyardProfile() {
                     {status.discord_user.username}
                 </p>
 
-                <div className="flex flex-row space-x-1 items-center">
-                    {activity ? (
-                        <p className="text-muted-foreground text-sm">
-                            {activity.type === 2 ? (
-                                <span>
-                                    Listening to
-                                    {status.spotify?.song.length! +
-                                        status.spotify?.artist.length! <
-                                    30 ? (
-                                        <span>
-                                            {" "}
-                                            {status.spotify?.song} by{" "}
-                                            {status.spotify?.artist}
-                                        </span>
+                <div className="flex flex-row space-x-1 items-center group">
+                    <div className="text-muted-foreground text-sm">
+                        {status.listening_to_spotify ? (
+                            <div className="flex flex-row space-x-1 items-center">
+                                <Image
+                                    src={`${status.spotify!.album_art_url}`}
+                                    alt="spotify album art"
+                                    width={48}
+                                    height={48}
+                                    className="size-5 rotate-[15deg] group-hover:rotate-[-15deg] transition-all duration-150 ease-in-out rounded-md"
+                                />
+                                <p>
+                                    Listening to{" "}
+                                    {status.spotify?.song.length! < 50 ? (
+                                        <Link
+                                            href={`https://open.spotify.com/track/${status.spotify?.track_id}`}
+                                            target="_blank"
+                                            className="text-foreground hover:cursor-pointer hover:text-muted-foreground/50 transition-all duration-150"
+                                        >
+                                            {status.spotify?.song}
+                                        </Link>
                                     ) : (
                                         <span> Spotify</span>
                                     )}
-                                </span>
-                            ) : (
-                                <span>Playing {activity.name}</span>
-                            )}
-                        </p>
-                    ) : (
-                        <p className="text-muted-foreground text-sm">
-                            {statusMap[status.discord_status]} on Discord
-                        </p>
-                    )}
+                                </p>
+                            </div>
+                        ) : (
+                            <p>{statusMap[status.discord_status]} on Discord</p>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>
