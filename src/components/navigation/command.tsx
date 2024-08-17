@@ -64,14 +64,6 @@ export function CommandMenu() {
 
     return (
         <>
-            <Button
-                variant={"ghost"}
-                className="rounded-full"
-                onClick={() => setIsOpen(!isOpen)}
-            >
-                {" "}
-                <CommandIcon size={16} />{" "}
-            </Button>
             <CommandDialog open={isOpen} onOpenChange={setIsOpen}>
                 <CommandInput placeholder="Search" />
                 <CommandList>
@@ -84,36 +76,6 @@ export function CommandMenu() {
                             <Home size={16} />
                             <span className="ml-2">Home</span>
                         </CommandItem>
-                        <CommandItem
-                            className="transition-all duration-100"
-                            onSelect={() =>
-                                runCommand(() => router.push("/tools"))
-                            }
-                        >
-                            <Wrench size={16} />
-                            <span className="ml-2">Tools</span>
-                        </CommandItem>
-                        <CommandItem
-                            className="transition-all duration-100"
-                            onSelect={() =>
-                                runCommand(() => router.push("/work"))
-                            }
-                        >
-                            <Layers size={16} />
-                            <span className="ml-2">Work</span>
-                        </CommandItem>
-                        <CommandItem
-                            className="transition-all duration-100"
-                            onSelect={() =>
-                                runCommand(() => router.push("/posts"))
-                            }
-                        >
-                            <Bookmark size={16} />
-                            <span className="ml-2">Posts</span>
-                        </CommandItem>
-                    </CommandGroup>
-                    <CommandSeparator />
-                    <CommandGroup heading="Actions">
                         {/* TODO(dromzeh): would be cool if it showed source code of the active page, could even open up on a sheet? maybe.. considering it's file based routing: tree/main/src/app..  */}
                         <CommandItem
                             onSelect={() =>
@@ -125,8 +87,11 @@ export function CommandMenu() {
                             }
                         >
                             <Github size={16} />
-                            <span className="ml-2">Source Code</span>
+                            <span className="ml-2">View Source</span>
                         </CommandItem>
+                    </CommandGroup>
+                    <CommandSeparator />
+                    <CommandGroup heading="Actions">
                         <CommandItem
                             className="transition-all duration-100"
                             onSelect={() =>

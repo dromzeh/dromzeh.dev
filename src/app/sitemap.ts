@@ -12,7 +12,7 @@ const defaults: {
         | "never";
     lastModified?: Date;
 } = {
-    changeFrequency: "weekly",
+    changeFrequency: "daily",
     lastModified: new Date(),
 };
 
@@ -33,36 +33,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
             url: baseUrl,
             priority: 1,
         },
-        {
-            ...defaults,
-            url: `${baseUrl}/tools`,
-            priority: 0.8,
-        },
-        {
-            ...defaults,
-            url: `${baseUrl}/posts`,
-            priority: 0.8,
-        },
-        {
-            ...defaults,
-            url: `${baseUrl}/work`,
-            priority: 0.8,
-        },
         ...postRoutes,
-        {
-            ...defaults,
-            url: `${baseUrl}/contact-policy`,
-            priority: 0.5,
-        },
-        {
-            ...defaults,
-            url: `${baseUrl}/tools/discord-lookup`,
-            priority: 0.5,
-        },
-        {
-            ...defaults,
-            url: `${baseUrl}/tools/ai-disturbance`,
-            priority: 0.5,
-        },
     ];
 }
