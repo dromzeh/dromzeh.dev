@@ -244,11 +244,14 @@ const isMassDownloading = useAppSelector(
 );
 
 
-{isUnsharedMassDownloading && <ShowMassDownloadProgress />}
+{isUnsharedMassDownloading ? (
+    <ShowMassDownloadProgress />
+) : null}
 
-{isMassDownloading && !isUnsharedMassDownloading && (
+{isMassDownloading && !isUnsharedMassDownloading ? (
     <MassDownloadInProgress />
-)}
+) : null}
+
 ```
 
 ## Conclusion
