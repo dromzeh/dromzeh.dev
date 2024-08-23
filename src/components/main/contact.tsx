@@ -6,7 +6,9 @@ import { DiscordLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
 export function ContactContainer() {
     return (
         <div>
-            <h2 className="text-foreground font-bold text-lg mb-2">Contact</h2>
+            <h2 className="text-foreground font-bold text-lg mb-2">
+                Contact Me
+            </h2>
             <div className="flex flex-row gap-2 flex-wrap">
                 <ContactItem
                     icon={<Mail size={16} />}

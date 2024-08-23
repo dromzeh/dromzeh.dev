@@ -71,9 +71,9 @@ export function MusicContainer({
     return (
         <div>
             <h2 className="text-foreground font-bold text-lg mb-2">
-                Music On Repeat
+                Favourite Tracks
             </h2>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {music?.map((song: Song) => (
                     <SongItem key={song.title} {...song} />
                 ))}
