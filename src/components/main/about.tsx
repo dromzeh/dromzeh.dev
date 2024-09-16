@@ -32,8 +32,8 @@ export function About() {
                     >
                         wanderer.moe
                     </Link>
-                    , an open-source platform for game assets developed at age
-                    15, now serving thousands of daily users.
+                    , an open-source platform for game assets at 15, now serving
+                    thousands of daily users.
                 </p>
                 <p>
                     Other projects include{" "}
