@@ -1,0 +1,93 @@
+---
+title: The only proxy you'll ever need
+description: How I set up Unraid, swag, Tailscale & Cloudflare to create a secure connection to my services.
+date: 16-09-2024
+slug: unraid-tailscale-proxy
+---
+
+I've been using [Unraid](https://unraid.net) for a while after switching from FreeNAS, and with that wanted an easy way to share some of my services with just friends without giving them any unwanted access to my Unraid Server or any other devices on my Tailet.
+
+This is where [Tailscale](https://tailscale.com) comes in, it's a VPN service that allows you to create a secure connection between your devices without the need for port forwarding or any other complex networking setups. It's also free for personal use, which is a bonus.
+
+This post entails setting up Swag with Tailscale to prevent any unwanted access to other services alongside an example service (Vaultwarden) on Unraid linked to a domain, with Cloudflare acting as the DNS provider.
+
+### Setting Up Tailscale on Unraid
+
+Open the Unraid web interface and navigate to the Apps section.
+
+Search for and install "Tailscale (Plugin)", make sure it's the plugin & do not use the Docker container. Once installed, locate to Settings > Network Services > Tailscale & authenticate and log in with your Tailscale account.
+
+### Installing and Configuring swag
+
+In the Apps section, search for and install "swag".
+
+Change port `443` to `1443` and `80` to `180` to avoid conflicts. For the remainder of the settings, set the URL to your domain only. Set `VALIDATION` to `dns` & `SUBDOMAINS` to `wildcard` to let swag generate appropiate certificates for all subdomains.
+
+Your `DNSPLUGIN` should be set to `cloudflare` and `EMAIL` set to the email linked with your Cloudflare account. Setting `ONLY_SUBDOMAINS` is up to you, I personally set it to `true` as I'm not using the main domain for hosting any services.
+
+Apply the changes and let the container start.
+
+### Creating a Custom Docker Network
+
+To connect the swag container to the Tailscale network, we need to create a custom Docker network, which we'll call "swagproxy". This will allow the containers to communicate with each other.
+
+```bash
+Docker network create swagproxy
+Docker network connect swagproxy swag
+```
+
+### Installing and Configuring Vaultwarden (Bitwarden)
+
+Install Vaultwarden from the Apps section, set the network type to your custom "swagproxy" network, and generate a password for the `ADMIN_TOKEN` field using argon2.
+
+```bash
+echo -n "your_password_here" | argon2 saltItWithSalt -l 32
+```
+
+Copy the encoded password into the Vaultwarden `ADMIN_TOKEN` field, then apply the changes. You can check the container is connected to the proxy by pinging the swag container from the Vaultwarden container terminal.
+
+### Configuring swag with Tailscale
+
+Generate a Tailscale API key and locate to the swag settings in unraid, add these variables which will allow the swag container to connect to your Tailnet:
+   - `Docker_MODS`: `ghcr.io/tailscale-dev/Docker-mod:main`
+   - `TAILSCALE_STATE_DIR`: `/data/lib/tailscale`
+   - `TAILSCALE_HOSTNAME`: `swag-unraid`
+   - `TAILSCALE_AUTH_KEY`: `tskey-...` (your Tailscale auth key)
+
+Alongside, create a path `/var/lib/tailscale` mapped to `/mnt/user/appdata/swag/tailscale`.
+Apply and restart the swag container.
+
+### Setting Up Cloudflare DNS
+
+Navigate to `/mnt/user/appdata/swag/dns-conf` in your Unraid terminal and edit the `cloudflare.ini`:
+
+```ini
+dns_cloudflare_email = your_cloudflare_email@domain.com
+dns_cloudflare_api_key = your_global_cf_api_key
+```
+
+In retrospect, you should use a custom API token with restricted permissions under `dns_cloudflare_api_token` instead of the global API key - for initial configuration, the global key is fine.
+
+### Configuring the Reverse Proxy
+
+Go to `/mnt/user/appdata/swag/nginx/proxy-confs` and copy the built-in Vaultwarden example, swag also includes various templates inside the same folder.
+
+```bash
+cp vaultwarden.subdomain.conf.example vaultwarden.subdomain.conf
+```
+
+Edit `vaultwarden.subdomain.conf`, replacing placeholder IP and port with your Vaultwarden container's details, then restart the swag container to apply changes - you'll have to restart the swag container any time you make changes to the proxy confs.
+
+### Linking Your Domain
+
+In your Tailscale dashboard, locate the swag-unraid device and note its IPv4 address, you can also change the IPv4 to something more memorable in the Tailscale admin console.
+
+In Cloudflare, create an `A` record pointing the subdomain listed in the configuration file (e.g., `vaultwarden.yourdomain.com`) to the Tailscale IP, the cloudflare proxy must be disabled or all records pointing to Tailscale IPs.
+
+### Check the setup
+
+Navigate to `https://vaultwarden.yourdomain.com` and you should see the Vaultwarden login page, for the first time, it can take a while for Vaultwarden to load.
+
+If the page errors or shows the default swag page, edit the subdomain conf to be linked to the appropiate IP (e.g 192.168.0.143) instead of the name of the container, then restart the swag container.
+
+When Tailscale is off, the domain will not be accessible, as expected. Tailscale's auth key does expire after a set amount of time of 90 days - you can create a tag in Tailscale's admin console to prevent this from occuring.

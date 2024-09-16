@@ -6,5 +6,6 @@ export interface Work {
     oss: boolean;
     giturl?: string;
     active: boolean;
+    role: string;
     iconurl?: string;
 }

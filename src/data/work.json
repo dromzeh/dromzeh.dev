@@ -5,14 +5,25 @@
             "description": "Created wanderer.moe at 15, an open-source centralized game assets hosting website that handles thousands of daily requests and users. \nBackend: Typescript, Turso (LibSQL), Hono, Cloudflare R2, DO & Resend hosted on Cloudflare Workers. \nFrontend: NextJS, TailwindCSS, and Typescript with shadcn/ui on Cloudflare Pages. \nSite translations handled through Crowdin.",
             "languages": ["NextJS", "Hono", "Typescript", "Cloudflare", "Rust"],
             "projecturl": "https://wanderer.moe/",
+            "role": "Creator",
             "oss": true,
             "giturl": "https://git.wanderer.moe/",
+            "active": true
+        },
+        {
+            "name": "pfp.supply",
+            "description": "Devleoped a free to use profile picture sharing platform made with NextJS & Cloudflare Workers.",
+            "languages": ["NextJS", "Hono", "Typescript", "Cloudflare", "NextJS", "TailwindCSS"],
+            "projecturl": "https://pfp.supply/",
+            "role": "Creator",
+            "oss": false,
             "active": true
         },
         {
             "name": "hyv-fps-unlocker",
             "description": "Developed a lightweight Rust CLI which modifies Registry Entries for various games, allowing users to bypass defaults and set custom FPS values. \nCurrently undergoing a rewrite with Tauri (Rust & Svelte) to support additional methods of unlocking.",
             "languages": ["Rust"],
+            "role": "Creator",
             "oss": true,
             "giturl": "https://git.dromzeh.dev/hyv-fps-unlocker",
             "active": true
@@ -21,6 +32,7 @@
             "name": "wuwa-fps-unlocker",
             "description": "Simple Rust program that alters the LocalStorage DB file for Wuthering Waves to set FPS to a non-default value. \nSupports automatic detection of primary monitor's refresh rate for ease of use.",
             "languages": ["Rust"],
+            "role": "Creator",
             "oss": true,
             "giturl": "https://git.dromzeh.dev/wuwa-fps-unlocker",
             "active": true
@@ -29,6 +41,7 @@
             "name": "Lucia Auth",
             "description": "Lucia is a lightweight Authentication Library in Typescript suitable for practically any environment. \nContributed towards documentation, specifically usage within Cloudflare Workers environments.",
             "languages": ["Typescript"],
+            "role": "Contributor",
             "oss": true,
             "giturl": "https://github.com/lucia-auth/lucia-auth",
             "projecturl": "https://lucia-auth.com/",
@@ -43,6 +56,7 @@
                 "DeepL",
                 "Speech Recognition"
             ],
+            "role": "Creator",
             "oss": true,
             "giturl": "https://git.dromzeh.dev/vmt",
             "active": true

@@ -57,29 +57,15 @@ export function LanyardProfile() {
                     alt="discord avatar"
                     width={64}
                     height={64}
-                    className="rounded-lg"
+                    className="rounded-full"
                 />
-                <div className="absolute bottom-0 right-0 transform translate-x-1 translate-y-1">
-                    <span className="relative flex h-4 w-4">
-                        <span
-                            className={`animate-ping transition-all absolute inline-flex h-full w-full rounded-full ${
-                                statusColorMap[status.discord_status]
-                            }`}
-                        ></span>
-                        <span
-                            className={`relative inline-flex rounded-full h-4 w-4 ${
-                                statusColorMap[status.discord_status]
-                            }`}
-                        ></span>
-                    </span>
-                </div>
             </div>
-            <div className="flex flex-col space-y-1">
+            <div className="flex flex-col space-y-2">
                 <p className="text-foreground">
                     {status.discord_user.username}
                 </p>
 
-                <div className="flex flex-row space-x-1 items-center group">
+                <div className="flex flex-row space-x-2 items-center group">
                     <div className="text-muted-foreground text-sm">
                         {status.listening_to_spotify ? (
                             <div className="flex flex-row space-x-1 items-center">
@@ -88,9 +74,9 @@ export function LanyardProfile() {
                                     alt="spotify album art"
                                     width={48}
                                     height={48}
-                                    className="size-5 rotate-[15deg] group-hover:rotate-[-15deg] transition-all duration-150 ease-in-out rounded-md"
+                                    className="size-5 rounded-md mr-1"
                                 />
-                                <p>
+                                <p className="line-clamp-1 overflow-ellipsis">
                                     Listening to{" "}
                                     {status.spotify?.song.length! < 50 ? (
                                         <Link
