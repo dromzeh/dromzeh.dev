@@ -112,7 +112,7 @@ function SocialsContent() {
                 <span>github</span>
             </Link>
             <Link
-                href="https://github.com/dromzeh"
+                href="https://discord.com/users/492731761680187403"
                 onMouseOver={() => ctx.setStatus("discord")}
                 onMouseOut={() => ctx.setStatus("idle")}
                 className="relative transition-colors duration-300 ease-out hover:!text-muted group-hover:text-primary"
