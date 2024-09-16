@@ -57,8 +57,16 @@ export function LanyardProfile() {
                     alt="discord avatar"
                     width={64}
                     height={64}
-                    className="rounded-full"
+                    className="rounded-lg"
                 />
+                <span className="absolute bottom-0 right-0 translate-y-2 translate-x-2">
+                    <span
+                        className={`animate-ping absolute inline-flex size-4 rounded-full ${statusColorMap[status.discord_status]} opacity-75`}
+                    />
+                    <span
+                        className={`relative inline-flex rounded-full ${statusColorMap[status.discord_status]} size-4`}
+                    />
+                </span>
             </div>
             <div className="flex flex-col space-y-2">
                 <p className="text-foreground">

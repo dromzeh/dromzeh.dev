@@ -49,7 +49,7 @@ async function PostPage({ params: { id } }: Props) {
     return (
         <div className="min-h-screen max-w-xl mx-auto flex items-center justify-center">
             <div className="py-24 px-6 text-sm">
-                <div className="flex flex-col space-y-6">
+                <div className="flex flex-col space-y-8">
                     <div className="flex flex-row space-x-2 items-center justify-between group">
                         <span className="text-neutral-500">
                             <Link
