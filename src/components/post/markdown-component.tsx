@@ -107,7 +107,7 @@ function h1(
 ) {
     const { children, ...rest } = props;
     return (
-        <h1 {...rest} className="text-foreground text-2xl font-bold">
+        <h1 {...rest} className="text-foreground text-2xl font-semibold pt-8">
             {children}
         </h1>
     );
@@ -121,7 +121,7 @@ function h2(
 ) {
     const { children, ...rest } = props;
     return (
-        <h2 {...rest} className="text-foreground text-xl font-bold">
+        <h2 {...rest} className="text-foreground text-xl font-semibold pt-8">
             {children}
         </h2>
     );
@@ -135,7 +135,7 @@ function h3(
 ) {
     const { children, ...rest } = props;
     return (
-        <h3 {...rest} className="text-foreground text-lg font-bold">
+        <h3 {...rest} className="text-foreground text-lg font-semibold pt-8">
             {children}
         </h3>
     );

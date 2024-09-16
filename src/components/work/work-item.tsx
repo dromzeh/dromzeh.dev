@@ -1,11 +1,5 @@
 import { Work } from "~/types/project";
-import Image from "next/image";
-import { ExternalLink, Github, GithubIcon, Package } from "lucide-react";
 import Link from "next/link";
-import { Button } from "~/components/ui/button";
-import { WorkSheet } from "./work-sheet";
-
-// project.giturl && project.projecturl (both optionmal)
 
 export function WorkItem(props: Work) {
     return (
@@ -16,7 +10,7 @@ export function WorkItem(props: Work) {
                 </h3>
             </Link>
             <div className="flex-grow border-t border-dotted border-gray-400"></div>
-            <WorkSheet {...props} />
+            <p>{props.role}</p>
         </div>
     );
 }
