@@ -17,11 +17,9 @@ export function About() {
             </h2>
             <div className="flex flex-col space-y-2">
                 <p>
-                    I'm Marcel, an <Age />
+                    Hey - I'm Marcel, an <Age />
                     -year-old Software Engineer specializing in Infrastructure,
-                    DevOps & Backend development. Currently pursuing an
-                    undergraduate Open Degree focusing on Mathematics and
-                    Computer Science.
+                    DevOps & Backend development.
                 </p>
                 <p>
                     Mostly known from creating{" "}
@@ -36,24 +34,17 @@ export function About() {
                     thousands of daily users.
                 </p>
                 <p>
-                    Other projects include{" "}
+                    Currently, I'm the Founder & CEO of Originoid LTD, going all
+                    in making{" "}
                     <Link
-                        href="https://x.com/dromzeh/status/1771212786736992411"
+                        href="https://originoid.co"
                         target="_blank"
                         className="text-foreground hover:text-muted-foreground/50 transition-all duration-150"
                     >
                         Originoid
                     </Link>
-                    , an OC & Work sharing platform launching everywhere Q3
-                    2024, and{" "}
-                    <Link
-                        href="https://pfp.supply"
-                        target="_blank"
-                        className="text-foreground hover:text-muted-foreground/50 transition-all duration-150"
-                    >
-                        pfp.supply
-                    </Link>
-                    , a platform for sharing profile pictures.
+                    , a platform for creators to post their artwork and original
+                    characters.
                 </p>
             </div>
         </div>

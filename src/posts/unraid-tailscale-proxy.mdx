@@ -32,8 +32,8 @@ Apply the changes and let the container start.
 To connect the swag container to the Tailscale network, we need to create a custom Docker network, which we'll call "swagproxy". This will allow the containers to communicate with each other.
 
 ```bash
-Docker network create swagproxy
-Docker network connect swagproxy swag
+docker network create swagproxy
+docker network connect swagproxy swag
 ```
 
 ### Installing and Configuring Vaultwarden (Bitwarden)
