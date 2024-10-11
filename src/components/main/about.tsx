@@ -11,45 +11,26 @@ import * as React from "react";
 
 export function About() {
     return (
-        <div>
-            <h2 className="text-foreground font-semibold text-lg mb-2">
-                About
-            </h2>
-            <div className="flex flex-col space-y-2">
+        <section>
+            <h2 className="text-lg mb-2 font-bold text-foreground">About Me</h2>
+            <div className="space-y-2 text-muted-foreground">
                 <p>
-                    Hey - I'm Marcel, an <Age />
-                    -year-old Software Engineer specializing in Infrastructure,
-                    DevOps & Backend development.
+                    Hi, I'm Marcel — a {<Age />}-year-old Software Engineer. Currently based in South West England, set to relocate to London next year.
                 </p>
                 <p>
-                    Mostly known from creating{" "}
-                    <Link
-                        href="https://wanderer.moe/"
-                        target="_blank"
-                        className="text-foreground hover:text-muted-foreground/50 transition-all duration-150"
-                    >
-                        wanderer.moe
-                    </Link>
-                    , an open-source platform for game assets at 15, now serving
-                    thousands of daily users.
+                    At 15, I created <Link href="https://wanderer.moe/" target="_blank" className="text-foreground hover:text-muted-foreground/50 transition-all duration-150 cursor-pointer">wanderer.moe</Link>, an open-source platform for game assets that now serves thousands of daily users.
                 </p>
                 <p>
-                    Currently, I'm the Founder & CEO of Originoid LTD, going all
-                    in making{" "}
-                    <Link
-                        href="https://originoid.co"
-                        target="_blank"
-                        className="text-foreground hover:text-muted-foreground/50 transition-all duration-150"
-                    >
-                        Originoid
-                    </Link>
-                    , a platform for creators to post their artwork and original
-                    characters.
+                    I'm the Founder & CEO of Originoid LTD, developing <Link href="https://originoid.co" target="_blank"  className="text-foreground hover:text-muted-foreground/50 transition-all duration-150 cursor-pointer">Originoid</Link> — a platform where creators can showcase their artwork, edits, and original characters.
+                </p>
+                <p>
+                    Beyond my primary focus, I enjoy video editing and connecting with like-minded individuals who share my interests.
                 </p>
             </div>
-        </div>
+        </section>
     );
 }
+
 
 const birthTimestamp = 1156114801000;
 const initialAge = 18;

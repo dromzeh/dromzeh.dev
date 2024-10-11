@@ -58,6 +58,7 @@ function SocialsContent() {
         <div className="group flex items-center gap-4 text-primary">
             <Link
                 href="https://x.com/dromzeh"
+                target="_blank"
                 onMouseOver={() => ctx.setStatus("x")}
                 onMouseOut={() => ctx.setStatus("idle")}
                 className="relative transition-colors duration-300 ease-out hover:!text-muted group-hover:text-primary"
@@ -86,6 +87,7 @@ function SocialsContent() {
             </Link>
             <Link
                 href="https://github.com/dromzeh"
+                target="_blank"
                 onMouseOver={() => ctx.setStatus("github")}
                 onMouseOut={() => ctx.setStatus("idle")}
                 className="relative transition-colors duration-300 ease-out hover:!text-muted group-hover:text-primary"
@@ -113,6 +115,7 @@ function SocialsContent() {
             </Link>
             <Link
                 href="https://discord.com/users/492731761680187403"
+                target="_blank"
                 onMouseOver={() => ctx.setStatus("discord")}
                 onMouseOut={() => ctx.setStatus("idle")}
                 className="relative transition-colors duration-300 ease-out hover:!text-muted group-hover:text-primary"
@@ -141,6 +144,7 @@ function SocialsContent() {
             </Link>
             <Link
                 href="https://tiktok.com/@dromzeh"
+                target="_blank"
                 onMouseOver={() => ctx.setStatus("tiktok")}
                 onMouseOut={() => ctx.setStatus("idle")}
                 className="relative transition-colors duration-300 ease-out hover:!text-muted group-hover:text-primary"
@@ -168,6 +172,7 @@ function SocialsContent() {
             </Link>
             <Link
                 href="mailto:marcel@dromzeh.dev"
+                target="_blank"
                 onMouseOver={() => ctx.setStatus("email")}
                 onMouseOut={() => ctx.setStatus("idle")}
                 className="relative transition-colors duration-300 ease-out hover:!text-muted group-hover:text-primary"
@@ -176,10 +181,11 @@ function SocialsContent() {
                     {ctx.status === "email" && (
                         <motion.div
                             variants={icon}
+                            custom={{ rotateRight: true }}
                             initial="hidden"
                             animate="show"
                             exit="exit"
-                            className="size-8 absolute -top-10 left-1/2 -translate-x-1/2 -rotate-3 overflow-hidden rounded-lg bg-black shadow-mixed"
+                            className="size-8 absolute -top-10 left-1/2 -translate-x-1/2 rotate-3 overflow-hidden rounded-lg bg-black shadow-mixed"
                         >
                             <Image
                                 src={"./socials/protonmail.png"}
@@ -192,6 +198,34 @@ function SocialsContent() {
                     )}
                 </AnimatePresence>
                 <span>email</span>
+            </Link>
+            <Link
+                href="https://cal.com/dromzeh"
+                target="_blank"
+                onMouseOver={() => ctx.setStatus("calcom")}
+                onMouseOut={() => ctx.setStatus("idle")}
+                className="relative transition-colors duration-300 ease-out hover:!text-muted group-hover:text-primary"
+            >
+                <AnimatePresence>
+                    {ctx.status === "calcom" && (
+                        <motion.div
+                            variants={icon}
+                            initial="hidden"
+                            animate="show"
+                            exit="exit"
+                            className="size-8 absolute -top-10 left-1/2 -translate-x-1/2 -rotate-3 overflow-hidden rounded-lg bg-black shadow-mixed"
+                        >
+                            <Image
+                                src={"./socials/calcom.png"}
+                                width={32}
+                                height={32}
+                                alt="cal"
+                                className="size-full"
+                            />
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+                <span>cal</span>
             </Link>
         </div>
     );
