@@ -90,6 +90,19 @@
         animation-delay: var(--delay);
     }
 
+    .caret {
+        animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+        from, to {
+            opacity: 1,
+        }
+        50% {
+            opacity: 0;
+        }
+    }
+
     @keyframes pulse {
         0% {
             stroke-dashoffset: var(--dash-width);

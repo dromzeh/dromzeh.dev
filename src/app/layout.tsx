@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-// import { GeistMono } from "geist/font/mono";
-import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+// import { GeistSans } from "geist/font/sans";
 import { CommandMenu } from "~/components/navigation/command";
 import { Toaster } from "~/components/ui/sonner";
 // import { HydrationOverlay } from "@builder.io/react-hydration-overlay";
@@ -10,7 +10,7 @@ import { ThemeToggle } from "~/components/navigation/theme-toggle";
 import { FramerOverlay } from "~/components/navigation/framer-overlay";
 import { NavigationBar } from "~/components/navigation/navigation-bar";
 
-const geist = GeistSans;
+const geist = GeistMono;
 
 export const metadata: Metadata = {
     title: "dromzeh.dev",

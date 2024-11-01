@@ -43,15 +43,14 @@ export function LanyardProfile() {
 
     return loading || !status || !status.discord_user ? (
         <div className="flex flex-row space-x-2 items-center">
-            <Skeleton className="h-[64px] mr-2 w-[64px] rounded-lg" />
             <div className="flex flex-col space-y-1">
-                <Skeleton className="h-4 w-[4.5rem]" />
-                <Skeleton className="h-4 translate-y-1 w-36" />
+                <Skeleton className="h-4 w-48" />
+                <Skeleton className="h-4 translate-y-1 w-56" />
             </div>
         </div>
     ) : (
         <div className="flex flex-row space-x-2 items-center">
-            <div className="relative mr-2">
+            {/* <div className="relative mr-2">
                 <Image
                     src={`https://cdn.discordapp.com/avatars/${status.discord_user.id}/${status.discord_user.avatar}`}
                     alt="discord avatar"
@@ -67,13 +66,18 @@ export function LanyardProfile() {
                         className={`relative inline-flex rounded-full ${statusColorMap[status.discord_status]} size-4`}
                     />
                 </span>
-            </div>
+            </div> */}
             <div className="flex flex-col space-y-2">
                 <p className="text-foreground">
-                    {status.discord_user.username}
+                    Marcel Alexander Elias<span className="caret">_</span>
                 </p>
 
                 <div className="flex flex-row space-x-2 items-center group">
+                    <div>
+                        <span
+                            className={`relative inline-flex animate-pulse rounded-full ${statusColorMap[status.discord_status]} size-2 translate-y-[-1]`}
+                        />
+                    </div>
                     <div className="text-muted-foreground text-sm">
                         {status.listening_to_spotify ? (
                             <div className="flex flex-row space-x-1 items-center">

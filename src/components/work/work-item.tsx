@@ -9,8 +9,8 @@ export function WorkItem(props: Work) {
                     {props.name}
                 </h3>
             </Link>
-            <div className="flex-grow border-t border-dotted border-gray-400"></div>
-            <p>{props.role}</p>
+            <div className="flex-grow max-sm:hidden border-t border-dotted border-gray-400"></div>
+            <p className="max-sm:hidden">{props.role}</p>
         </div>
     );
 }
