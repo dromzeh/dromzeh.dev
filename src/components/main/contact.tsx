@@ -77,13 +77,13 @@ function SocialsContent() {
                                 src={"./socials/x.png"}
                                 width={32}
                                 height={32}
-                                alt="x (twitter)"
+                                alt="x"
                                 className="size-full"
                             />
                         </motion.div>
                     )}
                 </AnimatePresence>
-                <span>x (twitter)</span>
+                <span>x</span>
             </Link>
             <Link
                 href="https://github.com/dromzeh"
