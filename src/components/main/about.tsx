@@ -16,10 +16,7 @@ export function About() {
                 <h2 className="text-muted-foreground/60 mb-2">About Me</h2>
                 <div className="space-y-2 text-muted-foreground">
                     <p>I'm Marcel, a {<Age />} year old Software Engineer.</p>
-                    <p>
-                        Based in South West England & moving to Central London
-                        soon.
-                    </p>
+                    <p>Currently in the process of moving to Central London.</p>
                 </div>
             </section>
             <section>
@@ -44,9 +41,7 @@ export function About() {
                         </Link>
                         .
                     </p>
-                    <p>
-                        Pursing a Bachelors in Computer Science & Law part-time.
-                    </p>
+                    <p>Currently learning Animation and Video Editing.</p>
                 </div>
             </section>
         </>
