@@ -35,11 +35,11 @@ export default function Contact() {
                                 help! You can either email me with your
                                 findings, or join Originoid's discord at{" "}
                                 <Link
-                                    href="https://discord.gg/originoid"
+                                    href="https://discord.gg/noid"
                                     target="_blank"
                                     className="text-foreground hover:text-muted-foreground/50 transition-all duration-150 cursor-pointer"
                                 >
-                                    discord.gg/originoid
+                                    discord.gg/noid
                                 </Link>
                                 .
                             </p>
