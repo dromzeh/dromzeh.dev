@@ -16,17 +16,20 @@ export function About() {
                 <h2 className="text-muted-foreground/60 mb-2">About Me</h2>
                 <div className="space-y-2 text-muted-foreground">
                     <p>
-                        I'm Marcel, {<Age />}-year-old Software Engineer
-                        planning on relocating to Central London this year.
+                        I'm Marcel (a.k.a. "dromzeh"), a {<Age />}-year-old
+                        Software Engineer.
                     </p>
-                    <p>Beyond technical work, I play 4K and 5K VSRGs.</p>
+                    <p>
+                        Beyond technical work, I play far too many 4K and 5K
+                        VSRGs.
+                    </p>
                 </div>
             </section>
             <section>
                 <h2 className="text-muted-foreground/60 mb-2">Current Focus</h2>
                 <div className="space-y-2 text-muted-foreground">
                     <p>
-                        CEO of{" "}
+                        Full-time Founder/CEO @{" "}
                         <Link
                             href="https://originoid.ltd"
                             target="_blank"
@@ -34,7 +37,7 @@ export function About() {
                         >
                             Originoid LTD
                         </Link>
-                        , developing{" "}
+                        , working on{" "}
                         <Link
                             href="https://wanderer.moe"
                             target="_blank"
@@ -53,7 +56,8 @@ export function About() {
                         .
                     </p>
                     <p>
-                        Currently learning App Development and Web Animations.
+                        Alongside, I'm learning Mobile App Development and Web
+                        Animations.
                     </p>
                 </div>
             </section>

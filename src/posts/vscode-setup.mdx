@@ -1,9 +1,11 @@
 ---
 title: My VSCode Configuration
-description: My minimal VSCode configuration for development.
-date: 10-07-2024
+description: My VSCode configuration for development.
+date: 01-06-2025
 slug: vscode-config
 ---
+
+This post has been updated to reflect my current VSCode config as of 1st June 2025. The below screenshot is my old config with [Apc Customize UI++](https://marketplace.visualstudio.com/items?itemName=drcika.apc-extension) and [GlassIt-VSC](https://marketplace.visualstudio.com/items?itemName=s-nlf-fh.glassit).
 
 <img src="https://cdn.marcel.best/ShareX/2024/07/KAGGcjg9nz.png" />
 
@@ -15,19 +17,16 @@ I decided to start fresh and only install the extensions I need. Here's my minim
 
 ## The Extensions I Use
 
-Here's a list of the extensions I use in my minimal VSCode setup, alongside the required language support extensions:
+Here's a list of the extensions I use in my setup, alongside the required language support extensions:
 
 - [Mellow](https://marketplace.visualstudio.com/items?itemName=kvrohit.mellow-theme) - My favorite theme for VSCode.
-- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) - Code formatter
-- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) - Tailwind CSS IntelliSense
-- [Pretty Typescript Errors](https://marketplace.visualstudio.com/items?itemName=YoavBls.pretty-ts-errors) - Better TypeScript error messages
-- [Wakatime](https://marketplace.visualstudio.com/items?itemName=WakaTime.vscode-wakatime) - Time tracking
-- [Apc Customize UI++](https://marketplace.visualstudio.com/items?itemName=drcika.apc-extension) - Custom UI
-- [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost) - Display package sizes
-- [GlassIt-VSC](https://marketplace.visualstudio.com/items?itemName=s-nlf-fh.glassit) - Transparency effect
-- [Github Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) - AI pair programming
-- [Catppucin Perfect Icons](https://marketplace.visualstudio.com/items?itemName=thang-nm.catppuccin-perfect-icons) - Icon theme
-- [Discord Rich Presence](https://marketplace.visualstudio.com/items?itemName=LeonardSSH.vscord) - Shows your current project in Discord
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) - Code formatter.
+- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) - Tailwind CSS IntelliSense.
+- [Pretty Typescript Errors](https://marketplace.visualstudio.com/items?itemName=YoavBls.pretty-ts-errors) - Better TypeScript error messages.
+- [Wakatime](https://marketplace.visualstudio.com/items?itemName=WakaTime.vscode-wakatime) - Time tracking.
+- [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost) - Displays package sizes: I notice some performance issues with this and therefore rarely use this now.
+- [Catppucin Perfect Icons](https://marketplace.visualstudio.com/items?itemName=thang-nm.catppuccin-perfect-icons) - Icon theme.
+- [Discord Rich Presence](https://marketplace.visualstudio.com/items?itemName=LeonardSSH.vscord) - Shows your current project in Discord.
 
 ## My Settings
 
@@ -85,52 +84,6 @@ Below is my `settings.json`, feel free to use it as a reference for your own con
     
     "window.titleBarStyle": "native",
     "window.customTitleBarVisibility": "never",
-
-    "apc.activityBar": {
-        "position": "bottom",
-        "hideSettings": true,
-        "size": 28
-    },
-    
-    "apc.header": {
-        "height": 37,
-    },
-    
-    "apc.menubar.compact": true,
-    
-    "apc.electron": {
-        "titleBarStyle": "hidden",
-        "frame": false,
-        "trafficLightPosition": {
-            "x": 12,
-            "y": 10
-        }
-    },
-    
-    "apc.font.family": "GeistMono Nerd Font",
-    
-    "apc.monospace.font.family": "GeistMono Nerd Font",
-    
-    "apc.statusBar": {
-        "position": "editor-bottom",
-        "height": 28,
-        "fontSize": 12
-    },
-    
-    "apc.stylesheet": {
-        ".sidebar > .composite": "height: 12px !important",
-        ".composite.title": "display: block !important",
-        ".monaco-workbench .part.sidebar .title-actions .actions-container": "justify-content: space-evenly !important",
-        ".title-label": "display: none !important",
-        ".title-actions": "display: none !important",
-        ".tabs-and-actions-container > .editor-actions": "display: none !important",
-        ".titlebar-center": "display: none !important",
-        ".titlebar-right": "display: none !important",
-        ".inline-tabs-placeholder": "display: none !important",
-        ".split-view-view .visible": "background-color: #2a2a2d !important",
-    },
-
-    "glassit.alpha": 250,
 
     // discord rpc
     "vscord.status.idle.check": false,
