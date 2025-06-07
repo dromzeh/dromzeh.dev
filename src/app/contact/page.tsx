@@ -18,48 +18,39 @@ export default function Contact() {
                         </h2>
                         <div className="space-y-2 text-muted-foreground">
                             <p>
-                                If you want to share an idea, ask a question, or
-                                simply want to say hello, please don't hesitate
-                                to reach out to me with the contact methods
-                                below.
+                                Feel free to reach out to me using any of the
+                                contact methods listed below.
                             </p>
                             <p>
-                                To ensure a safe and comfortable interaction for
-                                everyone, I kindly request that only individuals
-                                16 years and older reach out to me directly if
-                                we've never spoke before.
+                                I won't reply to anything regarding project
+                                updates/timelines & personal, sensitive,
+                                controversial or potentially triggering
+                                subjects.
                             </p>
                             <p>
-                                If you're under 16 and have discovered a bug or
-                                issue with any of my projects, I still want to
-                                help! You can either email me with your
-                                findings, or join Originoid's discord at{" "}
+                                For issues considered urgent or problems with
+                                any of my projects, email me directly with your
+                                findings; include "URGENT" in the subject.
+                            </p>
+                            <p>
+                                Please be direct and provide useful context to
+                                help me understand better.{" "}
                                 <Link
-                                    href="https://discord.gg/noid"
+                                    href="https://nohello.net/en/"
                                     target="_blank"
-                                    className="text-foreground hover:text-muted-foreground/50 transition-all duration-150 cursor-pointer"
+                                    className="text-primary hover:text-muted duration-300 transition-colors"
                                 >
-                                    discord.gg/noid
-                                </Link>
-                                .
+                                    Vague messages
+                                </Link>{" "}
+                                means no reply.
                             </p>
                             <p>
-                                When you reach out, a little context goes a long
-                                way. I truly appreciate messages that are clear,
-                                thoughtful, and give me a sense of what you're
-                                hoping to discuss. The more details you can
-                                share, the better I can understand and help you.
-                            </p>
-                            <p>
-                                Being transparent, I receive quite a few
-                                messages, which means my responses might not be
-                                instantaneous. Please know this isn't personal —
-                                I read and value every message and normally
-                                reply within 24 hours. If you don't hear back
-                                after a while, a gentle nudge is always welcome.
+                                Responses are prioritized based on the topic and
+                                urgency due to the amount of messages I receive.
                             </p>
                         </div>
                     </section>
+
                     <ContactContainer />
                 </section>
             </div>
