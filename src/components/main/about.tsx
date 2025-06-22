@@ -17,14 +17,15 @@ export function About() {
                 <div className="space-y-2 text-muted-foreground">
                     <p>
                         I'm Marcel (a.k.a. "dromzeh"), a {<Age />}-year-old
-                        Software Engineer.
+                        developer and former systems engineer.
                     </p>
                     <p>
-                        Beyond technical work, I play far too many 4K and 5K
-                        VSRGs.
+                        My interests lie in low-level programming, reverse
+                        engineering, hardware, and systems work.
                     </p>
                 </div>
             </section>
+
             <section>
                 <h2 className="text-muted-foreground/60 mb-2">Current Focus</h2>
                 <div className="space-y-2 text-muted-foreground">
@@ -39,25 +40,25 @@ export function About() {
                         </Link>
                         , working on{" "}
                         <Link
-                            href="https://wanderer.moe"
-                            target="_blank"
-                            className="text-foreground hover:text-muted-foreground/50 transition-all duration-150 cursor-pointer"
-                        >
-                            wanderer.moe
-                        </Link>{" "}
-                        and{" "}
-                        <Link
                             href="https://originoid.co"
                             target="_blank"
                             className="text-foreground hover:text-muted-foreground/50 transition-all duration-150 cursor-pointer"
                         >
                             originoid.co
+                        </Link>{" "}
+                        and{" "}
+                        <Link
+                            href="https://wanderer.moe"
+                            target="_blank"
+                            className="text-foreground hover:text-muted-foreground/50 transition-all duration-150 cursor-pointer"
+                        >
+                            wanderer.moe
                         </Link>
                         .
                     </p>
                     <p>
-                        Alongside, I'm learning Mobile App Development and Web
-                        Animations.
+                        Currently working primarily in web development, learning
+                        mobile development and web animations alongside.
                     </p>
                 </div>
             </section>
