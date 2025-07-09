@@ -60,6 +60,16 @@ export function About() {
                         Currently working primarily in web development, learning
                         mobile development and web animations alongside.
                     </p>
+                    <p>
+                        Further information can be found on my{" "}
+                        <Link
+                            href="/about-extended"
+                            className="text-foreground hover:text-muted-foreground/50 transition-all duration-150 cursor-pointer"
+                        >
+                            extended about me
+                        </Link>
+                        .
+                    </p>
                 </div>
             </section>
         </>
@@ -69,7 +79,11 @@ export function About() {
 const birthTimestamp = 1156114801000;
 const initialAge = 18;
 
-export function Age() {
+interface AgeProps {
+    fixedValue?: number;
+}
+
+export function Age({ fixedValue = 5 }: AgeProps) {
     const [age, setAge] = React.useState<number>(initialAge);
     React.useEffect(() => {
         const intervalId = setInterval(() => {
@@ -82,7 +96,7 @@ export function Age() {
             <Tooltip>
                 <TooltipTrigger asChild>
                     <span className="text-foreground hover:text-muted-foreground/50 transition-all duration-150 cursor-pointer">
-                        {age.toFixed(4)}
+                        {age.toFixed(fixedValue)}
                     </span>
                 </TooltipTrigger>
                 <TooltipContent className="text-center max-w-[250px]">
