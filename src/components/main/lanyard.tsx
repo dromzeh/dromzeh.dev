@@ -112,7 +112,7 @@ export function LanyardProfile() {
                             trigger={triggerScramble}
                             onScrambleComplete={handleScrambleComplete}
                         >
-                            {`not playing anything on spotify`}
+                            {`${statusMap[status.discord_status]} on Discord`}
                         </TextScramble>
                     )}
                 </div>
