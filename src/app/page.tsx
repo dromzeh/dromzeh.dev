@@ -13,15 +13,15 @@ export const metadata: Metadata = {
 
 export default function Home() {
     return (
-        <div className="min-h-screen max-w-xl mx-auto flex items-center justify-center">
-            <div className="py-24 px-6 text-sm">
-                <section className="flex flex-col space-y-8">
-                    <LanyardProfile />
+        <div className="min-h-screen max-w-2xl mx-auto px-6 py-16">
+            <div className="max-w-lg">
+                <main className="space-y-12">
                     <ContactContainer />
+                    <LanyardProfile />
                     <About />
-                    <PostContainer />
                     <WorkContainer />
-                </section>
+                    <PostContainer />
+                </main>
             </div>
         </div>
     );

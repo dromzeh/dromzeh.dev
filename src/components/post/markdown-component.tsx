@@ -32,11 +32,25 @@ function CodeBlock(
             <Code
                 {...rest}
                 lineNumbers
-                className={`rounded-sm max-w-[calc(100vw-2rem)] overflow-x-auto`}
+                className={`rounded-sm max-w-[calc(100vw-2rem)] overflow-x-auto text-sm normal-case`}
             >
                 {children}
             </Code>
         </div>
+    );
+}
+
+function Ul(
+    props: React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLUListElement>,
+        HTMLUListElement
+    >,
+) {
+    const { children, ...rest } = props;
+    return (
+        <ul {...rest} className="list-disc text-sm">
+            {children}
+        </ul>
     );
 }
 
@@ -48,7 +62,7 @@ function Strong(
 ) {
     const { children, ...rest } = props;
     return (
-        <b {...rest} className="text-foreground font-semibold">
+        <b {...rest} className="text-foreground font-semibold text-sm">
             {children}
         </b>
     );
@@ -85,6 +99,20 @@ function CustomLink(
     );
 }
 
+function Text(
+    props: React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLParagraphElement>,
+        HTMLParagraphElement
+    >,
+) {
+    const { children, ...rest } = props;
+    return (
+        <p {...rest} className="text-sm my-3">
+            {children}
+        </p>
+    );
+}
+
 function Video(
     props: React.DetailedHTMLProps<
         React.VideoHTMLAttributes<HTMLVideoElement>,
@@ -107,8 +135,8 @@ function h1(
 ) {
     const { children, ...rest } = props;
     return (
-        <h1 {...rest} className="text-foreground text-2xl font-semibold pt-8">
-            {children}
+        <h1 {...rest} className="text-foreground font-semibold mt-8 py-3">
+            # {children}
         </h1>
     );
 }
@@ -121,8 +149,8 @@ function h2(
 ) {
     const { children, ...rest } = props;
     return (
-        <h2 {...rest} className="text-foreground text-xl font-semibold pt-8">
-            {children}
+        <h2 {...rest} className="text-foreground font-semibold mt-8 py-3">
+            ## {children}
         </h2>
     );
 }
@@ -135,8 +163,8 @@ function h3(
 ) {
     const { children, ...rest } = props;
     return (
-        <h3 {...rest} className="text-foreground text-lg font-semibold pt-8">
-            {children}
+        <h3 {...rest} className="text-foreground font-semibold mt-8 py-3">
+            ### {children}
         </h3>
     );
 }
@@ -166,7 +194,7 @@ function ListItem(
 ) {
     const { children, ...rest } = props;
     return (
-        <li {...rest} className="ml-4 list-disc">
+        <li {...rest} className="ml-4 list- my-2">
             {children}
         </li>
     );
@@ -185,4 +213,6 @@ export const mdxComponents: MDXComponents = {
     h3: h3,
     code: inlineCode,
     li: ListItem,
+    p: Text,
+    ul: Ul,
 };

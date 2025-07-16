@@ -28,6 +28,40 @@ const Context = React.createContext<ContextType>({
     setStatus: () => null,
 });
 
+const socials = [
+    {
+        id: "x",
+        href: "https://x.com/dromzeh",
+        label: "x",
+        icon: "./socials/x.png",
+    },
+    {
+        id: "github",
+        href: "https://github.com/dromzeh",
+        label: "github",
+        icon: "./socials/github.png",
+    },
+    {
+        id: "discord",
+        href: "https://discord.com/users/492731761680187403",
+        label: "discord",
+        icon: "./socials/discord.png",
+    },
+    {
+        id: "tiktok",
+        href: "https://tiktok.com/@dromzeh",
+        label: "tiktok",
+        icon: "./socials/tiktok.png",
+    },
+    {
+        id: "email",
+        href: "mailto:marcel@dromzeh.dev",
+        label: "email",
+        icon: "./socials/protonmail.png",
+        target: undefined, // email doesn't need target="_blank"
+    },
+];
+
 function SocialsContent() {
     const ctx = React.useContext<ContextType>(Context);
 
@@ -55,178 +89,49 @@ function SocialsContent() {
     };
 
     return (
-        <div className="group flex items-center gap-4 text-primary">
-            <Link
-                href="https://x.com/dromzeh"
-                target="_blank"
-                onMouseOver={() => ctx.setStatus("x")}
-                onMouseOut={() => ctx.setStatus("idle")}
-                className="relative transition-colors duration-300 ease-out hover:!text-muted group-hover:text-primary"
-            >
-                <AnimatePresence>
-                    {ctx.status === "x" && (
-                        <motion.div
-                            variants={icon}
-                            custom={{ rotateRight: true }}
-                            initial="hidden"
-                            animate="show"
-                            exit="exit"
-                            className="size-8 absolute -top-10 left-1/2 rotate-3 rounded-lg bg-black p-2 shadow-mixed"
-                        >
-                            <Image
-                                src={"./socials/x.png"}
-                                width={32}
-                                height={32}
-                                alt="x"
-                                className="size-full"
-                            />
-                        </motion.div>
+        <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+            {socials.map((social, index) => (
+                <React.Fragment key={social.id}>
+                    <Link
+                        href={social.href}
+                        target={
+                            social.target !== undefined
+                                ? social.target
+                                : "_blank"
+                        }
+                        onMouseOver={() => ctx.setStatus(social.id)}
+                        onMouseOut={() => ctx.setStatus("idle")}
+                        className="relative hover:text-foreground transition-colors duration-200"
+                    >
+                        <AnimatePresence>
+                            {ctx.status === social.id && (
+                                <motion.div
+                                    variants={icon}
+                                    custom={{ rotateRight: index % 2 === 0 }}
+                                    initial="hidden"
+                                    animate="show"
+                                    exit="exit"
+                                    className={`size-8 absolute -top-10 left-1/2 -translate-x-1/2 overflow-hidden rounded-lg bg-black shadow-mixed ${
+                                        social.id === "x" ? "p-1.5" : ""
+                                    } ${index % 2 === 0 ? "rotate-3" : "-rotate-3"}`}
+                                >
+                                    <Image
+                                        src={social.icon}
+                                        width={32}
+                                        height={32}
+                                        alt={social.label}
+                                        className="w-full h-full object-cover"
+                                    />
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                        <span>{social.label}</span>
+                    </Link>
+                    {index < socials.length - 1 && (
+                        <span className="text-muted-foreground/40">//</span>
                     )}
-                </AnimatePresence>
-                <span>x</span>
-            </Link>
-            <Link
-                href="https://github.com/dromzeh"
-                target="_blank"
-                onMouseOver={() => ctx.setStatus("github")}
-                onMouseOut={() => ctx.setStatus("idle")}
-                className="relative transition-colors duration-300 ease-out hover:!text-muted group-hover:text-primary"
-            >
-                <AnimatePresence>
-                    {ctx.status === "github" && (
-                        <motion.div
-                            variants={icon}
-                            initial="hidden"
-                            animate="show"
-                            exit="exit"
-                            className="size-8 absolute -top-10 left-1/2 -translate-x-1/2 -rotate-3 overflow-hidden rounded-lg bg-black shadow-mixed"
-                        >
-                            <Image
-                                src={"./socials/github.png"}
-                                width={32}
-                                height={32}
-                                alt="github"
-                                className="size-full"
-                            />
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-                <span>github</span>
-            </Link>
-            <Link
-                href="https://discord.com/users/492731761680187403"
-                target="_blank"
-                onMouseOver={() => ctx.setStatus("discord")}
-                onMouseOut={() => ctx.setStatus("idle")}
-                className="relative transition-colors duration-300 ease-out hover:!text-muted group-hover:text-primary"
-            >
-                <AnimatePresence>
-                    {ctx.status === "discord" && (
-                        <motion.div
-                            variants={icon}
-                            custom={{ rotateRight: true }}
-                            initial="hidden"
-                            animate="show"
-                            exit="exit"
-                            className="size-8 absolute -top-10 left-1/2 -translate-x-1/2 rotate-3 overflow-hidden rounded-lg bg-black shadow-mixed"
-                        >
-                            <Image
-                                src={"./socials/discord.png"}
-                                width={32}
-                                height={32}
-                                alt="discord"
-                                className="size-full"
-                            />
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-                <span>discord</span>
-            </Link>
-            <Link
-                href="https://tiktok.com/@dromzeh"
-                target="_blank"
-                onMouseOver={() => ctx.setStatus("tiktok")}
-                onMouseOut={() => ctx.setStatus("idle")}
-                className="relative transition-colors duration-300 ease-out hover:!text-muted group-hover:text-primary"
-            >
-                <AnimatePresence>
-                    {ctx.status === "tiktok" && (
-                        <motion.div
-                            variants={icon}
-                            initial="hidden"
-                            animate="show"
-                            exit="exit"
-                            className="size-8 absolute -top-10 left-1/2 -translate-x-1/2 -rotate-3 overflow-hidden rounded-lg bg-black shadow-mixed"
-                        >
-                            <Image
-                                src={"./socials/tiktok.png"}
-                                width={32}
-                                height={32}
-                                alt="tiktok"
-                                className="size-full"
-                            />
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-                <span>tiktok</span>
-            </Link>
-            <Link
-                href="mailto:marcel@dromzeh.dev"
-                target="_blank"
-                onMouseOver={() => ctx.setStatus("email")}
-                onMouseOut={() => ctx.setStatus("idle")}
-                className="relative transition-colors duration-300 ease-out hover:!text-muted group-hover:text-primary"
-            >
-                <AnimatePresence>
-                    {ctx.status === "email" && (
-                        <motion.div
-                            variants={icon}
-                            custom={{ rotateRight: true }}
-                            initial="hidden"
-                            animate="show"
-                            exit="exit"
-                            className="size-8 absolute -top-10 left-1/2 -translate-x-1/2 rotate-3 overflow-hidden rounded-lg bg-black shadow-mixed"
-                        >
-                            <Image
-                                src={"./socials/protonmail.png"}
-                                width={32}
-                                height={32}
-                                alt="email"
-                                className="size-full"
-                            />
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-                <span>email</span>
-            </Link>
-            <Link
-                href="https://cal.com/dromzeh"
-                target="_blank"
-                onMouseOver={() => ctx.setStatus("calcom")}
-                onMouseOut={() => ctx.setStatus("idle")}
-                className="relative transition-colors duration-300 ease-out hover:!text-muted group-hover:text-primary"
-            >
-                <AnimatePresence>
-                    {ctx.status === "calcom" && (
-                        <motion.div
-                            variants={icon}
-                            initial="hidden"
-                            animate="show"
-                            exit="exit"
-                            className="size-8 absolute -top-10 left-1/2 -translate-x-1/2 -rotate-3 overflow-hidden rounded-lg bg-black shadow-mixed"
-                        >
-                            <Image
-                                src={"./socials/calcom.png"}
-                                width={32}
-                                height={32}
-                                alt="cal"
-                                className="size-full"
-                            />
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-                <span>cal</span>
-            </Link>
+                </React.Fragment>
+            ))}
         </div>
     );
 }

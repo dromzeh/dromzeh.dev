@@ -11,68 +11,55 @@ import * as React from "react";
 
 export function About() {
     return (
-        <>
-            <section>
-                <h2 className="text-muted-foreground/60 mb-2">About Me</h2>
-                <div className="space-y-2 text-muted-foreground">
-                    <p>
-                        I'm Marcel (a.k.a. "dromzeh"), a {<Age />}-year-old
-                        developer and former systems engineer.
-                    </p>
-                    <p>
-                        My interests lie in low-level programming, reverse
-                        engineering, hardware, and systems work.
-                    </p>
-                </div>
-            </section>
-
-            <section>
-                <h2 className="text-muted-foreground/60 mb-2">Current Focus</h2>
-                <div className="space-y-2 text-muted-foreground">
-                    <p>
-                        Full-time Founder/CEO @{" "}
-                        <Link
-                            href="https://originoid.ltd"
-                            target="_blank"
-                            className="text-foreground hover:text-muted-foreground/50 transition-all duration-150 cursor-pointer"
-                        >
-                            Originoid LTD
-                        </Link>
-                        , working on{" "}
-                        <Link
-                            href="https://originoid.co"
-                            target="_blank"
-                            className="text-foreground hover:text-muted-foreground/50 transition-all duration-150 cursor-pointer"
-                        >
-                            originoid.co
-                        </Link>{" "}
-                        and{" "}
-                        <Link
-                            href="https://wanderer.moe"
-                            target="_blank"
-                            className="text-foreground hover:text-muted-foreground/50 transition-all duration-150 cursor-pointer"
-                        >
-                            wanderer.moe
-                        </Link>
-                        .
-                    </p>
-                    <p>
-                        Currently working primarily in web development, learning
-                        mobile development and web animations alongside.
-                    </p>
-                    <p>
-                        Further information can be found on my{" "}
-                        <Link
-                            href="/about-extended"
-                            className="text-foreground hover:text-muted-foreground/50 transition-all duration-150 cursor-pointer"
-                        >
-                            extended about me
-                        </Link>
-                        .
-                    </p>
-                </div>
-            </section>
-        </>
+        <section>
+            <div className="space-y-3 text-sm">
+                <p className="text-muted-foreground leading-relaxed">
+                    I'm Marcel (a.k.a. "dromzeh"), a {<Age />}-year-old
+                    developer and former systems engineer.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                    My interests lie in low-level programming, reverse
+                    engineering, hardware, and systems work.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                    Full-time Founder/CEO @{" "}
+                    <Link
+                        href="https://originoid.ltd"
+                        target="_blank"
+                        className="text-foreground hover:text-muted-foreground/70 transition-colors duration-200"
+                    >
+                        Originoid LTD
+                    </Link>
+                    , working on{" "}
+                    <Link
+                        href="https://originoid.co"
+                        target="_blank"
+                        className="text-foreground hover:text-muted-foreground/70 transition-colors duration-200"
+                    >
+                        originoid.co
+                    </Link>{" "}
+                    and{" "}
+                    <Link
+                        href="https://wanderer.moe"
+                        target="_blank"
+                        className="text-foreground hover:text-muted-foreground/70 transition-colors duration-200"
+                    >
+                        wanderer.moe
+                    </Link>
+                    .
+                </p>
+                <p>
+                    Further information can be found on my{" "}
+                    <Link
+                        href="/about-extended"
+                        className="text-foreground hover:text-muted-foreground/70 transition-colors duration-200"
+                    >
+                        extended about me
+                    </Link>
+                    .
+                </p>
+            </div>
+        </section>
     );
 }
 
@@ -95,7 +82,7 @@ export function Age({ fixedValue = 5 }: AgeProps) {
         <TooltipProvider delayDuration={100}>
             <Tooltip>
                 <TooltipTrigger asChild>
-                    <span className="text-foreground hover:text-muted-foreground/50 transition-all duration-150 cursor-pointer">
+                    <span className="text-foreground hover:text-muted-foreground/70 transition-colors duration-200 cursor-pointer">
                         {age.toFixed(fixedValue)}
                     </span>
                 </TooltipTrigger>
