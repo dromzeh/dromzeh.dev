@@ -19,8 +19,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     if (!post) return notFound();
 
     return {
-        title: `${post.title} • dromzeh.dev`,
-        description: post.description,
+        title: `${post.title.toLowerCase()} • dromzeh.dev`,
+        description: post.description.toLowerCase(),
         metadataBase: new URL("https://dromzeh.dev"),
     };
 }
@@ -44,35 +44,32 @@ async function PostPage({ params: { id } }: Props) {
         year: "numeric",
     });
 
-    // const readTime = Math.ceil(post?.body!.split(" ").length / 200);
-
     return (
-        <div className="min-h-screen max-w-xl mx-auto flex items-center justify-center">
-            <div className="py-24 px-6 text-sm">
-                <div className="flex flex-col space-y-8">
-                    <div className="flex flex-row space-x-2 items-center justify-between group">
-                        <span className="text-neutral-500">
-                            <Link
-                                href="/"
-                                className="text-foreground group-hover:text-muted-foreground/50 transition-colors duration-150 hover:cursor-pointer"
-                            >
-                                Go Back
-                            </Link>
-                        </span>
-                        <div className="flex-grow border-t border-dotted border-gray-400"></div>
-                        <span className="text-muted-foreground">
+        <div className="min-h-screen max-w-2xl mx-auto px-6 py-16">
+            <div className="max-w-lg">
+                {/* Header with back navigation */}
+                <header className="mb-12">
+                    <div className="flex items-center justify-between text-sm text-muted-foreground mb-8">
+                        <Link
+                            href="/"
+                            className="hover:text-foreground transition-colors duration-200"
+                        >
+                            ← back
+                        </Link>
+                        <time className="text-muted-foreground/60">
                             {formattedDate}
-                        </span>
+                        </time>
                     </div>
-                    <div className="flex flex-col space-y-2">
-                        <h1 className="text-foreground text-2xl font-semibold">
-                            {post.title}
-                        </h1>
-                    </div>
-                </div>
-                <section className="flex flex-col space-y-2 mt-8 max-w-xl">
+
+                    <h1 className="text-lg font-medium text-foreground leading-tight">
+                        {post.title}
+                    </h1>
+                </header>
+
+                {/* Post Content */}
+                <article className="prose prose-neutral dark:prose-invert max-w-none">
                     <PostBody>{post.body!}</PostBody>
-                </section>
+                </article>
             </div>
         </div>
     );

@@ -6,13 +6,13 @@ export async function PostContainer() {
     const posts = await getPosts();
 
     return (
-        <div>
-            <h2 className="text-muted-foreground/60 mb-2">Writings</h2>
-            <div className="flex flex-col space-y-2">
+        <section>
+            <h2 className="text-foreground text-sm font-medium mb-4">posts</h2>
+            <div className="space-y-3">
                 {posts?.map((post: Post) => (
                     <PostItem key={post.slug} {...post} />
                 ))}
             </div>
-        </div>
+        </section>
     );
 }

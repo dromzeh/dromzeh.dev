@@ -8,13 +8,15 @@ interface WorkContainerProps {
 
 export function WorkContainer({ work = AllWork.work }: WorkContainerProps) {
     return (
-        <div>
-            <h2 className="text-muted-foreground/60 mb-2">Work</h2>
-            <div className="flex flex-col space-y-2">
+        <section>
+            <h2 className="text-foreground text-sm font-medium mb-4">
+                projects
+            </h2>
+            <div className="space-y-3">
                 {work?.map((work: Work) => (
                     <WorkItem key={work.name} {...work} />
                 ))}
             </div>
-        </div>
+        </section>
     );
 }
