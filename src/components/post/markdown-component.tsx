@@ -194,7 +194,7 @@ function ListItem(
 ) {
     const { children, ...rest } = props;
     return (
-        <li {...rest} className="ml-4 list- my-2">
+        <li {...rest} className="ml-4 list-disc my-2 text-sm marker:text-foreground">
             {children}
         </li>
     );
