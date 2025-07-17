@@ -47,7 +47,6 @@ async function PostPage({ params: { id } }: Props) {
     return (
         <div className="min-h-screen max-w-2xl mx-auto px-6 py-16">
             <div className="max-w-lg">
-                {/* Header with back navigation */}
                 <header className="mb-12">
                     <div className="flex items-center justify-between text-sm text-muted-foreground mb-8">
                         <Link
@@ -66,7 +65,6 @@ async function PostPage({ params: { id } }: Props) {
                     </h1>
                 </header>
 
-                {/* Post Content */}
                 <article className="prose prose-neutral dark:prose-invert max-w-none">
                     <PostBody>{post.body!}</PostBody>
                 </article>
