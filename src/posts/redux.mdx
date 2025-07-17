@@ -11,25 +11,21 @@ To enhance the user experience further, I also wanted to synchronize the selecte
 
 <Video src="https://cdn.marcel.best/ShareX/2024/06/NVIDIA_Share_EcVTfGPyHw.mp4" />
 
-This article details my approach to implementing this feature using Next.js, Redux, Redux Persist, and Redux State Sync.
-
 ## The Challenge I Faced
 
-My goal was to create a system that could:
+I needed a system that could:
 
 1. Share state across the entire application
 2. Persist state through page refreshes and tab closures
 3. Synchronize state in real-time across multiple browser tabs
 
-I quickly realized that while React's Context API can handle cross-component state sharing, it falls short for persistence and cross-tab synchronization.
+I quickly realized that while React's Context API can handle cross-component state sharing, it falls short for persistence & having cross-tab synchronization.
 
-## My Solution: Redux, Redux Persist, and Redux State Sync
-
-To address these challenges, I implemented state management with Redux Persist and Redux State Sync. Here's how I approached it:
+My Solution: Redux, Redux Persist, and Redux State Sync.
 
 ### Storage Implementation
 
-First, I created a hybrid storage solution to accommodate both client-side and server-side rendering:
+First, we need a storage implementation that correctly accommodate both client-side & server-side rendering:
 
 ```typescript
 import createWebStorage from "redux-persist/es/storage/createWebStorage";
@@ -54,14 +50,12 @@ export const storage =
         : createNoopStorage();
 ```
 
-This storage configuration ensures that my application can run on both the client and server without issues.
-
 ### Redux State Structure
 
-I designed the Redux state to encapsulate the essential data for cross-tab synchronization. In this case, we only need to manage:
+In this use case, we only really need to manage:
 
-- **isMassDownloading**: A boolean flag to indicate if mass downloading, to compare against the local state for the download indicator.
-- **selectedAssets**: An array of the selected assets.
+- `isMassDownloading`: A boolean flag to indicate if mass downloading, to compare against the local state for the download indicator.
+- `selectedAssets`: An array of the selected assets.
 
 ```typescript
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
@@ -80,7 +74,7 @@ const initialState: IAssetState = {
 
 ### Redux Slice Implementation
 
-I then implemented the `assetSlice` with appropriate actions and reducers:
+I created a slice named `assetSlice` with the appropriate actions and reducers, where asset selection/mass download state is managed:
 
 ```typescript
 export const assetSlice = createSlice({
@@ -115,7 +109,7 @@ export const assetSlice = createSlice({
 ### Redux Configuration
 
 
-I setup the Redux configuration with the `persistReducer` and `combineReducers` functions to persist the state across sessions:
+The redux configuration is setup with the `persistReducer` and `combineReducers` functions to persist the state across sessions:
 
 ```typescript
 import { combineReducers } from "@reduxjs/toolkit";
@@ -179,8 +173,6 @@ export const persistor = persistStore(store);
 initMessageListener(store);
 ```
 
-Certain actions are also blacklisted to ensure compatibility.
-
 ### Redux Provider
 
 Finally, we import `Provider` and `PersistGate` from `react-redux` and `redux-persist/integration/react` to wrap the application with the Redux provider:
@@ -207,7 +199,7 @@ export default ReduxProvider;
 
 ## Component Integration
 
-With the custom hooks I created, I can call this into any component as long as it is wrapped in the Redux provider. Here's how I implemented features for the `asset-item.tsx` component:
+With the custom hooks, I can call this into any component as long as it is wrapped in the Redux provider. Here's a snipper example of how I implemented features for the `asset-item.tsx` component:
 
 ```tsx
 import { useAppDispatch, useAppSelector } from "~/redux/store";
@@ -256,8 +248,6 @@ const isMassDownloading = useAppSelector(
 
 ## Conclusion
 
-While implementing cross-tab state synchronization may seem complex, it significantly enhances user experience in multi-tab scenarios. 
+While implementing cross-tab state synchronization may seem complex, and even unnecessary in some cases, adding this to wanderer.moe increased engagement and the probability of users revisiting the site.
 
-In my case, this solution not only improved user engagement but also increased the probability of users revisiting the site.
-
-You can view the full source code on [GitHub](https://git.wanderer.moe/site) or try it out on [wanderer.moe](https://wanderer.moe).
+You can view the full source code on [GitHub](https://git.wanderer.moe/site) or try it out for yourself on [wanderer.moe](https://wanderer.moe).

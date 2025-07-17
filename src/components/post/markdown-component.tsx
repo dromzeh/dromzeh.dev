@@ -135,7 +135,7 @@ function h1(
 ) {
     const { children, ...rest } = props;
     return (
-        <h1 {...rest} className="text-foreground font-semibold mt-8 py-3">
+        <h1 {...rest} className="text-foreground text-sm font-semibold mt-8 py-3">
             # {children}
         </h1>
     );
@@ -149,7 +149,7 @@ function h2(
 ) {
     const { children, ...rest } = props;
     return (
-        <h2 {...rest} className="text-foreground font-semibold mt-8 py-3">
+        <h2 {...rest} className="text-foreground text-sm font-semibold mt-8 py-3">
             ## {children}
         </h2>
     );
@@ -163,7 +163,7 @@ function h3(
 ) {
     const { children, ...rest } = props;
     return (
-        <h3 {...rest} className="text-foreground font-semibold mt-8 py-3">
+        <h3 {...rest} className="text-foreground text-sm font-semibold mt-8 py-3">
             ### {children}
         </h3>
     );
@@ -179,7 +179,7 @@ function inlineCode(
     return (
         <code
             {...rest}
-            className="bg-background text-foreground code rounded-sm px-1"
+            className="bg-background text-foreground code rounded-sm px-1 normal-case"
         >
             {children}
         </code>
