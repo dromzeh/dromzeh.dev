@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function Home() {
     return (
         <div className="min-h-screen max-w-2xl mx-auto px-6 py-16">
-            <div className="max-w-lg">
+            <div className="max-w-2xl">
                 <main className="space-y-12">
                     <ContactContainer />
                     <LanyardProfile />

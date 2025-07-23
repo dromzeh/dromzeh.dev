@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function About() {
     return (
         <div className="min-h-screen max-w-2xl mx-auto px-6 py-16">
-            <div className="max-w-lg">
+            <div className="max-w-2xl">
                 <div className="space-y-8">
                     <header className="space-y-4">
                         <div className="flex items-center justify-between text-sm text-muted-foreground mb-8">
