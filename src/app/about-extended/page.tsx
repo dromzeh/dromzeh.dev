@@ -247,7 +247,9 @@ export default function About() {
                                             Games:
                                         </strong>{" "}
                                         The Beginner's Guide, Outer Wilds,
-                                        Celeste, OMORI, OneShot, ULTRAKILL
+                                        Celeste, OMORI (Contains Sensitive
+                                        Topics), OneShot, ULTRAKILL, Dead Take
+                                        (Contains Sensitive Topics)
                                     </p>
                                     <p>
                                         <strong className="text-foreground">
