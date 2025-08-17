@@ -11,13 +11,23 @@
             "active": true
         },
         {
-            "name": "wanderer.moe",
-            "description": "Created wanderer.moe at 15, an open-source centralized game assets hosting website that handles thousands of daily requests and users. \nBackend: Typescript, Turso (LibSQL), Hono, Cloudflare R2, DO & Resend hosted on Cloudflare Workers. \nFrontend: NextJS, TailwindCSS, and Typescript with shadcn/ui on Cloudflare Pages. \nSite translations handled through Crowdin.",
+            "name": "skowt.cc",
+            "description": "Created skowt.cc at 15, an open-source centralized game assets hosting website that handles thousands of daily requests and users. \nBackend: Typescript, Turso (LibSQL), Hono, Cloudflare R2, DO & Resend hosted on Cloudflare Workers. \nFrontend: NextJS, TailwindCSS, and Typescript with shadcn/ui on Cloudflare Pages. \nSite translations handled through Crowdin.",
             "languages": ["NextJS", "Hono", "Typescript", "Cloudflare", "Rust"],
-            "projecturl": "https://wanderer.moe/",
+            "projecturl": "https://skowt.cc/",
             "role": "Creator",
             "oss": true,
-            "giturl": "https://git.wanderer.moe/",
+            "giturl": "https://github.com/skowtcc/",
+            "active": true
+        },
+        {
+            "name": "FestivalEnhanced",
+            "description": "Festival Enhanced is a free to use, open-source software for Windows that adds various useful features for Fortnite's Festival Game Mode.",
+            "languages": ["Tauri", "React", "Typescript", "Rust"],
+            "projecturl": "https://festivalenhanced.com/",
+            "role": "Creator",
+            "oss": true,
+            "giturl": "https://github.com/dromzeh/FestivelEnhanced",
             "active": true
         },
         {
