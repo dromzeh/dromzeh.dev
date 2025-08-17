@@ -14,15 +14,14 @@ export function About() {
         <section>
             <div className="space-y-3 text-sm">
                 <p className="text-muted-foreground leading-relaxed">
-                    I'm Marcel (a.k.a. "dromzeh"), a {<Age />}-year-old
-                    developer and former systems engineer.
+                    Hey! I'm Marcel, a {<Age />}-year-old self-taught developer.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                     My interests lie in low-level programming, reverse
                     engineering, hardware, and systems work.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                    Full-time Founder/CEO @{" "}
+                    Currently full-time at my own company{" "}
                     <Link
                         href="https://originoid.ltd"
                         target="_blank"
@@ -30,7 +29,7 @@ export function About() {
                     >
                         Originoid LTD
                     </Link>
-                    , working on{" "}
+                    , known for{" "}
                     <Link
                         href="https://originoid.co"
                         target="_blank"
@@ -40,16 +39,28 @@ export function About() {
                     </Link>{" "}
                     and{" "}
                     <Link
-                        href="https://wanderer.moe"
+                        href="https://skowt.cc"
                         target="_blank"
                         className="text-foreground hover:text-muted-foreground/70 transition-colors duration-200"
                     >
-                        wanderer.moe
+                        skowt.cc
+                    </Link>{" "}
+                    (prev. called wanderer.moe).
+                </p>
+                <p>
+                    Recently released a side project I've been working on for
+                    the past couple months called{" "}
+                    <Link
+                        href="https://festivalenhanced.com"
+                        target="_blank"
+                        className="text-foreground hover:text-muted-foreground/70 transition-colors duration-200"
+                    >
+                        Festival Enhanced
                     </Link>
                     .
                 </p>
                 <p>
-                    Further information can be found on my{" "}
+                    Further information about me can be found on my{" "}
                     <Link
                         href="/about-extended"
                         className="text-foreground hover:text-muted-foreground/70 transition-colors duration-200"

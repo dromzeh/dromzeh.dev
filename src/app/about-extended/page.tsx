@@ -58,12 +58,12 @@ export default function About() {
                                 </p>
                                 <p>
                                     I basically fully shifted into web
-                                    development at 15 when wanderer.moe exploded
-                                    in popularity. At 16-17, I was working as a
-                                    systems engineer at a startup, I also went
-                                    to college for a couple months before
-                                    dropping out & quitting my job at the same
-                                    time.
+                                    development at 15 when skowt.cc (prev.
+                                    wanderer.moe) exploded in popularity. At
+                                    16-17, I was working as a systems engineer
+                                    at a startup, I also went to college for a
+                                    couple months before dropping out & quitting
+                                    my job at the same time.
                                 </p>
                             </div>
                         </section>
@@ -76,7 +76,7 @@ export default function About() {
                                 <p>
                                     My main focus right now is web development
                                     and mobile development. I'm primarily
-                                    working on Originoid and wanderer.moe, but I
+                                    working on Originoid and skowt.cc, but I
                                     also have a few side projects going to keep
                                     things interesting and avoid getting stuck
                                     between the same two projects.
@@ -204,8 +204,8 @@ export default function About() {
                                         <strong className="text-foreground">
                                             Editors:
                                         </strong>{" "}
-                                        NvChad, VSC (Cursor, vi keybinds),
-                                        RustRover (vi keybinds)
+                                        NvChad, VSC (vi keybinds), RustRover (vi
+                                        keybinds)
                                     </p>
                                     <p>
                                         <strong className="text-foreground">
