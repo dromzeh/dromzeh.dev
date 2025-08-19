@@ -48,8 +48,8 @@ export function About() {
                     (prev. called wanderer.moe).
                 </p>
                 <p>
-                    Also working on a side project for
-                    the past couple months called{" "}
+                    Also working on a side project for the past couple months
+                    called{" "}
                     <Link
                         href="https://festivalenhanced.com"
                         target="_blank"
