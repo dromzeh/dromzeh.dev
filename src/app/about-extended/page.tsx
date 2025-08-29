@@ -98,13 +98,14 @@ export default function About() {
                                     I'm still very into low-level programming
                                     and reverse engineering. I also continue to
                                     do a lot of systems work and infrastructure
-                                    management.
+                                    management, also pretty into self-hosting
+                                    everything I can.
                                 </p>
                                 <p>
-                                    I'm heavily into self-hosting and run a
-                                    Proxmox cluster of 5 PCs in my room. I self
-                                    host pretty much everything I can as I like
-                                    having control over my data and services.
+                                    I also strongly enjoy hardware related
+                                    stuff, and it's definitely something I'd
+                                    kill to get back into more seriously,
+                                    hopefully in the future.
                                 </p>
                             </div>
                         </section>
@@ -119,11 +120,13 @@ export default function About() {
                                     got into the genre in 2017, starting with
                                     osu! standard before switching to VSRGs
                                     (vertical scrolling rhythm games) in 2020.
+                                    I've also been getting into learning 5-fret
+                                    guitar games.
                                 </p>
                                 <p>
-                                    Sometimes I'll do motion and text graphics
-                                    work in After Effects, which I've been using
-                                    on and off since 2019.
+                                    Very rarely, I'll do motion and text
+                                    graphics work in After Effects, which I've
+                                    been using on and off since 2019.
                                 </p>
                             </div>
                         </section>
@@ -167,15 +170,38 @@ export default function About() {
                                         <strong className="text-foreground">
                                             RAM:
                                         </strong>{" "}
-                                        2x24GB DDR5 6000MHz
+                                        48GB (2x24GB) DDR5 6000MHz
                                     </p>
                                     <p>
                                         <strong className="text-foreground">
-                                            Storage:
+                                            SSDs:
                                         </strong>{" "}
                                         1TB Samsung 990 EVO Plus M.2 NVME +
                                         512GB Sabrent M.2 NVME
                                     </p>
+                                    <p>
+                                        <strong className="text-foreground">
+                                            HDDs:
+                                        </strong>{" "}
+                                        1TB Seagate Barracuda + 8TB Seagate
+                                        External
+                                    </p>
+                                    <p>
+                                        <strong className="text-foreground">
+                                            Case:
+                                        </strong>{" "}
+                                        Lian Li A3 (black with wood accent)
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section className="space-y-4 text-sm">
+                            <h2 className="font-semibold text-foreground text-sm">
+                                Peripherals
+                            </h2>
+                            <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
+                                <div className="space-y-1 text-sm">
                                     <p>
                                         <strong className="text-foreground">
                                             Monitors:
@@ -185,10 +211,29 @@ export default function About() {
                                     </p>
                                     <p>
                                         <strong className="text-foreground">
-                                            Peripherals:
+                                            Keyboard:
                                         </strong>{" "}
-                                        Attack Shark X68HE, Steelseries Rival
-                                        650
+                                        Attack Shark X68HE
+                                    </p>
+                                    <p>
+                                        <strong className="text-foreground">
+                                            Mouse:
+                                        </strong>{" "}
+                                        Steelseries Rival 650 Wireless
+                                    </p>
+                                    <p>
+                                        <strong className="text-foreground">
+                                            Audio:
+                                        </strong>{" "}
+                                        HyperX Cloud 3 Wireless
+                                    </p>
+                                    <p>
+                                        <strong className="text-foreground">
+                                            5-Fret Controllers:
+                                        </strong>{" "}
+                                        CRKD Les Paul Black Tribal (Multi-Plat,
+                                        With Modded Mech Frets) & Xbox One
+                                        Riffmaster (don't suggest buying this)
                                     </p>
                                 </div>
                             </div>
@@ -224,7 +269,7 @@ export default function About() {
                                         <strong className="text-foreground">
                                             OS (Main PC):
                                         </strong>{" "}
-                                        Windows 11 w/ WSL (Ubuntu) & Arch
+                                        Windows 11 w/ WSL (Ubuntu)
                                     </p>
                                     <p>
                                         <strong className="text-foreground">
@@ -238,7 +283,7 @@ export default function About() {
 
                         <section className="space-y-4 text-sm">
                             <h2 className="font-semibold text-foreground text-sm">
-                                Media I Recommend
+                                Media I Recommend (Ordered by Preference)
                             </h2>
                             <div className="space-y-2 text-sm text-muted-foreground leading-relaxed">
                                 <div className="space-y-1 text-sm">
@@ -246,24 +291,25 @@ export default function About() {
                                         <strong className="text-foreground">
                                             Games:
                                         </strong>{" "}
-                                        The Beginner's Guide, Outer Wilds,
-                                        Celeste, OMORI (Contains Sensitive
-                                        Topics), OneShot, ULTRAKILL, Dead Take
-                                        (Contains Sensitive Topics)
+                                        Outer Wilds, OneShot, The Beginner's
+                                        Guide, OMORI (Contains Triggering
+                                        Topics), Hollow Knight, Celeste,
+                                        ULTRAKILL, Dead Take (Contains
+                                        Triggering Topics)
                                     </p>
                                     <p>
                                         <strong className="text-foreground">
                                             Shows:
                                         </strong>{" "}
                                         Cowboy Bebop, Severance, Black Mirror,
-                                        Mr Robot
+                                        Cyberpunk: Edgerunners, Mr Robot (All
+                                        Contain Triggering Topics)
                                     </p>
                                     <p>
                                         <strong className="text-foreground">
                                             Music (Artists):
                                         </strong>{" "}
-                                        underscores, Jane Remover, Frums,
-                                        Silentroom
+                                        Frums, underscores, Camellia, Silentroom
                                     </p>
                                 </div>
                             </div>
@@ -271,18 +317,30 @@ export default function About() {
 
                         <section className="space-y-4 text-sm">
                             <h2 className="font-semibold text-foreground text-sm">
-                                Favourite Songs
+                                Current Favourite Songs
                             </h2>
                             <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
                                 <div className="space-y-1 text-sm">
                                     <p>
                                         <strong className="text-foreground">
                                             <Link
-                                                href="https://open.spotify.com/track/4kfaLw8sMFbZ1LQxlTaS2y"
+                                                href="https://open.spotify.com/track/2EdifsiXKP2E8oXIGxQFMN"
                                                 target="_blank"
                                                 className="text-foreground hover:text-muted-foreground/50 transition-all duration-150 decoration-muted-foreground/30 hover:decoration-muted-foreground/50"
                                             >
-                                                Music
+                                                PROFESS1ON
+                                            </Link>
+                                        </strong>{" "}
+                                        by Frums
+                                    </p>
+                                    <p>
+                                        <strong className="text-foreground">
+                                            <Link
+                                                href="https://open.spotify.com/track/2cClnOEBnNJWxbLuTFVIgK"
+                                                target="_blank"
+                                                className="text-foreground hover:text-muted-foreground/50 transition-all duration-150 decoration-muted-foreground/30 hover:decoration-muted-foreground/50"
+                                            >
+                                                Poplife
                                             </Link>
                                         </strong>{" "}
                                         by underscores
@@ -311,18 +369,6 @@ export default function About() {
                                             </Link>
                                         </strong>{" "}
                                         by ATLUS Sound Team
-                                    </p>
-                                    <p>
-                                        <strong className="text-foreground">
-                                            <Link
-                                                href="https://open.spotify.com/track/7sruUbgF96auAnBstqL5wG"
-                                                target="_blank"
-                                                className="text-foreground hover:text-muted-foreground/50 transition-all duration-150 decoration-muted-foreground/30 hover:decoration-muted-foreground/50"
-                                            >
-                                                zero_one (Camellia Remix)
-                                            </Link>
-                                        </strong>{" "}
-                                        by The Living Tombstone & Camellia
                                     </p>
                                     <p>
                                         <strong className="text-foreground">
@@ -362,7 +408,7 @@ export default function About() {
                                         <strong className="text-foreground">
                                             MBTI:
                                         </strong>{" "}
-                                        INTJ
+                                        XNTJ
                                     </p>
                                     <p>
                                         <strong className="text-foreground">

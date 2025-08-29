@@ -12,6 +12,7 @@ import * as React from "react";
 export function About() {
     return (
         <section>
+            <h2 className="text-foreground text-sm font-medium mb-4">about</h2>
             <div className="space-y-3 text-sm">
                 <p className="text-muted-foreground leading-relaxed">
                     Hey! I'm Marcel, a {<Age />}-year-old self-taught developer.
@@ -48,19 +49,7 @@ export function About() {
                     (prev. called wanderer.moe).
                 </p>
                 <p>
-                    Also working on a side project for the past couple months
-                    called{" "}
-                    <Link
-                        href="https://festivalenhanced.com"
-                        target="_blank"
-                        className="text-foreground hover:text-muted-foreground/70 transition-colors duration-200"
-                    >
-                        Festival Enhanced
-                    </Link>
-                    .
-                </p>
-                <p>
-                    Further information about me can be found on my{" "}
+                    If you're curious for whatever reason, you can read my{" "}
                     <Link
                         href="/about-extended"
                         className="text-foreground hover:text-muted-foreground/70 transition-colors duration-200"
@@ -75,7 +64,7 @@ export function About() {
 }
 
 const birthTimestamp = 1156114801000;
-const initialAge = 18;
+const initialAge = 19;
 
 interface AgeProps {
     fixedValue?: number;
