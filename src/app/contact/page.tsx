@@ -13,10 +13,10 @@ export default function Contact() {
             <div className="py-24 px-6 text-sm">
                 <section className="flex flex-col space-y-8">
                     <section>
-                        <h2 className="text-muted-foreground/60 mb-2">
+                        <h2 className="text-foreground text-sm font-medium mb-4">
                             Contact Guidelines
                         </h2>
-                        <div className="space-y-2 text-muted-foreground">
+                        <div className="space-y-3 text-muted-foreground">
                             <p>
                                 Feel free to reach out to me using any of the
                                 contact methods listed below.
@@ -46,7 +46,9 @@ export default function Contact() {
                             </p>
                             <p>
                                 Responses are prioritized based on the topic and
-                                urgency due to the amount of messages I receive.
+                                urgency due to the amount of messages I receive
+                                & the fact I'm currently working 24/7 on getting
+                                Originoid out as soon as possible.
                             </p>
                         </div>
                     </section>
