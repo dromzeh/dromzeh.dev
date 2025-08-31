@@ -58,6 +58,18 @@ export function About() {
                     </Link>
                     .
                 </p>
+                <p className="text-xs">
+                    I'm currently very slow when it comes to replying, as I am
+                    working 24/7 on Originoid to prepare for public release;
+                    feel free to reach out and read my{" "}
+                    <Link
+                        href="/contact"
+                        className="text-foreground hover:text-muted-foreground/70 transition-colors duration-200"
+                    >
+                        contact policy
+                    </Link>
+                    .
+                </p>
             </div>
         </section>
     );
