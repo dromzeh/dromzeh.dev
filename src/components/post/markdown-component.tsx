@@ -84,7 +84,7 @@ function CustomLink(
     const { children, href } = props;
     return (
         <a
-            className="text-foreground hover:text-muted-foreground/50 transition duration-150"
+            className="text-foreground hover:text-muted transition duration-150"
             href={href ?? ""}
         >
             {children}

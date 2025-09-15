@@ -17,7 +17,7 @@ export default function DiscordLookupPage() {
                         <span className="text-neutral-500">
                             <Link
                                 href="/"
-                                className="text-foreground group-hover:text-muted-foreground/50 transition-colors duration-150 hover:cursor-pointer"
+                                className="text-foreground group-hover:text-muted transition-colors duration-150 hover:cursor-pointer"
                             >
                                 Home
                             </Link>
@@ -44,7 +44,7 @@ export default function DiscordLookupPage() {
                                 <Link
                                     href="https://github.com/dromzeh/dromzeh.dev"
                                     target="_blank"
-                                    className="text-foreground hover:text-muted-foreground/50 transition-all duration-150"
+                                    className="text-foreground hover:text-muted transition-all duration-150"
                                 >
                                     GitHub
                                 </Link>
