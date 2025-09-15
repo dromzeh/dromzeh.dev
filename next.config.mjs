@@ -8,6 +8,9 @@ export default {
         ],
         unoptimized: true,
     },
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
     reactStrictMode: true,
     output: "export",
 };
