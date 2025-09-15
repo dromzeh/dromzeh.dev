@@ -35,7 +35,7 @@ export default function FAQ() {
                                 exploiting and malware. One of the first things
                                 I did was figuring out ways to exploit online
                                 web games, like adding people as friends who
-                                hadn't even added me back.
+                                hadn&apos;t even added me back.
                             </p>
                             <p>
                                 At 7, I moved into JavaScript, then at 10, I
@@ -59,21 +59,21 @@ export default function FAQ() {
                         </h2>
                         <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
                             <p>
-                                I'm (sadly) currently stuck doing web
+                                I&apos;m (sadly) currently stuck doing web
                                 development.
                             </p>
                             <p>
                                 I strongly enjoy doing systems work and
                                 infrastructure management, plus being pretty
                                 into self-hosting everything I can. Sometimes
-                                I'll do some low-level programming and reverse
+                                I&apos;ll do some low-level programming and reverse
                                 engineering too.
                             </p>
                             <p>
                                 Alongside that, I play a stupid amount of rhythm
                                 games. I got into the genre in 2017, starting
                                 with osu! standard before switching to VSRGs
-                                (vertical scrolling rhythm games) in 2020. I've
+                                (vertical scrolling rhythm games) in 2020. I&apos;ve
                                 also been getting into learning 5-fret guitar
                                 games.
                             </p>
@@ -90,7 +90,7 @@ export default function FAQ() {
                                 not replace the work they spend years pouring
                                 their heart, soul & the sacrifices they make
                                 into. What we gain from our experience as humans
-                                has so much value that shouldn't be automated
+                                has so much value that shouldn&apos;t be automated
                                 away just for "convenience" or to cut corners.
                             </p>
                         </div>
@@ -141,7 +141,7 @@ export default function FAQ() {
                                     <strong className="text-foreground">
                                         Games:
                                     </strong>{" "}
-                                    Outer Wilds, OneShot, The Beginner's Guide,
+                                    Outer Wilds, OneShot, The Beginner&apos;s Guide,
                                     OMORI (Contains Triggering Topics), Hollow
                                     Knight, Celeste, ULTRAKILL, Dead Take
                                     (Contains Triggering Topics)
@@ -171,7 +171,7 @@ export default function FAQ() {
 
                         <div className="space-y-3 text-muted-foreground">
                             <p>
-                                I won't reply to anything regarding project
+                                I won&apos;t reply to anything regarding project
                                 updates/timelines & personal, sensitive,
                                 controversial or potentially triggering
                                 subjects.
