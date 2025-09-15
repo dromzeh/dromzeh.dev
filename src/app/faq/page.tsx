@@ -55,12 +55,12 @@ export default function FAQ() {
 
                     <section className="space-y-4">
                         <h2 className="font-semibold text-foreground text-sm">
-                            Current Focus and Interests
+                            Current Interests
                         </h2>
                         <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
                             <p>
-                                I&apos;m (sadly) currently stuck doing web
-                                development.
+                                Due to TikTok's algorithm, I&apos;ve been stuck
+                                doing web development for the past few years.
                             </p>
                             <p>
                                 I strongly enjoy doing systems work and

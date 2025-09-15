@@ -15,18 +15,19 @@ export function About() {
         <section>
             <div className="space-y-3 text-sm">
                 <div className="text-muted-foreground leading-relaxed">
-                    I&apos;m Marcel, currently {<Age />} years-old. I do pretty
-                    much everything and anything; mostly web development though.
+                    Hi - I&apos;m Marcel, also known as dromzeh, currently{" "}
+                    {<Age />} years-old.
                 </div>
                 <p className="text-muted-foreground leading-relaxed">
-                    If you want to know more about me, you can read the{" "}
+                    I do pretty much everything and anything. There's a{" "}
                     <Link
                         href="/faq"
                         className="text-foreground hover:text-muted transition-all duration-150 decoration-muted-foreground/30 hover:decoration-muted-foreground/50"
                     >
                         FAQ
-                    </Link>
-                    .
+                    </Link>{" "}
+                    you can read that explains further alongside my contact
+                    policy.
                 </p>
                 <div className="text-muted-foreground leading-relaxed flex flex-row flex-wrap gap-2">
                     <LanyardProfile />
