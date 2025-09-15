@@ -1,6 +1,9 @@
 import { MetadataRoute } from "next";
 import { getPosts } from "~/lib/posts/fetch-posts";
 
+export const dynamic = "force-static";
+export const revalidate = false;
+
 const defaults: {
     changeFrequency?:
         | "weekly"
@@ -18,9 +21,9 @@ const defaults: {
 
 const baseUrl = "https://dromzeh.dev";
 
-const posts = await getPosts();
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+    const posts = await getPosts();
 
-export default function sitemap(): MetadataRoute.Sitemap {
     const postRoutes = posts.map((post) => ({
         ...defaults,
         url: `${baseUrl}/posts/${post!.slug}`,
