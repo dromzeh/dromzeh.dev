@@ -4,10 +4,6 @@ import NextImage from "next/image";
 import { Code } from "bright";
 import { CopyCodeToClipboard } from "./code-utils";
 import mellowTheme from "./mellow.json";
-// import { GeistMono } from "geist/font/mono";
-
-// const font = GeistMono;
-
 Code.theme = mellowTheme;
 
 function CodeBlock(
@@ -23,10 +19,7 @@ function CodeBlock(
                 className={`absolute top-0 right-0 translate-y-5 translate-x-[-4px]`}
             >
                 <CopyCodeToClipboard
-                    code={
-                        (children as React.ReactElement).props
-                            .children as string
-                    }
+                    code={(children as any).props.children as string}
                 />
             </div>
             <Code

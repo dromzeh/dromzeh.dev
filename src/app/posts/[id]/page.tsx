@@ -13,7 +13,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const { id } = params;
+    const { id } = await params;
     const post = await getPost(id);
 
     if (!post) return notFound();
@@ -26,10 +26,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 type Props = {
-    params: { id: string };
+    params: Promise<{ id: string }>;
 };
 
-async function PostPage({ params: { id } }: Props) {
+async function PostPage({ params }: Props) {
+    const { id } = await params;
     const post = await getPost(id);
 
     if (!post) return notFound();
