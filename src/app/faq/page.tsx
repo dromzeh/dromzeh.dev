@@ -63,14 +63,14 @@ export default function FAQ() {
                                 development.
                             </p>
                             <p>
-                                I also strongly enjoy doing systems work and
+                                I strongly enjoy doing systems work and
                                 infrastructure management, plus being pretty
                                 into self-hosting everything I can. Sometimes
                                 I'll do some low-level programming and reverse
                                 engineering too.
                             </p>
                             <p>
-                                Alongside that, play a stupid amount of rhythm
+                                Alongside that, I play a stupid amount of rhythm
                                 games. I got into the genre in 2017, starting
                                 with osu! standard before switching to VSRGs
                                 (vertical scrolling rhythm games) in 2020. I've
