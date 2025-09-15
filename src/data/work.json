@@ -28,7 +28,7 @@
             "role": "Creator",
             "oss": true,
             "giturl": "https://github.com/dromzeh/FestivelEnhanced",
-            "active": true
+            "active": false
         },
         {
             "name": "hyv-fps-unlocker",
@@ -37,7 +37,7 @@
             "role": "Creator",
             "oss": true,
             "giturl": "https://git.dromzeh.dev/hyv-fps-unlocker",
-            "active": true
+            "active": false
         },
         {
             "name": "Lucia Auth",
@@ -47,7 +47,7 @@
             "oss": true,
             "giturl": "https://github.com/lucia-auth/lucia-auth",
             "projecturl": "https://lucia-auth.com/",
-            "active": true
+            "active": false
         },
         {
             "name": "vmt",
@@ -61,7 +61,7 @@
             "role": "Creator",
             "oss": true,
             "giturl": "https://git.dromzeh.dev/vmt",
-            "active": true
+            "active": false
         }
     ]
 }

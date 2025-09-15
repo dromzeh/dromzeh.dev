@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { GeistMono } from "geist/font/mono";
-// import { GeistSans } from "geist/font/sans";
+import { GeistSans } from "geist/font/sans";
 import { CommandMenu } from "~/components/navigation/command";
 import { Toaster } from "~/components/ui/sonner";
 // import { HydrationOverlay } from "@builder.io/react-hydration-overlay";
@@ -10,7 +9,8 @@ import { ThemeToggle } from "~/components/navigation/theme-toggle";
 import { FramerOverlay } from "~/components/navigation/framer-overlay";
 import { NavigationBar } from "~/components/navigation/navigation-bar";
 
-const geist = GeistMono;
+// add classname and variable
+const geist = GeistSans;
 
 export const metadata: Metadata = {
     title: "dromzeh.dev",
@@ -27,7 +27,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${geist.className} h-full lowercase scroll-smooth antialiased pl-[calc(100vw-100%)]`}
+                className={`${geist.className} h-full scroll-smooth antialiased pl-[calc(100vw-100%)]`}
             >
                 <ThemeProvider attribute="class" defaultTheme="dark">
                     <NavigationBar />

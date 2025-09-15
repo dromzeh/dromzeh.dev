@@ -10,12 +10,13 @@ export function WorkContainer({ work = AllWork.work }: WorkContainerProps) {
     return (
         <section>
             <h2 className="text-foreground text-sm font-medium mb-4">
-                projects
+                Current Focus
             </h2>
             <div className="space-y-3">
-                {work?.map((work: Work) => (
-                    <WorkItem key={work.name} {...work} />
-                ))}
+                {work?.map(
+                    (work: Work) =>
+                        work.active && <WorkItem key={work.name} {...work} />,
+                )}
             </div>
         </section>
     );
