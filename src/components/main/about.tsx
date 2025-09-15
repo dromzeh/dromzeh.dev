@@ -28,9 +28,9 @@ export function About() {
                     </Link>
                     .
                 </p>
-                <p className="text-muted-foreground leading-relaxed flex flex-row flex-wrap gap-2">
+                <div className="text-muted-foreground leading-relaxed flex flex-row flex-wrap gap-2">
                     <LanyardProfile />
-                </p>
+                </div>
             </div>
         </section>
     );

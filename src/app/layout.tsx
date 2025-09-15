@@ -25,7 +25,7 @@ export default function RootLayout({
     children,
 }: RootLayoutProps): React.ReactElement {
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
             <body
                 className={`${geist.className} h-full scroll-smooth antialiased pl-[calc(100vw-100%)]`}
             >
