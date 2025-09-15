@@ -32,33 +32,26 @@ const socials = [
     {
         id: "x",
         href: "https://x.com/dromzeh",
-        label: "x",
+        label: "Twitter/X",
         icon: "./socials/x.png",
     },
     {
         id: "github",
         href: "https://github.com/dromzeh",
-        label: "github",
+        label: "GitHub",
         icon: "./socials/github.png",
     },
     {
         id: "discord",
         href: "https://discord.com/users/492731761680187403",
-        label: "discord",
+        label: "Discord",
         icon: "./socials/discord.png",
     },
     {
         id: "tiktok",
         href: "https://tiktok.com/@dromzeh",
-        label: "tiktok",
+        label: "TikTok",
         icon: "./socials/tiktok.png",
-    },
-    {
-        id: "email",
-        href: "mailto:marcel@dromzeh.dev",
-        label: "email",
-        icon: "./socials/protonmail.png",
-        target: undefined, // email doesn't need target="_blank"
     },
 ];
 
@@ -89,16 +82,17 @@ function SocialsContent() {
     };
 
     return (
-        <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+        <div className="flex justify-between items-center gap-3 text-sm text-muted-foreground">
             {socials.map((social, index) => (
                 <React.Fragment key={social.id}>
                     <Link
                         href={social.href}
-                        target={
-                            social.target !== undefined
-                                ? social.target
-                                : "_blank"
-                        }
+                        target="_blank"
+                        // target={
+                        //     social.target !== undefined
+                        //         ? social.target
+                        //         : "_blank"
+                        // }
                         onMouseOver={() => ctx.setStatus(social.id)}
                         onMouseOut={() => ctx.setStatus("idle")}
                         className="relative hover:text-foreground transition-colors duration-200"
@@ -128,7 +122,7 @@ function SocialsContent() {
                         <span>{social.label}</span>
                     </Link>
                     {index < socials.length - 1 && (
-                        <span className="text-muted-foreground/40">//</span>
+                        <span className="text-muted-foreground/40">•</span>
                     )}
                 </React.Fragment>
             ))}

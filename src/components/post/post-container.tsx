@@ -7,7 +7,7 @@ export async function PostContainer() {
 
     return (
         <section>
-            <h2 className="text-foreground text-sm font-medium mb-4">posts</h2>
+            <h2 className="text-foreground text-sm font-medium mb-4">Posts</h2>
             <div className="space-y-3">
                 {posts?.map((post: Post) => (
                     <PostItem key={post.slug} {...post} />

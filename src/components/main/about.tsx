@@ -8,67 +8,28 @@ import {
 } from "~/components/ui/tooltip";
 import dayjs from "dayjs";
 import * as React from "react";
+import { LanyardProfile } from "./lanyard";
 
 export function About() {
     return (
         <section>
-            <h2 className="text-foreground text-sm font-medium mb-4">about</h2>
             <div className="space-y-3 text-sm">
                 <p className="text-muted-foreground leading-relaxed">
-                    Hey! I'm Marcel, a {<Age />}-year-old self-taught developer.
+                    I'm Marcel, currently {<Age />} years-old. I do pretty much
+                    everything and anything; mostly web development though.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                    My interests lie in low-level programming, reverse
-                    engineering, hardware, and systems work.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                    Currently full-time at my own company{" "}
+                    If you want to know more about me, you can read the{" "}
                     <Link
-                        href="https://originoid.ltd"
-                        target="_blank"
-                        className="text-foreground hover:text-muted-foreground/70 transition-colors duration-200"
+                        href="/faq"
+                        className="text-foreground hover:text-muted-foreground/50 transition-all duration-150 decoration-muted-foreground/30 hover:decoration-muted-foreground/50"
                     >
-                        Originoid LTD
-                    </Link>
-                    , known for{" "}
-                    <Link
-                        href="https://originoid.co"
-                        target="_blank"
-                        className="text-foreground hover:text-muted-foreground/70 transition-colors duration-200"
-                    >
-                        originoid.co
-                    </Link>{" "}
-                    and{" "}
-                    <Link
-                        href="https://skowt.cc"
-                        target="_blank"
-                        className="text-foreground hover:text-muted-foreground/70 transition-colors duration-200"
-                    >
-                        skowt.cc
-                    </Link>{" "}
-                    (prev. called wanderer.moe).
-                </p>
-                <p>
-                    If you're curious for whatever reason, you can read my{" "}
-                    <Link
-                        href="/about-extended"
-                        className="text-foreground hover:text-muted-foreground/70 transition-colors duration-200"
-                    >
-                        extended about me
+                        FAQ
                     </Link>
                     .
                 </p>
-                <p className="text-xs">
-                    I'm currently very slow when it comes to replying, as I am
-                    working 24/7 on Originoid to prepare for public release;
-                    feel free to reach out and read my{" "}
-                    <Link
-                        href="/contact"
-                        className="text-foreground hover:text-muted-foreground/70 transition-colors duration-200"
-                    >
-                        contact policy
-                    </Link>
-                    .
+                <p className="text-muted-foreground leading-relaxed flex flex-row flex-wrap gap-2">
+                    <LanyardProfile />
                 </p>
             </div>
         </section>
@@ -90,6 +51,7 @@ export function Age({ fixedValue = 5 }: AgeProps) {
         }, 50);
         return () => clearInterval(intervalId);
     }, []);
+
     return (
         <TooltipProvider delayDuration={100}>
             <Tooltip>

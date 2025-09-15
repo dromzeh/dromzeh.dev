@@ -45,15 +45,15 @@ async function PostPage({ params: { id } }: Props) {
     });
 
     return (
-        <div className="min-h-screen max-w-2xl mx-auto px-6 py-16">
-            <div className="max-w-2xl">
+        <div className="min-h-screen max-w-lg mx-auto px-6 py-16">
+            <div className="max-w-lg">
                 <header className="mb-12">
                     <div className="flex items-center justify-between text-sm text-muted-foreground mb-8">
                         <Link
                             href="/"
                             className="hover:text-foreground transition-colors duration-200"
                         >
-                            ← back
+                            ←
                         </Link>
                         <time className="text-muted-foreground/60">
                             {formattedDate}
