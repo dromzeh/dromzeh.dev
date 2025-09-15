@@ -1,15 +1,10 @@
-<div align="center">
 Source code for my personal website.
 
-Built with [Next.js](https://nextjs.org/), [TailwindCSS](https://tailwindcss.com/), [TypeScript](https://www.typescriptlang.org/), [Million](https://www.million.dev) & [Lanyard](https://lanyard.rest)
-</div>
+Built with [Next.js](https://nextjs.org/), [TailwindCSS](https://tailwindcss.com/), [TypeScript](https://www.typescriptlang.org/), & [Lanyard](https://lanyard.rest)
 
----
+Deployment is done via [Cloudflare Pages](https://pages.cloudflare.com/), using [next-on-pages](https://github.com/cloudflare/next-on-pages).
 
-## Deployment
-
-- Deployment is done via [Cloudflare Pages](https://pages.cloudflare.com/), using [next-on-pages](https://github.com/cloudflare/next-on-pages).
-- Cache is cleared via a [Workflow](.github/workflows/cf-pages-await.yml) that runs on every push.
+Cache is cleared via a [Workflow](.github/workflows/cf-pages-await.yml) that waits for the pages build to be completed.
 
 ## License
 
