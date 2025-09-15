@@ -30,6 +30,7 @@ import { useState, useEffect, useCallback } from "react";
 import { Button } from "../ui/button";
 
 import { useTheme } from "next-themes";
+import { DialogTitle } from "../ui/dialog";
 
 export function CommandMenu() {
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -65,6 +66,7 @@ export function CommandMenu() {
     return (
         <>
             <CommandDialog open={isOpen} onOpenChange={setIsOpen}>
+                <DialogTitle className="sr-only">Search</DialogTitle>
                 <CommandInput placeholder="Search" />
                 <CommandList>
                     <CommandEmpty>No results found</CommandEmpty>
