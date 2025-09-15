@@ -66,16 +66,16 @@ export default function FAQ() {
                                 I strongly enjoy doing systems work and
                                 infrastructure management, plus being pretty
                                 into self-hosting everything I can. Sometimes
-                                I&apos;ll do some low-level programming and reverse
-                                engineering too.
+                                I&apos;ll do some low-level programming and
+                                reverse engineering too.
                             </p>
                             <p>
                                 Alongside that, I play a stupid amount of rhythm
                                 games. I got into the genre in 2017, starting
                                 with osu! standard before switching to VSRGs
-                                (vertical scrolling rhythm games) in 2020. I&apos;ve
-                                also been getting into learning 5-fret guitar
-                                games.
+                                (vertical scrolling rhythm games) in 2020.
+                                I&apos;ve also been getting into learning 5-fret
+                                guitar games.
                             </p>
                         </div>
                     </section>
@@ -90,8 +90,9 @@ export default function FAQ() {
                                 not replace the work they spend years pouring
                                 their heart, soul & the sacrifices they make
                                 into. What we gain from our experience as humans
-                                has so much value that shouldn&apos;t be automated
-                                away just for "convenience" or to cut corners.
+                                has so much value that shouldn&apos;t be
+                                automated away just for &quot;convenience&quot;
+                                or to cut corners.
                             </p>
                         </div>
                     </section>
@@ -141,9 +142,9 @@ export default function FAQ() {
                                     <strong className="text-foreground">
                                         Games:
                                     </strong>{" "}
-                                    Outer Wilds, OneShot, The Beginner&apos;s Guide,
-                                    OMORI (Contains Triggering Topics), Hollow
-                                    Knight, Celeste, ULTRAKILL, Dead Take
+                                    Outer Wilds, OneShot, The Beginner&apos;s
+                                    Guide, OMORI (Contains Triggering Topics),
+                                    Hollow Knight, Celeste, ULTRAKILL, Dead Take
                                     (Contains Triggering Topics)
                                 </p>
                                 <p>

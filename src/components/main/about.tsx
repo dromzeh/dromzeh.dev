@@ -15,8 +15,8 @@ export function About() {
         <section>
             <div className="space-y-3 text-sm">
                 <div className="text-muted-foreground leading-relaxed">
-                    I'm Marcel, currently {<Age />} years-old. I do pretty much
-                    everything and anything; mostly web development though.
+                    I&apos;m Marcel, currently {<Age />} years-old. I do pretty
+                    much everything and anything; mostly web development though.
                 </div>
                 <p className="text-muted-foreground leading-relaxed">
                     If you want to know more about me, you can read the{" "}
