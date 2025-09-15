@@ -95,7 +95,7 @@ function SocialsContent() {
                         // }
                         onMouseOver={() => ctx.setStatus(social.id)}
                         onMouseOut={() => ctx.setStatus("idle")}
-                        className="relative hover:text-foreground transition-colors duration-200"
+                        className="relative text-foreground hover:text-muted transition-colors duration-200"
                     >
                         <AnimatePresence>
                             {ctx.status === social.id && (

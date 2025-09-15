@@ -13,7 +13,7 @@ const statusMap = {
 };
 
 const linkClassName =
-    "text-foreground hover:text-muted-foreground/50 transition-all duration-150 decoration-muted-foreground/30 hover:decoration-muted-foreground/50";
+    "text-foreground hover:text-muted transition-all duration-150 decoration-muted-foreground/30 hover:decoration-muted-foreground/50";
 
 export function LanyardProfile() {
     const [mounted, setMounted] = useState(false);

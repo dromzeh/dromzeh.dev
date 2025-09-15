@@ -5,7 +5,7 @@ export function WorkItem(props: Work) {
     return (
         <div className="flex flex-row text-sm space-x-2 items-center justify-between group">
             <Link href={props.projecturl || props.giturl || "#"}>
-                <h3 className="text-foreground group-hover:text-muted-foreground/50 transition-colors duration-150 hover:cursor-pointer">
+                <h3 className="text-foreground group-hover:text-muted transition-colors duration-150 hover:cursor-pointer">
                     {props.name}
                 </h3>
             </Link>

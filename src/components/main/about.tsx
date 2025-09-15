@@ -14,15 +14,15 @@ export function About() {
     return (
         <section>
             <div className="space-y-3 text-sm">
-                <p className="text-muted-foreground leading-relaxed">
+                <div className="text-muted-foreground leading-relaxed">
                     I'm Marcel, currently {<Age />} years-old. I do pretty much
                     everything and anything; mostly web development though.
-                </p>
+                </div>
                 <p className="text-muted-foreground leading-relaxed">
                     If you want to know more about me, you can read the{" "}
                     <Link
                         href="/faq"
-                        className="text-foreground hover:text-muted-foreground/50 transition-all duration-150 decoration-muted-foreground/30 hover:decoration-muted-foreground/50"
+                        className="text-foreground hover:text-muted transition-all duration-150 decoration-muted-foreground/30 hover:decoration-muted-foreground/50"
                     >
                         FAQ
                     </Link>
@@ -56,12 +56,12 @@ export function Age({ fixedValue = 5 }: AgeProps) {
         <TooltipProvider delayDuration={100}>
             <Tooltip>
                 <TooltipTrigger asChild>
-                    <span className="text-foreground hover:text-muted-foreground/70 transition-colors duration-200 cursor-pointer">
+                    <span className="text-foreground hover:text-muted transition-colors duration-200 cursor-pointer">
                         {age.toFixed(fixedValue)}
                     </span>
                 </TooltipTrigger>
                 <TooltipContent className="text-center max-w-[250px]">
-                    <p>{age.toFixed(12)}</p>
+                    <span>{age.toFixed(12)}</span>
                 </TooltipContent>
             </Tooltip>
         </TooltipProvider>
