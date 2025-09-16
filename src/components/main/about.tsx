@@ -15,8 +15,7 @@ export function About() {
         <section>
             <div className="space-y-3 text-sm">
                 <div className="text-muted-foreground leading-relaxed">
-                    Hi - I&apos;m Marcel, also known as dromzeh, currently{" "}
-                    {<Age />} years-old.
+                    Hi - I&apos;m Marcel, currently {<Age />} years-old.
                 </div>
                 <p className="text-muted-foreground leading-relaxed">
                     I do pretty much everything and anything. There's a{" "}

@@ -2,8 +2,8 @@
 
 import { useLanyard } from "react-use-lanyard";
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import type { Activity } from "react-use-lanyard";
+import type { Activity, LanyardData } from "react-use-lanyard";
+import { MusicStatus } from "./music-status";
 
 const statusMap = {
     online: "Online",
@@ -19,9 +19,6 @@ const statusColorMap = {
     offline: "bg-neutral-400/10 text-neutral-400 border border-neutral-400/50",
 };
 
-const linkClassName =
-    "text-foreground hover:text-muted transition-all duration-150 decoration-muted-foreground/30 hover:decoration-muted-foreground/50";
-
 export function LanyardProfile() {
     const [mounted, setMounted] = useState(false);
     const { loading, status } = useLanyard({
@@ -33,7 +30,12 @@ export function LanyardProfile() {
         status?.activities?.filter(
             (activity) => activity.type !== 4 && activity.type !== 2,
         ) || [];
+
     const hasSpotify = status?.listening_to_spotify;
+    const hasAppleMusic = status?.activities?.some(
+        (activity: Activity) =>
+            activity.type === 2 && activity.name === "Apple Music",
+    );
     const hasActivities = activities.length > 0;
 
     useEffect(() => {
@@ -54,45 +56,6 @@ export function LanyardProfile() {
         return `playing ${activity.name}`;
     };
 
-    const renderSpotifyContent = () => {
-        if (!status?.spotify?.song || !status?.spotify?.artist) {
-            return "listening to spotify";
-        }
-
-        const rawArtists = status.spotify.artist;
-        const artists = rawArtists
-            .split(";")
-            .map((a) => a.trim())
-            .filter(Boolean);
-
-        const artistNodes = artists.map((artist, idx) => (
-            <span key={`${artist}-${idx}`}>
-                {idx > 0 ? (idx === artists.length - 1 ? "; " : ", ") : null}
-                <Link
-                    href={`https://open.spotify.com/search/${encodeURIComponent(artist)}`}
-                    target="_blank"
-                    className={linkClassName}
-                >
-                    {artist}
-                </Link>
-            </span>
-        ));
-
-        return (
-            <>
-                listening to{" "}
-                <Link
-                    href={`https://open.spotify.com/track/${status.spotify.track_id}`}
-                    target="_blank"
-                    className={linkClassName}
-                >
-                    {status.spotify.song}
-                </Link>{" "}
-                by {artistNodes}
-            </>
-        );
-    };
-
     if (!mounted || loading || !status || !status.discord_user) {
         return (
             <span className="text-sm text-muted-foreground">
@@ -101,20 +64,31 @@ export function LanyardProfile() {
         );
     }
 
-    let tailContent;
-    if (hasActivities && hasSpotify) {
-        tailContent = (
-            <>
-                , {getActivityText(activities[0])} and {renderSpotifyContent()}.
-            </>
-        );
-    } else if (hasActivities && !hasSpotify) {
-        tailContent = <>, {getActivityText(activities[0])}.</>;
-    } else if (!hasActivities && hasSpotify) {
-        tailContent = <>, {renderSpotifyContent()}.</>;
-    } else {
-        tailContent = ".";
-    }
+    const renderTailContent = () => {
+        const activityText = hasActivities
+            ? getActivityText(activities[0])
+            : null;
+        const musicStatus =
+            hasSpotify || hasAppleMusic ? (
+                <MusicStatus status={status} />
+            ) : null;
+
+        if (!activityText && !musicStatus) return ".";
+
+        if (activityText && musicStatus) {
+            return (
+                <>
+                    , {activityText} and {musicStatus}.
+                </>
+            );
+        }
+
+        if (activityText) {
+            return <>, {activityText}.</>;
+        }
+
+        return <>, {musicStatus}.</>;
+    };
 
     return (
         <p className="text-sm text-muted-foreground leading-relaxed  ">
@@ -125,7 +99,7 @@ export function LanyardProfile() {
                 {statusMap[status.discord_status]}
             </span>
             on Discord
-            {tailContent}
+            {renderTailContent()}
         </p>
     );
 }

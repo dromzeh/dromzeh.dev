@@ -35,5 +35,5 @@ export function MDXImage({
         width: widthFromSrc || 550,
     };
 
-    return <NextImage {...imageProps} />;
+    return <NextImage className="rounded-lg" {...imageProps} />;
 }

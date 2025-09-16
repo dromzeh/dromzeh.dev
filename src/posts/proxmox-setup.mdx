@@ -1,0 +1,110 @@
+---
+title: Proxmox & Networking Setup
+description: Updated Proxmox and Networking setup, alongside services I'm hosting.
+date: 16-09-2025
+slug: proxmox-network-setup
+---
+
+Back in June of this year, I upgraded my PC - going from Ryzen 5 5600X w/ 3060 Ti to a Ryzen 7 9800X3D w/ RTX 5070 OC.
+
+I'd need a new motherboard for AM5, DDR5 instead of DDR4, etc.. so in other words, this was just be a whole new build.
+
+Now this meant I had my old PC laying around, I *could've* just sold it; for the past couple years I've been self hosting everything
+across various i3-i5 optiplexes, it would always naturally be very warm in my room (not ideal with UK weather) alongside being quite tedious to manage sometimes.
+
+My old PC could easily destroy what all the optiplexes combined could handle, so I decided to set it up for use with Proxmox.
+
+<img src="https://cdn.marcel.best/temp/firefox_S54BKLy7ps.png" />
+
+*(my [homepage](https://gethomepage.dev/) interface setup)*
+
+## What I'm Hosting
+
+I'm hosting a considerable amount of services on Proxmox:
+
+- **Jellyfin (LXC)**: Honestly, the best program for accessing media. Previously it was ran on my Host; it was tedious, I was more limited on resources, etc.
+- **Tailscale (Host/LXC/VM)**: Self explanatory, I use Tailscale to access my services from anywhere, alongside everything having an easy to remember name.
+- **Windows 11 24H2 (VM)**: Handles various different things which may require a GPU that I want to delegate from my Host.
+- **Unifi (LXC)**: Network Server for easily managing my APs, connected devices and overall networking configuration stuff.
+- **Pterodactyl (LXC)**: Really simple to setup for managing various game services I can then share out with friends also using Tailscale. Pterodactyl stores default credentials in the LXC's FS.
+- **RDTClient (LXC)**: Real Debrid Client for downloading various pieces of media and torrent files.
+- **Radarr/Sonarr (LXC)**: Used for easy Media Management, this can also be configured to work directly with RDTClient by it acting as a Torrent Client.
+- **Homepage (LXC)**: Informative dashboard for my services alongside quick links to stuff I use often. Very customizable and supports custom CSS/Javascript to make it even more personalized. 
+
+*(homepage crashes out after an hour and starts returning API Error responses for widgets if you provided Tailscale addresses in the configs; you can either use the actual given addresses for the services or setup a job to reconnect them)*
+
+
+## Requirements
+
+When setting this up, there were a few things I wanted to prioritize:
+- Tailscale
+- LXCs for all the services I run (jellyfin, radarr, pterodactyl, etc)
+- Windows 11 24H2 with passthrough
+- Unifi
+
+## Tailscale Setup
+
+Of course, I don't want to have to be typing 192.168.XXX.XXX every time I want to access everything, so Tailscale can be used to make this easier.
+For Proxmox itself, it's super easy, you just install it through the shell like you usually would for Linux.
+
+LXCs follow a similar process here, you install it through the LXC shell.
+
+For unprivileged LXCs, `/dev/net/tun` needs access to the LXC.
+
+Access can be given from the Proxmox Shell via `nano/vi.. /etc/pve/lxc/[id].conf` & adding the following:
+
+```sh
+lxc.cgroup2.devices.allow: c 10:200 rwm
+lxc.mount.entry: /dev/net/tun dev/net/tun none bind,create=file
+```
+
+You can also pass the `--ssh` parameter when installing Tailscale somewhere new too! This lets you directly ssh into your LXCs, vms, etc with your Tailscale account.
+
+This also makes it way easier for when you want to edit config files or access the shell for various services, like in VSCode you can connect easily via SSH.
+
+## LXC Setup
+
+I love LXCs. There's an incredibly site that hosts [Proxmox VE Scripts](https://community-scripts.github.io/ProxmoxVE/scripts) that can be used to easily setup various services. You run the commands inside your proxmox shell, and it handles everything.
+
+The process is very explanatory and walks you through specific configurations.
+
+There's also other scripts that exist for post-install configurations letting you disable enterprise, nagging, etc.
+
+
+## Windows 11 Passthrough VM
+
+As I have a 3060 Ti in this build that I didn't want to go to waste, I decided to setup Windows 11 as-well.
+
+This also gives me an easy way to delegate GPU-intensive tasks from my Host PC to the GPU in the VM when needed.
+
+There's a guide on the [Proxmox Forum](https://forum.proxmox.com/threads/windows-11-vm-for-gaming-setup-guide.137718/) which I mostly followed to set this up, as this area I'm not too familiar with.
+
+I also ran into quite a bit of issues, here's every issue I faced and how I fixed it:
+
+- **Virtio SCSI Drivers**: You have to provide drivers when Windows asks for the drive to install itself on so they can be found; none of them were listed as being compatible. I attempted to fix by using the latest recent [Windows VirtIO Drivers](https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers) and using US instead of International ISO as other people suggested, 
+but this didn't work. Turns out I forgot to set the SCSI controller to VirtIO in the VM settings.
+- **GPU not being detected in Windows**: Install drivers for your GPU. As I was on an Nvidia GPU, I personally generate installations with [NVCleanstall](https://www.techpowerup.com/nvcleanstall/) and then transfer them to the VM to be installed.
+- **Other Driver Issues**: Navigate to the VirtIO ISO, should be accessible within file explorer, there's an executable file in the root that installs everything for you.
+- **Requiring an Online Account**: During OOBE, you're prompted to create an online account and/or get forced to connect to internet. You can bypass this by opening command prompt with Shift + F10 and executing `oobe\bypassnro` that restarts the OOBE process and then allows you to skip these steps.
+
+I also didn't want my VM to be "detected" as a VM - so I used [pafish](https://github.com/a0rtega/pafish), it uses common testing methods to detect if you're running in a VM; then I went and fixed everything it flagged. There were no issues running games that use EAC and BattlEye.
+
+Alongside this, the GPU is also shared between Windows 11 and my Jellyfin Instance so they can run together.
+
+## Network Setup
+
+As I currently live with my parents & my ISP wants you to use their own provided router, I had to beg them and persuade I *somewhat* know what I'm doing for the router to be set to bridge mode - basically converting the provided router into a modem to allow you to use your own router.
+
+The "router" then connects to a (temporary) TP Link Router for my parents to get internet access - they aren't as obsessed over internet speed as me, so this setup is fine for them.
+
+I've also made a simple diagram [of my network setup](https://cdn.marcel.best/temp/firefox_oT0ZzRlSZR.png).
+
+### Unifi
+
+There are 2 APs that I own, a U6 Pro and Nano HD - setup for a better wireless speed and also gives me my own completely seperate network. Getting a gateway is currently a little out of my budget, so Unifi Network Server was setup in an LXC.
+
+The setup for Unifi and adopting APs to your network is very easy to follow; a considerable amount of messing with bands and channels was also needed. I was able to get 800Mbps parallel from my iPhone 15 Pro where my ISP provides 1Gbps parallel.
+
+Without a Gateway, I am limited on what I can do with my APs and overall Network Configuration; it works for now.
+
+Hopefully in the future, I'll either move out to a place with better internet and build an incredibly overkill setup. Once you get into self hosting, there's really no way out.
