@@ -15,7 +15,8 @@ export function About() {
         <section>
             <div className="space-y-3 text-sm">
                 <div className="text-muted-foreground leading-relaxed">
-                    Hi - I&apos;m Marcel, currently {<Age />} years-old.
+                    Hi - I&apos;m Marcel; I&apos;m currently {<Age />}{" "}
+                    years-old.
                 </div>
                 <p className="text-muted-foreground leading-relaxed">
                     I do pretty much everything and anything. There's a{" "}
@@ -25,8 +26,8 @@ export function About() {
                     >
                         FAQ
                     </Link>{" "}
-                    you can read that explains further alongside my contact
-                    policy.
+                    you can read that explains more about me alongside my
+                    contact policy.
                 </p>
                 <div className="text-muted-foreground leading-relaxed flex flex-row flex-wrap gap-2">
                     <LanyardProfile />

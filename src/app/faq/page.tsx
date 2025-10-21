@@ -45,10 +45,17 @@ export default function FAQ() {
                                 and getting into Roblox exploit development.
                             </p>
                             <p>
-                                I basically fully shifted into web development
-                                at 15 when skowt.cc (prev. wanderer.moe)
-                                exploded in popularity. Proceeded to drop out of
-                                college at 16.
+                                Left mainstream school in Year 10 to an
+                                international secondary school. I got a 9 in
+                                Further Maths & Computer Science alongside a
+                                BTEC Level 2 Disctinction in Business & finished
+                                secondary school one year early.
+                            </p>
+                            <p>
+                                Then I basically fully shifted into web
+                                development at 15 when skowt.cc (prev.
+                                wanderer.moe) exploded in popularity. Proceeded
+                                to drop out of college at 16.
                             </p>
                         </div>
                     </section>
@@ -60,22 +67,26 @@ export default function FAQ() {
                         <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
                             <p>
                                 Due to TikTok's algorithm, I&apos;ve been stuck
-                                doing web development for the past few years.
+                                mostly doing web development for the past few
+                                years. I have, however, been thoroughly enjoying
+                                hardware and robotics and have been working on a
+                                (top secret) project for the past few months.
                             </p>
                             <p>
-                                I strongly enjoy doing systems work and
+                                Sometimes I&apos;ll do systems work and
                                 infrastructure management, plus being pretty
-                                into self-hosting everything I can. Sometimes
-                                I&apos;ll do some low-level programming and
-                                reverse engineering too.
+                                into self-hosting everything I can. I&apos;ve
+                                also dabbled in doing some low-level programming
+                                and reverse engineering.
                             </p>
                             <p>
-                                Alongside that, I play a stupid amount of rhythm
-                                games. I got into the genre in 2017, starting
-                                with osu! standard before switching to VSRGs
-                                (vertical scrolling rhythm games) in 2020.
-                                I&apos;ve also been getting into learning 5-fret
-                                guitar games.
+                                Alongside that, I play an unhealthy amount of
+                                rhythm games. I got into the genre in 2017,
+                                starting with osu! standard before switching to
+                                VSRGs (vertical scrolling rhythm games) in 2020,
+                                predominately 4K. Recently got my hands on
+                                5-fret controllers and I'm now learning 5-fret
+                                rhythm games.
                             </p>
                         </div>
                     </section>
@@ -134,32 +145,72 @@ export default function FAQ() {
 
                     <section className="space-y-4 text-sm">
                         <h2 className="font-semibold text-foreground text-sm">
+                            Games
+                        </h2>
+                        <div className="space-y-2 text-sm text-muted-foreground leading-relaxed">
+                            <div className="space-y-1 text-sm">
+                                <p>
+                                    <strong className="text-foreground">
+                                        Suggestions:
+                                    </strong>{" "}
+                                    Outer Wilds, OneShot, The Beginner&apos;s
+                                    Guide, OMORI, Hollow Knight, Celeste,
+                                    ULTRAKILL, Dead Take
+                                </p>
+                                <p>
+                                    <strong className="text-foreground">
+                                        Liked:
+                                    </strong>{" "}
+                                    Persona 3 Reload, Neon White, Halo 4, Halo
+                                    Reach, Metal: Hellsinger, Sonic Adventure 2,
+                                    Watchdogs: Legion, Left 4 Dead 2, BO6
+                                    (Zombies)
+                                </p>
+                                <p>
+                                    <strong className="text-foreground">
+                                        Rotation:
+                                    </strong>{" "}
+                                    Quaver, Fortnite (Festival), Phasmophobia,
+                                    Rock Band 4, YARG, Elden Ring Nightreign
+                                </p>
+                                <p>
+                                    <strong className="text-foreground">
+                                        Need to play:
+                                    </strong>{" "}
+                                    Hollow Knight: Silksong, Black Ops 7, CIV 7,
+                                    Borderlands 4, GTA 6, Persona 4 Revival
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section className="space-y-4 text-sm">
+                        <h2 className="font-semibold text-foreground text-sm">
                             Media I Like
                         </h2>
                         <div className="space-y-2 text-sm text-muted-foreground leading-relaxed">
                             <div className="space-y-1 text-sm">
                                 <p>
                                     <strong className="text-foreground">
-                                        Games:
-                                    </strong>{" "}
-                                    Outer Wilds, OneShot, The Beginner&apos;s
-                                    Guide, OMORI (Contains Triggering Topics),
-                                    Hollow Knight, Celeste, ULTRAKILL, Dead Take
-                                    (Contains Triggering Topics)
-                                </p>
-                                <p>
-                                    <strong className="text-foreground">
                                         Shows:
                                     </strong>{" "}
                                     Cowboy Bebop, Severance, Black Mirror,
-                                    Cyberpunk: Edgerunners (All Contain
-                                    Triggering Topics)
+                                    Cyberpunk: Edgerunners
+                                </p>
+                                <p>
+                                    <strong className="text-foreground">
+                                        Movies:
+                                    </strong>{" "}
+                                    Black Mirror: Bandersnatch, Unfriended,
+                                    Unfriended: Dark Web, Sonic 1-3
                                 </p>
                                 <p>
                                     <strong className="text-foreground">
                                         Music Artists:
                                     </strong>{" "}
-                                    Frums, underscores, Camellia, Silentroom
+                                    Frums, Imperial Circus Dead Decadence,
+                                    underscores, Camellia, Silentroom, Dance
+                                    Gavin Dance, Basement
                                 </p>
                             </div>
                         </div>
