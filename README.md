@@ -1,10 +1,10 @@
-Source code for my personal website.
+source code for my personal website.
 
-Built with [Next.js](https://nextjs.org/), [TailwindCSS](https://tailwindcss.com/), [TypeScript](https://www.typescriptlang.org/), & [Lanyard](https://lanyard.rest)
+built with [Next.js](https://nextjs.org/), [TailwindCSS](https://tailwindcss.com/), [TypeScript](https://www.typescriptlang.org/), & [Lanyard](https://lanyard.rest)
 
-Deployment is done via [Cloudflare Pages](https://pages.cloudflare.com/), using [next-on-pages](https://github.com/cloudflare/next-on-pages).
+deployment is done via [Cloudflare Pages](https://pages.cloudflare.com/), using [next-on-pages](https://github.com/cloudflare/next-on-pages).
 
-Cache is cleared via a [Workflow](.github/workflows/cf-pages-await.yml) that waits for the pages build to be completed.
+cache is cleared via a [Workflow](.github/workflows/cf-pages-await.yml) that waits for the pages build to be completed.
 
 ## License
 
