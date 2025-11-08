@@ -5,17 +5,15 @@ date: 12-06-2024
 slug: cf-pages-nextjs-blog
 ---
 
-I recently rewrote my site to [Next.js](https://nextjs.org). Where it's being hosted on [Cloudflare Pages](https://pages.cloudflare.com/) using [next-on-pages](https://github.com/cloudflare/next-on-pages/).
+I rewrote my site in [Next.js](https://nextjs.org), hosting on [Cloudflare Pages](https://pages.cloudflare.com/) via [next-on-pages](https://github.com/cloudflare/next-on-pages/).
 
-For the most part, next-on-pages works incredibly well. However, if you're new to deploying Next.js sites on Cloudflare Pages, it can get tedious.
+Next-on-pages works well, but the setup isn't obvious if you're unfamiliar with Cloudflare's deployment model. Here's how I implemented a blog system.
 
-This article is how I added posts to my Next.js site hosted on Cloudflare Pages.
+## MDX Support
 
-## Markdown on Next.js
+I chose `next-mdx-remote` for its clean API and React component rendering.
 
-The first part is to add support for Markdown files in Next.js. For this, I used `next-mdx-remote`. It's a library that allows you to render MDX files as React components.
-
-For this, I first created a declaration file called `mdx.d.ts` in the root of my project:
+Create `mdx.d.ts` in your project root:
 
 ```ts
 declare module "*.mdx" {
@@ -24,7 +22,7 @@ declare module "*.mdx" {
 }
 ```
 
-Then, it was onto reconfiguring my `next.config.js` to output the site as a static site:
+Configure `next.config.js` for static export (required for Cloudflare Pages):
 
 ```ts
 const nextConfig = {
@@ -33,14 +31,11 @@ const nextConfig = {
 };
 ```
 
-Now, we need to create a way to fetch posts. In this case, we can create a `fetch-posts.ts` lib file which contains:
+## Fetching Posts
 
-- A way to fetch all posts
-- A way to fetch a single post
+I created `fetch-posts.ts` with two functions: fetch all posts, fetch by slug.
 
-To fetch all posts, we can simply use `fs` to read the `posts` directory and filter out the `.mdx` files:
-
-If our post is not published, we can simply return `null`:
+Read the posts directory with Node's `fs` module, filter for `.mdx` files, skip unpublished posts:
 
 ```ts
 import matter from "gray-matter";
@@ -78,7 +73,7 @@ export const getPosts = async () => {
 };
 ```
 
-To fetch a single post, we can use the `getPosts` function and filter out the post by the slug:
+Single post fetch leverages `getPosts`:
 
 ```ts
 export async function getPost(slug: string) {
@@ -87,13 +82,9 @@ export async function getPost(slug: string) {
 }
 ```
 
-## Rendering Posts
+## Rendering
 
-Now that we have a way to fetch posts, we can render them using `next-mdx-remote`. 
-
-I created a `markdown-component.tsx` file that contains the components for rendering the markdown.
-
-For example, to render a `strong` tag, I created a `Strong` component then added it to the exported `mdxComponents` object:
+Custom components for markdown elements live in `markdown-component.tsx`:
 
 ```tsx
 function Strong(
@@ -116,7 +107,7 @@ export const mdxComponents: MDXComponents = {
 };
 ```
 
-Then, I created a `post-body.tsx` file that contains the `PostBody` component, this component uses `MDXRemote` to render the markdown:
+The `post-body.tsx` component renders markdown with remark and rehype plugins:
 
 ```tsx
 import { MDXRemote } from "next-mdx-remote/rsc";
@@ -144,9 +135,7 @@ export function PostBody({ children }: { children: string }) {
 }
 ```
 
-For the basic configuration, that's all you need to render posts in Next.js, where you pass the `body` of the post to the `PostBody` component.
-
-For our `posts/[id]` route, we use `generateStaticParams` to generate the routes for each post, as we can't edge render this.
+Pass the post body to `PostBody` to render. For `posts/[id]`, pre-generate routes with `generateStaticParams` (edge rendering isn't supported):
 
 ```ts
 export async function generateStaticParams() {
@@ -158,7 +147,7 @@ export async function generateStaticParams() {
 }
 ```
 
-For generating metadata, we can use `generateMetadata` function.
+Generate metadata:
 
 ```ts
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -175,7 +164,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 ```
 
-Then in the PostPage, we can fetch the post and render it.
+Fetch and render in the PostPage component:
 
 ```tsx
 export default async function PostPage({ params: { id } }: Props) {
@@ -194,9 +183,8 @@ export default async function PostPage({ params: { id } }: Props) {
 }
 ```
 
-## Conclusion
+## Extending
 
-You can freely use this to build onto this to add additional entries such as tags. 
+This foundation supports tags, categories, search, or any other features you need.
 
-You can view the full source code for this site on [GitHub](https://git.dromzeh.dev/dromzeh.dev).
-
+Full source on [GitHub](https://git.dromzeh.dev/dromzeh.dev).

@@ -5,30 +5,28 @@ date: 01-06-2025
 slug: vscode-config
 ---
 
-This post has been updated to reflect my current VSCode config as of 1st June 2025.
+This post reflects my current VSCode config as of 1st June 2025.
 
-After [Atom](https://atom.io/) was archived, I switched to [Visual Studio Code](https://code.visualstudio.com/) for my development needs.
+After [Atom](https://atom.io/) was archived, I moved to [Visual Studio Code](https://code.visualstudio.com/). I made the mistake most developers make: installing every extension that looked useful. The result was a bloated, sluggish editor that hurt my workflow.
 
-Over time, I ended up installing loads of extensions that were either unnecessary or redundant. This led to an incredibly slow and bloated editor.
+I rebuilt from scratch. Here's what survived.
 
-I decided to start fresh and only install the extensions I need. Here's my minimal VSCode setup for development.
+## Extensions
 
-## The Extensions I Use
+I keep the list short. Only what I actively use and necessary language support:
 
-Here's a list of the extensions I use in my setup, alongside the required language support extensions:
+- [Mellow](https://marketplace.visualstudio.com/items?itemName=kvrohit.mellow-theme): My preferred theme.
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode): Code formatter.
+- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss): Autocomplete and linting for Tailwind.
+- [Pretty TypeScript Errors](https://marketplace.visualstudio.com/items?itemName=YoavBls.pretty-ts-errors): Makes TypeScript errors readable.
+- [Wakatime](https://marketplace.visualstudio.com/items?itemName=WakaTime.vscode-wakatime): Time tracking.
+- [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost): Displays package sizes inline. Performance issues make me rarely enable it.
+- [Catppuccin Perfect Icons](https://marketplace.visualstudio.com/items?itemName=thang-nm.catppuccin-perfect-icons): Icon theme.
+- [Discord Rich Presence](https://marketplace.visualstudio.com/items?itemName=LeonardSSH.vscord): Displays current project in Discord.
 
-- [Mellow](https://marketplace.visualstudio.com/items?itemName=kvrohit.mellow-theme) - My favorite theme for VSCode.
-- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) - Code formatter.
-- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) - Tailwind CSS IntelliSense.
-- [Pretty Typescript Errors](https://marketplace.visualstudio.com/items?itemName=YoavBls.pretty-ts-errors) - Better TypeScript error messages.
-- [Wakatime](https://marketplace.visualstudio.com/items?itemName=WakaTime.vscode-wakatime) - Time tracking.
-- [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost) - Displays package sizes: I notice some performance issues with this and therefore rarely use this now.
-- [Catppucin Perfect Icons](https://marketplace.visualstudio.com/items?itemName=thang-nm.catppuccin-perfect-icons) - Icon theme.
-- [Discord Rich Presence](https://marketplace.visualstudio.com/items?itemName=LeonardSSH.vscord) - Shows your current project in Discord.
+## Settings
 
-## My Settings
-
-Below is my `settings.json`, feel free to use it as a reference for your own configuration:
+My `settings.json` for reference:
 
 ```json
 {
@@ -36,7 +34,7 @@ Below is my `settings.json`, feel free to use it as a reference for your own con
     "terminal.integrated.smoothScrolling": true,
     "terminal.integrated.fontFamily": "GeistMono Nerd Font",
     "terminal.integrated.fontSize": 14,
-    
+
     "editor.fontFamily": "GeistMono Nerd Font",
     "editor.inlayHints.fontFamily": "GeistMono Nerd Font",
     "editor.codeLensFontFamily": "GeistMono Nerd Font",
@@ -69,7 +67,7 @@ Below is my `settings.json`, feel free to use it as a reference for your own con
     "workbench.colorTheme": "Mellow",
     "workbench.iconTheme": "catppuccin-perfect-mocha",
     "workbench.settings.editor": "json",
-    
+
     "scm.inputFontFamily": "GeistMono Nerd Font",
     "chat.editor.fontFamily": "GeistMono Nerd Font",
     "debug.console.fontFamily": "GeistMono Nerd Font",
@@ -79,7 +77,7 @@ Below is my `settings.json`, feel free to use it as a reference for your own con
         // prevents the 'unknown rule' error in .css files when working with TailwindCSS
         "*.css": "tailwindcss",
     },
-    
+
     "window.titleBarStyle": "native",
     "window.customTitleBarVisibility": "never",
 

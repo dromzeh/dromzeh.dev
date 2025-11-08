@@ -5,29 +5,27 @@ date: 22-06-2024
 slug: redux-persist-tab-syncing-on-nextjs
 ---
 
-**Note: This post was written before wanderer.moe was rebranded into skowt.cc, written content has been updated to reflect these changes.**
+**Note: This post was written before wanderer.moe was rebranded to skowt.cc-written content has been updated to reflect these changes.**
 
-While working on mass downloading for [skowt.cc](https://skowt.cc), I wanted to implement a feature that would allow users to select multiple assets and download them in a single click. 
-
-To enhance the user experience further, I also wanted to synchronize the selected assets and download state across multiple browser tabs in real-time.
+While building the mass download feature for [skowt.cc](https://skowt.cc), I needed users to select multiple assets and download them in one click. State had to sync in real-time across browser tabs.
 
 <Video src="https://cdn.marcel.best/ShareX/2024/06/NVIDIA_Share_EcVTfGPyHw.mp4" />
 
-## The Challenge I Faced
+## The Challenge
 
-I needed a system that could:
+I needed state that could:
 
-1. Share state across the entire application
-2. Persist state through page refreshes and tab closures
-3. Synchronize state in real-time across multiple browser tabs
+1. Share across the entire application
+2. Persist through page refreshes and tab closures
+3. Synchronize in real-time across multiple browser tabs
 
-I quickly realized that while React's Context API can handle cross-component state sharing, it falls short for persistence & having cross-tab synchronization.
+React's Context API handles cross-component state well. It fails at persistence and cross-tab sync.
 
-My Solution: Redux, Redux Persist, and Redux State Sync.
+Solution: Redux, Redux Persist, and Redux State Sync.
 
 ### Storage Implementation
 
-First, we need a storage implementation that correctly accommodate both client-side & server-side rendering:
+First, a storage adapter that handles both client and server rendering:
 
 ```typescript
 import createWebStorage from "redux-persist/es/storage/createWebStorage";
@@ -54,10 +52,10 @@ export const storage =
 
 ### Redux State Structure
 
-In this use case, we only really need to manage:
+Two pieces of state:
 
-- `isMassDownloading`: A boolean flag to indicate if mass downloading, to compare against the local state for the download indicator.
-- `selectedAssets`: An array of the selected assets.
+- `isMassDownloading`: Boolean flag tracking download progress across tabs
+- `selectedAssets`: Array of selected assets
 
 ```typescript
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
@@ -76,7 +74,7 @@ const initialState: IAssetState = {
 
 ### Redux Slice Implementation
 
-I created a slice named `assetSlice` with the appropriate actions and reducers, where asset selection/mass download state is managed:
+An `assetSlice` with actions and reducers managing asset selection and download state:
 
 ```typescript
 export const assetSlice = createSlice({
@@ -110,8 +108,7 @@ export const assetSlice = createSlice({
 
 ### Redux Configuration
 
-
-The redux configuration is setup with the `persistReducer` and `combineReducers` functions to persist the state across sessions:
+`persistReducer` and `combineReducers` persist state across sessions:
 
 ```typescript
 import { combineReducers } from "@reduxjs/toolkit";
@@ -132,7 +129,7 @@ const rootReducer = combineReducers({
 export const persistedReducer = persistReducer(persistConfig, rootReducer);
 ```
 
-Then, I configured the Redux store with the `createStateSyncMiddleware` and `initMessageListener` to synchronize the state across tabs:
+The Redux store uses `createStateSyncMiddleware` and `initMessageListener` to synchronize state across tabs:
 
 ```typescript
 import { configureStore } from "@reduxjs/toolkit";
@@ -177,7 +174,7 @@ initMessageListener(store);
 
 ### Redux Provider
 
-Finally, we import `Provider` and `PersistGate` from `react-redux` and `redux-persist/integration/react` to wrap the application with the Redux provider:
+Wrap the application with `Provider` and `PersistGate`:
 
 ```tsx
 "use client";
@@ -201,7 +198,7 @@ export default ReduxProvider;
 
 ## Component Integration
 
-With the custom hooks, I can call this into any component as long as it is wrapped in the Redux provider. Here's a snipper example of how I implemented features for the `asset-item.tsx` component:
+Access state and dispatch actions from any component:
 
 ```tsx
 import { useAppDispatch, useAppSelector } from "~/redux/store";
@@ -214,7 +211,7 @@ const isSelected = isAssetSelected(
 );
 ```
 
-With the above, you can access the Redux state and dispatch actions directly from the component.
+Dispatching actions is straightforward:
 
 ```ts
 <button onClick={() => dispatch(toggleAssetSelection(asset))}>
@@ -224,7 +221,7 @@ With the above, you can access the Redux state and dispatch actions directly fro
 
 ### Download Indicator
 
-I created a local context to manage the download indicator state, where I can compare the local state with the global state to determine what should be conditionally rendered:
+A local context manages the download indicator state, comparing it with global Redux state to determine what to render:
 
 ```tsx
 const {
@@ -250,6 +247,6 @@ const isMassDownloading = useAppSelector(
 
 ## Conclusion
 
-While implementing cross-tab state synchronization may seem complex, and even unnecessary in some cases, adding this to skowt.cc increased engagement and the probability of users revisiting the site.
+Cross-tab state synchronization improved engagement on skowt.cc. Users appreciate continuity when switching between tabs, and it encourages them to revisit the site.
 
-You can view the full source code on [GitHub](https://github.com/skowtcc/site) or try it out for yourself on [skowt.cc](https://skowt.cc).
+View the full source code on [GitHub](https://github.com/skowtcc/site) or try it yourself on [skowt.cc](https://skowt.cc).

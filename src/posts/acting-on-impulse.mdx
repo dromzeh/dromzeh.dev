@@ -7,70 +7,64 @@ slug: acting-on-impulse
 
 **Note: This post was written before wanderer.moe was rebranded into skowt.cc, written content has been updated to reflect these changes.**
 
-When I was 15 years old in early 2022, I stumbled upon an opportunity that would lead me to create a platform serving millions of users.
+At 15, I built a platform that now serves millions of users. It started with a single TikTok comment.
 
 ## A TikTok Video
 
-Like many others my age at the time, I was an avid Genshin Impact player. I was in online school after dealing with various medical issues, finding mainstream not challenging & being assaulted and threatened at a mainstream school, so I had a lot of free time. 
+Early 2022. I was in online school after medical issues, assault, and threats made mainstream education impossible. I had time.
 
-One night, while doom-scrolling TikTok, I came across a video where users expressed their frustration about not having easy access to game assets for Genshin and similar games.
-
-With my existing hate for various storage providers, that video sparked an idea: I could create a site to solve this problem.
+Scrolling TikTok one night, I found a video where users complained about accessing game assets for Genshin Impact. I'd been frustrated with storage providers for years. This was solvable.
 
 ## The Initial Launch: wtf.dromzeh.dev
 
-With some unused credits from my DigitalOcean GitHub Student grant, I spun up a site in about two hours. It was named wtf.dromzeh.dev, running on h5ai with NGINX, and I managed the DNS records with Cloudflare. It was simple, functional, and, most importantly, quick to deploy.
+I had unused DigitalOcean credits from GitHub Student. Two hours later, wtf.dromzeh.dev was live: h5ai, NGINX, Cloudflare DNS. Simple. Functional. Fast.
 
 ## Organic Growth Through Social Media
 
-I didn't have a strategy, a marketing budget, or big expectations. All I did was comment on TikToks related to game assets, dropping a line about my site and letting people know the link was in my bio. To my surprise, it worked.
+No strategy. No budget. No expectations.
 
-Within days, the traffic exploded. Users started posting their own TikToks about the site, drawing even more attention. My Discord DMs were overflowing, my inbox was packed, and my TikTok account blew up with comments. In just a few days, what started as a side project had grown to 3,000 daily users. I was stunned, and incredibly overwhelmed.
+I commented on TikToks about game assets and dropped my bio link. It worked.
+
+Traffic exploded within days. Users created their own TikToks. My Discord DMs flooded. My inbox packed. Within days, 3,000 daily users. I was stunned.
 
 ## Creating skowt.cc
 
-As wtf.dromzeh.dev struggled under the rapidly growing traffic, I knew I needed to create something more robust. That's when skowt.cc was born. I decided to learn Svelte to build it, even though I only had backend programming experience in Node.js and Python at the time. 
+wtf.dromzeh.dev couldn't handle the load. I needed something robust.
 
-While on holiday, I built version 1 of skowt.cc in just three days and deployed it on DigitalOcean. But I ran into a major problem: production-specific issues caused the site to go down, taking both wtf.dromzeh.dev and skowt.cc offline for a couple days.
+I learned Svelte despite only knowing Node.js and Python. On holiday, I built skowt.cc v1 in three days and deployed it. Production bugs took both sites offline for days.
 
-Being entirely on my own, I worked non-stop, determined to fix the issue. It turned out the problem was with DigitalOcean, I had faced issues with DigitalOcean before (where they randomly shut off the droplet wtf.dromzeh.dev was running on at 2am for a couple hours without informing me) so I made the move to Cloudflare Pages, and the site came back online.
-
-Naturally, one of the first things you'd do is check if it's a provider issue, but I was under a lot of pressure from the attention, stress, and therefore not clearly thinking.
+Working alone, under pressure, I missed the obvious: DigitalOcean was the problem. They had also shut down my droplet a couple weeks prior at 2am before without warning. I migrated to Cloudflare Pages. The site came back.
 
 ## New API Development in 2023
 
-Initially, the assets were stored directly in the frontend. While this saved on costs, it required rebuilding the site every time new assets were added. As skowt.cc grew, this approach became less sustainable.
+Assets were stored in the frontend initially. Cost-effective, but every update required a full rebuild. Unsustainable.
 
-In 2023, I designed and implemented a custom API to solve this problem. Using Cloudflare Workers and itty-router, I created an API that dynamically indexed files stored in a Cloudflare R2 bucket. This removed the need for constant manual rebuilds, made updates seamless and kept costs low.
+I built a custom API using Cloudflare Workers and itty-router, dynamically indexing files in R2 buckets. No more manual rebuilds. Seamless updates. Low costs.
 
 ## The 2024 Rewrite
 
-As the platform continued to grow, I decided to rewrite skowt.cc in Next.js to address performance issues.
+A massive DDoS attack from VPS providers forced an early rewrite. I rebuilt skowt.cc in Next.js in 6 hours.
 
-The rewrite wasn't originally planned for early 2024, but a massive DDoS attack forced my hand. Attack traffic from various VPS providers overwhelmed the site, and I realized I couldn't delay the change. In just 6 hours, I built a completely new version of skowt.cc in Next.js with an entirely fresh structure.
-
-The effort paid off. skowt.cc now averages 300,000 monthly active users.
+skowt.cc now averages 300,000 monthly active users.
 
 ## Conclusion
 
-One singular tiktok comment changed the trajectory of my life life, and it really shows how fast your life can change. I've met so many amazing people, and I've learned so much along the way.
+One TikTok comment changed everything. I've met incredible people and learned constantly.
 
-I ended up dropping out of college to work on skowt.cc. I was only 16 at the time, and my parents did not approve as I wasn't making any money from skowt.cc (and still don't). 
+I dropped out of college at 16 to work on skowt.cc. My parents didn't approve: I made no money from it. They wanted university. We compromised on part-time.
 
-They wanted me to go to University to do a degree, I disagreed with them and we ended up coming to a conclusion, me going to uni part-time instead of full-time. 
+Dropping out wasn't easy or smart. Doubt and exhaustion were constant. But I stayed focused. A simple idea now impacts millions worldwide.
 
-Dropping out of college wasn't an easy decision, nor smart - and there were countless moments of doubt and exhaustion. But by staying focused and determined, I was able to turn a simple idea into something that impacts millions of people worldwide.
+I'm building [Originoid](https://originoid.co), a platform for creators to share their work. Leveraging skowt.cc's userbase, it has 15,000 people on the waitlist.
 
-I'm now working on [Originoid](https://originoid.co), a platform for creators to create and share their various work, with my leverage of skowt.cc and both platforms sharing the same userbase, it has over 15,000 people currently on the waitlist.
-
-Hopefully, this will allow me to generate a stable income to continue making useful tools for creators.
+This will let me generate stable income while building useful tools for creators.
 
 ## Believe in Yourself and Your Ideas
 
-If there's one thing I've learned from this journey, it's that believing in yourself and your ideas is crucial. 
+Believing in yourself matters.
 
-So, if you're passionate about something and there's an opportunity right infront of you, take the leap. It's not always going to be smooth, but the lessons, growth, and rewards you'll gain make it worth it. Even if you fail, you learn from your mistakes, and that's valuable for the long run.
+If you're passionate and see an opportunity, take it. It won't be smooth. But the lessons, growth, and rewards make it worth it. Failure teaches. That's invaluable.
 
-You can literally just build things. Even if you don't have much experience with programming, there are so resources available that let you build whatever you want.
+You can build things. Even without programming experience, resources exist to build whatever you want.
 
-You can view the full project on [skowt.cc](https://skowt.cc).
+View the full project at [skowt.cc](https://skowt.cc).
