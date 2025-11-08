@@ -22,6 +22,7 @@ export function About() {
                     <Link
                         className="text-foreground hover:text-muted transition-all duration-150 decoration-muted-foreground/30 hover:decoration-muted-foreground/50"
                         href="https://skowt.cc"
+                        target="_blank"
                     >
                         skowt.cc
                     </Link>
@@ -29,6 +30,7 @@ export function About() {
                     <Link
                         className="text-foreground hover:text-muted transition-all duration-150 decoration-muted-foreground/30 hover:decoration-muted-foreground/50"
                         href="https://originoid.co"
+                        target="_blank"
                     >
                         Originoid
                     </Link>

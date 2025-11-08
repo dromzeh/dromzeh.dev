@@ -22,7 +22,7 @@ export default function Home() {
                         <About />
                     </div>
                 </div>
-                <div className="h-full flex flex-col md:justify-between items-end gap-6 md:gap-0">
+                <div className="h-full flex flex-col md:justify-between items-end gap-16 md:gap-0">
                     <MusicStatus />
                     <div className="md:max-w-md md:w-full w-[300px]">
                         <PostContainer />
