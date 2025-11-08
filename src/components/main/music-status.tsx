@@ -137,7 +137,7 @@ export function MusicStatus() {
 
     if (!mounted || loading) {
         return (
-            <div className="w-full min-w-[300px] h-[76px] relative overflow-hidden rounded-[24px] border border-border bg-muted/50 shadow-sm flex items-center gap-4 px-4 py-2 animate-pulse">
+            <div className="w-[300px] h-[76px] relative overflow-hidden rounded-[24px] border border-border bg-muted/50 shadow-sm flex items-center gap-4 px-4 py-2 animate-pulse">
                 <div className="size-[60px] rounded-full bg-muted" />
                 <div className="flex-1 space-y-2">
                     <div className="h-3 bg-muted rounded w-1/3" />
@@ -195,7 +195,7 @@ export function MusicStatus() {
                         <CD
                             albumArt={album_art_url || ""}
                             albumName={album || ""}
-                            isPlaying={isSpotify}
+                            isPlaying={!!isSpotify}
                             href={spotifyLink}
                         />
                         <motion.div
