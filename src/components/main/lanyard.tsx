@@ -2,8 +2,6 @@
 
 import { useLanyard } from "react-use-lanyard";
 import { useEffect, useState } from "react";
-import type { Activity, LanyardData } from "react-use-lanyard";
-import { MusicStatus } from "./music-status";
 
 const statusMap = {
     online: "Online",
@@ -26,35 +24,9 @@ export function LanyardProfile() {
         socket: true,
     });
 
-    const activities =
-        status?.activities?.filter(
-            (activity) => activity.type !== 4 && activity.type !== 2,
-        ) || [];
-
-    const hasSpotify = status?.listening_to_spotify;
-    const hasAppleMusic = status?.activities?.some(
-        (activity: Activity) =>
-            activity.type === 2 && activity.name === "Apple Music",
-    );
-    const hasActivities = activities.length > 0;
-
     useEffect(() => {
         setMounted(true);
     }, []);
-
-    const getActivityText = (activity: Activity) => {
-        if (activity.name === "Visual Studio Code") {
-            const details = activity.details;
-            if (details?.startsWith("In ")) {
-                const projectMatch = details.match(/^In (.+?) -/);
-                if (projectMatch) {
-                    return `working on ${projectMatch[1]}`;
-                }
-            }
-            return `working on ${activity.name}`;
-        }
-        return `playing ${activity.name}`;
-    };
 
     if (!mounted || loading || !status || !status.discord_user) {
         return (
@@ -64,42 +36,15 @@ export function LanyardProfile() {
         );
     }
 
-    const renderTailContent = () => {
-        const activityText = hasActivities
-            ? getActivityText(activities[0])
-            : null;
-        const musicStatus =
-            hasSpotify || hasAppleMusic ? (
-                <MusicStatus status={status} />
-            ) : null;
-
-        if (!activityText && !musicStatus) return ".";
-
-        if (activityText && musicStatus) {
-            return (
-                <>
-                    , {activityText} and {musicStatus}.
-                </>
-            );
-        }
-
-        if (activityText) {
-            return <>, {activityText}.</>;
-        }
-
-        return <>, {musicStatus}.</>;
-    };
-
     return (
-        <p className="text-sm text-muted-foreground leading-relaxed  ">
+        <p className="text-sm text-muted-foreground leading-relaxed">
             Currently
             <span
                 className={`${statusColorMap[status.discord_status]} inline-flex items-center align-middle leading-none rounded-md translate-y-[-0.6px] px-1.5 mx-1 py-[1px] text-xs`}
             >
                 {statusMap[status.discord_status]}
             </span>
-            on Discord
-            {renderTailContent()}
+            on Discord.
         </p>
     );
 }

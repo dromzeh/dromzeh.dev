@@ -30,7 +30,6 @@ export default function RootLayout({
                 className={`${geist.className} h-full scroll-smooth antialiased pl-[calc(100vw-100%)]`}
             >
                 <ThemeProvider attribute="class" defaultTheme="dark">
-                    <NavigationBar />
                     <div>
                         <FramerOverlay>{children}</FramerOverlay>
                     </div>

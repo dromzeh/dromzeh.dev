@@ -29,9 +29,6 @@ export function About() {
                     you can read that explains more about me alongside my
                     contact policy.
                 </p>
-                <div className="text-muted-foreground leading-relaxed flex flex-row flex-wrap gap-2">
-                    <LanyardProfile />
-                </div>
             </div>
         </section>
     );
