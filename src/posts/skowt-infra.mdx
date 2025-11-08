@@ -11,24 +11,6 @@ back in june 2022, i started working on what would become [skowt.cc](https://sko
 
 the website's old stack wasn't very good for a lot of reasons. the API was solely just indexing from an r2 bucket for assets. literally just listing files from object storage and calling it a day.
 
-here's an example of how the old storage was organized:
-```
-/games/
-  /genshin-impact/
-    icon.png          (game icon)
-    cover.png         (game cover)
-    /splash-art/
-      yelan.png
-      hu-tao.png
-    /character-sheets/
-      childe-3.png
-  /honkai-star-rail/
-    icon.png
-    cover.png
-    /splash-art/
-      what.png
-```
-
 everything was manually mapped from slug to actual display name, hardcoded in the frontend. every. single. mapping. it was maintainability hell.
 
 i also faced a very peculiar issue with our old api setup where not all the games would show at the root, so they had to be hard-coded, which was far from ideal. 
@@ -124,18 +106,18 @@ i retroactively tagged all assets as "official" or "fanmade" based on:
 
 what used to be folders and filenames became this:
 
-```
-games table:
+```md
+#games:
 - id (uuidv7)
 - slug 
 - name
 
-categories table:
+#categories:
 - id (uuidv7)
 - slug
 - name
 
-assets table:
+#assets:
 - id (uuidv7)
 - name
 - game_id
@@ -145,11 +127,11 @@ assets table:
 - status (approved/pending, rejected assets are instantly deleted.)
 - ...
 
-game_to_category:
+#game_to_category:
 - game_id
 - category_id
 
-asset_to_tag:
+#asset_to_tag:
 - asset_id
 - tag_id
 ```

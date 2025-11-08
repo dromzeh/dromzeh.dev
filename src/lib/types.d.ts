@@ -1,3 +1,5 @@
+import type { MDXRemoteSerializeResult } from "next-mdx-remote";
+
 export type Post = {
     title: string;
     slug: string;
@@ -6,6 +8,7 @@ export type Post = {
     views: number | null;
     body?: string;
     content?: string;
+    serializedContent?: MDXRemoteSerializeResult;
 };
 
 export type Tool = {

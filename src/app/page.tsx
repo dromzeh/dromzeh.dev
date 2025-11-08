@@ -1,9 +1,7 @@
 import { About } from "~/components/main/about";
 import type { Metadata } from "next";
-import { WorkContainer } from "~/components/work/work-container";
 import { PostContainer } from "~/components/post/post-container";
 import { ContactContainer } from "~/components/main/contact";
-import { LanyardProfile } from "~/components/main/lanyard";
 import { MusicStatus } from "~/components/main/music-status";
 
 export const metadata: Metadata = {
@@ -21,9 +19,7 @@ export default function Home() {
                         <ContactContainer />
                     </div>
                     <div className="space-y-12 max-w-md">
-                        {/* <LanyardProfile /> */}
                         <About />
-                        <WorkContainer />
                     </div>
                 </div>
                 <div className="h-full flex flex-col md:justify-between items-end gap-6 md:gap-0">

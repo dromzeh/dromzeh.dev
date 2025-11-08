@@ -15,19 +15,36 @@ export function About() {
         <section>
             <div className="space-y-3 text-sm">
                 <div className="text-muted-foreground leading-relaxed">
-                    Hi - I&apos;m Marcel; I&apos;m currently {<Age />}{" "}
-                    years-old.
+                    I'm Marcel — {<Age />}-year-old developer.
                 </div>
                 <p className="text-muted-foreground leading-relaxed">
-                    I do pretty much everything and anything. There's a{" "}
+                    Known for{" "}
+                    <Link
+                        className="text-foreground hover:text-muted transition-all duration-150 decoration-muted-foreground/30 hover:decoration-muted-foreground/50"
+                        href="https://skowt.cc"
+                    >
+                        skowt.cc
+                    </Link>
+                    , now building{" "}
+                    <Link
+                        className="text-foreground hover:text-muted transition-all duration-150 decoration-muted-foreground/30 hover:decoration-muted-foreground/50"
+                        href="https://originoid.co"
+                    >
+                        Originoid
+                    </Link>
+                    — a human-first content sharing platform. I dabble in
+                    hardware/electronics and reverse engineering. Currently
+                    learning more about how machines think.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                    More available in the{" "}
                     <Link
                         href="/faq"
                         className="text-foreground hover:text-muted transition-all duration-150 decoration-muted-foreground/30 hover:decoration-muted-foreground/50"
                     >
                         FAQ
-                    </Link>{" "}
-                    you can read that explains more about me alongside my
-                    contact policy.
+                    </Link>
+                    .
                 </p>
             </div>
         </section>

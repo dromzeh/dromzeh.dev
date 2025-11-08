@@ -8,6 +8,7 @@ import { ThemeProvider } from "~/components/navigation/theme-provider";
 import { ThemeToggle } from "~/components/navigation/theme-toggle";
 import { FramerOverlay } from "~/components/navigation/framer-overlay";
 import { NavigationBar } from "~/components/navigation/navigation-bar";
+import { PostModalWrapper } from "~/components/post/post-modal-wrapper";
 
 // add classname and variable
 const geist = GeistSans;
@@ -33,6 +34,7 @@ export default function RootLayout({
                     <div>
                         <FramerOverlay>{children}</FramerOverlay>
                     </div>
+                    <PostModalWrapper />
                     <Toaster />
                     <div
                         className="fixed top-[-10px] z-40 h-10 w-screen bg-background opacity-70 blur backdrop-blur-lg "

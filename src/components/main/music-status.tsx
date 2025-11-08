@@ -1,7 +1,5 @@
 "use client";
 
-// cr to vaunblu for the inspo!
-
 import { motion, MotionConfig, Transition } from "framer-motion";
 import React from "react";
 import Image from "next/image";
@@ -81,7 +79,7 @@ interface LastFmTrack {
     };
 }
 
-export function MusicStatus() {
+export const MusicStatus = React.memo(function MusicStatus() {
     const [componentStatus, setComponentStatus] = React.useState("idle");
     const [currentTime, setCurrentTime] = React.useState(0);
     const [mounted, setMounted] = React.useState(false);
@@ -147,7 +145,6 @@ export function MusicStatus() {
         );
     }
 
-    // Use Spotify if available, otherwise use Last.fm
     const isSpotify = status?.listening_to_spotify && status?.spotify;
     const song = isSpotify ? status.spotify.song : lastFmTrack?.track.name;
     const artist = isSpotify
@@ -163,7 +160,6 @@ export function MusicStatus() {
           ];
     const timestamps = isSpotify ? status.spotify.timestamps : undefined;
 
-    // Generate Spotify link
     const spotifyLink = isSpotify
         ? `https://open.spotify.com/track/${status.spotify.track_id}`
         : `https://open.spotify.com/search/${encodeURIComponent(`${song} ${artist}`)}`;
@@ -218,8 +214,6 @@ export function MusicStatus() {
                             <div
                                 className={`flex items-center gap-2 ${!isSpotify ? "-mt-1" : ""}`}
                             >
-                                {/* <VisualizerBars /> */}
-
                                 <div className="flex-1 flex items-center gap-2">
                                     {isSpotify ? (
                                         <>
@@ -259,4 +253,4 @@ export function MusicStatus() {
             </MotionConfig>
         </Context.Provider>
     );
-}
+});

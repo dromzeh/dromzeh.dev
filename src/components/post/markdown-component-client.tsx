@@ -1,78 +1,12 @@
 import { MDXImage } from "~/components/post/mdx-img";
 import { MDXComponents } from "mdx/types";
 import NextImage from "next/image";
-import { Code } from "bright";
-import { CopyCodeToClipboard } from "./code-utils";
-import mellowTheme from "./mellow.json";
-Code.theme = mellowTheme;
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { nord } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-function CodeBlock(
-    props: React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLElement>,
-        HTMLPreElement
-    >,
-) {
-    const { children, ...rest } = props;
-    return (
-        <div className="relative">
-            <div
-                className={`absolute top-0 right-0 translate-y-5 translate-x-[-4px]`}
-            >
-                <CopyCodeToClipboard
-                    code={(children as any).props.children as string}
-                />
-            </div>
-            <Code
-                {...rest}
-                lineNumbers
-                className={`rounded-sm max-w-full overflow-x-auto text-sm normal-case`}
-            >
-                {children}
-            </Code>
-        </div>
-    );
-}
-
-function Ul(
-    props: React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLUListElement>,
-        HTMLUListElement
-    >,
-) {
-    const { children, ...rest } = props;
-    return (
-        <ul {...rest} className="list-disc text-sm">
-            {children}
-        </ul>
-    );
-}
-
-function Strong(
-    props: React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLElement>,
-        HTMLElement
-    >,
-) {
-    const { children, ...rest } = props;
-    return (
-        <b {...rest} className="text-foreground font-semibold text-sm">
-            {children}
-        </b>
-    );
-}
-
-function Italic(
-    props: React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLElement>,
-        HTMLElement
-    >,
-) {
-    const { children, ...rest } = props;
-    return (
-        <i {...rest} className="italic">
-            {children}
-        </i>
-    );
+interface CodeProps {
+    children?: React.ReactNode;
+    className?: string;
 }
 
 function CustomLink(
@@ -205,8 +139,107 @@ function ListItem(
     );
 }
 
-export const mdxComponents: MDXComponents = {
-    pre: CodeBlock,
+function Ul(
+    props: React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLUListElement>,
+        HTMLUListElement
+    >,
+) {
+    const { children, ...rest } = props;
+    return (
+        <ul {...rest} className="list-disc text-sm">
+            {children}
+        </ul>
+    );
+}
+
+function Strong(
+    props: React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLElement>,
+        HTMLElement
+    >,
+) {
+    const { children, ...rest } = props;
+    return (
+        <b {...rest} className="text-foreground font-semibold text-sm">
+            {children}
+        </b>
+    );
+}
+
+function Italic(
+    props: React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLElement>,
+        HTMLElement
+    >,
+) {
+    const { children, ...rest } = props;
+    return (
+        <i {...rest} className="italic">
+            {children}
+        </i>
+    );
+}
+
+function CodeBlock({ children, className }: CodeProps) {
+    const match = /language-(\w+)/.exec(className || "");
+    const language = match ? match[1] : "text";
+    const code = String(children).replace(/\n$/, "");
+
+    return (
+        <SyntaxHighlighter
+            style={nord}
+            language={language}
+            PreTag="div"
+            className="rounded-sm text-sm max-w-full !bg-[#161617] !mt-4 !mb-4"
+            showLineNumbers={true}
+            customStyle={{
+                margin: 0,
+                padding: "1rem",
+                fontSize: "0.875rem",
+                background: "#161617",
+            }}
+        >
+            {code}
+        </SyntaxHighlighter>
+    );
+}
+
+function Pre({ children, className }: CodeProps) {
+    if (className?.startsWith("language-")) {
+        return <CodeBlock className={className}>{children}</CodeBlock>;
+    }
+
+    const childElement = children as React.ReactElement<CodeProps>;
+    if (childElement?.props?.className?.startsWith("language-")) {
+        return <CodeBlock {...childElement.props} />;
+    }
+
+    if (typeof children === "string") {
+        return <CodeBlock>{children}</CodeBlock>;
+    }
+
+    return (
+        <pre className="bg-muted rounded-sm p-4 overflow-x-auto text-sm max-w-full">
+            {children}
+        </pre>
+    );
+}
+
+function CodeElement({
+    children,
+    className,
+    ...rest
+}: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>) {
+    if (className?.startsWith("language-")) {
+        return <CodeBlock className={className}>{children}</CodeBlock>;
+    }
+
+    return inlineCode({ children, className, ...rest });
+}
+
+export const mdxComponentsClient: MDXComponents = {
+    pre: Pre,
     strong: Strong,
     i: Italic,
     img: MDXImage as any,
@@ -216,7 +249,7 @@ export const mdxComponents: MDXComponents = {
     h1: h1,
     h2: h2,
     h3: h3,
-    code: inlineCode,
+    code: CodeElement,
     li: ListItem,
     p: Text,
     ul: Ul,
