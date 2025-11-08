@@ -15,7 +15,7 @@ export default function Home() {
         <div className="h-screen px-6 md:px-12 lg:px-24 py-16">
             <main className="h-full w-full grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 lg:gap-48">
                 <div className="h-full flex flex-col justify-between">
-                    <div className="max-w-md">
+                    <div className="max-w-md mb-12">
                         <ContactContainer />
                     </div>
                     <div className="space-y-12 max-w-md">

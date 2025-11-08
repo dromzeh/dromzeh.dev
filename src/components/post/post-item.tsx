@@ -20,12 +20,14 @@ export function PostItem(post: Post) {
                 onClick={handleClick}
                 className="group block"
             >
-                <h3 className="text-foreground group-hover:text-muted transition-colors duration-150 hover:cursor-pointer">
+                <h3 className="text-foreground group-hover:text-muted transition-colors duration-150 hover:cursor-pointer truncate">
                     {post.title}
                 </h3>
             </Link>
-            <div className="flex-grow max-sm:hidden border-t border-muted"></div>
-            <p className="max-sm:hidden">{formatPostDate(post.date)}</p>
+            <div className="flex-grow max-md:hidden border-t border-muted"></div>
+            <p className="max-md:hidden truncate">
+                {formatPostDate(post.date)}
+            </p>
         </div>
     );
 }
