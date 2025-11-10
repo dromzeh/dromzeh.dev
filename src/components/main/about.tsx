@@ -15,7 +15,7 @@ export function About() {
         <section>
             <div className="space-y-3 text-sm">
                 <div className="text-muted-foreground leading-relaxed">
-                    I'm Marcel — {<Age />}-year-old developer.
+                    I'm Marcel, {<Age />}-year-old developer.
                 </div>
                 <p className="text-muted-foreground leading-relaxed">
                     Known for{" "}
@@ -34,7 +34,7 @@ export function About() {
                     >
                         Originoid
                     </Link>
-                    — a human-first content sharing platform. I dabble in
+                    , a human-first content sharing platform. I dabble in
                     hardware/electronics and reverse engineering. Currently
                     learning more about how machines think.
                 </p>
