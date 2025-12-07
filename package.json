@@ -13,9 +13,6 @@
     },
     "dependencies": {
         "@fec/remark-a11y-emoji": "^4.0.2",
-        "@ffmpeg/core": "^0.12.10",
-        "@ffmpeg/ffmpeg": "^0.12.15",
-        "@ffmpeg/util": "^0.12.2",
         "@hookform/resolvers": "^5.2.2",
         "@park-ui/tailwind-plugin": "^0.20.1",
         "@radix-ui/react-accordion": "^1.2.12",
@@ -65,7 +62,7 @@
         "lodash.debounce": "^4.0.8",
         "lucide-react": "^0.544.0",
         "motion-number": "^1.0.0",
-        "next": "^15.5.3",
+        "next": "15.5.7",
         "next-mdx-remote": "^5.0.0",
         "next-themes": "^0.4.6",
         "react": "^19.1.1",

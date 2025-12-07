@@ -133,16 +133,18 @@ export const MusicStatus = React.memo(function MusicStatus() {
         return () => clearInterval(interval);
     }, [status?.spotify?.timestamps?.start]);
 
-    if (!mounted || loading) {
-        return (
-            <div className="w-[300px] h-[76px] relative overflow-hidden rounded-[24px] border border-border bg-muted/50 shadow-sm flex items-center gap-4 px-4 py-2 animate-pulse">
-                <div className="size-[60px] rounded-full bg-muted" />
-                <div className="flex-1 space-y-2">
-                    <div className="h-3 bg-muted rounded w-1/3" />
-                    <div className="h-3 bg-muted rounded w-1/2" />
-                </div>
+    const Skeleton = () => (
+        <div className="w-[300px] h-[76px] relative overflow-hidden rounded-[24px] border border-border bg-muted/50 shadow-sm flex items-center gap-4 px-4 py-2 animate-pulse">
+            <div className="size-[60px] rounded-full bg-muted" />
+            <div className="flex-1 space-y-2">
+                <div className="h-3 bg-muted rounded w-1/3" />
+                <div className="h-3 bg-muted rounded w-1/2" />
             </div>
-        );
+        </div>
+    );
+
+    if (!mounted || loading) {
+        return <Skeleton />;
     }
 
     const isSpotify = status?.listening_to_spotify && status?.spotify;
@@ -164,8 +166,9 @@ export const MusicStatus = React.memo(function MusicStatus() {
         ? `https://open.spotify.com/track/${status.spotify.track_id}`
         : `https://open.spotify.com/search/${encodeURIComponent(`${song} ${artist}`)}`;
 
+    // todo(@dromzeh): visual error handling
     if (!song || !artist) {
-        return null;
+        return <Skeleton />;
     }
 
     const duration =
