@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Commit Mono";
+  src: url("/fonts/CommitMono-400-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Commit Mono";
+  src: url("/fonts/CommitMono-700-Regular.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-bg: #101010;
+  --color-well: #0b0b0b;
+  --color-raised: #191919;
+  --color-strong: #f2f2f2;
+  --color-text: #d4d4d4;
+  --color-body: #b1b1b1;
+  --color-muted: #929292;
+
+  --color-ident: #ecb38c;
+  --color-em: #99d6e5;
+  --color-ok: #9ad4b4;
+  --color-bad: #eba6c6;
+
+  --color-line: #232323;
+  --color-surface: #ffffff0d;
+
+  --font-serif: "Newsreader Variable", "Charter", "Iowan Old Style", Georgia, serif;
+  --font-mono: "Commit Mono", monospace;
+  --font-sans: "Inter Variable", system-ui, sans-serif;
+}
+
+html {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-serif);
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+:root[data-sel-mark] ::selection {
+  background: transparent;
+  color: var(--color-text);
+}
+
+[data-highlighters-overlay],
+[data-highlighters-overlay] + div[aria-hidden="true"] {
+  z-index: -1;
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.3;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.8' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-color: var(--color-muted);
+  text-underline-offset: 3px;
+  transition: color 150ms ease;
+}
+
+nav:hover a:not(:hover),
+footer:hover a:not(:hover) {
+  color: var(--color-muted);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-em);
+  outline-offset: 2px;
+}
+
+.section-label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--color-muted);
+}
+
+.quiet-link {
+  text-decoration: none;
+}
+.quiet-link:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--color-muted);
+}
+
+.plain-link,
+.plain-link:hover {
+  text-decoration: none;
+}
+
+.cut {
+  opacity: 0;
+  animation: cut-in 1ms steps(1, end) 120ms forwards;
+}
+
+@keyframes cut-in {
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cut {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+.eq-bar {
+  display: block;
+  height: 100%;
+  width: 2px;
+  border-radius: 9999px;
+  background: color-mix(in oklab, var(--color-text) 70%, transparent);
+  animation: eq-bar 1s ease-in-out infinite;
+  will-change: transform;
+}
+@keyframes eq-bar {
+  0%,
+  100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .eq-bar { animation: none; }
+}
+.eq-enter-active,
+.eq-leave-active {
+  transition: opacity 300ms cubic-bezier(0.25, 0.1, 0.25, 1), max-width 300ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.eq-enter-from,
+.eq-leave-to { opacity: 0; max-width: 0; }
+.eq-enter-to,
+.eq-leave-from { max-width: 1rem; }
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+button.quiet-link {
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}

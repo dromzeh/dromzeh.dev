@@ -1,13 +1,31 @@
-Source code for my personal website.
+# dromzeh.dev
 
-Built with [Next.js](https://nextjs.org/), [TailwindCSS](https://tailwindcss.com/), [TypeScript](https://www.typescriptlang.org/), & [Lanyard](https://lanyard.rest)
+Source for [dromzeh.dev](https://dromzeh.dev).
 
-Deployment is done via [Cloudflare Pages](https://pages.cloudflare.com/), using [next-on-pages](https://github.com/cloudflare/next-on-pages).
+Nuxt 4 and Nuxt Content, prerendered to static files and served from Cloudflare. Tailwind v4, Newsreader, Inter and Commit Mono.
 
-Cache is cleared via a [Workflow](.github/workflows/cf-pages-await.yml) that waits for the pages build to be completed.
+## Running it
+
+```sh
+bun install
+bun run dev
+bun run generate
+bun run typecheck
+```
+
+`generate` writes the static site to `.output/public`, which `wrangler.jsonc` serves.
+
+## Layout
+
+- `content/posts`: the writing, as Markdown with MDC components
+- `app/components/content`: the components those posts use (charts, flow diagrams, the animated scenes, code blocks)
+- `app/components/music`: the now playing card, from [Lanyard](https://lanyard.rest) with a Last.fm fallback
+- `app/data`: projects, craft pieces and the FAQ
+- `server/routes`: RSS, sitemap and `llms.txt`
+- `shared/site.ts`: the site URL, name and description, used by both the app and the server
 
 ## License
 
-dromzeh.dev is licensed under the [GNU Affero General Public License v3.0](LICENSE)
+The code is licensed under [AGPL-3.0](LICENSE).
 
-**You must state all significant changes made to the original software, make the source code available to the public with credit to the original author, original source, and use the same license.**
+The writing in `content/` is © dromzeh (Marcel Elias), all rights reserved. It is not covered by the AGPL and may not be republished without permission.
